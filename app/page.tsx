@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from "react";
 import { BaseQuestion, Domain, domainMeta, questions, researchSources } from "./question-bank";
 
 type AnswerValue = number | number[] | string | string[] | null;
@@ -142,9 +142,196 @@ function choiceRationale(question: BaseQuestion, index: number) {
     ? ((question.answer as number[]) ?? []).includes(index)
     : Number(question.answer) === index;
   const auditedRationale = question.rationales?.[index];
-  if (auditedRationale) return `${correct ? "Correct" : "Incorrect"} — ${auditedRationale}`;
+  if (auditedRationale) {
+    const normalized = auditedRationale.replace(/^(Correct|Incorrect)\s*[:—-]\s*/i, "");
+    return `${correct ? "Correct" : "Incorrect"} — ${normalized}`;
+  }
   if (correct) return `Correct — ${question.explanation}`;
   return `Incorrect — “${question.choices?.[index] ?? "This option"}” does not fit the condition in the prompt; the guide-supported response is “${correctLabel(question)}.”`;
+}
+
+const LONG_PRESS_MS = 520;
+const MATRIX_GLYPHS = "01<>/\\[]{}#*+=-";
+
+function MatrixSwapText({ option, hint, active, as = "p" }: { option: string; hint: string; active: boolean; as?: "p" | "span" }) {
+  const [displayText, setDisplayText] = useState(option);
+
+  useEffect(() => {
+    if (!active) {
+      setDisplayText(option);
+      return;
+    }
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      setDisplayText(hint);
+      return;
+    }
+
+    let frame = 0;
+    const totalFrames = 13;
+    const timer = window.setInterval(() => {
+      frame += 1;
+      const revealed = Math.ceil((frame / totalFrames) * hint.length);
+      setDisplayText(Array.from(hint, (character, index) => {
+        if (character === " " || index < revealed) return character;
+        return MATRIX_GLYPHS[(index + frame) % MATRIX_GLYPHS.length];
+      }).join(""));
+      if (frame >= totalFrames) window.clearInterval(timer);
+    }, 28);
+
+    return () => window.clearInterval(timer);
+  }, [active, hint, option]);
+
+  const className = `option-copy ${active ? "matrix-copy" : ""}`;
+  if (as === "span") return <span className={className} aria-hidden="true">{displayText}</span>;
+  return <p className={className} aria-hidden="true">{displayText}</p>;
+}
+
+function useLongPressHint() {
+  const [hintActive, setHintActive] = useState(false);
+  const [pressing, setPressing] = useState(false);
+  const timerRef = useRef<number | null>(null);
+  const suppressClickRef = useRef(false);
+  const originRef = useRef({ x: 0, y: 0 });
+
+  const clearTimer = useCallback(() => {
+    if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+    timerRef.current = null;
+  }, []);
+
+  useEffect(() => () => clearTimer(), [clearTimer]);
+
+  const onPointerDown = useCallback((event: ReactPointerEvent<HTMLButtonElement>) => {
+    const coarsePointer = event.pointerType === "touch" || event.pointerType === "pen" || window.matchMedia("(pointer: coarse)").matches;
+    if (!coarsePointer) return;
+
+    clearTimer();
+    suppressClickRef.current = false;
+    originRef.current = { x: event.clientX, y: event.clientY };
+    setPressing(true);
+    try { event.currentTarget.setPointerCapture(event.pointerId); } catch {}
+    timerRef.current = window.setTimeout(() => {
+      suppressClickRef.current = true;
+      setHintActive(true);
+      if ("vibrate" in navigator) navigator.vibrate(12);
+    }, LONG_PRESS_MS);
+  }, [clearTimer]);
+
+  const onPointerMove = useCallback((event: ReactPointerEvent<HTMLButtonElement>) => {
+    if (!pressing) return;
+    const distance = Math.hypot(event.clientX - originRef.current.x, event.clientY - originRef.current.y);
+    if (distance <= 14) return;
+    clearTimer();
+    setPressing(false);
+    setHintActive(false);
+  }, [clearTimer, pressing]);
+
+  const finishPress = useCallback((event: ReactPointerEvent<HTMLButtonElement>) => {
+    clearTimer();
+    setPressing(false);
+    setHintActive(false);
+    try {
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    } catch {}
+  }, [clearTimer]);
+
+  const onClick = useCallback((event: ReactMouseEvent<HTMLButtonElement>, select: () => void) => {
+    if (suppressClickRef.current) {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClickRef.current = false;
+      return;
+    }
+    select();
+  }, []);
+
+  const onContextMenu = useCallback((event: ReactMouseEvent<HTMLButtonElement>) => {
+    if (hintActive || window.matchMedia("(pointer: coarse)").matches) event.preventDefault();
+  }, [hintActive]);
+
+  return { hintActive, pressing, onPointerDown, onPointerMove, finishPress, onClick, onContextMenu };
+}
+
+function ChoiceOption({ label, option, hint, selected, forcedHint = false, onSelect }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void }) {
+  const press = useLongPressHint();
+  const hintVisible = press.hintActive || forcedHint;
+  return (
+    <button
+      className={`${selected ? "selected" : ""} ${press.pressing ? "press-arming" : ""} ${hintVisible ? "matrix-active" : ""}`}
+      aria-pressed={selected}
+      aria-expanded={hintVisible}
+      aria-label={hintVisible ? `Hint: ${hint}` : `Option ${label}: ${option}`}
+      data-hint-active={hintVisible ? "true" : "false"}
+      onPointerDown={press.onPointerDown}
+      onPointerMove={press.onPointerMove}
+      onPointerUp={press.finishPress}
+      onPointerCancel={press.finishPress}
+      onLostPointerCapture={press.finishPress}
+      onContextMenu={press.onContextMenu}
+      onClick={(event) => press.onClick(event, onSelect)}
+    >
+      <span>{label}</span>
+      <MatrixSwapText option={option} hint={hint} active={hintVisible} />
+      <i />
+      <em className="hint-bubble">{hint}</em>
+      <small className="hold-meter" aria-hidden="true" />
+    </button>
+  );
+}
+
+function HotspotOption({ label, option, hint, selected, forcedHint = false, position, onSelect }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; position: { x: number; y: number; w: number; h: number }; onSelect: () => void }) {
+  const press = useLongPressHint();
+  const hintVisible = press.hintActive || forcedHint;
+  return (
+    <button
+      className={`hotspot ${selected ? "selected" : ""} ${press.pressing ? "press-arming" : ""} ${hintVisible ? "matrix-active" : ""}`}
+      aria-pressed={selected}
+      aria-expanded={hintVisible}
+      aria-label={hintVisible ? `Hint: ${hint}` : `Region ${label}: ${option}`}
+      data-hint-active={hintVisible ? "true" : "false"}
+      style={{ left: `${position.x}%`, top: `${position.y}%`, width: `${position.w}%`, height: `${position.h}%` }}
+      onPointerDown={press.onPointerDown}
+      onPointerMove={press.onPointerMove}
+      onPointerUp={press.finishPress}
+      onPointerCancel={press.finishPress}
+      onLostPointerCapture={press.finishPress}
+      onContextMenu={press.onContextMenu}
+      onClick={(event) => press.onClick(event, onSelect)}
+    >
+      <b>{label}</b>
+      <MatrixSwapText option={option} hint={hint} active={hintVisible} as="span" />
+      <em className="hint-bubble">{hint}</em>
+      <small className="hold-meter" aria-hidden="true" />
+    </button>
+  );
+}
+
+function ConnectionOption({ label, option, hint, selected, forcedHint = false, onSelect }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void }) {
+  const press = useLongPressHint();
+  const hintVisible = press.hintActive || forcedHint;
+  return (
+    <button
+      className={`${selected ? "selected" : ""} ${press.pressing ? "press-arming" : ""} ${hintVisible ? "matrix-active" : ""}`}
+      aria-pressed={selected}
+      aria-expanded={hintVisible}
+      aria-label={hintVisible ? `Hint: ${hint}` : `Destination ${label}: ${option}`}
+      data-hint-active={hintVisible ? "true" : "false"}
+      onPointerDown={press.onPointerDown}
+      onPointerMove={press.onPointerMove}
+      onPointerUp={press.finishPress}
+      onPointerCancel={press.finishPress}
+      onLostPointerCapture={press.finishPress}
+      onContextMenu={press.onContextMenu}
+      onClick={(event) => press.onClick(event, onSelect)}
+    >
+      <i />
+      <span>{label}</span>
+      <MatrixSwapText option={option} hint={hint} active={hintVisible} />
+      <em className="hint-bubble">{hint}</em>
+      <small className="hold-meter" aria-hidden="true" />
+    </button>
+  );
 }
 
 export default function Home() {
@@ -161,6 +348,7 @@ export default function Home() {
   const [showSources, setShowSources] = useState(false);
   const [reviewFilter, setReviewFilter] = useState<"all" | "missed" | Domain>("missed");
   const [controlHeld, setControlHeld] = useState(false);
+  const [hintLens, setHintLens] = useState(false);
   const [shuffleOn, setShuffleOn] = useState(true);
   const [questionIds, setQuestionIds] = useState<number[]>(standardQuestionIds);
   const [railOpen, setRailOpen] = useState(true);
@@ -561,8 +749,15 @@ export default function Home() {
           {!railOpen && <button className="rail-reopen" onClick={() => setRailOpen(true)}><small>Click here to</small><span>Open question rail →</span></button>}
           <div className="question-number"><span>{String(currentIndex + 1).padStart(3, "0")}</span><button className={flagged.includes(question.id) ? "flagged" : ""} onClick={toggleFlag}>{flagged.includes(question.id) ? "◆ Flagged" : "◇ Flag for review"}</button></div>
           <h1>{question.prompt}</h1>
-          <div className={`hint-key ${controlHeld ? "active" : ""}`}><kbd>Ctrl</kbd><span>{controlHeld ? "Rationale lens active" : "Hold Control for rationales · press 1–4 to answer choice items"}</span></div>
-          <QuestionInput question={question} response={response} setResponse={setResponse} moveStep={moveStep} controlHeld={controlHeld} />
+          <div className={`hint-key ${controlHeld || hintLens ? "active" : ""}`}>
+            <div className="hint-instruction">
+              <kbd>Ctrl</kbd>
+              <span className="desktop-hint-copy">{hintLens ? "Hint lens on · choose an option to decode it" : controlHeld ? "Rationale lens active" : "Hold Control for rationales · press 1–4 to answer choice items"}</span>
+              <span className="touch-hint-copy">{hintLens ? "Hint lens on · tap an option to decode without answering" : <><b>Press + hold</b> any option to decode its rationale</>}</span>
+            </div>
+            <button className={`hint-lens-btn ${hintLens ? "active" : ""}`} aria-pressed={hintLens} onClick={() => setHintLens((value) => !value)}><span aria-hidden="true">{hintLens ? "×" : "?"}</span>{hintLens ? "Exit hint lens" : "Hint lens"}</button>
+          </div>
+          <QuestionInput question={question} response={response} setResponse={setResponse} moveStep={moveStep} controlHeld={controlHeld} hintLens={hintLens} />
           {mode === "study" && isChecked && (
             <div className={`feedback ${correctNow ? "correct" : "incorrect"}`}>
               <b>{correctNow ? "Correct." : "Not quite."}</b>
@@ -586,22 +781,69 @@ export default function Home() {
   );
 }
 
-function QuestionInput({ question, response, setResponse, moveStep, controlHeld }: { question: BaseQuestion; response: AnswerValue; setResponse: (value: AnswerValue) => void; moveStep: (index: number, direction: -1 | 1) => void; controlHeld: boolean }) {
-  if (question.type === "single") return <div className={`choice-list ${controlHeld ? "hints-on" : ""}`}>{question.choices?.map((choice, index) => <button key={index} className={response === index ? "selected" : ""} aria-pressed={response === index} onClick={() => setResponse(index)}><span>{letters[index]}</span><p>{choice}</p><i /><em className="hint-bubble">{choiceRationale(question, index)}</em></button>)}</div>;
+function QuestionInput({ question, response, setResponse, moveStep, controlHeld, hintLens }: { question: BaseQuestion; response: AnswerValue; setResponse: (value: AnswerValue) => void; moveStep: (index: number, direction: -1 | 1) => void; controlHeld: boolean; hintLens: boolean }) {
+  const [pinnedHint, setPinnedHint] = useState<number | null>(null);
+
+  useEffect(() => setPinnedHint(null), [question.id, hintLens]);
+
+  const chooseOrHint = (index: number, select: () => void) => {
+    if (!hintLens) {
+      select();
+      return;
+    }
+    setPinnedHint((current) => current === index ? null : index);
+  };
+
+  if (question.type === "single") return (
+    <div className={`choice-list ${controlHeld ? "hints-on" : ""}`}>
+      {question.choices?.map((choice, index) => (
+        <ChoiceOption key={index} label={letters[index]} option={choice} hint={choiceRationale(question, index)} selected={response === index} forcedHint={hintLens && pinnedHint === index} onSelect={() => chooseOrHint(index, () => setResponse(index))} />
+      ))}
+    </div>
+  );
   if (question.type === "multi") {
     const selected = (response as number[]) ?? [];
-    return <div className={`choice-list multi-list ${controlHeld ? "hints-on" : ""}`}>{question.choices?.map((choice, index) => <button key={index} className={selected.includes(index) ? "selected" : ""} aria-pressed={selected.includes(index)} onClick={() => setResponse(selected.includes(index) ? selected.filter((n) => n !== index) : [...selected, index])}><span>{selected.includes(index) ? "✓" : letters[index]}</span><p>{choice}</p><i /><em className="hint-bubble">{choiceRationale(question, index)}</em></button>)}</div>;
+    return (
+      <div className={`choice-list multi-list ${controlHeld ? "hints-on" : ""}`}>
+        {question.choices?.map((choice, index) => (
+          <ChoiceOption key={index} label={selected.includes(index) ? "✓" : letters[index]} option={choice} hint={choiceRationale(question, index)} selected={selected.includes(index)} forcedHint={hintLens && pinnedHint === index} onSelect={() => chooseOrHint(index, () => setResponse(selected.includes(index) ? selected.filter((n) => n !== index) : [...selected, index]))} />
+        ))}
+      </div>
+    );
   }
-  if (question.type === "numeric") return <div className={`numeric-entry ${controlHeld ? "hints-on" : ""}`}><label>Enter your answer</label><div><input inputMode="decimal" type="number" step="any" value={typeof response === "string" ? response : ""} onChange={(event) => setResponse(event.target.value)} autoFocus /><span>{question.unit}</span></div><small>Use numbers only. A reasonable rounding tolerance is accepted where appropriate.</small><em className="interaction-rationale">{question.interactionRationale}</em></div>;
+  if (question.type === "numeric") return <div className={`numeric-entry ${controlHeld || hintLens ? "hints-on" : ""}`}><label>Enter your answer</label><div><input inputMode="decimal" type="number" step="any" value={typeof response === "string" ? response : ""} onChange={(event) => setResponse(event.target.value)} autoFocus /><span>{question.unit}</span></div><small>Use numbers only. A reasonable rounding tolerance is accepted where appropriate.</small><em className="interaction-rationale">{question.interactionRationale}</em></div>;
   if (question.type === "order") {
     const order = (response as string[]) ?? shuffledSteps(question);
-    return <div className={`order-task ${controlHeld ? "hints-on" : ""}`}><p className="interaction-hint">Use the arrow controls to arrange the steps from first to last.</p>{order.map((step, index) => <div className="order-row" key={step}><span>{index + 1}</span><p>{step}</p><div><button aria-label="Move up" disabled={index === 0} onClick={() => moveStep(index, -1)}>↑</button><button aria-label="Move down" disabled={index === order.length - 1} onClick={() => moveStep(index, 1)}>↓</button></div></div>)}<em className="interaction-rationale">{question.interactionRationale}</em></div>;
+    return <div className={`order-task ${controlHeld || hintLens ? "hints-on" : ""}`}><p className="interaction-hint">Use the arrow controls to arrange the steps from first to last.</p>{order.map((step, index) => <div className="order-row" key={step}><span>{index + 1}</span><p>{step}</p><div><button aria-label="Move up" disabled={index === 0} onClick={() => moveStep(index, -1)}>↑</button><button aria-label="Move down" disabled={index === order.length - 1} onClick={() => moveStep(index, 1)}>↓</button></div></div>)}<em className="interaction-rationale">{question.interactionRationale}</em></div>;
   }
-  if (question.type === "hotspot") return <div className={`hotspot-wrap ${controlHeld ? "hints-on" : ""}`}><p className="interaction-hint">Click one region. The selected area will hold a gold marker.</p><div className="diagram-board"><div className="diagram-grid" />{question.hotspots?.map((spot, index) => <button key={spot.id} className={`hotspot ${response === spot.id ? "selected" : ""}`} aria-pressed={response === spot.id} style={{ left: `${spot.x}%`, top: `${spot.y}%`, width: `${spot.w}%`, height: `${spot.h}%` }} onClick={() => setResponse(spot.id)}><b>{letters[index]}</b><span>{spot.label}</span><em className="hint-bubble">{choiceRationale(question, index)}</em></button>)}</div></div>;
+  if (question.type === "hotspot") return (
+    <div className={`hotspot-wrap ${controlHeld ? "hints-on" : ""}`}>
+      <p className="interaction-hint">Tap one region. The selected area will hold a gold marker.</p>
+      <div className="diagram-board">
+        <div className="diagram-grid" />
+        {question.hotspots?.map((spot, index) => (
+          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} position={spot} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
+        ))}
+      </div>
+    </div>
+  );
   if (question.type === "connect") {
     const selected = typeof response === "string" ? Number(response) : -1;
     const targetY = selected >= 0 ? ((selected + 0.5) / (question.choices?.length ?? 4)) * 100 : 50;
-    return <div className={`connect-task ${controlHeld ? "hints-on" : ""}`}><p className="interaction-hint">Click a destination to draw the connection.</p><div className="connection-board"><svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none">{selected >= 0 && <line x1="27" y1="50" x2="73" y2={targetY} />}</svg><div className="source-node"><small>Prompt</small><b>Best match</b><i /></div><div className="target-list">{question.choices?.map((choice, index) => <button key={index} className={selected === index ? "selected" : ""} aria-pressed={selected === index} onClick={() => setResponse(String(index))}><i /><span>{letters[index]}</span><p>{choice}</p><em className="hint-bubble">{choiceRationale(question, index)}</em></button>)}</div></div></div>;
+    return (
+      <div className={`connect-task ${controlHeld ? "hints-on" : ""}`}>
+        <p className="interaction-hint">Tap a destination to draw the connection.</p>
+        <div className="connection-board">
+          <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none">{selected >= 0 && <line x1="27" y1="50" x2="73" y2={targetY} />}</svg>
+          <div className="source-node"><small>Prompt</small><b>Best match</b><i /></div>
+          <div className="target-list">
+            {question.choices?.map((choice, index) => (
+              <ConnectionOption key={index} label={letters[index]} option={choice} hint={choiceRationale(question, index)} selected={selected === index} forcedHint={hintLens && pinnedHint === index} onSelect={() => chooseOrHint(index, () => setResponse(String(index)))} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
   }
   return null;
 }

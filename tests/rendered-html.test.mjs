@@ -57,6 +57,27 @@ test("preserves question navigation, rationale, and detailed reporting contracts
   assert.match(page, /aria-pressed/);
 });
 
+test("supports responsive mobile hint decoding without changing desktop controls", async () => {
+  const [page, css, indexHtml] = await Promise.all([
+    readFile(new URL("app/page.tsx", root), "utf8"),
+    readFile(new URL("app/globals.css", root), "utf8"),
+    readFile(new URL("index.html", root), "utf8"),
+  ]);
+
+  assert.match(indexHtml, /width=device-width, initial-scale=1\.0/);
+  assert.match(page, /const LONG_PRESS_MS = 520/);
+  assert.match(page, /onPointerDown/);
+  assert.match(page, /data-hint-active/);
+  assert.match(page, /Press \+ hold/);
+  assert.match(page, /Hint lens on/);
+  assert.match(page, /chooseOrHint/);
+  assert.match(css, /\.matrix-active/);
+  assert.match(css, /@keyframes matrix-decode/);
+  assert.match(css, /min-height:100dvh/);
+  assert.match(css, /env\(safe-area-inset-bottom\)/);
+  assert.match(css, /@media \(max-width:380px\)/);
+});
+
 test("ships CTS-specific branding and a ready-to-upload social carousel", async () => {
   const indexHtml = await readFile(new URL("index.html", root), "utf8");
   const posts = await readFile(new URL("marketing/social/POSTS.md", root), "utf8");

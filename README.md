@@ -9,6 +9,7 @@ Aureum Study Hall is a free, independent study series. CTS is the first release:
 - 20-question quick drills, 60-question deep practice, a 115-question / 150-minute simulation, or the complete 300-question mastery bank.
 - Blueprint-balanced sessions or focused practice for any CTS duty.
 - Timed and study modes, shuffle, flags, resume, detailed rationales, and six interaction styles.
+- Responsive mobile exam layouts with press-and-hold rationale decoding, an accessible Hint Lens, and the existing desktop Control shortcut.
 - Local attempt history, missed-question practice, CSV export, and printable/PDF-ready reports.
 - Installable offline behavior after the first visit.
 

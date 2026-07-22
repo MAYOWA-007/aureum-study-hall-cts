@@ -14,6 +14,7 @@ What’s included:
 - 20-question drills, 60-question deep practice, a 115-question/150-minute simulation, and a full 300-question session
 - Blueprint-balanced sessions or focused practice across Duties A–D
 - Timed and study modes, shuffle, flags, save/resume, and local attempt history
+- Phone-friendly layouts with press-and-hold rationale decoding, a tap-based Hint Lens, and desktop Control-key hints
 - Six interaction styles: choice, hotspot, connection, sequence, numeric, and multi-select
 - 1,142 choice-by-choice rationales, study notes, and source citations
 - Duty and task diagnostics, missed-question practice, CSV export, and printable/PDF reports
@@ -47,6 +48,7 @@ Features:
 - 115-question simulation paced for 150 minutes
 - Blueprint-balanced or Duty A–D focused practice
 - Timed and study modes, shuffle, flags, navigator, and save/resume
+- Responsive phone layouts with hold-to-decode rationales, a Hint Lens button, and desktop Control-key hints
 - Choice, hotspot, connection, ordering, numeric, and multi-select interactions
 - Detailed rationales, study notes, sources, duty/task reports, and missed-question drills
 - CSV and printable/PDF reports
