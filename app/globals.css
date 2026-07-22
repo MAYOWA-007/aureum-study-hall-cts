@@ -14,8 +14,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 h1,h2,h3,p { margin-top:0; }
 h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:500; }
 .eyebrow { margin:0 0 14px; color:var(--accent); font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
-.seal { width:52px; height:52px; border:1px solid rgba(214,181,94,.75); display:inline-grid; place-items:center; border-radius:50%; background:radial-gradient(circle,#d6b55e 0 3%,transparent 4%),var(--accent-deep); color:#f7df9d; font:700 25px Georgia,serif; box-shadow:0 0 0 5px rgba(203,164,75,.12); }
-.seal.small { width:35px; height:35px; font-size:17px; box-shadow:none; }
+.seal { width:58px; height:58px; flex:0 0 auto; border:1px solid rgba(214,181,94,.75); display:block; border-radius:16px; object-fit:cover; background:var(--accent-deep); box-shadow:0 0 0 5px rgba(203,164,75,.12),0 9px 22px rgba(0,0,0,.18); }
+.seal.small { width:38px; height:38px; border-radius:11px; box-shadow:0 4px 10px rgba(0,0,0,.12); }
 
 .hero-shell { color:#f7f1e4; min-height:76vh; padding:36px clamp(24px,6vw,90px) 0; background-color:#0c4839; background-image:linear-gradient(120deg,rgba(4,31,25,.94),rgba(13,80,63,.84)),radial-gradient(circle at 74% 28%,rgba(235,205,121,.22),transparent 31%),repeating-linear-gradient(95deg,transparent 0 20px,rgba(255,255,255,.018) 21px 22px); position:relative; overflow:hidden; }
 .hero-shell:after { content:"AUREUM"; position:absolute; right:-16px; bottom:52px; font:700 clamp(90px,16vw,250px) Georgia,serif; letter-spacing:-.08em; color:rgba(255,255,255,.035); }

@@ -1,4 +1,4 @@
-name: Deploy Aureum Study Hall
+name: Deploy Aureum Study Hall — CTS
 
 on:
   push:

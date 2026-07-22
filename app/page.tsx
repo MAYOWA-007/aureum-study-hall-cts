@@ -389,7 +389,7 @@ export default function Home() {
     return (
       <main className="landing emerald-theme">
         <section className="hero-shell">
-          <div className="hero-kicker"><span className="seal">A</span> Aureum Study Hall</div>
+          <div className="hero-kicker"><img className="seal" src="./favicon-512.png" alt="" /> Aureum Study Hall</div>
           <div className="hero-grid">
             <div>
               <p className="eyebrow">CTS® practice • {TOTAL_QUESTIONS}-question mastery bank</p>
@@ -466,7 +466,7 @@ export default function Home() {
     return (
       <main className="results-page emerald-theme">
         <header className="results-hero">
-          <button className="brand-button" onClick={() => setScreen("start")}><span className="seal small">A</span> Aureum Study Hall</button>
+          <button className="brand-button" onClick={() => setScreen("start")}><img className="seal small" src="./favicon-512.png" alt="" /> Aureum Study Hall</button>
           <button className="secondary-btn compact" onClick={() => setShowSources(true)}>Sources</button>
           <div className="score-ring" style={{ "--score": `${percent * 3.6}deg` } as React.CSSProperties}><div><strong>{percent}%</strong><span>{score} / {sessionTotal}</span></div></div>
           <p className="eyebrow">Assessment complete</p>
@@ -526,7 +526,7 @@ export default function Home() {
   return (
     <main className={`exam-page ${theme}-theme`}>
       <header className="exam-header">
-        <button className="brand-button" onClick={() => setScreen("start")}><span className="seal small">A</span><span>Aureum Study Hall</span></button>
+        <button className="brand-button" onClick={() => setScreen("start")}><img className="seal small" src="./favicon-512.png" alt="" /><span>Aureum Study Hall</span></button>
         <div className="header-progress"><span style={{ width: `${progress}%` }} /><b>{currentIndex + 1}</b><small>of {sessionTotal}</small>{shuffleOn && <em>Shuffled</em>}</div>
         <div className="header-tools">
           {mode === "exam" && <div className={`timer ${timeLeft < 900 ? "urgent" : ""}`}><span>Time</span><b>{formatTime(timeLeft)}</b></div>}

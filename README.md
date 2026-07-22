@@ -2,6 +2,8 @@
 
 Aureum Study Hall is a free, independent study series. CTS is the first release: a local-first practice app with a 300-question source-grounded bank.
 
+[Open Aureum Study Hall — CTS](https://mayowa-007.github.io/aureum-study-hall-cts/)
+
 ## What learners get
 
 - 20-question quick drills, 60-question deep practice, a 115-question / 150-minute simulation, or the complete 300-question mastery bank.
