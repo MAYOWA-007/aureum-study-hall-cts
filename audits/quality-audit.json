@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "questions": 300,
+  "uniqueCanonicalPrompts": 300,
+  "blockedWordingPatterns": 5,
+  "issues": []
+}

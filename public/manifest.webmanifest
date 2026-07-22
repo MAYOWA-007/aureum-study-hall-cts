@@ -1,0 +1,18 @@
+{
+  "name": "Aureum Study Hall — CTS Practice",
+  "short_name": "Aureum CTS",
+  "description": "Free, independent CTS certification practice with 300 original source-grounded questions.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f0e6",
+  "theme_color": "#07392e",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

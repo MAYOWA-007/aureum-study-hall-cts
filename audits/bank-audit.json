@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "questions": 300,
+  "unique_canonical_prompts": 300,
+  "domains": {
+    "A": 105,
+    "B": 90,
+    "C": 45,
+    "D": 60
+  },
+  "types": {
+    "connect": 27,
+    "hotspot": 27,
+    "multi": 2,
+    "numeric": 5,
+    "order": 10,
+    "single": 229
+  },
+  "tasks": {
+    "Conduct a customer needs analysis": 21,
+    "Conduct a site survey": 27,
+    "Conduct maintenance activities": 20,
+    "Design AV solutions": 30,
+    "Develop an AV project scope": 27,
+    "Integrate AV solution": 45,
+    "Manage AV integration": 45,
+    "Provide AV support": 45,
+    "Supervise AV operations": 12,
+    "Troubleshoot and repair AV solutions": 28
+  },
+  "answer_key_positions": {
+    "0": 71,
+    "1": 71,
+    "2": 71,
+    "3": 70
+  },
+  "rationales": 1142,
+  "interaction_rationales": 15,
+  "evidence": {
+    "status": "NOT_RUN",
+    "checked": 0,
+    "failures": []
+  },
+  "errors": [],
+  "warnings": []
+}
