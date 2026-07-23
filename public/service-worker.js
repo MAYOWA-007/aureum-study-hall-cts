@@ -1,5 +1,5 @@
-const CACHE_NAME = "aureum-study-hall-cts-v1";
-const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon-192.png", "./favicon-512.png"];
+const CACHE_NAME = "aureum-study-hall-cts-v2";
+const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon-192.png", "./favicon-512.png", "./audio/narration/manifest.json", "./audio/narration/pack.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
@@ -27,6 +27,7 @@ self.addEventListener("fetch", (event) => {
   }
   event.respondWith(
     caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+      if (!response.ok) return response;
       const copy = response.clone();
       void caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
       return response;

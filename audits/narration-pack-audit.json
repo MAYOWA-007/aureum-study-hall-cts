@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-07-23T02:11:19.069Z",
+  "provider": "Fish Audio",
+  "model": "s2.1-pro",
+  "voiceReferenceId": "f3b85abdea0e4e1c9fc60b4e3063a4a0",
+  "manifestClips": 1761,
+  "indexedClips": 1761,
+  "mp3Files": 1761,
+  "totalBytes": 361243306,
+  "totalMegabytes": 361.2,
+  "partialFiles": 0,
+  "issues": []
+}

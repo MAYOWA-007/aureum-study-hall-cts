@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from "react";
 import { BaseQuestion, Domain, domainMeta, questions, researchSources } from "./question-bank";
+import { NarrationPlayer } from "./narration-player";
+import { rationaleNarrationClips, requestNarrationClip } from "./narration";
 
 type AnswerValue = number | number[] | string | string[] | null;
 type Screen = "start" | "exam" | "results";
@@ -188,7 +190,7 @@ function MatrixSwapText({ option, hint, active, as = "p" }: { option: string; hi
   return <p className={className} aria-hidden="true">{displayText}</p>;
 }
 
-function useLongPressHint() {
+function useLongPressHint(onReveal?: () => void) {
   const [hintActive, setHintActive] = useState(false);
   const [pressing, setPressing] = useState(false);
   const timerRef = useRef<number | null>(null);
@@ -214,9 +216,10 @@ function useLongPressHint() {
     timerRef.current = window.setTimeout(() => {
       suppressClickRef.current = true;
       setHintActive(true);
+      onReveal?.();
       if ("vibrate" in navigator) navigator.vibrate(12);
     }, LONG_PRESS_MS);
-  }, [clearTimer]);
+  }, [clearTimer, onReveal]);
 
   const onPointerMove = useCallback((event: ReactPointerEvent<HTMLButtonElement>) => {
     if (!pressing) return;
@@ -253,8 +256,8 @@ function useLongPressHint() {
   return { hintActive, pressing, onPointerDown, onPointerMove, finishPress, onClick, onContextMenu };
 }
 
-function ChoiceOption({ label, option, hint, selected, forcedHint = false, onSelect }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void }) {
-  const press = useLongPressHint();
+function ChoiceOption({ label, option, hint, selected, forcedHint = false, onSelect, onHint }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void; onHint?: () => void }) {
+  const press = useLongPressHint(onHint);
   const hintVisible = press.hintActive || forcedHint;
   return (
     <button
@@ -280,8 +283,8 @@ function ChoiceOption({ label, option, hint, selected, forcedHint = false, onSel
   );
 }
 
-function HotspotOption({ label, option, hint, selected, forcedHint = false, position, onSelect }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; position: { x: number; y: number; w: number; h: number }; onSelect: () => void }) {
-  const press = useLongPressHint();
+function HotspotOption({ label, option, hint, selected, forcedHint = false, position, onSelect, onHint }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; position: { x: number; y: number; w: number; h: number }; onSelect: () => void; onHint?: () => void }) {
+  const press = useLongPressHint(onHint);
   const hintVisible = press.hintActive || forcedHint;
   return (
     <button
@@ -307,8 +310,8 @@ function HotspotOption({ label, option, hint, selected, forcedHint = false, posi
   );
 }
 
-function ConnectionOption({ label, option, hint, selected, forcedHint = false, onSelect }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void }) {
-  const press = useLongPressHint();
+function ConnectionOption({ label, option, hint, selected, forcedHint = false, onSelect, onHint }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void; onHint?: () => void }) {
+  const press = useLongPressHint(onHint);
   const hintVisible = press.hintActive || forcedHint;
   return (
     <button
@@ -634,6 +637,7 @@ export default function Home() {
           <p>AVIXA states that the live CTS exam uses four response alternatives and one best answer. The diagrams, connections, ordering, numeric, and multi-select items here are custom learning interactions—not actual or leaked exam questions. No practice tool can guarantee a pass or predict a live exam.</p>
           <button className="source-link" onClick={() => setShowSources(true)}>Review research sources ↗</button>
         </section>
+        <NarrationPlayer context="landing" />
         {showSources && <SourcesModal onClose={() => setShowSources(false)} />}
       </main>
     );
@@ -702,6 +706,7 @@ export default function Home() {
             <button className="text-btn results-home" onClick={() => setScreen("start")}>Build another session</button>
           </div>
         </section>
+        <NarrationPlayer context="results" />
         {showSources && <SourcesModal onClose={() => setShowSources(false)} />}
       </main>
     );
@@ -774,6 +779,7 @@ export default function Home() {
       </div>
 
       <div className="bottom-rail"><button onClick={() => setShowNavigator(true)}><span style={{ width: `${sessionAnsweredCount / sessionTotal * 100}%` }} />Answered {sessionAnsweredCount} · Flagged {flagged.length} · Open {sessionTotal - sessionAnsweredCount}</button></div>
+      <NarrationPlayer context="exam" question={question} reviewAvailable={mode === "study" && isChecked} />
       {showNavigator && <Navigator orderedQuestions={orderedQuestions} current={currentIndex} answers={answers} flagged={flagged} onChoose={(index) => { goToQuestion(index); setShowNavigator(false); }} onClose={() => setShowNavigator(false)} onSubmit={() => { setShowNavigator(false); setShowSubmit(true); }} />}
       {showSubmit && <SubmitModal total={sessionTotal} answeredCount={sessionAnsweredCount} flagged={flagged.length} onCancel={() => setShowSubmit(false)} onSubmit={submit} />}
       {showSources && <SourcesModal onClose={() => setShowSources(false)} />}
@@ -783,6 +789,7 @@ export default function Home() {
 
 function QuestionInput({ question, response, setResponse, moveStep, controlHeld, hintLens }: { question: BaseQuestion; response: AnswerValue; setResponse: (value: AnswerValue) => void; moveStep: (index: number, direction: -1 | 1) => void; controlHeld: boolean; hintLens: boolean }) {
   const [pinnedHint, setPinnedHint] = useState<number | null>(null);
+  const spokenRationales = useMemo(() => rationaleNarrationClips(question), [question]);
 
   useEffect(() => setPinnedHint(null), [question.id, hintLens]);
 
@@ -792,12 +799,17 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
       return;
     }
     setPinnedHint((current) => current === index ? null : index);
+    if (spokenRationales[index]) requestNarrationClip(spokenRationales[index]);
+  };
+
+  const narrateHint = (index: number) => {
+    if (spokenRationales[index]) requestNarrationClip(spokenRationales[index]);
   };
 
   if (question.type === "single") return (
     <div className={`choice-list ${controlHeld ? "hints-on" : ""}`}>
       {question.choices?.map((choice, index) => (
-        <ChoiceOption key={index} label={letters[index]} option={choice} hint={choiceRationale(question, index)} selected={response === index} forcedHint={hintLens && pinnedHint === index} onSelect={() => chooseOrHint(index, () => setResponse(index))} />
+        <ChoiceOption key={index} label={letters[index]} option={choice} hint={choiceRationale(question, index)} selected={response === index} forcedHint={hintLens && pinnedHint === index} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(index))} />
       ))}
     </div>
   );
@@ -806,7 +818,7 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
     return (
       <div className={`choice-list multi-list ${controlHeld ? "hints-on" : ""}`}>
         {question.choices?.map((choice, index) => (
-          <ChoiceOption key={index} label={selected.includes(index) ? "✓" : letters[index]} option={choice} hint={choiceRationale(question, index)} selected={selected.includes(index)} forcedHint={hintLens && pinnedHint === index} onSelect={() => chooseOrHint(index, () => setResponse(selected.includes(index) ? selected.filter((n) => n !== index) : [...selected, index]))} />
+          <ChoiceOption key={index} label={selected.includes(index) ? "✓" : letters[index]} option={choice} hint={choiceRationale(question, index)} selected={selected.includes(index)} forcedHint={hintLens && pinnedHint === index} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(selected.includes(index) ? selected.filter((n) => n !== index) : [...selected, index]))} />
         ))}
       </div>
     );
@@ -822,7 +834,7 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
       <div className="diagram-board">
         <div className="diagram-grid" />
         {question.hotspots?.map((spot, index) => (
-          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} position={spot} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
+          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} position={spot} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
         ))}
       </div>
     </div>
@@ -838,7 +850,7 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
           <div className="source-node"><small>Prompt</small><b>Best match</b><i /></div>
           <div className="target-list">
             {question.choices?.map((choice, index) => (
-              <ConnectionOption key={index} label={letters[index]} option={choice} hint={choiceRationale(question, index)} selected={selected === index} forcedHint={hintLens && pinnedHint === index} onSelect={() => chooseOrHint(index, () => setResponse(String(index)))} />
+              <ConnectionOption key={index} label={letters[index]} option={choice} hint={choiceRationale(question, index)} selected={selected === index} forcedHint={hintLens && pinnedHint === index} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(String(index)))} />
             ))}
           </div>
         </div>

@@ -7,11 +7,15 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "narration:manifest": "tsx scripts/build-narration-manifest.ts",
+    "narration:dry-run": "npm run narration:manifest && node scripts/generate-fish-narration.mjs",
+    "narration:generate": "npm run narration:manifest && node scripts/generate-fish-narration.mjs --execute",
+    "narration:audit": "node scripts/audit-narration-pack.mjs",
+    "build": "npm run narration:manifest && tsc --noEmit && vite build",
     "preview": "vite preview",
     "export:bank": "tsx scripts/export-question-bank.ts",
     "audit:quality": "npm run export:bank && node scripts/audit-question-quality.mjs",
-    "test": "npm run build && npm run audit:quality && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build && npm run audit:quality && npm run narration:audit && node --test tests/rendered-html.test.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

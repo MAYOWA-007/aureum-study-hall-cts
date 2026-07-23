@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-07-23T02:11:01.953Z",
+  "questionCount": 300,
+  "clipCount": 1761,
+  "clipsByKind": {
+    "interface": 4,
+    "question": 300,
+    "rationale": 1157,
+    "review": 300
+  },
+  "totalUtf8Bytes": 858363,
+  "estimatedWords": 128905,
+  "estimatedMinutesAt145Wpm": 889,
+  "estimatedMp3MegabytesAt64Kbps": 426.7,
+  "priceEstimate": {
+    "basis": "Fish Audio public pricing checked 2026-07-22; verify again before generation",
+    "usdPerMillionUtf8Bytes": 15,
+    "estimatedUsd": 12.88
+  },
+  "safety": {
+    "apiKeyInManifest": false,
+    "runtimeProviderCalls": false,
+    "generationRequiresExplicitExecuteFlag": true,
+    "selectedVoice": {
+      "provider": "Fish Audio",
+      "model": "s2.1-pro",
+      "referenceId": "f3b85abdea0e4e1c9fc60b4e3063a4a0",
+      "approvedAt": "2026-07-22"
+    }
+  }
+}

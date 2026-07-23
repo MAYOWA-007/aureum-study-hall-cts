@@ -4,5 +4,6 @@
 2. Four session cards showing 20-question Quick Drill, 60-question Deep Practice, 115-question Exam Simulation paced for 150 minutes, and 300-question Full Mastery, plus balanced or Duty A–D focused coverage.
 3. Four study-mode cards showing Timed Mode, Study Mode, Shuffle and Flags, and Save and Resume, with mobile press-and-hold hints, a Hint Lens button, navigator support, and desktop controls.
 4. Six interaction cards: 229 choice questions, 27 hotspots, 27 connections, 10 sequences, 5 numeric questions, and 2 multi-select questions. A note says the interactions are original and not live or leaked exam questions.
-5. Results and teaching slide highlighting 1,142 choice-by-choice rationales, duty breakdown, task diagnostics, detailed review, source citations, and missed-question practice.
-6. Privacy slide stating no account, backend, payment wall, or analytics. It highlights local progress, offline-ready behavior, CSV and printable/PDF exports, and the free CTS project link.
+5. Narration slide showing an emerald-and-gold Study Narrator console with a waveform, play and restart controls, auto-read, and playback pace. Text explains that the approved Fish Audio S2.1 Pro voice covers all 300 questions, options, rationales, study reviews, and interface guides using static audio only.
+6. Results and teaching slide highlighting 1,142 choice-by-choice rationales, duty breakdown, task diagnostics, detailed review, source citations, and missed-question practice.
+7. Privacy slide stating no account, backend, payment wall, analytics, or runtime voice-provider request. It highlights local progress, offline-ready behavior, CSV and printable/PDF exports, and the free CTS-specific project link.

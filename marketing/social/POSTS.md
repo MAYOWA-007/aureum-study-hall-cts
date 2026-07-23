@@ -15,12 +15,14 @@ What’s included:
 - Blueprint-balanced sessions or focused practice across Duties A–D
 - Timed and study modes, shuffle, flags, save/resume, and local attempt history
 - Phone-friendly layouts with press-and-hold rationale decoding, a tap-based Hint Lens, and desktop Control-key hints
+- Full Fish Audio S2.1 Pro narration for every question, response option, rationale, study review, and interface guide
+- Clear desktop/mobile narrator controls with play, pause, restart, auto-read, and three playback speeds
 - Six interaction styles: choice, hotspot, connection, sequence, numeric, and multi-select
 - 1,142 choice-by-choice rationales, study notes, and source citations
 - Duty and task diagnostics, missed-question practice, CSV export, and printable/PDF reports
 - Offline-ready behavior after the first successful visit
 
-There is no account, backend, payment wall, or analytics layer. Study progress stays in the learner’s browser.
+There is no account, backend, payment wall, or analytics layer. Study progress stays in the learner’s browser. Narration is delivered as static audio, so the public page never sends study text or a credential to the voice provider.
 
 Try Aureum Study Hall — CTS:
 https://mayowa-007.github.io/aureum-study-hall-cts/
@@ -49,11 +51,13 @@ Features:
 - Blueprint-balanced or Duty A–D focused practice
 - Timed and study modes, shuffle, flags, navigator, and save/resume
 - Responsive phone layouts with hold-to-decode rationales, a Hint Lens button, and desktop Control-key hints
+- Complete Fish Audio S2.1 Pro narration with question, option-rationale, and study-review audio
+- Mobile/desktop voice controls, auto-read, replay, and adjustable playback pace
 - Choice, hotspot, connection, ordering, numeric, and multi-select interactions
 - Detailed rationales, study notes, sources, duty/task reports, and missed-question drills
 - CSV and printable/PDF reports
 - Local browser progress and offline-ready behavior
-- No sign-up, payment, backend, or analytics
+- No sign-up, payment, backend, analytics, or runtime voice-provider request
 
 Live site:
 https://mayowa-007.github.io/aureum-study-hall-cts/
@@ -68,7 +72,8 @@ Independent study resource. It is not affiliated with or endorsed by AVIXA, cont
 2. `carousel/02-session-options.png`
 3. `carousel/03-practice-modes.png`
 4. `carousel/04-interactions.png`
-5. `carousel/05-feedback.png`
-6. `carousel/06-privacy-and-link.png`
+5. `carousel/05-narration.png`
+6. `carousel/06-feedback.png`
+7. `carousel/07-privacy-and-link.png`
 
 All images are 1080 × 1350 PNG files in a 4:5 ratio.
