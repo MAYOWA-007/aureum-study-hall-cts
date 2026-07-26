@@ -176,20 +176,20 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
             ? "This clip is queued for the voice pack"
             : playback === "error"
               ? "Audio could not be loaded"
-              : enabled ? "Narrator on · ready" : "Narrator off";
+              : enabled ? "Read aloud is on · ready" : "Read aloud is off";
 
   return (
-    <aside className={`narrator-dock ${open ? "open" : ""} ${enabled ? "enabled" : ""}`} aria-label="Study narrator">
+    <aside className={`narrator-dock ${open ? "open" : ""} ${enabled ? "enabled" : ""}`} aria-label="Read-aloud controls">
       {open && (
         <section className="narrator-panel">
           <div className="narrator-head">
-            <div><span className="narrator-kicker">Aureum voice layer</span><h2>Study narrator</h2></div>
-            <button className="narrator-close" onClick={() => setOpen(false)} aria-label="Close narrator controls">×</button>
+            <div><span className="narrator-kicker">Aureum voice layer</span><h2>Read aloud</h2></div>
+            <button className="narrator-close" onClick={() => setOpen(false)} aria-label="Close read-aloud controls">×</button>
           </div>
 
           <button className="narrator-power" role="switch" aria-checked={enabled} onClick={() => setEnabled((value) => !value)}>
             <span className="voice-orb" aria-hidden="true"><i /><i /><i /><i /></span>
-            <span><b>{enabled ? "Narration on" : "Narration off"}</b><small>{statusCopy}</small></span>
+            <span><b>{enabled ? "Read aloud on" : "Read aloud off"}</b><small>{statusCopy}</small></span>
             <em aria-hidden="true"><i /></em>
           </button>
 
@@ -199,8 +199,8 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
           </div>
 
           <div className="narrator-controls">
-            <button onClick={togglePlayback} disabled={!enabled || !packReady} aria-label={playback === "playing" ? "Pause narration" : "Play narration"}>{playback === "playing" ? "Ⅱ" : "▶"}<span>{playback === "playing" ? "Pause" : "Read"}</span></button>
-            <button onClick={() => void playClip(currentClip, true)} disabled={!enabled || !packReady} aria-label="Restart narration">↺<span>Restart</span></button>
+            <button onClick={togglePlayback} disabled={!enabled || !packReady} aria-label={playback === "playing" ? "Pause reading" : "Read this aloud"}>{playback === "playing" ? "Ⅱ" : "▶"}<span>{playback === "playing" ? "Pause" : "Read"}</span></button>
+            <button onClick={() => void playClip(currentClip, true)} disabled={!enabled || !packReady} aria-label="Restart reading">↺<span>Restart</span></button>
             {guideClip && <button onClick={() => void playClip(guideClip, true)} disabled={!enabled || !packReady} aria-label="Read interface guide">◇<span>{context === "exam" ? "Controls" : "Session guide"}</span></button>}
             {context === "exam" && reviewClip && <button onClick={() => void playClip(reviewClip, true)} disabled={!enabled || !packReady || !reviewAvailable} aria-label="Read study review">◎<span>Review</span></button>}
           </div>
@@ -215,7 +215,7 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
       )}
       <button className="narrator-trigger" onClick={() => setOpen((value) => !value)} aria-expanded={open}>
         <span className="voice-orb compact-orb" aria-hidden="true"><i /><i /><i /><i /></span>
-        <span><b>Narrator</b><small>{pack?.status === "awaiting_voice" ? "Voice pending" : pack?.status === "awaiting_generation" ? "S2.1 Pro queued" : enabled ? playback === "playing" ? "Reading now" : "On" : "Off"}</small></span>
+        <span><b>Read aloud</b><small>{pack?.status === "awaiting_voice" ? "Voice pending" : pack?.status === "awaiting_generation" ? "S2.1 Pro queued" : enabled ? playback === "playing" ? "Reading now" : "On" : "Off"}</small></span>
         <em>{open ? "×" : "⌃"}</em>
       </button>
     </aside>

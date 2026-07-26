@@ -5752,24 +5752,24 @@
     "type": "single",
     "domain": "A",
     "task": "Develop an AV project scope",
-    "topic": "Project Scope",
-    "prompt": "A programmer is defining system capabilities, boundaries, assumptions, and cost expectations. Which option identifies the objective of the program phase of AV system design?",
+    "topic": "Project acceptance criteria",
+    "prompt": "Which project-scope statement is a measurable AV acceptance criterion rather than a product preference?",
     "choices": [
-      "Describe the AV systems necessary to support the defined needs and the general cost of those systems",
-      "Create the computer software required to control an AV system",
-      "Create detailed design documents depicting the AV system components and installation",
-      "Provide a detailed cost quote for the client to approve"
+      "Every documented source shall be seen and heard at each required destination during final verification",
+      "Use the project manager’s preferred display brand",
+      "Let the installer decide after the client accepts the room",
+      "Choose the newest equipment available when purchasing begins"
     ],
     "answer": 0,
-    "explanation": "The program phase should focus on defining the user needs, the general AV systems required to meet these needs, and the general costs of these systems.",
+    "explanation": "Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered.",
     "source": "Official CTS Exam Guide, 3rd ed., Chapter 15, pp. 293-311",
     "chapter": 15,
-    "studyNote": "The program phase should focus on defining the user needs, the general AV systems required to meet these needs, and the general costs of these systems. CTS cue: start with the viewing task and environment, then verify the complete signal path, image geometry, light, and device limits.",
+    "studyNote": "Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered. CTS cue: start with the viewing task and environment, then verify the complete signal path, image geometry, light, and device limits.",
     "rationales": [
-      "Correct: The program phase should focus on defining the user needs, the general AV systems required to meet these needs, and the general costs of these systems. CTS cue: start with the viewing task and environment, then verify the complete signal path, image geometry, light, and device limits.",
-      "Not this one: “Create the computer software required to control an AV system” names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: The program phase should focus on defining the user needs, the general AV systems required to meet these needs, and the general costs of these systems. Best answer: Describe the AV systems necessary to support the defined needs and the general cost of those systems.",
-      "Not this one: The choice “Create detailed design documents depicting…and installation” addresses a related concern but omits or misorders the decisive requirement in this situation. Decisive rule: The program phase should focus on defining the user needs, the general AV systems required to meet these needs, and the general costs of these systems. Best answer: Describe the AV systems necessary to support the defined needs and the general cost of those systems.",
-      "Not this one: “Provide a detailed cost quote for the client to approve” names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: The program phase should focus on defining the user needs, the general AV systems required to meet these needs, and the general costs of these systems. Best answer: Describe the AV systems necessary to support the defined needs and the general cost of those systems."
+      "Correct: Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered. CTS cue: start with the viewing task and environment, then verify the complete signal path, image geometry, light, and device limits.",
+      "Not this one: “Use the project manager’s preferred display brand” names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered. Best answer: Every documented source shall be seen and heard at each required destination during final verification.",
+      "Not this one: “Let the installer decide after the client accepts the room” names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered. Best answer: Every documented source shall be seen and heard at each required destination during final verification.",
+      "Not this one: “Choose the newest equipment available when purchasing begins” names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered. Best answer: Every documented source shall be seen and heard at each required destination during final verification."
     ]
   },
   {

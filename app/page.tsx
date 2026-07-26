@@ -1,14 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from "react";
-import { BaseQuestion, Domain, domainMeta, questions, researchSources } from "./question-bank";
+import { allQuestions, BaseQuestion, Domain, domainMeta, finalCramQuestions, questions, researchSources } from "./question-bank";
 import { NarrationPlayer } from "./narration-player";
 import { rationaleNarrationClips, requestNarrationClip } from "./narration";
 
 type AnswerValue = number | number[] | string | string[] | null;
 type Screen = "start" | "exam" | "results";
 type Mode = "exam" | "study";
-type SessionSize = 20 | 60 | 115 | 300;
+type SessionSize = 20 | 60 | 75 | 115 | 300;
 type SessionDuty = "all" | Domain;
 type AttemptSummary = {
   id: string;
@@ -26,16 +26,41 @@ const HISTORY_KEY = "aureum-study-hall-cts-history-v1";
 const TOTAL_QUESTIONS = questions.length;
 const OFFICIAL_EXAM_QUESTIONS = 115;
 const OFFICIAL_EXAM_SECONDS = 150 * 60;
-const SESSION_SIZES: SessionSize[] = [20, 60, 115, 300];
+const SESSION_SIZES: SessionSize[] = [20, 60, 75, 115, 300];
 const DUTY_WEIGHTS: Record<Domain, number> = { A: 0.35, B: 0.30, C: 0.15, D: 0.20 };
 const letters = "ABCDE";
 const standardQuestionIds = questions.map((question) => question.id);
-const questionById = new Map(questions.map((question) => [question.id, question]));
+const finalCramQuestionIds = finalCramQuestions.map((question) => question.id);
+const questionById = new Map(allQuestions.map((question) => [question.id, question]));
 
-function shuffledIds(source: number[]) {
+function seedToNumber(seed: string) {
+  let value = 2166136261;
+  for (const character of seed) {
+    value ^= character.charCodeAt(0);
+    value = Math.imul(value, 16777619);
+  }
+  return value >>> 0;
+}
+
+function seededRandom(seed: string) {
+  let value = seedToNumber(seed);
+  return () => {
+    value += 0x6D2B79F5;
+    let result = value;
+    result = Math.imul(result ^ result >>> 15, result | 1);
+    result ^= result + Math.imul(result ^ result >>> 7, result | 61);
+    return ((result ^ result >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function newSessionSeed() {
+  return crypto.randomUUID().replaceAll("-", "").slice(0, 8).toUpperCase();
+}
+
+function shuffledIds(source: number[], random = Math.random) {
   const ids = [...source];
   for (let index = ids.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
+    const randomIndex = Math.floor(random() * (index + 1));
     [ids[index], ids[randomIndex]] = [ids[randomIndex], ids[index]];
   }
   return ids;
@@ -44,7 +69,7 @@ function shuffledIds(source: number[]) {
 function validQuestionOrder(value: unknown): value is number[] {
   return Array.isArray(value)
     && value.length > 0
-    && value.length <= questions.length
+    && value.length <= allQuestions.length
     && new Set(value).size === value.length
     && value.every((id) => typeof id === "number" && questionById.has(id));
 }
@@ -53,14 +78,40 @@ function examSeconds(questionCount: number) {
   return Math.round((OFFICIAL_EXAM_SECONDS / OFFICIAL_EXAM_QUESTIONS) * questionCount);
 }
 
-function buildQuestionOrder(requested: SessionSize, duty: SessionDuty, shouldShuffle: boolean) {
+function diversifiedQuestionIds(candidates: BaseQuestion[], count: number, shouldShuffle: boolean, random: () => number) {
+  const topicGroups = new Map<string, number[]>();
+  for (const question of candidates) {
+    const key = `${question.topic} ${correctLabel(question)}`.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    topicGroups.set(key, [...(topicGroups.get(key) ?? []), question.id]);
+  }
+  let groups = [...topicGroups.values()].map((ids) => shouldShuffle ? shuffledIds(ids, random) : ids);
+  if (shouldShuffle) groups = shuffledIds(groups.map((_, index) => index), random).map((index) => groups[index]);
+  const selected: number[] = [];
+  for (let round = 0; selected.length < count && groups.some((group) => round < group.length); round += 1) {
+    for (const group of groups) {
+      if (round < group.length) selected.push(group[round]);
+      if (selected.length === count) break;
+    }
+  }
+  return selected;
+}
+
+function buildQuestionOrder(requested: SessionSize, duty: SessionDuty, shouldShuffle: boolean, mode: Mode, seed: string) {
+  const random = seededRandom(seed);
+  if (requested === 75) return shouldShuffle ? shuffledIds(finalCramQuestionIds, random) : [...finalCramQuestionIds];
+
+  const sourceQuestions = mode === "exam"
+    ? questions.filter((question) => question.type === "single")
+    : questions;
+
   if (duty !== "all") {
-    const candidates = questions.filter((question) => question.domain === duty).map((question) => question.id);
-    const source = shouldShuffle ? shuffledIds(candidates) : candidates;
-    return source.slice(0, Math.min(requested, source.length));
+    const candidates = sourceQuestions.filter((question) => question.domain === duty);
+    const count = Math.min(requested, candidates.length);
+    const selected = diversifiedQuestionIds(candidates, count, shouldShuffle, random);
+    return shouldShuffle ? shuffledIds(selected, random) : selected;
   }
 
-  if (requested >= TOTAL_QUESTIONS) return shouldShuffle ? shuffledIds(standardQuestionIds) : [...standardQuestionIds];
+  if (requested >= TOTAL_QUESTIONS) return shouldShuffle ? shuffledIds(standardQuestionIds, random) : [...standardQuestionIds];
 
   const domains = Object.keys(DUTY_WEIGHTS) as Domain[];
   const allocations = domains.map((domain) => ({
@@ -76,10 +127,26 @@ function buildQuestionOrder(requested: SessionSize, duty: SessionDuty, shouldShu
   }
 
   const selected = allocations.flatMap(({ domain, count }) => {
-    const candidates = questions.filter((question) => question.domain === domain).map((question) => question.id);
-    return (shouldShuffle ? shuffledIds(candidates) : candidates).slice(0, count);
+    const candidates = sourceQuestions.filter((question) => question.domain === domain);
+    return diversifiedQuestionIds(candidates, count, shouldShuffle, random);
   });
-  return shouldShuffle ? shuffledIds(selected) : selected.sort((a, b) => a - b);
+  return shouldShuffle ? shuffledIds(selected, random) : selected.sort((a, b) => a - b);
+}
+
+function visiblePrompt(question: BaseQuestion) {
+  return question.prompt
+    .replace(/\s*Select the correct labeled region in the diagram\.\s*$/i, "")
+    .replace(/\s*Draw the connection from the prompt node to the best destination\.\s*$/i, "")
+    .trim();
+}
+
+function questionStyle(question: BaseQuestion) {
+  if (question.type === "single") return "Single best answer";
+  if (question.type === "multi") return "Multiple-answer study activity";
+  if (question.type === "hotspot") return "Labeled-choice study activity";
+  if (question.type === "connect") return "Matching study activity";
+  if (question.type === "order") return "Sequencing study activity";
+  return "Calculation study activity";
 }
 
 function sameArray(a: unknown[], b: unknown[]) {
@@ -264,7 +331,7 @@ function ChoiceOption({ label, option, hint, selected, forcedHint = false, onSel
       className={`${selected ? "selected" : ""} ${press.pressing ? "press-arming" : ""} ${hintVisible ? "matrix-active" : ""}`}
       aria-pressed={selected}
       aria-expanded={hintVisible}
-      aria-label={hintVisible ? `Hint: ${hint}` : `Option ${label}: ${option}`}
+      aria-label={hintVisible ? `Answer help: ${hint}` : `Option ${label}: ${option}`}
       data-hint-active={hintVisible ? "true" : "false"}
       onPointerDown={press.onPointerDown}
       onPointerMove={press.onPointerMove}
@@ -276,14 +343,14 @@ function ChoiceOption({ label, option, hint, selected, forcedHint = false, onSel
     >
       <span>{label}</span>
       <MatrixSwapText option={option} hint={hint} active={hintVisible} />
-      <i />
+      <i aria-hidden="true" />
       <em className="hint-bubble">{hint}</em>
       <small className="hold-meter" aria-hidden="true" />
     </button>
   );
 }
 
-function HotspotOption({ label, option, hint, selected, forcedHint = false, position, onSelect, onHint }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; position: { x: number; y: number; w: number; h: number }; onSelect: () => void; onHint?: () => void }) {
+function HotspotOption({ label, option, hint, selected, forcedHint = false, onSelect, onHint }: { label: string; option: string; hint: string; selected: boolean; forcedHint?: boolean; onSelect: () => void; onHint?: () => void }) {
   const press = useLongPressHint(onHint);
   const hintVisible = press.hintActive || forcedHint;
   return (
@@ -291,9 +358,8 @@ function HotspotOption({ label, option, hint, selected, forcedHint = false, posi
       className={`hotspot ${selected ? "selected" : ""} ${press.pressing ? "press-arming" : ""} ${hintVisible ? "matrix-active" : ""}`}
       aria-pressed={selected}
       aria-expanded={hintVisible}
-      aria-label={hintVisible ? `Hint: ${hint}` : `Region ${label}: ${option}`}
+      aria-label={hintVisible ? `Answer help: ${hint}` : `Choice ${label}: ${option}`}
       data-hint-active={hintVisible ? "true" : "false"}
-      style={{ left: `${position.x}%`, top: `${position.y}%`, width: `${position.w}%`, height: `${position.h}%` }}
       onPointerDown={press.onPointerDown}
       onPointerMove={press.onPointerMove}
       onPointerUp={press.finishPress}
@@ -328,7 +394,7 @@ function ConnectionOption({ label, option, hint, selected, forcedHint = false, o
       onContextMenu={press.onContextMenu}
       onClick={(event) => press.onClick(event, onSelect)}
     >
-      <i />
+      <i aria-hidden="true" />
       <span>{label}</span>
       <MatrixSwapText option={option} hint={hint} active={hintVisible} />
       <em className="hint-bubble">{hint}</em>
@@ -358,14 +424,13 @@ export default function Home() {
   const [jumpValue, setJumpValue] = useState("");
   const [sessionSize, setSessionSize] = useState<SessionSize>(115);
   const [sessionDuty, setSessionDuty] = useState<SessionDuty>("all");
+  const [sessionSeed, setSessionSeed] = useState("");
   const [attemptStartedAt, setAttemptStartedAt] = useState("");
   const [history, setHistory] = useState<AttemptSummary[]>([]);
 
   const orderedQuestions = useMemo(() => questionIds.map((id) => questionById.get(id)).filter((item): item is BaseQuestion => Boolean(item)), [questionIds]);
   const question = orderedQuestions[currentIndex] ?? questions[0];
   const response = answers[question.id] ?? null;
-  const theme = Math.floor(currentIndex / 10) % 2 === 0 ? "emerald" : "crimson";
-
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -381,17 +446,29 @@ export default function Home() {
   useEffect(() => {
     const down = (event: KeyboardEvent) => { if (event.key === "Control") setControlHeld(true); };
     const up = (event: KeyboardEvent) => { if (event.key === "Control") setControlHeld(false); };
-    const clear = () => setControlHeld(false);
+    const clear = () => {
+      setControlHeld(false);
+      setHintLens(false);
+    };
+    const clearWhenHidden = () => {
+      if (document.hidden) clear();
+    };
     window.addEventListener("keydown", down);
     window.addEventListener("keyup", up);
     window.addEventListener("blur", clear);
-    return () => { window.removeEventListener("keydown", down); window.removeEventListener("keyup", up); window.removeEventListener("blur", clear); };
+    document.addEventListener("visibilitychange", clearWhenHidden);
+    return () => {
+      window.removeEventListener("keydown", down);
+      window.removeEventListener("keyup", up);
+      window.removeEventListener("blur", clear);
+      document.removeEventListener("visibilitychange", clearWhenHidden);
+    };
   }, []);
 
   useEffect(() => {
     if (screen !== "exam") return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, attemptStartedAt }));
-  }, [screen, mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, attemptStartedAt]);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, sessionSeed, attemptStartedAt }));
+  }, [screen, mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, sessionSeed, attemptStartedAt]);
 
   useEffect(() => {
     if (screen !== "exam" || mode !== "exam") return;
@@ -467,9 +544,10 @@ export default function Home() {
   }, [screen, attemptStartedAt, mode, orderedQuestions, sessionAnsweredCount, score, sessionDuty]);
 
   function start(selectedMode: Mode, forcedOrder?: number[]) {
+    const nextSeed = forcedOrder?.length && sessionSeed ? sessionSeed : newSessionSeed();
     const nextOrder = forcedOrder?.length
-      ? (shuffleOn ? shuffledIds(forcedOrder) : forcedOrder)
-      : buildQuestionOrder(sessionSize, sessionDuty, shuffleOn);
+      ? [...forcedOrder]
+      : buildQuestionOrder(sessionSize, sessionDuty, shuffleOn, selectedMode, nextSeed);
     setMode(selectedMode);
     setScreen("exam");
     setCurrentIndex(0);
@@ -477,8 +555,11 @@ export default function Home() {
     setAnswers({});
     setFlagged([]);
     setChecked([]);
+    setControlHeld(false);
+    setHintLens(false);
     setTimeLeft(examSeconds(nextOrder.length));
     setHasSaved(false);
+    setSessionSeed(nextSeed);
     setAttemptStartedAt(new Date().toISOString());
     window.scrollTo({ top: 0, behavior: "auto" });
   }
@@ -497,6 +578,7 @@ export default function Home() {
       setShuffleOn(Boolean(saved.shuffleOn));
       setSessionSize(SESSION_SIZES.includes(saved.sessionSize) ? saved.sessionSize : 115);
       setSessionDuty(["all", "A", "B", "C", "D"].includes(saved.sessionDuty) ? saved.sessionDuty : "all");
+      setSessionSeed(typeof saved.sessionSeed === "string" ? saved.sessionSeed : newSessionSeed());
       setAttemptStartedAt(saved.attemptStartedAt ?? new Date().toISOString());
       setScreen("exam");
       window.scrollTo({ top: 0, behavior: "auto" });
@@ -510,6 +592,8 @@ export default function Home() {
   }
 
   function goToQuestion(index: number) {
+    setControlHeld(false);
+    setHintLens(false);
     setCurrentIndex(Math.max(0, Math.min(orderedQuestions.length - 1, index)));
     setJumpValue("");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -555,7 +639,7 @@ export default function Home() {
       isCorrect(item, answers[item.id]) ? "Correct" : "Review",
       item.source,
     ].map(escapeCell).join(","));
-    const csv = ["Position,Question ID,Duty,Task,Topic,Your response,Best answer,Result,Source", ...rows].join("\n");
+    const csv = ["Position,Question ID,Exam area,Task,Topic,Your response,Best answer,Result,Source", ...rows].join("\n");
     const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
     const anchor = document.createElement("a");
     anchor.href = url;
@@ -569,9 +653,11 @@ export default function Home() {
     window.setTimeout(() => window.print(), 50);
   }
 
-  const selectedQuestionCount = sessionDuty === "all"
-    ? sessionSize
-    : Math.min(sessionSize, questions.filter((item) => item.domain === sessionDuty).length);
+  const selectedQuestionCount = sessionSize === 75
+    ? finalCramQuestions.length
+    : sessionDuty === "all"
+      ? sessionSize
+      : Math.min(sessionSize, questions.filter((item) => item.domain === sessionDuty && (sessionSize === 300 || item.type === "single")).length);
   const latestAttempt = history[0];
   const bestAttempt = history.length ? Math.max(...history.map((attempt) => attempt.percent)) : null;
   const sessionTotal = orderedQuestions.length;
@@ -587,34 +673,35 @@ export default function Home() {
               <h1>Build the judgment<br />behind the signal.</h1>
               <p className="lede">Free, independent practice grounded in the third-edition CTS Exam Guide and calibrated to the current four-duty outline. Your work stays on this device.</p>
               <div className="session-builder" aria-label="Build a practice session">
-                <div className="builder-heading"><span>01</span><div><b>Choose your session</b><small>Start small, simulate the official pace, or work the complete bank.</small></div></div>
+                <div className="builder-heading"><span>01</span><div><b>Choose your session</b><small>Start small, use the curated final review, simulate the official pace, or work the complete bank.</small></div></div>
                 <div className="size-options">
-                  {SESSION_SIZES.map((size) => <button key={size} className={sessionSize === size ? "active" : ""} onClick={() => setSessionSize(size)}><b>{size}</b><small>{size === 20 ? "Quick drill" : size === 60 ? "Deep practice" : size === 115 ? "Exam simulation" : "Full mastery"}</small></button>)}
+                  {SESSION_SIZES.map((size) => <button key={size} className={sessionSize === size ? "active" : ""} onClick={() => setSessionSize(size)}><b>{size}</b><small>{size === 20 ? "Quick drill" : size === 60 ? "Deep practice" : size === 75 ? "Final cram" : size === 115 ? "Exam simulation" : "Full bank study"}</small></button>)}
                 </div>
-                <label className="duty-select"><span>Coverage</span><select value={sessionDuty} onChange={(event) => setSessionDuty(event.target.value as SessionDuty)}><option value="all">All four duties — blueprint balanced</option>{(Object.keys(domainMeta) as Domain[]).map((domain) => <option value={domain} key={domain}>Duty {domain} — {domainMeta[domain].name}</option>)}</select></label>
-                <div className="session-preview"><b>{selectedQuestionCount} questions</b><span>{formatTime(examSeconds(selectedQuestionCount))} timed pace</span><span>{sessionDuty === "all" ? "Blueprint balanced" : `Focused on duty ${sessionDuty}`}</span></div>
+                <label className="duty-select"><span>Coverage</span><select disabled={sessionSize === 75} value={sessionSize === 75 ? "all" : sessionDuty} onChange={(event) => setSessionDuty(event.target.value as SessionDuty)}><option value="all">{sessionSize === 75 ? "Curated high-yield final review" : "All four exam areas — blueprint balanced"}</option>{(Object.keys(domainMeta) as Domain[]).map((domain) => <option value={domain} key={domain}>Exam area {domain} — {domainMeta[domain].name}</option>)}</select></label>
+                <div className="session-preview"><b>{selectedQuestionCount} questions</b><span>{sessionSize === 300 ? "Untimed complete study" : `${formatTime(examSeconds(selectedQuestionCount))} timed pace`}</span><span>{sessionSize === 75 ? "75 newly edited single-best-answer questions" : sessionDuty === "all" ? "Blueprint balanced" : `Focused on exam area ${sessionDuty}`}</span></div>
               </div>
               <div className="hero-actions">
-                <button className="primary-btn" onClick={() => start("exam")}>Begin timed session <span>→</span></button>
+                <button className="primary-btn" onClick={() => start(sessionSize === 300 ? "study" : "exam")}>{sessionSize === 300 ? "Begin full-bank study" : "Begin timed session"} <span>→</span></button>
                 <button className="secondary-btn" onClick={() => start("study")}>Open study mode</button>
                 {hasSaved && <button className="text-btn" onClick={resume}>Resume saved session</button>}
               </div>
               <button className={`shuffle-toggle ${shuffleOn ? "active" : ""}`} role="switch" aria-checked={shuffleOn} onClick={() => setShuffleOn((value) => !value)}>
                 <span aria-hidden="true">⇄</span>
-                <span><b>Shuffle this session</b><small>{shuffleOn ? "On — a fresh, balanced order will be created." : "Off — questions follow source-bank order."}</small></span>
+                <span><b>Shuffle this session</b><small>{shuffleOn ? "On — a fresh, reproducible order will be created without duplicate question IDs." : "Off — questions follow the curated order."}</small></span>
                 <i aria-hidden="true"><em /></i>
               </button>
             </div>
             <aside className="exam-card">
               <div className="card-flourish">MM</div>
-              <p className="eyebrow">Inside the assessment</p>
+              <p className="eyebrow">Inside Aureum CTS</p>
               <div className="big-stat">{TOTAL_QUESTIONS}</div>
-              <p className="stat-label">source-grounded questions</p>
+              <p className="stat-label">source-grounded mastery questions</p>
+              <p className="cram-stat"><b>+75</b> newly edited Final Cram questions</p>
               <div className="format-grid">
                 <span><b>229</b> choice</span><span><b>27</b> hotspots</span><span><b>27</b> connections</span><span><b>10</b> sequences</span><span><b>5</b> numeric</span><span><b>2</b> multi-select</span>
               </div>
               <div className="rule" />
-              <p className="fine-print">The 115-question simulation uses the official 150-minute pace. Shorter and longer sessions scale proportionally. Progress saves only in this browser.</p>
+              <p className="fine-print">The 115-question simulation uses the official 150-minute pace and only single-best-answer questions. Custom learning activities appear in study mode. Progress saves only in this browser.</p>
             </aside>
           </div>
           <div className="duty-strip">
@@ -634,7 +721,7 @@ export default function Home() {
             <p className="eyebrow">Built for honest preparation</p>
             <h2>Official concepts. Original practice.</h2>
           </div>
-          <p>AVIXA states that the live CTS exam uses four response alternatives and one best answer. The diagrams, connections, ordering, numeric, and multi-select items here are custom learning interactions—not actual or leaked exam questions. No practice tool can guarantee a pass or predict a live exam.</p>
+          <p>AVIXA states that the live CTS exam uses four response alternatives and one best answer. Timed practice now follows that response format. Labeled choices, matching, ordering, numeric, and multi-select exercises are clearly marked study activities—not actual or leaked exam questions. No practice tool can guarantee a pass or predict a live exam.</p>
           <button className="source-link" onClick={() => setShowSources(true)}>Review research sources ↗</button>
         </section>
         <NarrationPlayer context="landing" />
@@ -672,7 +759,7 @@ export default function Home() {
             <div><small>Answer status</small><strong>{sessionAnsweredCount}/{sessionTotal}</strong><span>{incorrectAnswered} incorrect · {sessionTotal - sessionAnsweredCount} unanswered · {flagged.length} flagged</span></div>
             <div><small>Attempt mode</small><strong>{mode === "exam" ? "Timed" : "Study"}</strong><span>The same complete review is provided in either mode</span></div>
           </div>
-          <div className="report-section-title"><p className="eyebrow">Performance report</p><h2>Results by duty</h2><p>Overall scoring treats unanswered questions as incorrect. Answered accuracy isolates the questions you attempted.</p></div>
+          <div className="report-section-title"><p className="eyebrow">Performance report</p><h2>Results by exam area</h2><p>Overall scoring treats unanswered questions as incorrect. Answered accuracy isolates the questions you attempted.</p></div>
           <div className="domain-results">
             {(Object.keys(domainMeta) as Domain[]).map((domain) => {
               const set = orderedQuestions.filter((q) => q.domain === domain);
@@ -689,13 +776,13 @@ export default function Home() {
           <div className="review-head">
             <div><p className="eyebrow">Detailed evidence review</p><h2>Question-by-question</h2><p>Open any row for your response, the best answer, teaching explanation, study takeaway, and choice-by-choice reasoning.</p></div>
             <div className="filter-chips">
-              {(["missed", "all", "A", "B", "C", "D"] as const).map((filter) => <button key={filter} className={reviewFilter === filter ? "active" : ""} onClick={() => setReviewFilter(filter)}>{filter === "missed" ? "Missed" : filter === "all" ? "All" : `Duty ${filter}`}</button>)}
+              {(["missed", "all", "A", "B", "C", "D"] as const).map((filter) => <button key={filter} className={reviewFilter === filter ? "active" : ""} onClick={() => setReviewFilter(filter)}>{filter === "missed" ? "Missed" : filter === "all" ? "All" : `Area ${filter}`}</button>)}
             </div>
           </div>
           <div className="review-list">
             {filtered.map((q) => {
               const correct = isCorrect(q, answers[q.id]);
-              return <details className={`review-item ${correct ? "right" : "wrong"}`} key={q.id}><summary><span>{correct ? "✓" : "×"}</span><b>{String(q.id).padStart(3, "0")}</b><p>{q.prompt.replace(/ Select the correct labeled region in the diagram\.| Draw the connection from the prompt node to the best destination\./g, "")}</p><small>{q.topic}</small></summary><div className="review-content"><div><small>Your response</small><p>{responseLabel(q, answers[q.id])}</p></div><div><small>Best answer</small><p>{correctLabel(q)}</p></div><div className="explanation"><small>Why</small><p>{q.explanation}</p><cite>{q.source}</cite></div><div className="study-takeaway"><small>Study takeaway</small><p>{q.studyNote ?? q.explanation}</p></div>{q.rationales?.length ? <div className="choice-review"><small>Choice-by-choice reasoning</small><ol>{q.rationales.map((rationale, index) => <li key={index}><b>{letters[index]}. {q.choices?.[index]}</b><p>{rationale}</p></li>)}</ol></div> : q.interactionRationale ? <div className="choice-review"><small>Interaction reasoning</small><p>{q.interactionRationale}</p></div> : null}</div></details>;
+              return <details className={`review-item ${correct ? "right" : "wrong"}`} key={q.id}><summary><span>{correct ? "✓" : "×"}</span><b>{q.collection === "final-cram" ? `FC${q.legacyId}` : String(q.id).padStart(3, "0")}</b><p>{visiblePrompt(q)}</p><small>{q.topic}</small></summary><div className="review-content"><div><small>Your response</small><p>{responseLabel(q, answers[q.id])}</p></div><div><small>Best answer</small><p>{correctLabel(q)}</p></div><div className="explanation"><small>Why</small><p>{q.explanation}</p><cite>{q.source}</cite></div><div className="study-takeaway"><small>Study takeaway</small><p>{q.studyNote ?? q.explanation}</p></div>{q.rationales?.length ? <div className="choice-review"><small>Choice-by-choice reasoning</small><ol>{q.rationales.map((rationale, index) => <li key={index}><b>{letters[index]}. {q.choices?.[index]}</b><p>{rationale}</p></li>)}</ol></div> : q.interactionRationale ? <div className="choice-review"><small>Interaction reasoning</small><p>{q.interactionRationale}</p></div> : null}</div></details>;
             })}
           </div>
           <div className="results-actions">
@@ -717,10 +804,10 @@ export default function Home() {
   const progress = ((currentIndex + 1) / orderedQuestions.length) * 100;
 
   return (
-    <main className={`exam-page ${theme}-theme`}>
+    <main className="exam-page emerald-theme">
       <header className="exam-header">
         <button className="brand-button" onClick={() => setScreen("start")}><img className="seal small" src="./favicon-512.png" alt="" /><span>Aureum Study Hall</span></button>
-        <div className="header-progress"><span style={{ width: `${progress}%` }} /><b>{currentIndex + 1}</b><small>of {sessionTotal}</small>{shuffleOn && <em>Shuffled</em>}</div>
+        <div className="header-progress"><span style={{ width: `${progress}%` }} /><b>{currentIndex + 1}</b><small>of {sessionTotal}</small>{shuffleOn && <em>Set {sessionSeed}</em>}</div>
         <div className="header-tools">
           {mode === "exam" && <div className={`timer ${timeLeft < 900 ? "urgent" : ""}`}><span>Time</span><b>{formatTime(timeLeft)}</b></div>}
           <button className="icon-btn" onClick={() => setShowSources(true)} aria-label="Open sources">⌁</button>
@@ -732,19 +819,19 @@ export default function Home() {
         <aside className="question-meta">
           <div className="rail-head"><b>Question rail</b><button onClick={() => setRailOpen(false)} aria-label="Close question rail">×</button></div>
           <span className="domain-badge large">{question.domain}</span>
-          <p className="eyebrow">Duty {question.domain}</p>
+          <p className="eyebrow">Exam area {question.domain}</p>
           <h3>{domainMeta[question.domain].name}</h3>
           <div className="meta-rule" />
-          <small>Task</small><p>{question.task}</p>
+          <small>Blueprint task</small><p>{question.task}</p>
           <small>Topic</small><p>{question.topic}</p>
-          <small>Format</small><p>{question.type === "single" ? "Single best answer" : question.type === "multi" ? "Select all that apply" : question.type === "hotspot" ? "Diagram hotspot" : question.type === "connect" ? "Connection task" : question.type === "order" ? "Sequencing task" : "Numeric entry"}</p>
+          <small>Question style</small><p>{questionStyle(question)}</p>
           <div className="rail-navigator">
             <small>Jump to position</small>
             <form onSubmit={submitJump}><input aria-label="Question position" type="number" min="1" max={sessionTotal} value={jumpValue} onChange={(event) => setJumpValue(event.target.value)} placeholder={`1–${sessionTotal}`} /><button type="submit">Go</button></form>
             <div className="rail-list-head"><b>Current order</b><span>{shuffleOn ? "Shuffled" : "Standard"}</span></div>
             <p className="rail-click-hint">Click any question to move around</p>
             <div className="rail-question-list" aria-label="Current question order">
-              {orderedQuestions.map((item, index) => <button key={item.id} className={`${currentIndex === index ? "current" : ""} ${answered(item, answers[item.id]) ? "done" : ""} ${flagged.includes(item.id) ? "flag" : ""}`} onClick={() => goToQuestion(index)}><b>{index + 1}</b><span>Q{item.id} · {item.domain}</span></button>)}
+              {orderedQuestions.map((item, index) => <button key={item.id} className={`${currentIndex === index ? "current" : ""} ${answered(item, answers[item.id]) ? "done" : ""} ${flagged.includes(item.id) ? "flag" : ""}`} onClick={() => goToQuestion(index)}><b>{index + 1}</b><span>{item.collection === "final-cram" ? `FC${item.legacyId}` : `Q${item.id}`} · {item.domain}</span></button>)}
             </div>
             <button className="rail-end" onClick={() => setShowSubmit(true)}><small>Finished for now?</small><b>End test &amp; see full report</b></button>
           </div>
@@ -753,15 +840,16 @@ export default function Home() {
         <section className="question-stage">
           {!railOpen && <button className="rail-reopen" onClick={() => setRailOpen(true)}><small>Click here to</small><span>Open question rail →</span></button>}
           <div className="question-number"><span>{String(currentIndex + 1).padStart(3, "0")}</span><button className={flagged.includes(question.id) ? "flagged" : ""} onClick={toggleFlag}>{flagged.includes(question.id) ? "◆ Flagged" : "◇ Flag for review"}</button></div>
-          <h1>{question.prompt}</h1>
+          <h1>{visiblePrompt(question)}</h1>
           <div className={`hint-key ${controlHeld || hintLens ? "active" : ""}`}>
             <div className="hint-instruction">
               <kbd>Ctrl</kbd>
-              <span className="desktop-hint-copy">{hintLens ? "Hint lens on · choose an option to decode it" : controlHeld ? "Rationale lens active" : "Hold Control for rationales · press 1–4 to answer choice items"}</span>
-              <span className="touch-hint-copy">{hintLens ? "Hint lens on · tap an option to decode without answering" : <><b>Press + hold</b> any option to decode its rationale</>}</span>
+              <span className="desktop-hint-copy">{hintLens ? "Answer help is on · choose an option to see why" : controlHeld ? "Answer help is active" : "Hold Control to preview why · press 1–4 to answer"}</span>
+              <span className="touch-hint-copy">{hintLens ? "Answer help is on · tap an option to see why without answering" : <><b>Press and hold</b> any option to preview why</>}</span>
             </div>
-            <button className={`hint-lens-btn ${hintLens ? "active" : ""}`} aria-pressed={hintLens} onClick={() => setHintLens((value) => !value)}><span aria-hidden="true">{hintLens ? "×" : "?"}</span>{hintLens ? "Exit hint lens" : "Hint lens"}</button>
+            <button className={`hint-lens-btn ${hintLens ? "active" : ""}`} aria-pressed={hintLens} onClick={() => setHintLens((value) => !value)}><span aria-hidden="true">{hintLens ? "×" : "?"}</span>{hintLens ? "Close answer help" : "Answer help"}</button>
           </div>
+          {question.type !== "single" && <div className="practice-format-note"><b>Study activity</b><span>This interaction teaches the concept in a hands-on format. The CTS exam itself uses four choices and one best answer.</span></div>}
           <QuestionInput question={question} response={response} setResponse={setResponse} moveStep={moveStep} controlHeld={controlHeld} hintLens={hintLens} />
           {mode === "study" && isChecked && (
             <div className={`feedback ${correctNow ? "correct" : "incorrect"}`}>
@@ -770,6 +858,7 @@ export default function Home() {
               <p>{question.studyNote ?? question.explanation}</p><cite>{question.source}</cite>
             </div>
           )}
+          <NarrationPlayer context="exam" question={question} reviewAvailable={mode === "study" && isChecked} />
           <footer className="question-actions">
             <button className="secondary-btn compact" disabled={currentIndex === 0} onClick={() => goToQuestion(currentIndex - 1)}>← Previous</button>
             {mode === "study" && <button className="check-btn" disabled={!answered(question, response)} onClick={() => setChecked((all) => all.includes(question.id) ? all : [...all, question.id])}>Check answer</button>}
@@ -779,7 +868,6 @@ export default function Home() {
       </div>
 
       <div className="bottom-rail"><button onClick={() => setShowNavigator(true)}><span style={{ width: `${sessionAnsweredCount / sessionTotal * 100}%` }} />Answered {sessionAnsweredCount} · Flagged {flagged.length} · Open {sessionTotal - sessionAnsweredCount}</button></div>
-      <NarrationPlayer context="exam" question={question} reviewAvailable={mode === "study" && isChecked} />
       {showNavigator && <Navigator orderedQuestions={orderedQuestions} current={currentIndex} answers={answers} flagged={flagged} onChoose={(index) => { goToQuestion(index); setShowNavigator(false); }} onClose={() => setShowNavigator(false)} onSubmit={() => { setShowNavigator(false); setShowSubmit(true); }} />}
       {showSubmit && <SubmitModal total={sessionTotal} answeredCount={sessionAnsweredCount} flagged={flagged.length} onCancel={() => setShowSubmit(false)} onSubmit={submit} />}
       {showSources && <SourcesModal onClose={() => setShowSources(false)} />}
@@ -830,11 +918,10 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
   }
   if (question.type === "hotspot") return (
     <div className={`hotspot-wrap ${controlHeld ? "hints-on" : ""}`}>
-      <p className="interaction-hint">Tap one region. The selected area will hold a gold marker.</p>
-      <div className="diagram-board">
-        <div className="diagram-grid" />
+      <p className="interaction-hint">Choose one clearly labeled answer area. A check mark and “Selected” label will confirm your choice.</p>
+      <div className="labeled-choice-board" aria-label="Labeled answer choices">
         {question.hotspots?.map((spot, index) => (
-          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} position={spot} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
+          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
         ))}
       </div>
     </div>
@@ -844,7 +931,7 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
     const targetY = selected >= 0 ? ((selected + 0.5) / (question.choices?.length ?? 4)) * 100 : 50;
     return (
       <div className={`connect-task ${controlHeld ? "hints-on" : ""}`}>
-        <p className="interaction-hint">Tap a destination to draw the connection.</p>
+        <p className="interaction-hint">Choose the destination that best matches the prompt. The line is only a study aid.</p>
         <div className="connection-board">
           <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none">{selected >= 0 && <line x1="27" y1="50" x2="73" y2={targetY} />}</svg>
           <div className="source-node"><small>Prompt</small><b>Best match</b><i /></div>
@@ -861,7 +948,7 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
 }
 
 function Navigator({ orderedQuestions, current, answers, flagged, onChoose, onClose, onSubmit }: { orderedQuestions: BaseQuestion[]; current: number; answers: Record<number, AnswerValue>; flagged: number[]; onChoose: (index: number) => void; onClose: () => void; onSubmit: () => void }) {
-  return <div className="modal-backdrop"><section className="navigator-panel" role="dialog" aria-modal="true"><div className="modal-head"><div><p className="eyebrow">Session navigator</p><h2>{orderedQuestions.length} questions</h2></div><button onClick={onClose} aria-label="Close navigator">×</button></div><div className="legend"><span><i className="done" />Answered</span><span><i className="flag" />Flagged</span><span><i />Open</span></div><div className="question-grid">{orderedQuestions.map((q, index) => <button key={q.id} className={`${answered(q, answers[q.id]) ? "done" : ""} ${flagged.includes(q.id) ? "flag" : ""} ${current === index ? "current" : ""}`} onClick={() => onChoose(index)} aria-label={`Position ${index + 1}, source question ${q.id}`}>{q.id}</button>)}</div><div className="navigator-footer"><button className="secondary-btn compact" onClick={onClose}>Return to question</button><button className="primary-btn compact" onClick={onSubmit}>End session</button></div></section></div>;
+  return <div className="modal-backdrop"><section className="navigator-panel" role="dialog" aria-modal="true"><div className="modal-head"><div><p className="eyebrow">Session navigator</p><h2>{orderedQuestions.length} questions</h2></div><button onClick={onClose} aria-label="Close navigator">×</button></div><div className="legend"><span><i className="done" />Answered</span><span><i className="flag" />Flagged</span><span><i />Open</span></div><div className="question-grid">{orderedQuestions.map((q, index) => <button key={q.id} className={`${answered(q, answers[q.id]) ? "done" : ""} ${flagged.includes(q.id) ? "flag" : ""} ${current === index ? "current" : ""}`} onClick={() => onChoose(index)} aria-label={`Position ${index + 1}, ${q.collection === "final-cram" ? `Final Cram question ${q.legacyId}` : `source question ${q.id}`}`}>{q.collection === "final-cram" ? q.legacyId : q.id}</button>)}</div><div className="navigator-footer"><button className="secondary-btn compact" onClick={onClose}>Return to question</button><button className="primary-btn compact" onClick={onSubmit}>End session</button></div></section></div>;
 }
 
 function SubmitModal({ total, answeredCount, flagged, onCancel, onSubmit }: { total: number; answeredCount: number; flagged: number; onCancel: () => void; onSubmit: () => void }) {

@@ -43,4 +43,5 @@ next-env.d.ts
 /outputs/
 /output/
 /.playwright-cli/
+/.serena/
 /work/

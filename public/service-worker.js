@@ -1,4 +1,4 @@
-const CACHE_NAME = "aureum-study-hall-cts-v2";
+const CACHE_NAME = "aureum-study-hall-cts-v3";
 const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon-192.png", "./favicon-512.png", "./audio/narration/manifest.json", "./audio/narration/pack.json"];
 
 self.addEventListener("install", (event) => {

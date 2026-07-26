@@ -29,7 +29,9 @@ test("includes high-value local study modes and offline support", async () => {
     readFile(new URL("public/service-worker.js", root), "utf8"),
   ]);
 
-  assert.match(page, /SESSION_SIZES: SessionSize\[\] = \[20, 60, 115, 300\]/);
+  assert.match(page, /SESSION_SIZES: SessionSize\[\] = \[20, 60, 75, 115, 300\]/);
+  assert.match(page, /Final Cram/);
+  assert.match(page, /finalCramQuestions/);
   assert.match(page, /buildQuestionOrder/);
   assert.match(page, /Practice \{sessionTotal - score\} review items/);
   assert.match(page, /Download CSV report/);
@@ -48,6 +50,8 @@ test("includes high-value local study modes and offline support", async () => {
 test("preserves question navigation, rationale, and detailed reporting contracts", async () => {
   const page = await readFile(new URL("app/page.tsx", root), "utf8");
   assert.match(page, /setControlHeld\(true\)/);
+  assert.match(page, /setControlHeld\(false\)/);
+  assert.match(page, /visibilitychange/);
   assert.match(page, /submitJump/);
   assert.match(page, /Close question rail/);
   assert.match(page, /Click any question to move around/);
@@ -68,11 +72,13 @@ test("supports responsive mobile hint decoding without changing desktop controls
   assert.match(page, /const LONG_PRESS_MS = 520/);
   assert.match(page, /onPointerDown/);
   assert.match(page, /data-hint-active/);
-  assert.match(page, /Press \+ hold/);
-  assert.match(page, /Hint lens on/);
+  assert.match(page, /Press and hold/);
+  assert.match(page, /Answer help is on/);
   assert.match(page, /chooseOrHint/);
   assert.match(css, /\.matrix-active/);
   assert.match(css, /@keyframes matrix-decode/);
+  assert.match(css, /\.narrator-dock \{[^}]*pointer-events:none/);
+  assert.match(css, /\.narrator-trigger \{[^}]*pointer-events:auto/);
   assert.match(css, /min-height:100dvh/);
   assert.match(css, /env\(safe-area-inset-bottom\)/);
   assert.match(css, /@media \(max-width:380px\)/);
@@ -96,10 +102,12 @@ test("prepares full static Fish narration without exposing a runtime secret or A
   assert.equal(parsedManifest.voiceStatus, "approved");
   assert.equal(parsedManifest.approvedVoice.model, "s2.1-pro");
   assert.equal(parsedManifest.approvedVoice.referenceId, "f3b85abdea0e4e1c9fc60b4e3063a4a0");
-  assert.equal(parsedAudit.questionCount, 300);
-  assert.equal(parsedAudit.clipsByKind.question, 300);
-  assert.equal(parsedAudit.clipsByKind.review, 300);
-  assert.ok(parsedManifest.clipCount > 1500, "every question, choice rationale, review, and interface guide should have a clip script");
+  assert.equal(parsedAudit.questionCount, 375);
+  assert.equal(parsedAudit.masteryBankQuestionCount, 300);
+  assert.equal(parsedAudit.finalCramQuestionCount, 75);
+  assert.equal(parsedAudit.clipsByKind.question, 375);
+  assert.equal(parsedAudit.clipsByKind.review, 375);
+  assert.equal(parsedManifest.clipCount, 2211, "every mastery and Final Cram question, choice rationale, review, and interface guide should have a clip script");
   assert.equal(parsedPack.status, "ready");
   assert.equal(parsedPack.availableClipIds.length, parsedManifest.clipCount);
   assert.match(page, /NarrationPlayer context="exam"/);
@@ -112,6 +120,30 @@ test("prepares full static Fish narration without exposing a runtime secret or A
   assert.doesNotMatch(`${page}\n${player}\n${narration}\n${manifest}\n${pack}`, /FISH_AUDIO_API_KEY|api\.fish\.audio|Bearer /);
   assert.match(serviceWorker, /audio\/narration\/pack\.json/);
   assert.match(serviceWorker, /if \(!response\.ok\) return response/);
+});
+
+test("blocks repeated concepts in timed sessions and keeps custom interactions in study mode", async () => {
+  const [page, quality, cram, css] = await Promise.all([
+    readFile(new URL("app/page.tsx", root), "utf8"),
+    readFile(new URL("audits/quality-audit.json", root), "utf8"),
+    readFile(new URL("app/final-cram.generated.json", root), "utf8"),
+    readFile(new URL("app/globals.css", root), "utf8"),
+  ]);
+  const parsedQuality = JSON.parse(quality);
+  const parsedCram = JSON.parse(cram);
+  assert.equal(parsedQuality.status, "PASS");
+  assert.equal(parsedQuality.finalCramQuestions, 75);
+  assert.ok(parsedQuality.semanticDuplicatePairs.length > 0, "the known concept variants should remain explicitly audited");
+  for (const domain of ["A", "B", "C", "D"]) {
+    assert.ok(parsedQuality.uniqueSingleBestAnswerConcepts[domain].available >= parsedQuality.uniqueSingleBestAnswerConcepts[domain].required);
+  }
+  assert.equal(parsedCram.length, 75);
+  assert.ok(parsedCram.every((question) => question.type === "single" && question.choices.length === 4 && question.rationales.length === 4));
+  assert.match(page, /question\.type === "single"/);
+  assert.match(page, /question\.topic\} \$\{correctLabel\(question\)/);
+  assert.match(page, /Timed practice now follows that response format/);
+  assert.match(css, /\.choice-list>button\.selected i:after \{ content:"✓"/);
+  assert.match(css, /\.labeled-choice-board/);
 });
 
 test("ships CTS-specific branding and a ready-to-upload social carousel", async () => {

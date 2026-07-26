@@ -1,4 +1,5 @@
 import parsed from "./questions.generated.json";
+import parsedFinalCram from "./final-cram.generated.json";
 
 export type Domain = "A" | "B" | "C" | "D";
 export type QuestionType = "single" | "hotspot" | "connect" | "order" | "numeric" | "multi";
@@ -6,6 +7,8 @@ export type QuestionType = "single" | "hotspot" | "connect" | "order" | "numeric
 export type Hotspot = { id: string; label: string; x: number; y: number; w: number; h: number };
 export type BaseQuestion = {
   id: number;
+  legacyId?: number;
+  collection?: "mastery-bank" | "final-cram";
   type: QuestionType;
   domain: Domain;
   task: string;
@@ -174,6 +177,20 @@ const auditedOverrides: Record<number, Partial<BaseQuestion>> = {
     prompt: "Before assigning a static address to an AV endpoint on a client-managed network, what should the technician do?",
     choices: ["Choose any unused-looking address and document it later", "Obtain the approved IP settings and network requirements from the client’s network manager", "Enable a link-local 169.254.x.x address for permanent use", "Copy the address from a nearby device"], answer: 1,
     explanation: "Static addressing must be coordinated with the client’s network authority so the IP address, subnet, gateway, VLAN, and related settings do not conflict with network policy or other devices.",
+  },
+  214: {
+    topic: "Project acceptance criteria",
+    prompt: "Which project-scope statement is a measurable AV acceptance criterion rather than a product preference?",
+    choices: [
+      "Use the project manager’s preferred display brand",
+      "Every documented source shall be seen and heard at each required destination during final verification",
+      "Let the installer decide after the client accepts the room",
+      "Choose the newest equipment available when purchasing begins",
+    ],
+    answer: 1,
+    explanation: "Acceptance criteria define observable, testable outcomes. Verifying every documented source at each required destination creates evidence that the agreed system function was delivered.",
+    source: sourceFor(15, "293-311"),
+    chapter: 15,
   },
   21: {
     prompt: "In a conventional loudspeaker signal chain, which device normally follows the power amplifier?",
@@ -1031,6 +1048,8 @@ const auditedServiceQuestions = serviceQuestions.map((question) => {
 });
 
 export const questions: BaseQuestion[] = [...base, ...auditedServiceQuestions];
+export const finalCramQuestions: BaseQuestion[] = parsedFinalCram as BaseQuestion[];
+export const allQuestions: BaseQuestion[] = [...questions, ...finalCramQuestions];
 
 export const domainMeta: Record<Domain, { name: string; weight: string }> = {
   A: { name: "Creating AV Solutions", weight: "35%" },

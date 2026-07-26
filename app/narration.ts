@@ -107,9 +107,9 @@ function responseSegments(question: BaseQuestion): NarrationSegment[] {
   const instruction = question.type === "multi"
     ? "Select every response that applies."
     : question.type === "hotspot"
-      ? "Choose one labeled region."
+      ? "Choose one labeled answer area."
       : question.type === "connect"
-        ? "Choose the best destination for the connection."
+        ? "Choose the best destination for the match."
         : "Choose the single best answer.";
   return [
     { label: "Response instruction", text: instruction },
@@ -117,14 +117,27 @@ function responseSegments(question: BaseQuestion): NarrationSegment[] {
   ];
 }
 
+function spokenPrompt(question: BaseQuestion) {
+  return question.prompt
+    .replace(/\s*Select the correct labeled region in the diagram\.\s*$/i, "")
+    .replace(/\s*Draw the connection from the prompt node to the best destination\.\s*$/i, "")
+    .trim();
+}
+
+function spokenQuestionLabel(question: BaseQuestion) {
+  return question.collection === "final-cram"
+    ? `Final Cram question ${question.legacyId}`
+    : `Question ${question.id}`;
+}
+
 export function questionNarrationClip(question: BaseQuestion): NarrationClip {
   return makeClip(
     `q${String(question.id).padStart(3, "0")}-question`,
     "question",
-    `Question ${question.id}`,
+    spokenQuestionLabel(question),
     [
-      { label: "Context", text: `Duty ${question.domain}. Topic: ${question.topic}.` },
-      { label: "Question", text: question.prompt },
+      { label: "Context", text: `Exam area ${question.domain}. Topic: ${question.topic}.` },
+      { label: "Question", text: spokenPrompt(question) },
       ...responseSegments(question),
     ],
     question.id,
@@ -135,7 +148,7 @@ export function reviewNarrationClip(question: BaseQuestion): NarrationClip {
   return makeClip(
     `q${String(question.id).padStart(3, "0")}-review`,
     "review",
-    `Study review ${question.id}`,
+    `${spokenQuestionLabel(question)} review`,
     [
       { label: "Review", text: "Study review." },
       { label: "Best answer", text: `The best answer is: ${bestAnswer(question)}.` },
@@ -187,17 +200,17 @@ export const interfaceNarrationClips: NarrationClip[] = [
     { label: "Privacy", text: "Your session and attempt history remain in this browser. No account is required." },
   ]),
   makeClip("interface-session-builder", "interface", "Session builder", [
-    { label: "Session choices", text: "Choose a quick drill, deep practice, exam simulation, or complete mastery session." },
-    { label: "Coverage", text: "Practice all four duties in blueprint balance, or focus on one duty." },
-    { label: "Modes", text: "Timed mode protects exam pacing. Study mode reveals the explanation after you check your answer." },
+    { label: "Session choices", text: "Choose a quick drill, deep practice, the curated seventy-five-question Final Cram, the official-pace simulation, or complete bank study." },
+    { label: "Coverage", text: "Practice all four exam areas in blueprint balance, or focus on one exam area." },
+    { label: "Modes", text: "Timed mode uses four choices and one best answer. Study mode also includes clearly labeled hands-on learning activities." },
   ]),
   makeClip("interface-exam-controls", "interface", "Exam controls", [
     { label: "Navigation", text: "Use Previous and Next to move through the session. Flag any question you want to revisit." },
-    { label: "Hints", text: "On desktop, hold Control to inspect choice rationales. On touch devices, press and hold an option. Hint Lens also reveals a rationale without selecting the response." },
-    { label: "Narration", text: "Use the narrator controls to replay the question, adjust playback speed, or automatically read each new question." },
+    { label: "Answer help", text: "On desktop, hold Control to preview why each choice fits or does not fit. On touch devices, press and hold an option. The Answer Help button also reveals the explanation without selecting the response." },
+    { label: "Read aloud", text: "Use the read-aloud controls to replay the question, adjust playback speed, or automatically read each new question." },
   ]),
   makeClip("interface-results", "interface", "Results guide", [
-    { label: "Results", text: "Your study report separates overall score, answered accuracy, duty performance, and task performance." },
+    { label: "Results", text: "Your study report separates overall score, answered accuracy, exam-area performance, and blueprint-task performance." },
     { label: "Review", text: "Open each review item to compare your response, the best answer, the explanation, and its source citation." },
     { label: "Next step", text: "You can practice missed items, download a C S V report, print a P D F, or build another session." },
   ]),

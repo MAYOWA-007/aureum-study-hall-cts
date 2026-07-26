@@ -1,0 +1,2027 @@
+[
+  {
+    "id": 1001,
+    "legacyId": 1,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Conduct a customer needs analysis",
+    "topic": "Needs analysis",
+    "prompt": "What is the primary purpose of an initial AV needs analysis?",
+    "choices": [
+      "Identify the end-user activities and the AV functions required to support them",
+      "Select specific equipment models before meeting the users",
+      "Create the final cable schedule and rack elevations",
+      "Verify that the completed system meets its performance metrics"
+    ],
+    "answer": 0,
+    "explanation": "Needs analysis starts with what users must do and what functions the system must provide. Product selection and final documentation come later.",
+    "studyNote": "Needs analysis starts with what users must do and what functions the system must provide. Product selection and final documentation come later.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 11, pp. 203-211",
+    "chapter": 11,
+    "rationales": [
+      "Correct: Needs analysis starts with what users must do and what functions the system must provide. Product selection and final documentation come later. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Select specific equipment models before meeting the users” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Identify the end-user activities and the AV functions required to support them.” Needs analysis starts with what users must do and what functions the system must provide. Product selection and final documentation come later.",
+      "Not this one: “Create the final cable schedule and rack elevations” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Identify the end-user activities and the AV functions required to support them.” Needs analysis starts with what users must do and what functions the system must provide. Product selection and final documentation come later.",
+      "Not this one: “Verify that the completed system meets its performance metrics” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Identify the end-user activities and the AV functions required to support them.” Needs analysis starts with what users must do and what functions the system must provide. Product selection and final documentation come later."
+    ]
+  },
+  {
+    "id": 1002,
+    "legacyId": 2,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Conduct a site survey",
+    "topic": "Site survey",
+    "prompt": "Which activity best describes a site survey?",
+    "choices": [
+      "Interviewing users only about their preferred equipment brands",
+      "Inspecting and documenting measured field conditions, services, access, and constraints",
+      "Programming the control system after installation",
+      "Approving every change to the construction contract"
+    ],
+    "answer": 1,
+    "explanation": "A site survey verifies the actual physical environment and records conditions that can affect design and installation.",
+    "studyNote": "A site survey verifies the actual physical environment and records conditions that can affect design and installation.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 12, pp. 225-253",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: “Interviewing users only about their preferred equipment brands” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Inspecting and documenting measured field conditions, services, access, and constraints.” A site survey verifies the actual physical environment and records conditions that can affect design and installation.",
+      "Correct: A site survey verifies the actual physical environment and records conditions that can affect design and installation. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Programming the control system after installation” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Inspecting and documenting measured field conditions, services, access, and constraints.” A site survey verifies the actual physical environment and records conditions that can affect design and installation.",
+      "Not this one: “Approving every change to the construction contract” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Inspecting and documenting measured field conditions, services, access, and constraints.” A site survey verifies the actual physical environment and records conditions that can affect design and installation."
+    ]
+  },
+  {
+    "id": 1003,
+    "legacyId": 3,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Develop an AV project scope",
+    "topic": "Functional scope",
+    "prompt": "A functional AV scope should make which information clear?",
+    "choices": [
+      "Only the manufacturer and model of each device",
+      "Only the final test results and warranty dates",
+      "Required system functions, boundaries, assumptions, exclusions, and supporting requirements",
+      "Only the daily labor schedule for the installation crew"
+    ],
+    "answer": 2,
+    "explanation": "The scope translates confirmed needs into explicit outcomes and boundaries so the client and project team agree on what is and is not included.",
+    "studyNote": "The scope translates confirmed needs into explicit outcomes and boundaries so the client and project team agree on what is and is not included.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 15, pp. 293-311",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: “Only the manufacturer and model of each device” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Required system functions, boundaries, assumptions, exclusions, and supporting requirements.” The scope translates confirmed needs into explicit outcomes and boundaries so the client and project team agree on what is and is not included.",
+      "Not this one: “Only the final test results and warranty dates” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Required system functions, boundaries, assumptions, exclusions, and supporting requirements.” The scope translates confirmed needs into explicit outcomes and boundaries so the client and project team agree on what is and is not included.",
+      "Correct: The scope translates confirmed needs into explicit outcomes and boundaries so the client and project team agree on what is and is not included. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Only the daily labor schedule for the installation crew” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Required system functions, boundaries, assumptions, exclusions, and supporting requirements.” The scope translates confirmed needs into explicit outcomes and boundaries so the client and project team agree on what is and is not included."
+    ]
+  },
+  {
+    "id": 1004,
+    "legacyId": 4,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Block diagram",
+    "prompt": "Which drawing shows the principal functional parts of a system and their relationships at a high level?",
+    "choices": [
+      "Reflected ceiling plan",
+      "Rack elevation",
+      "Finish schedule",
+      "Block diagram"
+    ],
+    "answer": 3,
+    "explanation": "A block diagram uses labeled shapes and connections to show major functions and functional relationships without every wiring detail.",
+    "studyNote": "A block diagram uses labeled shapes and connections to show major functions and functional relationships without every wiring detail.",
+    "source": "CTS Exam Guide, 3rd ed., Glossary, p. 516; Ch. 17, pp. 379-384",
+    "chapter": 17,
+    "rationales": [
+      "Not this one: “Reflected ceiling plan” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Block diagram.” A block diagram uses labeled shapes and connections to show major functions and functional relationships without every wiring detail.",
+      "Not this one: “Rack elevation” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Block diagram.” A block diagram uses labeled shapes and connections to show major functions and functional relationships without every wiring detail.",
+      "Not this one: “Finish schedule” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Block diagram.” A block diagram uses labeled shapes and connections to show major functions and functional relationships without every wiring detail.",
+      "Correct: A block diagram uses labeled shapes and connections to show major functions and functional relationships without every wiring detail. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1005,
+    "legacyId": 5,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Signal flow",
+    "prompt": "What does signal flow describe?",
+    "choices": [
+      "The path a signal takes from its source through processing and routing to its destination",
+      "The order in which project invoices are approved",
+      "The pattern of air movement through an equipment rack",
+      "The route used only by AC branch-circuit power"
+    ],
+    "answer": 0,
+    "explanation": "Signal flow is the path on which signal types travel. Following it is fundamental to connection, verification, and troubleshooting.",
+    "studyNote": "Signal flow is the path on which signal types travel. Following it is fundamental to connection, verification, and troubleshooting.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 7, pp. 145-159; Ch. 18, pp. 418-420",
+    "chapter": 7,
+    "rationales": [
+      "Correct: Signal flow is the path on which signal types travel. Following it is fundamental to connection, verification, and troubleshooting. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “The order in which project invoices are approved” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The path a signal takes from its source through processing and routing to its destination.” Signal flow is the path on which signal types travel. Following it is fundamental to connection, verification, and troubleshooting.",
+      "Not this one: “The pattern of air movement through an equipment rack” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The path a signal takes from its source through processing and routing to its destination.” Signal flow is the path on which signal types travel. Following it is fundamental to connection, verification, and troubleshooting.",
+      "Not this one: “The route used only by AC branch-circuit power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The path a signal takes from its source through processing and routing to its destination.” Signal flow is the path on which signal types travel. Following it is fundamental to connection, verification, and troubleshooting."
+    ]
+  },
+  {
+    "id": 1006,
+    "legacyId": 6,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Bill of materials",
+    "prompt": "What is the main purpose of a bill of materials (BOM)?",
+    "choices": [
+      "Describe only the end-user training agenda",
+      "List the components and associated quantities or costs required to build the specified system",
+      "Record only the final system test measurements",
+      "Show only the architectural dimensions of the room"
+    ],
+    "answer": 1,
+    "explanation": "The BOM is the procurement-oriented equipment and materials list for the specified system, often including quantities and costs.",
+    "studyNote": "The BOM is the procurement-oriented equipment and materials list for the specified system, often including quantities and costs.",
+    "source": "CTS Exam Guide, 3rd ed., Glossary, p. 516; Ch. 16, pp. 316-320, 358-360",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “Describe only the end-user training agenda” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “List the components and associated quantities or costs required to build the specified system.” The BOM is the procurement-oriented equipment and materials list for the specified system, often including quantities and costs.",
+      "Correct: The BOM is the procurement-oriented equipment and materials list for the specified system, often including quantities and costs. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Record only the final system test measurements” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “List the components and associated quantities or costs required to build the specified system.” The BOM is the procurement-oriented equipment and materials list for the specified system, often including quantities and costs.",
+      "Not this one: “Show only the architectural dimensions of the room” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “List the components and associated quantities or costs required to build the specified system.” The BOM is the procurement-oriented equipment and materials list for the specified system, often including quantities and costs."
+    ]
+  },
+  {
+    "id": 1007,
+    "legacyId": 7,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "RFI",
+    "prompt": "When project information is unclear or conflicting, which document formally asks for clarification?",
+    "choices": [
+      "Change order",
+      "As-built drawing",
+      "Request for information (RFI)",
+      "Preventive-maintenance log"
+    ],
+    "answer": 2,
+    "explanation": "An RFI formally asks about a design issue, site issue, or owner request. It may be answered by clarification or may lead to a contractual change.",
+    "studyNote": "An RFI formally asks about a design issue, site issue, or owner request. It may be answered by clarification or may lead to a contractual change.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 19, p. 439",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: “Change order” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Request for information (RFI).” An RFI formally asks about a design issue, site issue, or owner request. It may be answered by clarification or may lead to a contractual change.",
+      "Not this one: “As-built drawing” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Request for information (RFI).” An RFI formally asks about a design issue, site issue, or owner request. It may be answered by clarification or may lead to a contractual change.",
+      "Correct: An RFI formally asks about a design issue, site issue, or owner request. It may be answered by clarification or may lead to a contractual change. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Preventive-maintenance log” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Request for information (RFI).” An RFI formally asks about a design issue, site issue, or owner request. It may be answered by clarification or may lead to a contractual change."
+    ]
+  },
+  {
+    "id": 1008,
+    "legacyId": 8,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "Change order",
+    "prompt": "What is the function of an approved change order?",
+    "choices": [
+      "Ask an informal technical question without changing the contract",
+      "Record the original design exactly as first issued",
+      "Provide a list of routine maintenance tools",
+      "Document agreed changes to project specifications or contract scope, price, or schedule"
+    ],
+    "answer": 3,
+    "explanation": "A change order is the formal record of an agreed contractual change and can alter scope, pricing, and schedule.",
+    "studyNote": "A change order is the formal record of an agreed contractual change and can alter scope, pricing, and schedule.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 19, pp. 439-440",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: “Ask an informal technical question without changing the contract” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Document agreed changes to project specifications or contract scope, price, or schedule.” A change order is the formal record of an agreed contractual change and can alter scope, pricing, and schedule.",
+      "Not this one: “Record the original design exactly as first issued” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Document agreed changes to project specifications or contract scope, price, or schedule.” A change order is the formal record of an agreed contractual change and can alter scope, pricing, and schedule.",
+      "Not this one: “Provide a list of routine maintenance tools” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Document agreed changes to project specifications or contract scope, price, or schedule.” A change order is the formal record of an agreed contractual change and can alter scope, pricing, and schedule.",
+      "Correct: A change order is the formal record of an agreed contractual change and can alter scope, pricing, and schedule. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1009,
+    "legacyId": 9,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Commissioning",
+    "prompt": "In an AV installation, what is the key purpose of the formal commissioning or verification process before handover?",
+    "choices": [
+      "Systematically demonstrate that the installed system meets the documented performance requirements",
+      "Choose a visual theme for the control interface",
+      "Replace all equipment that is no longer the newest model",
+      "Estimate the cost of an unrelated future renovation"
+    ],
+    "answer": 0,
+    "explanation": "The process provides a structured way to test the system, demonstrate conformance, and identify issues before client handover.",
+    "studyNote": "The process provides a structured way to test the system, demonstrate conformance, and identify issues before client handover.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 18, pp. 416-419",
+    "chapter": 18,
+    "rationales": [
+      "Correct: The process provides a structured way to test the system, demonstrate conformance, and identify issues before client handover. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Choose a visual theme for the control interface” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Systematically demonstrate that the installed system meets the documented performance requirements.” The process provides a structured way to test the system, demonstrate conformance, and identify issues before client handover.",
+      "Not this one: “Replace all equipment that is no longer the newest model” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Systematically demonstrate that the installed system meets the documented performance requirements.” The process provides a structured way to test the system, demonstrate conformance, and identify issues before client handover.",
+      "Not this one: “Estimate the cost of an unrelated future renovation” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Systematically demonstrate that the installed system meets the documented performance requirements.” The process provides a structured way to test the system, demonstrate conformance, and identify issues before client handover."
+    ]
+  },
+  {
+    "id": 1010,
+    "legacyId": 10,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Performance verification",
+    "prompt": "Which statement best describes AV systems performance verification?",
+    "choices": [
+      "Checking only that every device powers on",
+      "Using defined verification items, metrics, tests, and reports to confirm correct system performance",
+      "Obtaining verbal approval without measurements or records",
+      "Confirming only that the equipment was delivered to the site"
+    ],
+    "answer": 1,
+    "explanation": "Performance verification is evidence-based: it identifies what must be verified, when, by what metric or process, and how results are reported.",
+    "studyNote": "Performance verification is evidence-based: it identifies what must be verified, when, by what metric or process, and how results are reported.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 18, pp. 416-420",
+    "chapter": 18,
+    "rationales": [
+      "Not this one: “Checking only that every device powers on” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Using defined verification items, metrics, tests, and reports to confirm correct system performance.” Performance verification is evidence-based: it identifies what must be verified, when, by what metric or process, and how results are reported.",
+      "Correct: Performance verification is evidence-based: it identifies what must be verified, when, by what metric or process, and how results are reported. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Obtaining verbal approval without measurements or records” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Using defined verification items, metrics, tests, and reports to confirm correct system performance.” Performance verification is evidence-based: it identifies what must be verified, when, by what metric or process, and how results are reported.",
+      "Not this one: “Confirming only that the equipment was delivered to the site” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Using defined verification items, metrics, tests, and reports to confirm correct system performance.” Performance verification is evidence-based: it identifies what must be verified, when, by what metric or process, and how results are reported."
+    ]
+  },
+  {
+    "id": 1011,
+    "legacyId": 11,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "As-built drawings",
+    "prompt": "What distinguishes an as-built drawing from the original design drawing?",
+    "choices": [
+      "It shows only the earliest concept before client approval",
+      "It omits field changes so the original intent remains untouched",
+      "It contains final corrections, additions, and field-verified information showing what was actually installed",
+      "It is used only to advertise the system to future clients"
+    ],
+    "answer": 2,
+    "explanation": "As-built drawings record the completed installation, including approved and field-verified changes, for operation and service.",
+    "studyNote": "As-built drawings record the completed installation, including approved and field-verified changes, for operation and service.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 18, pp. 421-424",
+    "chapter": 18,
+    "rationales": [
+      "Not this one: “It shows only the earliest concept before client approval” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It contains final corrections, additions, and field-verified information showing what was actually installed.” As-built drawings record the completed installation, including approved and field-verified changes, for operation and service.",
+      "Not this one: “It omits field changes so the original intent remains untouched” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It contains final corrections, additions, and field-verified information showing what was actually installed.” As-built drawings record the completed installation, including approved and field-verified changes, for operation and service.",
+      "Correct: As-built drawings record the completed installation, including approved and field-verified changes, for operation and service. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “It is used only to advertise the system to future clients” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It contains final corrections, additions, and field-verified information showing what was actually installed.” As-built drawings record the completed installation, including approved and field-verified changes, for operation and service."
+    ]
+  },
+  {
+    "id": 1012,
+    "legacyId": 12,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "EDID",
+    "prompt": "What information does EDID communicate?",
+    "choices": [
+      "The encryption key used to protect copyrighted content",
+      "The IP address assigned by a DHCP server",
+      "The amplifier power required by a loudspeaker",
+      "A digital display’s supported capabilities to the connected video source"
+    ],
+    "answer": 3,
+    "explanation": "EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+    "studyNote": "EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 94-96",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “The encryption key used to protect copyrighted content” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A digital display’s supported capabilities to the connected video source.” EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+      "Not this one: “The IP address assigned by a DHCP server” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A digital display’s supported capabilities to the connected video source.” EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+      "Not this one: “The amplifier power required by a loudspeaker” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A digital display’s supported capabilities to the connected video source.” EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+      "Correct: EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1013,
+    "legacyId": 13,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "HDCP",
+    "prompt": "What is HDCP used for in a digital video signal path?",
+    "choices": [
+      "Content protection and authentication of compliant source, transport, and display devices",
+      "Automatic assignment of network addresses",
+      "Conversion of one resolution into another",
+      "Rejection of common-mode analog audio noise"
+    ],
+    "answer": 0,
+    "explanation": "HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+    "studyNote": "HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, p. 94; Glossary",
+    "chapter": 5,
+    "rationales": [
+      "Correct: HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Automatic assignment of network addresses” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Content protection and authentication of compliant source, transport, and display devices.” HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+      "Not this one: “Conversion of one resolution into another” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Content protection and authentication of compliant source, transport, and display devices.” HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+      "Not this one: “Rejection of common-mode analog audio noise” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Content protection and authentication of compliant source, transport, and display devices.” HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works."
+    ]
+  },
+  {
+    "id": 1014,
+    "legacyId": 14,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Scaler",
+    "prompt": "Which device function converts an incoming video resolution or timing to a different output format?",
+    "choices": [
+      "Distribution amplifier",
+      "Scaler",
+      "Network switch",
+      "Power amplifier"
+    ],
+    "answer": 1,
+    "explanation": "A scaler reformats video to a resolution or timing appropriate for the destination display or downstream system.",
+    "studyNote": "A scaler reformats video to a resolution or timing appropriate for the destination display or downstream system.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 323-326",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “Distribution amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Scaler.” A scaler reformats video to a resolution or timing appropriate for the destination display or downstream system.",
+      "Correct: A scaler reformats video to a resolution or timing appropriate for the destination display or downstream system. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Network switch” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Scaler.” A scaler reformats video to a resolution or timing appropriate for the destination display or downstream system.",
+      "Not this one: “Power amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Scaler.” A scaler reformats video to a resolution or timing appropriate for the destination display or downstream system."
+    ]
+  },
+  {
+    "id": 1015,
+    "legacyId": 15,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Switcher",
+    "prompt": "What is the basic function of a switcher?",
+    "choices": [
+      "Combine the impedances of loudspeakers in parallel",
+      "Increase every output to speaker level",
+      "Allow the user or system to select one input from multiple inputs for an output",
+      "Assign IP addresses to connected devices"
+    ],
+    "answer": 2,
+    "explanation": "A switcher selects among inputs. It does not inherently scale, amplify to speaker level, or provide network addressing.",
+    "studyNote": "A switcher selects among inputs. It does not inherently scale, amplify to speaker level, or provide network addressing.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 7, pp. 153-157",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: “Combine the impedances of loudspeakers in parallel” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Allow the user or system to select one input from multiple inputs for an output.” A switcher selects among inputs. It does not inherently scale, amplify to speaker level, or provide network addressing.",
+      "Not this one: “Increase every output to speaker level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Allow the user or system to select one input from multiple inputs for an output.” A switcher selects among inputs. It does not inherently scale, amplify to speaker level, or provide network addressing.",
+      "Correct: A switcher selects among inputs. It does not inherently scale, amplify to speaker level, or provide network addressing. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Assign IP addresses to connected devices” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Allow the user or system to select one input from multiple inputs for an output.” A switcher selects among inputs. It does not inherently scale, amplify to speaker level, or provide network addressing."
+    ]
+  },
+  {
+    "id": 1016,
+    "legacyId": 16,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Matrix switcher",
+    "prompt": "What capability defines a matrix switcher?",
+    "choices": [
+      "Routing one fixed input to one fixed output only",
+      "Changing acoustic energy into electrical energy",
+      "Measuring light falling on a projection screen",
+      "Independent routing of any available input to one or more available outputs"
+    ],
+    "answer": 3,
+    "explanation": "A matrix provides flexible many-input-to-many-output routing; each output can normally select from the available inputs.",
+    "studyNote": "A matrix provides flexible many-input-to-many-output routing; each output can normally select from the available inputs.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 7, pp. 151-159",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: “Routing one fixed input to one fixed output only” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Independent routing of any available input to one or more available outputs.” A matrix provides flexible many-input-to-many-output routing; each output can normally select from the available inputs.",
+      "Not this one: “Changing acoustic energy into electrical energy” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Independent routing of any available input to one or more available outputs.” A matrix provides flexible many-input-to-many-output routing; each output can normally select from the available inputs.",
+      "Not this one: “Measuring light falling on a projection screen” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Independent routing of any available input to one or more available outputs.” A matrix provides flexible many-input-to-many-output routing; each output can normally select from the available inputs.",
+      "Correct: A matrix provides flexible many-input-to-many-output routing; each output can normally select from the available inputs. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1017,
+    "legacyId": 17,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Distribution amplifier",
+    "prompt": "When the same source signal must feed several isolated destinations, which device is the best fit?",
+    "choices": [
+      "Distribution amplifier (DA)",
+      "Scaler",
+      "Audio compressor",
+      "DHCP server"
+    ],
+    "answer": 0,
+    "explanation": "A DA takes one input and provides multiple buffered or isolated outputs, commonly at unity gain.",
+    "studyNote": "A DA takes one input and provides multiple buffered or isolated outputs, commonly at unity gain.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 7, pp. 153-156",
+    "chapter": 7,
+    "rationales": [
+      "Correct: A DA takes one input and provides multiple buffered or isolated outputs, commonly at unity gain. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Scaler” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Distribution amplifier (DA).” A DA takes one input and provides multiple buffered or isolated outputs, commonly at unity gain.",
+      "Not this one: “Audio compressor” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Distribution amplifier (DA).” A DA takes one input and provides multiple buffered or isolated outputs, commonly at unity gain.",
+      "Not this one: “DHCP server” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Distribution amplifier (DA).” A DA takes one input and provides multiple buffered or isolated outputs, commonly at unity gain."
+    ]
+  },
+  {
+    "id": 1018,
+    "legacyId": 18,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Resolution",
+    "prompt": "In a fixed-pixel video system, what does a resolution such as 1920 × 1080 describe?",
+    "choices": [
+      "The width-to-height proportion only",
+      "The horizontal and vertical pixel dimensions of the image",
+      "The number of audio samples per second",
+      "The light falling on one square meter"
+    ],
+    "answer": 1,
+    "explanation": "Resolution identifies the pixel dimensions or amount of image detail represented by the raster.",
+    "studyNote": "Resolution identifies the pixel dimensions or amount of image detail represented by the raster.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 90-99",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “The width-to-height proportion only” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The horizontal and vertical pixel dimensions of the image.” Resolution identifies the pixel dimensions or amount of image detail represented by the raster.",
+      "Correct: Resolution identifies the pixel dimensions or amount of image detail represented by the raster. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “The number of audio samples per second” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The horizontal and vertical pixel dimensions of the image.” Resolution identifies the pixel dimensions or amount of image detail represented by the raster.",
+      "Not this one: “The light falling on one square meter” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The horizontal and vertical pixel dimensions of the image.” Resolution identifies the pixel dimensions or amount of image detail represented by the raster."
+    ]
+  },
+  {
+    "id": 1019,
+    "legacyId": 19,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Aspect ratio",
+    "prompt": "What does an image aspect ratio of 16:9 express?",
+    "choices": [
+      "The number of pixels refreshed each second",
+      "The projector distance divided by lens diameter",
+      "The proportional relationship of image width to image height",
+      "The ratio of signal level to background noise"
+    ],
+    "answer": 2,
+    "explanation": "Aspect ratio describes image shape as width compared with height; it does not by itself specify pixel count.",
+    "studyNote": "Aspect ratio describes image shape as width compared with height; it does not by itself specify pixel count.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 100-104",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “The number of pixels refreshed each second” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The proportional relationship of image width to image height.” Aspect ratio describes image shape as width compared with height; it does not by itself specify pixel count.",
+      "Not this one: “The projector distance divided by lens diameter” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The proportional relationship of image width to image height.” Aspect ratio describes image shape as width compared with height; it does not by itself specify pixel count.",
+      "Correct: Aspect ratio describes image shape as width compared with height; it does not by itself specify pixel count. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “The ratio of signal level to background noise” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The proportional relationship of image width to image height.” Aspect ratio describes image shape as width compared with height; it does not by itself specify pixel count."
+    ]
+  },
+  {
+    "id": 1020,
+    "legacyId": 20,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Native resolution",
+    "prompt": "Why is a display’s native resolution important?",
+    "choices": [
+      "It is the highest network data rate the display can receive",
+      "It is the minimum audio level required for the display speakers",
+      "It is the room’s preferred architectural drawing scale",
+      "It is the display engine’s optimized physical pixel grid and normally produces the best image without scaling"
+    ],
+    "answer": 3,
+    "explanation": "The native resolution corresponds to the display’s physical pixel structure. Matching it avoids unnecessary image scaling.",
+    "studyNote": "The native resolution corresponds to the display’s physical pixel structure. Matching it avoids unnecessary image scaling.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 96-99",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “It is the highest network data rate the display can receive” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It is the display engine’s optimized physical pixel grid and normally produces the best image without scaling.” The native resolution corresponds to the display’s physical pixel structure. Matching it avoids unnecessary image scaling.",
+      "Not this one: “It is the minimum audio level required for the display speakers” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It is the display engine’s optimized physical pixel grid and normally produces the best image without scaling.” The native resolution corresponds to the display’s physical pixel structure. Matching it avoids unnecessary image scaling.",
+      "Not this one: “It is the room’s preferred architectural drawing scale” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It is the display engine’s optimized physical pixel grid and normally produces the best image without scaling.” The native resolution corresponds to the display’s physical pixel structure. Matching it avoids unnecessary image scaling.",
+      "Correct: The native resolution corresponds to the display’s physical pixel structure. Matching it avoids unnecessary image scaling. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1021,
+    "legacyId": 21,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Balanced audio",
+    "prompt": "Why is balanced audio commonly used for professional analog signal runs?",
+    "choices": [
+      "It helps reject interference induced equally into the signal conductors",
+      "It automatically creates left and right stereo channels",
+      "It raises mic level directly to speaker level without amplification",
+      "It prevents every possible ground loop regardless of installation"
+    ],
+    "answer": 0,
+    "explanation": "Balanced circuitry is used for common-mode noise rejection. Balanced does not mean stereo and does not eliminate the need for correct grounding.",
+    "studyNote": "Balanced circuitry is used for common-mode noise rejection. Balanced does not mean stereo and does not eliminate the need for correct grounding.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 71-75; Ch. 7, pp. 149-150",
+    "chapter": 4,
+    "rationales": [
+      "Correct: Balanced circuitry is used for common-mode noise rejection. Balanced does not mean stereo and does not eliminate the need for correct grounding. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “It automatically creates left and right stereo channels” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It helps reject interference induced equally into the signal conductors.” Balanced circuitry is used for common-mode noise rejection. Balanced does not mean stereo and does not eliminate the need for correct grounding.",
+      "Not this one: “It raises mic level directly to speaker level without amplification” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It helps reject interference induced equally into the signal conductors.” Balanced circuitry is used for common-mode noise rejection. Balanced does not mean stereo and does not eliminate the need for correct grounding.",
+      "Not this one: “It prevents every possible ground loop regardless of installation” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “It helps reject interference induced equally into the signal conductors.” Balanced circuitry is used for common-mode noise rejection. Balanced does not mean stereo and does not eliminate the need for correct grounding."
+    ]
+  },
+  {
+    "id": 1022,
+    "legacyId": 22,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Unbalanced audio",
+    "prompt": "Which description best fits an unbalanced analog audio connection?",
+    "choices": [
+      "Two signal conductors with equal impedance to ground for common-mode rejection",
+      "A signal referenced to a shared return or shield that is generally more susceptible to noise over long runs",
+      "A digital packet stream sent to a multicast group",
+      "A transformer-distributed 70 V loudspeaker circuit"
+    ],
+    "answer": 1,
+    "explanation": "Unbalanced connections use the signal and a common return/shield and are normally more vulnerable to induced noise over distance.",
+    "studyNote": "Unbalanced connections use the signal and a common return/shield and are normally more vulnerable to induced noise over distance.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 71-75; Ch. 7, pp. 149-150",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “Two signal conductors with equal impedance to ground for common-mode rejection” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A signal referenced to a shared return or shield that is generally more susceptible to noise over long runs.” Unbalanced connections use the signal and a common return/shield and are normally more vulnerable to induced noise over distance.",
+      "Correct: Unbalanced connections use the signal and a common return/shield and are normally more vulnerable to induced noise over distance. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “A digital packet stream sent to a multicast group” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A signal referenced to a shared return or shield that is generally more susceptible to noise over long runs.” Unbalanced connections use the signal and a common return/shield and are normally more vulnerable to induced noise over distance.",
+      "Not this one: “A transformer-distributed 70 V loudspeaker circuit” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A signal referenced to a shared return or shield that is generally more susceptible to noise over long runs.” Unbalanced connections use the signal and a common return/shield and are normally more vulnerable to induced noise over distance."
+    ]
+  },
+  {
+    "id": 1023,
+    "legacyId": 23,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Gain structure",
+    "prompt": "What is the goal of proper gain structure through an audio signal chain?",
+    "choices": [
+      "Set every device to its maximum gain regardless of signal level",
+      "Lower all input gains and recover level only at the final amplifier",
+      "Keep each stage high enough above the noise floor while remaining below distortion and clipping",
+      "Use equalization to replace all level adjustments"
+    ],
+    "answer": 2,
+    "explanation": "Good gain structure preserves signal-to-noise ratio and headroom through every stage. Poor gain structure can create hiss or overload.",
+    "studyNote": "Good gain structure preserves signal-to-noise ratio and headroom through every stage. Poor gain structure can create hiss or overload.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 22, pp. 481-483",
+    "chapter": 22,
+    "rationales": [
+      "Not this one: “Set every device to its maximum gain regardless of signal level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Keep each stage high enough above the noise floor while remaining below distortion and clipping.” Good gain structure preserves signal-to-noise ratio and headroom through every stage. Poor gain structure can create hiss or overload.",
+      "Not this one: “Lower all input gains and recover level only at the final amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Keep each stage high enough above the noise floor while remaining below distortion and clipping.” Good gain structure preserves signal-to-noise ratio and headroom through every stage. Poor gain structure can create hiss or overload.",
+      "Correct: Good gain structure preserves signal-to-noise ratio and headroom through every stage. Poor gain structure can create hiss or overload. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Use equalization to replace all level adjustments” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Keep each stage high enough above the noise floor while remaining below distortion and clipping.” Good gain structure preserves signal-to-noise ratio and headroom through every stage. Poor gain structure can create hiss or overload."
+    ]
+  },
+  {
+    "id": 1024,
+    "legacyId": 24,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Headroom",
+    "prompt": "What does audio-system headroom provide?",
+    "choices": [
+      "A guaranteed reduction in cable resistance",
+      "A second IP subnet for backup control",
+      "A larger image without changing projector distance",
+      "Level margin above normal operation for peaks before the system reaches its maximum or clips"
+    ],
+    "answer": 3,
+    "explanation": "Headroom is the available margin for signal peaks above average operating level before overload.",
+    "studyNote": "Headroom is the available margin for signal peaks above average operating level before overload.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 331, 342-345; Glossary",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “A guaranteed reduction in cable resistance” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Level margin above normal operation for peaks before the system reaches its maximum or clips.” Headroom is the available margin for signal peaks above average operating level before overload.",
+      "Not this one: “A second IP subnet for backup control” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Level margin above normal operation for peaks before the system reaches its maximum or clips.” Headroom is the available margin for signal peaks above average operating level before overload.",
+      "Not this one: “A larger image without changing projector distance” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Level margin above normal operation for peaks before the system reaches its maximum or clips.” Headroom is the available margin for signal peaks above average operating level before overload.",
+      "Correct: Headroom is the available margin for signal peaks above average operating level before overload. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1025,
+    "legacyId": 25,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Clipping",
+    "prompt": "What causes clipping in an audio device?",
+    "choices": [
+      "Driving the signal beyond the device’s available output capability",
+      "Operating a microphone below its acoustic noise floor only",
+      "Using a display at its native resolution",
+      "Assigning two devices to different VLANs"
+    ],
+    "answer": 0,
+    "explanation": "When a stage cannot reproduce a larger waveform, the peaks are cut off, creating distortion.",
+    "studyNote": "When a stage cannot reproduce a larger waveform, the peaks are cut off, creating distortion.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 22, pp. 481-483",
+    "chapter": 22,
+    "rationales": [
+      "Correct: When a stage cannot reproduce a larger waveform, the peaks are cut off, creating distortion. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Operating a microphone below its acoustic noise floor only” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Driving the signal beyond the device’s available output capability.” When a stage cannot reproduce a larger waveform, the peaks are cut off, creating distortion.",
+      "Not this one: “Using a display at its native resolution” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Driving the signal beyond the device’s available output capability.” When a stage cannot reproduce a larger waveform, the peaks are cut off, creating distortion.",
+      "Not this one: “Assigning two devices to different VLANs” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Driving the signal beyond the device’s available output capability.” When a stage cannot reproduce a larger waveform, the peaks are cut off, creating distortion."
+    ]
+  },
+  {
+    "id": 1026,
+    "legacyId": 26,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Impedance",
+    "prompt": "What is impedance?",
+    "choices": [
+      "The amount of electric charge flowing each second, measured in amperes",
+      "The total opposition to current flow in an AC circuit, measured in ohms",
+      "The total visible light emitted by a source, measured in lumens",
+      "The number of video frames generated each second"
+    ],
+    "answer": 1,
+    "explanation": "Impedance includes resistance and reactance and is measured in ohms.",
+    "studyNote": "Impedance includes resistance and reactance and is measured in ohms.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 9, pp. 171-174; Ch. 4, pp. 59-62",
+    "chapter": 9,
+    "rationales": [
+      "Not this one: “The amount of electric charge flowing each second, measured in amperes” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The total opposition to current flow in an AC circuit, measured in ohms.” Impedance includes resistance and reactance and is measured in ohms.",
+      "Correct: Impedance includes resistance and reactance and is measured in ohms. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “The total visible light emitted by a source, measured in lumens” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The total opposition to current flow in an AC circuit, measured in ohms.” Impedance includes resistance and reactance and is measured in ohms.",
+      "Not this one: “The number of video frames generated each second” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The total opposition to current flow in an AC circuit, measured in ohms.” Impedance includes resistance and reactance and is measured in ohms."
+    ]
+  },
+  {
+    "id": 1027,
+    "legacyId": 27,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Phantom power",
+    "prompt": "What is phantom power primarily used to provide?",
+    "choices": [
+      "High-power loudspeaker output over an unbalanced cable",
+      "A network address for a wireless receiver",
+      "Remote DC power through a balanced microphone cable for devices such as condenser microphones",
+      "Copy protection for digital video content"
+    ],
+    "answer": 2,
+    "explanation": "Phantom power supplies compatible microphones and active devices over the same balanced conductors that carry audio.",
+    "studyNote": "Phantom power supplies compatible microphones and active devices over the same balanced conductors that carry audio.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 54-58, 78-80",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “High-power loudspeaker output over an unbalanced cable” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Remote DC power through a balanced microphone cable for devices such as condenser microphones.” Phantom power supplies compatible microphones and active devices over the same balanced conductors that carry audio.",
+      "Not this one: “A network address for a wireless receiver” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Remote DC power through a balanced microphone cable for devices such as condenser microphones.” Phantom power supplies compatible microphones and active devices over the same balanced conductors that carry audio.",
+      "Correct: Phantom power supplies compatible microphones and active devices over the same balanced conductors that carry audio. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Copy protection for digital video content” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Remote DC power through a balanced microphone cable for devices such as condenser microphones.” Phantom power supplies compatible microphones and active devices over the same balanced conductors that carry audio."
+    ]
+  },
+  {
+    "id": 1028,
+    "legacyId": 28,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Acoustic echo cancellation",
+    "prompt": "In a conferencing system, what problem is acoustic echo cancellation designed to reduce?",
+    "choices": [
+      "A presenter hearing only the other participants but not program audio",
+      "A projector displaying the wrong aspect ratio",
+      "A network switch forwarding multicast traffic to interested ports",
+      "Far-site audio from local loudspeakers being picked up by local microphones and sent back"
+    ],
+    "answer": 3,
+    "explanation": "AEC models and removes the far-end loudspeaker signal that returns through the room and local microphones.",
+    "studyNote": "AEC models and removes the far-end loudspeaker signal that returns through the room and local microphones.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, p. 337",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “A presenter hearing only the other participants but not program audio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Far-site audio from local loudspeakers being picked up by local microphones and sent back.” AEC models and removes the far-end loudspeaker signal that returns through the room and local microphones.",
+      "Not this one: “A projector displaying the wrong aspect ratio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Far-site audio from local loudspeakers being picked up by local microphones and sent back.” AEC models and removes the far-end loudspeaker signal that returns through the room and local microphones.",
+      "Not this one: “A network switch forwarding multicast traffic to interested ports” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Far-site audio from local loudspeakers being picked up by local microphones and sent back.” AEC models and removes the far-end loudspeaker signal that returns through the room and local microphones.",
+      "Correct: AEC models and removes the far-end loudspeaker signal that returns through the room and local microphones. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1029,
+    "legacyId": 29,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Mix-minus",
+    "prompt": "What does a mix-minus feed contain?",
+    "choices": [
+      "The required program mix with the recipient’s own signal removed",
+      "Only the recipient’s own microphone and nothing else",
+      "Every available input at maximum level",
+      "A copy-protected video signal without audio"
+    ],
+    "answer": 0,
+    "explanation": "Mix-minus prevents a participant or zone from receiving its own contribution back while still receiving the rest of the mix.",
+    "studyNote": "Mix-minus prevents a participant or zone from receiving its own contribution back while still receiving the rest of the mix.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, p. 73; Ch. 16, pp. 332, 338; Glossary",
+    "chapter": 4,
+    "rationales": [
+      "Correct: Mix-minus prevents a participant or zone from receiving its own contribution back while still receiving the rest of the mix. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Only the recipient’s own microphone and nothing else” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The required program mix with the recipient’s own signal removed.” Mix-minus prevents a participant or zone from receiving its own contribution back while still receiving the rest of the mix.",
+      "Not this one: “Every available input at maximum level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The required program mix with the recipient’s own signal removed.” Mix-minus prevents a participant or zone from receiving its own contribution back while still receiving the rest of the mix.",
+      "Not this one: “A copy-protected video signal without audio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “The required program mix with the recipient’s own signal removed.” Mix-minus prevents a participant or zone from receiving its own contribution back while still receiving the rest of the mix."
+    ]
+  },
+  {
+    "id": 1030,
+    "legacyId": 30,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "IP address",
+    "prompt": "What is the basic purpose of an IP address?",
+    "choices": [
+      "Identify the physical connector pinout of an analog cable",
+      "Provide a logical address used to identify and route communication to a device on an IP network",
+      "State the native pixel count of a display",
+      "Specify the tap setting of a 70 V loudspeaker"
+    ],
+    "answer": 1,
+    "explanation": "Each networked device needs appropriate IP addressing so packets can be delivered within and between networks.",
+    "studyNote": "Each networked device needs appropriate IP addressing so packets can be delivered within and between networks.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 133-135",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “Identify the physical connector pinout of an analog cable” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Provide a logical address used to identify and route communication to a device on an IP network.” Each networked device needs appropriate IP addressing so packets can be delivered within and between networks.",
+      "Correct: Each networked device needs appropriate IP addressing so packets can be delivered within and between networks. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “State the native pixel count of a display” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Provide a logical address used to identify and route communication to a device on an IP network.” Each networked device needs appropriate IP addressing so packets can be delivered within and between networks.",
+      "Not this one: “Specify the tap setting of a 70 V loudspeaker” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Provide a logical address used to identify and route communication to a device on an IP network.” Each networked device needs appropriate IP addressing so packets can be delivered within and between networks."
+    ]
+  },
+  {
+    "id": 1031,
+    "legacyId": 31,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Subnet mask",
+    "prompt": "What information does a subnet mask provide when used with an IPv4 address?",
+    "choices": [
+      "Which video resolutions are supported by the display",
+      "Which audio channels are balanced",
+      "Which address bits identify the network or subnet and which identify the host",
+      "Which project changes have been contractually approved"
+    ],
+    "answer": 2,
+    "explanation": "The subnet mask lets a device determine whether a destination is local or must be reached through a router or gateway.",
+    "studyNote": "The subnet mask lets a device determine whether a destination is local or must be reached through a router or gateway.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 133-137; Ch. 16, p. 353",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “Which video resolutions are supported by the display” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Which address bits identify the network or subnet and which identify the host.” The subnet mask lets a device determine whether a destination is local or must be reached through a router or gateway.",
+      "Not this one: “Which audio channels are balanced” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Which address bits identify the network or subnet and which identify the host.” The subnet mask lets a device determine whether a destination is local or must be reached through a router or gateway.",
+      "Correct: The subnet mask lets a device determine whether a destination is local or must be reached through a router or gateway. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Which project changes have been contractually approved” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Which address bits identify the network or subnet and which identify the host.” The subnet mask lets a device determine whether a destination is local or must be reached through a router or gateway."
+    ]
+  },
+  {
+    "id": 1032,
+    "legacyId": 32,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Default gateway",
+    "prompt": "When an IP device must reach a destination outside its local subnet, where does it normally send the traffic first?",
+    "choices": [
+      "Its EDID table",
+      "Its audio distribution amplifier",
+      "Its reflected ceiling plan",
+      "Its configured default gateway or router"
+    ],
+    "answer": 3,
+    "explanation": "The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
+    "studyNote": "The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, p. 353; Glossary, p. 528",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “Its EDID table” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Its configured default gateway or router.” The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
+      "Not this one: “Its audio distribution amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Its configured default gateway or router.” The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
+      "Not this one: “Its reflected ceiling plan” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Its configured default gateway or router.” The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
+      "Correct: The default gateway is the local router used to reach other networks when the destination is not on the local subnet. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1033,
+    "legacyId": 33,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "DHCP",
+    "prompt": "What does DHCP automate?",
+    "choices": [
+      "Assignment of IP addresses and other network parameters to devices",
+      "Authentication of HDCP-protected content",
+      "Conversion of line level to speaker level",
+      "Creation of as-built drawings"
+    ],
+    "answer": 0,
+    "explanation": "DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters.",
+    "studyNote": "DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 136-138; Glossary",
+    "chapter": 6,
+    "rationales": [
+      "Correct: DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Authentication of HDCP-protected content” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Assignment of IP addresses and other network parameters to devices.” DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters.",
+      "Not this one: “Conversion of line level to speaker level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Assignment of IP addresses and other network parameters to devices.” DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters.",
+      "Not this one: “Creation of as-built drawings” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Assignment of IP addresses and other network parameters to devices.” DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters."
+    ]
+  },
+  {
+    "id": 1034,
+    "legacyId": 34,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "VLAN",
+    "prompt": "What is a primary reason to use a VLAN on shared switching hardware?",
+    "choices": [
+      "Increase loudspeaker impedance by adding transformers",
+      "Logically separate devices into different Layer 2 broadcast domains",
+      "Change the native resolution of a display",
+      "Measure acoustic sound pressure level"
+    ],
+    "answer": 1,
+    "explanation": "A VLAN creates logical network separation even when devices use the same physical switching infrastructure.",
+    "studyNote": "A VLAN creates logical network separation even when devices use the same physical switching infrastructure.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 126, 138-140; Ch. 16, pp. 349-353",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “Increase loudspeaker impedance by adding transformers” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Logically separate devices into different Layer 2 broadcast domains.” A VLAN creates logical network separation even when devices use the same physical switching infrastructure.",
+      "Correct: A VLAN creates logical network separation even when devices use the same physical switching infrastructure. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Change the native resolution of a display” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Logically separate devices into different Layer 2 broadcast domains.” A VLAN creates logical network separation even when devices use the same physical switching infrastructure.",
+      "Not this one: “Measure acoustic sound pressure level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Logically separate devices into different Layer 2 broadcast domains.” A VLAN creates logical network separation even when devices use the same physical switching infrastructure."
+    ]
+  },
+  {
+    "id": 1035,
+    "legacyId": 35,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "QoS and IGMP",
+    "prompt": "Which pairing correctly matches the network function?",
+    "choices": [
+      "QoS assigns display resolutions; IGMP protects copyrighted video",
+      "QoS measures cable resistance; IGMP supplies phantom power",
+      "QoS prioritizes or allocates traffic; IGMP manages IPv4 multicast group membership",
+      "QoS creates as-built drawings; IGMP approves change orders"
+    ],
+    "answer": 2,
+    "explanation": "QoS manages traffic to preserve usefulness through prioritization or allocation. IGMP is the IPv4 protocol used by clients to join or leave multicast groups.",
+    "studyNote": "QoS manages traffic to preserve usefulness through prioritization or allocation. IGMP is the IPv4 protocol used by clients to join or leave multicast groups.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 347-353; Glossary, IGMP and QoS",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “QoS assigns display resolutions; IGMP protects copyrighted video” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “QoS prioritizes or allocates traffic; IGMP manages IPv4 multicast group membership.” QoS manages traffic to preserve usefulness through prioritization or allocation. IGMP is the IPv4 protocol used by clients to join or leave multicast groups.",
+      "Not this one: “QoS measures cable resistance; IGMP supplies phantom power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “QoS prioritizes or allocates traffic; IGMP manages IPv4 multicast group membership.” QoS manages traffic to preserve usefulness through prioritization or allocation. IGMP is the IPv4 protocol used by clients to join or leave multicast groups.",
+      "Correct: QoS manages traffic to preserve usefulness through prioritization or allocation. IGMP is the IPv4 protocol used by clients to join or leave multicast groups. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “QoS creates as-built drawings; IGMP approves change orders” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “QoS prioritizes or allocates traffic; IGMP manages IPv4 multicast group membership.” QoS manages traffic to preserve usefulness through prioritization or allocation. IGMP is the IPv4 protocol used by clients to join or leave multicast groups."
+    ]
+  },
+  {
+    "id": 1036,
+    "legacyId": 36,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Mic, line, and speaker level",
+    "prompt": "Which sequence orders common analog audio signal levels from lowest to highest?",
+    "choices": [
+      "Speaker level → microphone level → line level",
+      "Line level → speaker level → microphone level",
+      "Line level → microphone level → speaker level",
+      "Microphone level → line level → speaker level"
+    ],
+    "answer": 3,
+    "explanation": "Microphones normally produce very small signals, line level interconnects powered equipment, and speaker level is the high-power amplifier output.",
+    "studyNote": "Microphones normally produce very small signals, line level interconnects powered equipment, and speaker level is the high-power amplifier output.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 60-68",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “Speaker level → microphone level → line level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Microphone level → line level → speaker level.” Microphones normally produce very small signals, line level interconnects powered equipment, and speaker level is the high-power amplifier output.",
+      "Not this one: “Line level → speaker level → microphone level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Microphone level → line level → speaker level.” Microphones normally produce very small signals, line level interconnects powered equipment, and speaker level is the high-power amplifier output.",
+      "Not this one: “Line level → microphone level → speaker level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Microphone level → line level → speaker level.” Microphones normally produce very small signals, line level interconnects powered equipment, and speaker level is the high-power amplifier output.",
+      "Correct: Microphones normally produce very small signals, line level interconnects powered equipment, and speaker level is the high-power amplifier output. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1037,
+    "legacyId": 37,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Dynamic vs. condenser microphone",
+    "prompt": "Which statement correctly distinguishes a typical condenser microphone from a typical dynamic microphone?",
+    "choices": [
+      "A condenser microphone requires a power source; a dynamic microphone generally does not",
+      "A dynamic microphone always requires phantom power; a condenser never does",
+      "A condenser microphone can carry only digital audio",
+      "A dynamic microphone is always more sensitive and fragile than a condenser"
+    ],
+    "answer": 0,
+    "explanation": "Condenser microphones require power for their active circuitry or capsule, while moving-coil dynamic microphones normally generate their own small signal.",
+    "studyNote": "Condenser microphones require power for their active circuitry or capsule, while moving-coil dynamic microphones normally generate their own small signal.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 52-58",
+    "chapter": 4,
+    "rationales": [
+      "Correct: Condenser microphones require power for their active circuitry or capsule, while moving-coil dynamic microphones normally generate their own small signal. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “A dynamic microphone always requires phantom power; a condenser never does” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A condenser microphone requires a power source; a dynamic microphone generally does not.” Condenser microphones require power for their active circuitry or capsule, while moving-coil dynamic microphones normally generate their own small signal.",
+      "Not this one: “A condenser microphone can carry only digital audio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A condenser microphone requires a power source; a dynamic microphone generally does not.” Condenser microphones require power for their active circuitry or capsule, while moving-coil dynamic microphones normally generate their own small signal.",
+      "Not this one: “A dynamic microphone is always more sensitive and fragile than a condenser” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A condenser microphone requires a power source; a dynamic microphone generally does not.” Condenser microphones require power for their active circuitry or capsule, while moving-coil dynamic microphones normally generate their own small signal."
+    ]
+  },
+  {
+    "id": 1038,
+    "legacyId": 38,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "dB and dB SPL",
+    "prompt": "Which statement correctly distinguishes dB from dB SPL?",
+    "choices": [
+      "dB always measures watts, while dB SPL always measures volts",
+      "dB expresses a logarithmic ratio; dB SPL states acoustic pressure relative to a defined reference",
+      "dB is a linear unit, while dB SPL is a pixel count",
+      "They are interchangeable labels for projector light output"
+    ],
+    "answer": 1,
+    "explanation": "The decibel is a logarithmic ratio. dB SPL is an acoustic level referenced to 20 micropascals at 0 dB SPL.",
+    "studyNote": "The decibel is a logarithmic ratio. dB SPL is an acoustic level referenced to 20 micropascals at 0 dB SPL.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 42-45; Glossary, dB SPL",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “dB always measures watts, while dB SPL always measures volts” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “dB expresses a logarithmic ratio; dB SPL states acoustic pressure relative to a defined reference.” The decibel is a logarithmic ratio. dB SPL is an acoustic level referenced to 20 micropascals at 0 dB SPL.",
+      "Correct: The decibel is a logarithmic ratio. dB SPL is an acoustic level referenced to 20 micropascals at 0 dB SPL. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “dB is a linear unit, while dB SPL is a pixel count” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “dB expresses a logarithmic ratio; dB SPL states acoustic pressure relative to a defined reference.” The decibel is a logarithmic ratio. dB SPL is an acoustic level referenced to 20 micropascals at 0 dB SPL.",
+      "Not this one: “They are interchangeable labels for projector light output” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “dB expresses a logarithmic ratio; dB SPL states acoustic pressure relative to a defined reference.” The decibel is a logarithmic ratio. dB SPL is an acoustic level referenced to 20 micropascals at 0 dB SPL."
+    ]
+  },
+  {
+    "id": 1039,
+    "legacyId": 39,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Lumens, lux, and nits",
+    "prompt": "Which pairing is correct?",
+    "choices": [
+      "Lumens = acoustic pressure; lux = electrical power; nits = network throughput",
+      "Lumens = image width; lux = throw distance; nits = aspect ratio",
+      "Lumens = total light output; lux = illuminance on an area; nits = luminance of a surface",
+      "Lumens = video frame rate; lux = refresh rate; nits = pixel count"
+    ],
+    "answer": 2,
+    "explanation": "The guide distinguishes luminous flux in lumens, incident illuminance in lux, and surface luminance in candelas per square meter, commonly called nits.",
+    "studyNote": "The guide distinguishes luminous flux in lumens, incident illuminance in lux, and surface luminance in candelas per square meter, commonly called nits.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 80-84, 116-118",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “Lumens = acoustic pressure; lux = electrical power; nits = network throughput” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Lumens = total light output; lux = illuminance on an area; nits = luminance of a surface.” The guide distinguishes luminous flux in lumens, incident illuminance in lux, and surface luminance in candelas per square meter, commonly called nits.",
+      "Not this one: “Lumens = image width; lux = throw distance; nits = aspect ratio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Lumens = total light output; lux = illuminance on an area; nits = luminance of a surface.” The guide distinguishes luminous flux in lumens, incident illuminance in lux, and surface luminance in candelas per square meter, commonly called nits.",
+      "Correct: The guide distinguishes luminous flux in lumens, incident illuminance in lux, and surface luminance in candelas per square meter, commonly called nits. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Lumens = video frame rate; lux = refresh rate; nits = pixel count” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Lumens = total light output; lux = illuminance on an area; nits = luminance of a surface.” The guide distinguishes luminous flux in lumens, incident illuminance in lux, and surface luminance in candelas per square meter, commonly called nits."
+    ]
+  },
+  {
+    "id": 1040,
+    "legacyId": 40,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Frame rate and refresh rate",
+    "prompt": "Which distinction is most useful when troubleshooting motion or display compatibility?",
+    "choices": [
+      "Frame rate is image width, while refresh rate is image height",
+      "Frame rate is an audio level, while refresh rate is light output",
+      "Frame rate is a network address, while refresh rate is a subnet mask",
+      "Frame rate describes frames produced or carried per second; refresh rate describes how often the display updates"
+    ],
+    "answer": 3,
+    "explanation": "Both are rates in hertz or frames per second, but one originates with the content or signal and the other describes display updating capability.",
+    "studyNote": "Both are rates in hertz or frames per second, but one originates with the content or signal and the other describes display updating capability.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 90-92",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “Frame rate is image width, while refresh rate is image height” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Frame rate describes frames produced or carried per second; refresh rate describes how often the display updates.” Both are rates in hertz or frames per second, but one originates with the content or signal and the other describes display updating capability.",
+      "Not this one: “Frame rate is an audio level, while refresh rate is light output” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Frame rate describes frames produced or carried per second; refresh rate describes how often the display updates.” Both are rates in hertz or frames per second, but one originates with the content or signal and the other describes display updating capability.",
+      "Not this one: “Frame rate is a network address, while refresh rate is a subnet mask” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Frame rate describes frames produced or carried per second; refresh rate describes how often the display updates.” Both are rates in hertz or frames per second, but one originates with the content or signal and the other describes display updating capability.",
+      "Correct: Both are rates in hertz or frames per second, but one originates with the content or signal and the other describes display updating capability. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1041,
+    "legacyId": 41,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Grounding and bonding",
+    "prompt": "Which statement correctly distinguishes grounding from bonding?",
+    "choices": [
+      "Grounding provides a fault path to earth; bonding joins conductive parts with a low-impedance connection so they remain at the same potential",
+      "Grounding assigns IP addresses; bonding assigns MAC addresses",
+      "Grounding changes video timing; bonding changes image aspect ratio",
+      "Grounding and bonding both mean removing the protective earth conductor"
+    ],
+    "answer": 0,
+    "explanation": "Safety grounding provides a low-resistance fault path. Bonding electrically joins conductive materials to equalize potential.",
+    "studyNote": "Safety grounding provides a low-resistance fault path. Bonding electrically joins conductive materials to equalize potential.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 9, pp. 174-177; Glossary, p. 516",
+    "chapter": 9,
+    "rationales": [
+      "Correct: Safety grounding provides a low-resistance fault path. Bonding electrically joins conductive materials to equalize potential. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Grounding assigns IP addresses; bonding assigns MAC addresses” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Grounding provides a fault path to earth; bonding joins conductive parts with a low-impedance connection so they remain at the same potential.” Safety grounding provides a low-resistance fault path. Bonding electrically joins conductive materials to equalize potential.",
+      "Not this one: “Grounding changes video timing; bonding changes image aspect ratio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Grounding provides a fault path to earth; bonding joins conductive parts with a low-impedance connection so they remain at the same potential.” Safety grounding provides a low-resistance fault path. Bonding electrically joins conductive materials to equalize potential.",
+      "Not this one: “Grounding and bonding both mean removing the protective earth conductor” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Grounding provides a fault path to earth; bonding joins conductive parts with a low-impedance connection so they remain at the same potential.” Safety grounding provides a low-resistance fault path. Bonding electrically joins conductive materials to equalize potential."
+    ]
+  },
+  {
+    "id": 1042,
+    "legacyId": 42,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Direct-coupled and constant-voltage audio",
+    "prompt": "Which loudspeaker-system description is correct?",
+    "choices": [
+      "Direct-coupled systems always use 70 V transformers at every loudspeaker",
+      "Direct-coupled systems connect low-impedance loudspeakers to the amplifier; constant-voltage systems use transformers for many or distant loudspeakers",
+      "Constant-voltage systems prohibit parallel loudspeaker connections",
+      "The two terms describe identical wiring with different connector types"
+    ],
+    "answer": 1,
+    "explanation": "Direct-coupled systems are low impedance and connect directly to the amplifier. Constant-voltage systems use step-up and step-down transformers for distributed loads.",
+    "studyNote": "Direct-coupled systems are low impedance and connect directly to the amplifier. Constant-voltage systems use step-up and step-down transformers for distributed loads.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 339-343",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “Direct-coupled systems always use 70 V transformers at every loudspeaker” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Direct-coupled systems connect low-impedance loudspeakers to the amplifier; constant-voltage systems use transformers for many or distant loudspeakers.” Direct-coupled systems are low impedance and connect directly to the amplifier. Constant-voltage systems use step-up and step-down transformers for distributed loads.",
+      "Correct: Direct-coupled systems are low impedance and connect directly to the amplifier. Constant-voltage systems use step-up and step-down transformers for distributed loads. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Constant-voltage systems prohibit parallel loudspeaker connections” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Direct-coupled systems connect low-impedance loudspeakers to the amplifier; constant-voltage systems use transformers for many or distant loudspeakers.” Direct-coupled systems are low impedance and connect directly to the amplifier. Constant-voltage systems use step-up and step-down transformers for distributed loads.",
+      "Not this one: “The two terms describe identical wiring with different connector types” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Direct-coupled systems connect low-impedance loudspeakers to the amplifier; constant-voltage systems use transformers for many or distant loudspeakers.” Direct-coupled systems are low impedance and connect directly to the amplifier. Constant-voltage systems use step-up and step-down transformers for distributed loads."
+    ]
+  },
+  {
+    "id": 1043,
+    "legacyId": 43,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "TCP and UDP",
+    "prompt": "Which statement best distinguishes TCP from UDP?",
+    "choices": [
+      "TCP is used only for analog audio; UDP is used only for AC power",
+      "TCP assigns MAC addresses; UDP creates VLANs",
+      "TCP emphasizes reliable ordered delivery; UDP uses less overhead and is common for time-sensitive real-time traffic",
+      "TCP and UDP are physical cable categories"
+    ],
+    "answer": 2,
+    "explanation": "TCP establishes reliable delivery behavior, while UDP avoids connection and retransmission overhead, which can suit real-time media.",
+    "studyNote": "TCP establishes reliable delivery behavior, while UDP avoids connection and retransmission overhead, which can suit real-time media.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 132-140; Ch. 16, pp. 349-353; Glossary",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “TCP is used only for analog audio; UDP is used only for AC power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “TCP emphasizes reliable ordered delivery; UDP uses less overhead and is common for time-sensitive real-time traffic.” TCP establishes reliable delivery behavior, while UDP avoids connection and retransmission overhead, which can suit real-time media.",
+      "Not this one: “TCP assigns MAC addresses; UDP creates VLANs” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “TCP emphasizes reliable ordered delivery; UDP uses less overhead and is common for time-sensitive real-time traffic.” TCP establishes reliable delivery behavior, while UDP avoids connection and retransmission overhead, which can suit real-time media.",
+      "Correct: TCP establishes reliable delivery behavior, while UDP avoids connection and retransmission overhead, which can suit real-time media. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “TCP and UDP are physical cable categories” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “TCP emphasizes reliable ordered delivery; UDP uses less overhead and is common for time-sensitive real-time traffic.” TCP establishes reliable delivery behavior, while UDP avoids connection and retransmission overhead, which can suit real-time media."
+    ]
+  },
+  {
+    "id": 1044,
+    "legacyId": 44,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Network switch and router",
+    "prompt": "Which device normally forwards Ethernet frames within a LAN using MAC addresses, and which device moves IP packets between networks?",
+    "choices": [
+      "A router forwards only microphone signals; a switch routes AC power",
+      "A switch changes resolution; a router provides phantom power",
+      "A router measures SPL; a switch measures lux",
+      "A switch forwards within the LAN; a router moves traffic between networks"
+    ],
+    "answer": 3,
+    "explanation": "Switching is primarily local Layer 2 forwarding; routing is Layer 3 forwarding between IP networks.",
+    "studyNote": "Switching is primarily local Layer 2 forwarding; routing is Layer 3 forwarding between IP networks.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 132-140",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “A router forwards only microphone signals; a switch routes AC power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A switch forwards within the LAN; a router moves traffic between networks.” Switching is primarily local Layer 2 forwarding; routing is Layer 3 forwarding between IP networks.",
+      "Not this one: “A switch changes resolution; a router provides phantom power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A switch forwards within the LAN; a router moves traffic between networks.” Switching is primarily local Layer 2 forwarding; routing is Layer 3 forwarding between IP networks.",
+      "Not this one: “A router measures SPL; a switch measures lux” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A switch forwards within the LAN; a router moves traffic between networks.” Switching is primarily local Layer 2 forwarding; routing is Layer 3 forwarding between IP networks.",
+      "Correct: Switching is primarily local Layer 2 forwarding; routing is Layer 3 forwarding between IP networks. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1045,
+    "legacyId": 45,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Static IP and DHCP",
+    "prompt": "Which statement correctly compares a static IP configuration with DHCP?",
+    "choices": [
+      "A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters",
+      "A static IP is assigned by EDID; DHCP is assigned by HDCP",
+      "A static IP works only on fiber; DHCP works only on copper",
+      "A static IP is an audio level; DHCP is a loudspeaker load"
+    ],
+    "answer": 0,
+    "explanation": "Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
+    "studyNote": "Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 133-138; Glossary, DHCP and reserve DHCP",
+    "chapter": 6,
+    "rationales": [
+      "Correct: Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “A static IP is assigned by EDID; DHCP is assigned by HDCP” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters.” Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
+      "Not this one: “A static IP works only on fiber; DHCP works only on copper” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters.” Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
+      "Not this one: “A static IP is an audio level; DHCP is a loudspeaker load” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters.” Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool."
+    ]
+  },
+  {
+    "id": 1046,
+    "legacyId": 46,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Unicast, multicast, and broadcast",
+    "prompt": "Which mapping is correct?",
+    "choices": [
+      "Unicast = all devices; multicast = one receiver; broadcast = one selected group",
+      "Unicast = one sender to one receiver; multicast = one sender to an interested group; broadcast = one sender to all devices in the local domain",
+      "Unicast = analog; multicast = digital; broadcast = optical",
+      "Unicast = balanced audio; multicast = unbalanced audio; broadcast = speaker level"
+    ],
+    "answer": 1,
+    "explanation": "These terms describe delivery scope. Multicast avoids sending a separate stream to every receiver but requires network group management.",
+    "studyNote": "These terms describe delivery scope. Multicast avoids sending a separate stream to every receiver but requires network group management.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 124-140; Ch. 16, p. 352; Glossary",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “Unicast = all devices; multicast = one receiver; broadcast = one selected group” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Unicast = one sender to one receiver; multicast = one sender to an interested group; broadcast = one sender to all devices in the local domain.” These terms describe delivery scope. Multicast avoids sending a separate stream to every receiver but requires network group management.",
+      "Correct: These terms describe delivery scope. Multicast avoids sending a separate stream to every receiver but requires network group management. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Unicast = analog; multicast = digital; broadcast = optical” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Unicast = one sender to one receiver; multicast = one sender to an interested group; broadcast = one sender to all devices in the local domain.” These terms describe delivery scope. Multicast avoids sending a separate stream to every receiver but requires network group management.",
+      "Not this one: “Unicast = balanced audio; multicast = unbalanced audio; broadcast = speaker level” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Unicast = one sender to one receiver; multicast = one sender to an interested group; broadcast = one sender to all devices in the local domain.” These terms describe delivery scope. Multicast avoids sending a separate stream to every receiver but requires network group management."
+    ]
+  },
+  {
+    "id": 1047,
+    "legacyId": 47,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Conduct maintenance activities",
+    "topic": "Preventive and corrective maintenance",
+    "prompt": "Which statement correctly compares preventive and corrective maintenance?",
+    "choices": [
+      "Preventive maintenance occurs only after failure; corrective maintenance occurs before use",
+      "Preventive maintenance changes contract scope; corrective maintenance writes RFIs",
+      "Preventive maintenance is planned to reduce failures; corrective maintenance is performed after a fault is found",
+      "They are identical terms for commissioning"
+    ],
+    "answer": 2,
+    "explanation": "Preventive work includes planned inspection, cleaning, service, and testing. Corrective work restores operation after a defect or failure.",
+    "studyNote": "Preventive work includes planned inspection, cleaning, service, and testing. Corrective work restores operation after a defect or failure.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 21, pp. 459-465",
+    "chapter": 21,
+    "rationales": [
+      "Not this one: “Preventive maintenance occurs only after failure; corrective maintenance occurs before use” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Preventive maintenance is planned to reduce failures; corrective maintenance is performed after a fault is found.” Preventive work includes planned inspection, cleaning, service, and testing. Corrective work restores operation after a defect or failure.",
+      "Not this one: “Preventive maintenance changes contract scope; corrective maintenance writes RFIs” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Preventive maintenance is planned to reduce failures; corrective maintenance is performed after a fault is found.” Preventive work includes planned inspection, cleaning, service, and testing. Corrective work restores operation after a defect or failure.",
+      "Correct: Preventive work includes planned inspection, cleaning, service, and testing. Corrective work restores operation after a defect or failure. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “They are identical terms for commissioning” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Preventive maintenance is planned to reduce failures; corrective maintenance is performed after a fault is found.” Preventive work includes planned inspection, cleaning, service, and testing. Corrective work restores operation after a defect or failure."
+    ]
+  },
+  {
+    "id": 1048,
+    "legacyId": 48,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Plan, elevation, section, and RCP",
+    "prompt": "Which drawing shows ceiling-mounted devices as if looking upward at the ceiling plane?",
+    "choices": [
+      "Elevation drawing",
+      "Section drawing",
+      "Rack elevation",
+      "Reflected ceiling plan (RCP)"
+    ],
+    "answer": 3,
+    "explanation": "An RCP depicts the ceiling layout. A plan is top-down, an elevation is a straight-on vertical view, and a section cuts through construction.",
+    "studyNote": "An RCP depicts the ceiling layout. A plan is top-down, an elevation is a straight-on vertical view, and a section cuts through construction.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 12, pp. 231-239",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: “Elevation drawing” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Reflected ceiling plan (RCP).” An RCP depicts the ceiling layout. A plan is top-down, an elevation is a straight-on vertical view, and a section cuts through construction.",
+      "Not this one: “Section drawing” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Reflected ceiling plan (RCP).” An RCP depicts the ceiling layout. A plan is top-down, an elevation is a straight-on vertical view, and a section cuts through construction.",
+      "Not this one: “Rack elevation” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Reflected ceiling plan (RCP).” An RCP depicts the ceiling layout. A plan is top-down, an elevation is a straight-on vertical view, and a section cuts through construction.",
+      "Correct: An RCP depicts the ceiling layout. A plan is top-down, an elevation is a straight-on vertical view, and a section cuts through construction. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1049,
+    "legacyId": 49,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "Critical path",
+    "prompt": "Which project-scheduling concept identifies task dependencies and determines the project completion date?",
+    "choices": [
+      "Critical path schedule",
+      "EDID table",
+      "Signal-to-noise ratio",
+      "Reflected ceiling plan"
+    ],
+    "answer": 0,
+    "explanation": "The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
+    "studyNote": "The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 19, pp. 434-438; Glossary, p. 521",
+    "chapter": 19,
+    "rationales": [
+      "Correct: The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “EDID table” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Critical path schedule.” The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
+      "Not this one: “Signal-to-noise ratio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Critical path schedule.” The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
+      "Not this one: “Reflected ceiling plan” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Critical path schedule.” The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion."
+    ]
+  },
+  {
+    "id": 1050,
+    "legacyId": 50,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Develop an AV project scope",
+    "topic": "Value engineering",
+    "prompt": "What is value engineering?",
+    "choices": [
+      "Choosing the cheapest component even when performance is lost",
+      "Reducing cost by streamlining the design while retaining required functionality and performance",
+      "Adding equipment without evaluating need or cost",
+      "Changing the contract without written authorization"
+    ],
+    "answer": 1,
+    "explanation": "Value engineering is not simple cost cutting. It preserves necessary performance, quality, and long-term value while seeking a more efficient solution.",
+    "studyNote": "Value engineering is not simple cost cutting. It preserves necessary performance, quality, and long-term value while seeking a more efficient solution.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 359-362",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “Choosing the cheapest component even when performance is lost” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Reducing cost by streamlining the design while retaining required functionality and performance.” Value engineering is not simple cost cutting. It preserves necessary performance, quality, and long-term value while seeking a more efficient solution.",
+      "Correct: Value engineering is not simple cost cutting. It preserves necessary performance, quality, and long-term value while seeking a more efficient solution. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Adding equipment without evaluating need or cost” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Reducing cost by streamlining the design while retaining required functionality and performance.” Value engineering is not simple cost cutting. It preserves necessary performance, quality, and long-term value while seeking a more efficient solution.",
+      "Not this one: “Changing the contract without written authorization” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Reducing cost by streamlining the design while retaining required functionality and performance.” Value engineering is not simple cost cutting. It preserves necessary performance, quality, and long-term value while seeking a more efficient solution."
+    ]
+  },
+  {
+    "id": 1051,
+    "legacyId": 51,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "Allied trades",
+    "prompt": "In an AV project, who are allied trades?",
+    "choices": [
+      "Only the AV manufacturer’s sales representatives",
+      "Only the end users who operate the finished system",
+      "Other project disciplines whose work must coordinate with AV, such as electrical, IT, mechanical, structural, and architectural teams",
+      "Only the test instruments used during verification"
+    ],
+    "answer": 2,
+    "explanation": "AV work depends on coordinated information and schedules from related construction and technical disciplines.",
+    "studyNote": "AV work depends on coordinated information and schedules from related construction and technical disciplines.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 11, p. 194; Ch. 15, pp. 301-305; Ch. 19, pp. 436-438",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: “Only the AV manufacturer’s sales representatives” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Other project disciplines whose work must coordinate with AV, such as electrical, IT, mechanical, structural, and architectural teams.” AV work depends on coordinated information and schedules from related construction and technical disciplines.",
+      "Not this one: “Only the end users who operate the finished system” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Other project disciplines whose work must coordinate with AV, such as electrical, IT, mechanical, structural, and architectural teams.” AV work depends on coordinated information and schedules from related construction and technical disciplines.",
+      "Correct: AV work depends on coordinated information and schedules from related construction and technical disciplines. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Only the test instruments used during verification” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Other project disciplines whose work must coordinate with AV, such as electrical, IT, mechanical, structural, and architectural teams.” AV work depends on coordinated information and schedules from related construction and technical disciplines."
+    ]
+  },
+  {
+    "id": 1052,
+    "legacyId": 52,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Cable handling",
+    "prompt": "Which statement correctly matches cable-handling practice with its purpose?",
+    "choices": [
+      "Bend radius assigns IP addresses; strain relief scales video; a service loop supplies phantom power",
+      "Bend radius increases cable resistance intentionally; strain relief removes shielding; a service loop eliminates labeling",
+      "All three terms describe methods of grounding an equipment rack",
+      "Bend radius protects cable performance; strain relief protects the termination; a service loop provides controlled extra length for service"
+    ],
+    "answer": 3,
+    "explanation": "Cable geometry, pulling force, termination support, and planned slack must be controlled to avoid damage and preserve serviceability.",
+    "studyNote": "Cable geometry, pulling force, termination support, and planned slack must be controlled to avoid damage and preserve serviceability.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 17, pp. 383, 386-389; Glossary, bend radius and pulling tension",
+    "chapter": 17,
+    "rationales": [
+      "Not this one: “Bend radius assigns IP addresses; strain relief scales video; a service loop supplies phantom power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Bend radius protects cable performance; strain relief protects the termination; a service loop provides controlled extra length for service.” Cable geometry, pulling force, termination support, and planned slack must be controlled to avoid damage and preserve serviceability.",
+      "Not this one: “Bend radius increases cable resistance intentionally; strain relief removes shielding; a service loop eliminates labeling” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Bend radius protects cable performance; strain relief protects the termination; a service loop provides controlled extra length for service.” Cable geometry, pulling force, termination support, and planned slack must be controlled to avoid damage and preserve serviceability.",
+      "Not this one: “All three terms describe methods of grounding an equipment rack” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Bend radius protects cable performance; strain relief protects the termination; a service loop provides controlled extra length for service.” Cable geometry, pulling force, termination support, and planned slack must be controlled to avoid damage and preserve serviceability.",
+      "Correct: Cable geometry, pulling force, termination support, and planned slack must be controlled to avoid damage and preserve serviceability. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1053,
+    "legacyId": 53,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Single-mode and multimode fiber",
+    "prompt": "Which statement correctly distinguishes single-mode from multimode fiber?",
+    "choices": [
+      "Single-mode has a smaller core and is suited to longer distances; multimode has a larger core and is commonly used for shorter links",
+      "Single-mode carries only analog audio; multimode carries only digital video",
+      "Single-mode requires copper conductors; multimode requires coaxial shielding",
+      "Single-mode is always orange; multimode is always yellow"
+    ],
+    "answer": 0,
+    "explanation": "Core size and optical propagation differ. Single-mode minimizes modal dispersion and supports longer reach; multimode is common for shorter building links.",
+    "studyNote": "Core size and optical propagation differ. Single-mode minimizes modal dispersion and supports longer reach; multimode is common for shorter building links.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 6, pp. 128-130, 142; Ch. 7, pp. 149-150",
+    "chapter": 6,
+    "rationales": [
+      "Correct: Core size and optical propagation differ. Single-mode minimizes modal dispersion and supports longer reach; multimode is common for shorter building links. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Single-mode carries only analog audio; multimode carries only digital video” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Single-mode has a smaller core and is suited to longer distances; multimode has a larger core and is commonly used for shorter links.” Core size and optical propagation differ. Single-mode minimizes modal dispersion and supports longer reach; multimode is common for shorter building links.",
+      "Not this one: “Single-mode requires copper conductors; multimode requires coaxial shielding” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Single-mode has a smaller core and is suited to longer distances; multimode has a larger core and is commonly used for shorter links.” Core size and optical propagation differ. Single-mode minimizes modal dispersion and supports longer reach; multimode is common for shorter building links.",
+      "Not this one: “Single-mode is always orange; multimode is always yellow” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Single-mode has a smaller core and is suited to longer distances; multimode has a larger core and is commonly used for shorter links.” Core size and optical propagation differ. Single-mode minimizes modal dispersion and supports longer reach; multimode is common for shorter building links."
+    ]
+  },
+  {
+    "id": 1054,
+    "legacyId": 54,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "RFI versus change order",
+    "prompt": "A drawing conflict is discovered, but no contractual change has yet been approved. What is the correct first document?",
+    "choices": [
+      "A completed as-built drawing showing unapproved work",
+      "An RFI requesting clarification",
+      "A preventive-maintenance report",
+      "A final change order signed after the work is performed"
+    ],
+    "answer": 1,
+    "explanation": "Use the RFI to clarify the issue. If resolution changes contractual obligations, the formal change process can then produce an approved change order.",
+    "studyNote": "Use the RFI to clarify the issue. If resolution changes contractual obligations, the formal change process can then produce an approved change order.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 19, pp. 438-440",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: “A completed as-built drawing showing unapproved work” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “An RFI requesting clarification.” Use the RFI to clarify the issue. If resolution changes contractual obligations, the formal change process can then produce an approved change order.",
+      "Correct: Use the RFI to clarify the issue. If resolution changes contractual obligations, the formal change process can then produce an approved change order. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “A preventive-maintenance report” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “An RFI requesting clarification.” Use the RFI to clarify the issue. If resolution changes contractual obligations, the formal change process can then produce an approved change order.",
+      "Not this one: “A final change order signed after the work is performed” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “An RFI requesting clarification.” Use the RFI to clarify the issue. If resolution changes contractual obligations, the formal change process can then produce an approved change order."
+    ]
+  },
+  {
+    "id": 1055,
+    "legacyId": 55,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Integrate AV solution",
+    "topic": "Commissioning versus verification",
+    "prompt": "Which statement best reflects the terminology used in the guide?",
+    "choices": [
+      "Performance verification is only a product-delivery count",
+      "Commissioning means selecting equipment before a needs analysis",
+      "Commissioning is a broader building-lifecycle process; AV systems performance verification is the AV testing and evidence step within that process",
+      "The two terms refer only to end-user training"
+    ],
+    "answer": 2,
+    "explanation": "The construction industry uses commissioning broadly across planning, delivery, verification, and operation. AVIXA uses systems performance verification for the AV-specific confirmation work.",
+    "studyNote": "The construction industry uses commissioning broadly across planning, delivery, verification, and operation. AVIXA uses systems performance verification for the AV-specific confirmation work.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 18, pp. 416-419",
+    "chapter": 18,
+    "rationales": [
+      "Not this one: “Performance verification is only a product-delivery count” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Commissioning is a broader building-lifecycle process; AV systems performance verification is the AV testing and evidence step within that process.” The construction industry uses commissioning broadly across planning, delivery, verification, and operation. AVIXA uses systems performance verification for the AV-specific confirmation work.",
+      "Not this one: “Commissioning means selecting equipment before a needs analysis” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Commissioning is a broader building-lifecycle process; AV systems performance verification is the AV testing and evidence step within that process.” The construction industry uses commissioning broadly across planning, delivery, verification, and operation. AVIXA uses systems performance verification for the AV-specific confirmation work.",
+      "Correct: The construction industry uses commissioning broadly across planning, delivery, verification, and operation. AVIXA uses systems performance verification for the AV-specific confirmation work. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “The two terms refer only to end-user training” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Commissioning is a broader building-lifecycle process; AV systems performance verification is the AV testing and evidence step within that process.” The construction industry uses commissioning broadly across planning, delivery, verification, and operation. AVIXA uses systems performance verification for the AV-specific confirmation work."
+    ]
+  },
+  {
+    "id": 1056,
+    "legacyId": 56,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Ohm’s law",
+    "prompt": "A 12 V source is applied across a 6 Ω load. What current flows?",
+    "choices": [
+      "0.5 A",
+      "6 A",
+      "72 A",
+      "2 A"
+    ],
+    "answer": 3,
+    "explanation": "Using I = V ÷ R: 12 ÷ 6 = 2 amperes.",
+    "studyNote": "Using I = V ÷ R: 12 ÷ 6 = 2 amperes.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 9, p. 172",
+    "chapter": 9,
+    "rationales": [
+      "Not this one: “0.5 A” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “2 A.” Using I = V ÷ R: 12 ÷ 6 = 2 amperes.",
+      "Not this one: “6 A” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “2 A.” Using I = V ÷ R: 12 ÷ 6 = 2 amperes.",
+      "Not this one: “72 A” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “2 A.” Using I = V ÷ R: 12 ÷ 6 = 2 amperes.",
+      "Correct: Using I = V ÷ R: 12 ÷ 6 = 2 amperes. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1057,
+    "legacyId": 57,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Electrical power",
+    "prompt": "A device draws 2 A from a 120 V circuit. What power does it use?",
+    "choices": [
+      "240 W",
+      "60 W",
+      "122 W",
+      "7,200 W"
+    ],
+    "answer": 0,
+    "explanation": "Using P = V × I: 120 × 2 = 240 watts.",
+    "studyNote": "Using P = V × I: 120 × 2 = 240 watts.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 9, p. 172",
+    "chapter": 9,
+    "rationales": [
+      "Correct: Using P = V × I: 120 × 2 = 240 watts. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “60 W” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “240 W.” Using P = V × I: 120 × 2 = 240 watts.",
+      "Not this one: “122 W” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “240 W.” Using P = V × I: 120 × 2 = 240 watts.",
+      "Not this one: “7,200 W” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “240 W.” Using P = V × I: 120 × 2 = 240 watts."
+    ]
+  },
+  {
+    "id": 1058,
+    "legacyId": 58,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Throw ratio",
+    "prompt": "A projector has a throw ratio of 1.5:1 and is 6 m from the screen. What image width is produced?",
+    "choices": [
+      "2.25 m",
+      "4 m",
+      "7.5 m",
+      "9 m"
+    ],
+    "answer": 1,
+    "explanation": "Throw ratio = throw distance ÷ image width, so image width = 6 ÷ 1.5 = 4 m.",
+    "studyNote": "Throw ratio = throw distance ÷ image width, so image width = 6 ÷ 1.5 = 4 m.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 112-114",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “2.25 m” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 m.” Throw ratio = throw distance ÷ image width, so image width = 6 ÷ 1.5 = 4 m.",
+      "Correct: Throw ratio = throw distance ÷ image width, so image width = 6 ÷ 1.5 = 4 m. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “7.5 m” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 m.” Throw ratio = throw distance ÷ image width, so image width = 6 ÷ 1.5 = 4 m.",
+      "Not this one: “9 m” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 m.” Throw ratio = throw distance ÷ image width, so image width = 6 ÷ 1.5 = 4 m."
+    ]
+  },
+  {
+    "id": 1059,
+    "legacyId": 59,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Wave speed, frequency, and wavelength",
+    "prompt": "Using a sound speed of 343 m/s, what is the wavelength of a 343 Hz tone?",
+    "choices": [
+      "0.5 m",
+      "2 m",
+      "1 m",
+      "343 m"
+    ],
+    "answer": 2,
+    "explanation": "Using wavelength = speed ÷ frequency: 343 ÷ 343 = 1 meter.",
+    "studyNote": "Using wavelength = speed ÷ frequency: 343 ÷ 343 = 1 meter.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 38-40",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “0.5 m” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “1 m.” Using wavelength = speed ÷ frequency: 343 ÷ 343 = 1 meter.",
+      "Not this one: “2 m” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “1 m.” Using wavelength = speed ÷ frequency: 343 ÷ 343 = 1 meter.",
+      "Correct: Using wavelength = speed ÷ frequency: 343 ÷ 343 = 1 meter. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “343 m” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “1 m.” Using wavelength = speed ÷ frequency: 343 ÷ 343 = 1 meter."
+    ]
+  },
+  {
+    "id": 1060,
+    "legacyId": 60,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Series impedance",
+    "prompt": "Three 4 Ω loudspeakers are connected in series. What is the total impedance?",
+    "choices": [
+      "1.33 Ω",
+      "4 Ω",
+      "64 Ω",
+      "12 Ω"
+    ],
+    "answer": 3,
+    "explanation": "Series impedances add directly: 4 + 4 + 4 = 12 ohms.",
+    "studyNote": "Series impedances add directly: 4 + 4 + 4 = 12 ohms.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 339-343, review question 8",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “1.33 Ω” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “12 Ω.” Series impedances add directly: 4 + 4 + 4 = 12 ohms.",
+      "Not this one: “4 Ω” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “12 Ω.” Series impedances add directly: 4 + 4 + 4 = 12 ohms.",
+      "Not this one: “64 Ω” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “12 Ω.” Series impedances add directly: 4 + 4 + 4 = 12 ohms.",
+      "Correct: Series impedances add directly: 4 + 4 + 4 = 12 ohms. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1061,
+    "legacyId": 61,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Parallel impedance",
+    "prompt": "Two identical 8 Ω loudspeakers are connected in parallel. What is the total impedance?",
+    "choices": [
+      "4 Ω",
+      "8 Ω",
+      "16 Ω",
+      "64 Ω"
+    ],
+    "answer": 0,
+    "explanation": "Two equal impedances in parallel produce half the impedance of either load: 8 ÷ 2 = 4 ohms.",
+    "studyNote": "Two equal impedances in parallel produce half the impedance of either load: 8 ÷ 2 = 4 ohms.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 339-343",
+    "chapter": 16,
+    "rationales": [
+      "Correct: Two equal impedances in parallel produce half the impedance of either load: 8 ÷ 2 = 4 ohms. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “8 Ω” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 Ω.” Two equal impedances in parallel produce half the impedance of either load: 8 ÷ 2 = 4 ohms.",
+      "Not this one: “16 Ω” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 Ω.” Two equal impedances in parallel produce half the impedance of either load: 8 ÷ 2 = 4 ohms.",
+      "Not this one: “64 Ω” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 Ω.” Two equal impedances in parallel produce half the impedance of either load: 8 ÷ 2 = 4 ohms."
+    ]
+  },
+  {
+    "id": 1062,
+    "legacyId": 62,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Inverse square law",
+    "prompt": "In a free field, a listener moves from 2 m to 4 m from a point-source loudspeaker. What approximate SPL change should be expected?",
+    "choices": [
+      "A 3 dB increase",
+      "A 6 dB decrease",
+      "No change",
+      "A 12 dB increase"
+    ],
+    "answer": 1,
+    "explanation": "Doubling distance from a point source produces approximately a 6 dB reduction in sound pressure level under free-field conditions.",
+    "studyNote": "Doubling distance from a point source produces approximately a 6 dB reduction in sound pressure level under free-field conditions.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 44-46; Ch. 16, pp. 342-343",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “A 3 dB increase” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A 6 dB decrease.” Doubling distance from a point source produces approximately a 6 dB reduction in sound pressure level under free-field conditions.",
+      "Correct: Doubling distance from a point source produces approximately a 6 dB reduction in sound pressure level under free-field conditions. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “No change” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A 6 dB decrease.” Doubling distance from a point source produces approximately a 6 dB reduction in sound pressure level under free-field conditions.",
+      "Not this one: “A 12 dB increase” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A 6 dB decrease.” Doubling distance from a point source produces approximately a 6 dB reduction in sound pressure level under free-field conditions."
+    ]
+  },
+  {
+    "id": 1063,
+    "legacyId": 63,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Power and decibels",
+    "prompt": "Loudspeaker power is increased from 10 W to 20 W with all other conditions unchanged. What is the approximate SPL increase?",
+    "choices": [
+      "1 dB",
+      "6 dB",
+      "3 dB",
+      "10 dB"
+    ],
+    "answer": 2,
+    "explanation": "Using ΔSPL = 10 log10(P2/P1), doubling power gives 10 log10(2), approximately 3 dB.",
+    "studyNote": "Using ΔSPL = 10 log10(P2/P1), doubling power gives 10 log10(2), approximately 3 dB.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 343-344",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “1 dB” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “3 dB.” Using ΔSPL = 10 log10(P2/P1), doubling power gives 10 log10(2), approximately 3 dB.",
+      "Not this one: “6 dB” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “3 dB.” Using ΔSPL = 10 log10(P2/P1), doubling power gives 10 log10(2), approximately 3 dB.",
+      "Correct: Using ΔSPL = 10 log10(P2/P1), doubling power gives 10 log10(2), approximately 3 dB. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “10 dB” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “3 dB.” Using ΔSPL = 10 log10(P2/P1), doubling power gives 10 log10(2), approximately 3 dB."
+    ]
+  },
+  {
+    "id": 1064,
+    "legacyId": 64,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Manage AV integration",
+    "topic": "Change control scenario",
+    "prompt": "During installation, a client asks the technician to add two displays that are not in the approved scope. What is the best response?",
+    "choices": [
+      "Install the displays immediately and discuss cost after project closeout",
+      "Refuse to record the request because only drawings matter",
+      "Modify the as-built drawings first and treat that as authorization",
+      "Document the request, assess impact, and obtain authorization through the project change process before performing the added work"
+    ],
+    "answer": 3,
+    "explanation": "A field request that changes scope, price, or schedule must be documented, evaluated, and approved through the established change-control process.",
+    "studyNote": "A field request that changes scope, price, or schedule must be documented, evaluated, and approved through the established change-control process.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 19, pp. 438-440",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: “Install the displays immediately and discuss cost after project closeout” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Document the request, assess impact, and obtain authorization through the project change process before performing the added work.” A field request that changes scope, price, or schedule must be documented, evaluated, and approved through the established change-control process.",
+      "Not this one: “Refuse to record the request because only drawings matter” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Document the request, assess impact, and obtain authorization through the project change process before performing the added work.” A field request that changes scope, price, or schedule must be documented, evaluated, and approved through the established change-control process.",
+      "Not this one: “Modify the as-built drawings first and treat that as authorization” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Document the request, assess impact, and obtain authorization through the project change process before performing the added work.” A field request that changes scope, price, or schedule must be documented, evaluated, and approved through the established change-control process.",
+      "Correct: A field request that changes scope, price, or schedule must be documented, evaluated, and approved through the established change-control process. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1065,
+    "legacyId": 65,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Troubleshoot and repair AV solutions",
+    "topic": "EDID troubleshooting scenario",
+    "prompt": "A laptop connected through an extender outputs a resolution the display does not support. Which communication mechanism should be checked first?",
+    "choices": [
+      "EDID",
+      "HDCP",
+      "Phantom power",
+      "IGMP"
+    ],
+    "answer": 0,
+    "explanation": "EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+    "studyNote": "EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 94-96",
+    "chapter": 5,
+    "rationales": [
+      "Correct: EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “HDCP” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “EDID.” EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+      "Not this one: “Phantom power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “EDID.” EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+      "Not this one: “IGMP” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “EDID.” EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output."
+    ]
+  },
+  {
+    "id": 1066,
+    "legacyId": 66,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Troubleshoot and repair AV solutions",
+    "topic": "HDCP troubleshooting scenario",
+    "prompt": "A computer desktop displays normally, but protected streaming video produces a blank image through the same HDMI path. What is the most likely issue?",
+    "choices": [
+      "Incorrect microphone impedance",
+      "HDCP authentication or compliance failure",
+      "Insufficient phantom power",
+      "An open loudspeaker circuit"
+    ],
+    "answer": 1,
+    "explanation": "Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+    "studyNote": "Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, p. 94; Ch. 7, p. 151",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: “Incorrect microphone impedance” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “HDCP authentication or compliance failure.” Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+      "Correct: Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Insufficient phantom power” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “HDCP authentication or compliance failure.” Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+      "Not this one: “An open loudspeaker circuit” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “HDCP authentication or compliance failure.” Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance."
+    ]
+  },
+  {
+    "id": 1067,
+    "legacyId": 67,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Distribution scenario",
+    "prompt": "One camera must feed the same signal simultaneously to four recorders, with each output isolated. Which device is most appropriate?",
+    "choices": [
+      "Four-input switcher",
+      "Video scaler only",
+      "Distribution amplifier",
+      "Network router"
+    ],
+    "answer": 2,
+    "explanation": "A distribution amplifier creates multiple buffered outputs from one source and isolates destination faults from the other feeds.",
+    "studyNote": "A distribution amplifier creates multiple buffered outputs from one source and isolates destination faults from the other feeds.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 7, pp. 153-156",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: “Four-input switcher” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Distribution amplifier.” A distribution amplifier creates multiple buffered outputs from one source and isolates destination faults from the other feeds.",
+      "Not this one: “Video scaler only” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Distribution amplifier.” A distribution amplifier creates multiple buffered outputs from one source and isolates destination faults from the other feeds.",
+      "Correct: A distribution amplifier creates multiple buffered outputs from one source and isolates destination faults from the other feeds. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Network router” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Distribution amplifier.” A distribution amplifier creates multiple buffered outputs from one source and isolates destination faults from the other feeds."
+    ]
+  },
+  {
+    "id": 1068,
+    "legacyId": 68,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Matrix-routing scenario",
+    "prompt": "A system has four sources and four displays. Each display must independently select any source. What device is required?",
+    "choices": [
+      "One-input, four-output distribution amplifier",
+      "Single two-input switcher",
+      "Audio limiter",
+      "4 × 4 matrix switcher"
+    ],
+    "answer": 3,
+    "explanation": "Independent many-to-many routing is the defining use of a matrix switcher.",
+    "studyNote": "Independent many-to-many routing is the defining use of a matrix switcher.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 7, pp. 151-159",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: “One-input, four-output distribution amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 × 4 matrix switcher.” Independent many-to-many routing is the defining use of a matrix switcher.",
+      "Not this one: “Single two-input switcher” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 × 4 matrix switcher.” Independent many-to-many routing is the defining use of a matrix switcher.",
+      "Not this one: “Audio limiter” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “4 × 4 matrix switcher.” Independent many-to-many routing is the defining use of a matrix switcher.",
+      "Correct: Independent many-to-many routing is the defining use of a matrix switcher. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1069,
+    "legacyId": 69,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Scaling scenario",
+    "prompt": "A 3840 × 2160 source must be presented to a display that accepts only 1920 × 1080. Which function is required?",
+    "choices": [
+      "Video scaling",
+      "Phantom powering",
+      "Network address translation only",
+      "Loudspeaker impedance matching"
+    ],
+    "answer": 0,
+    "explanation": "The signal must be converted to a supported output resolution; that is a scaler function.",
+    "studyNote": "The signal must be converted to a supported output resolution; that is a scaler function.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 5, pp. 94-99; Ch. 16, pp. 323-326",
+    "chapter": 16,
+    "rationales": [
+      "Correct: The signal must be converted to a supported output resolution; that is a scaler function. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Phantom powering” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Video scaling.” The signal must be converted to a supported output resolution; that is a scaler function.",
+      "Not this one: “Network address translation only” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Video scaling.” The signal must be converted to a supported output resolution; that is a scaler function.",
+      "Not this one: “Loudspeaker impedance matching” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Video scaling.” The signal must be converted to a supported output resolution; that is a scaler function."
+    ]
+  },
+  {
+    "id": 1070,
+    "legacyId": 70,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Troubleshoot and repair AV solutions",
+    "topic": "IGMP scenario",
+    "prompt": "A multicast AV stream is flooding switch ports that did not request it. Which network function is most directly relevant?",
+    "choices": [
+      "HDCP authentication",
+      "IGMP group management, commonly used with multicast-aware switching",
+      "Audio gain structure",
+      "Projector lens shift"
+    ],
+    "answer": 1,
+    "explanation": "IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
+    "studyNote": "IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
+    "source": "CTS Exam Guide, 3rd ed., Glossary, IGMP and multicast streaming",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: “HDCP authentication” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “IGMP group management, commonly used with multicast-aware switching.” IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
+      "Correct: IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Audio gain structure” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “IGMP group management, commonly used with multicast-aware switching.” IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
+      "Not this one: “Projector lens shift” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “IGMP group management, commonly used with multicast-aware switching.” IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic."
+    ]
+  },
+  {
+    "id": 1071,
+    "legacyId": 71,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Provide AV support",
+    "topic": "QoS scenario",
+    "prompt": "During heavy network use, real-time voice and video become delayed and uneven. Which feature should be reviewed to prioritize time-sensitive traffic?",
+    "choices": [
+      "EDID",
+      "Bonding",
+      "Quality of service (QoS)",
+      "Throw ratio"
+    ],
+    "answer": 2,
+    "explanation": "QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
+    "studyNote": "QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, pp. 347-353; Glossary, QoS",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: “EDID” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Quality of service (QoS).” QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
+      "Not this one: “Bonding” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Quality of service (QoS).” QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
+      "Correct: QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Throw ratio” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Quality of service (QoS).” QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services."
+    ]
+  },
+  {
+    "id": 1072,
+    "legacyId": 72,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Design AV solutions",
+    "topic": "Balanced-audio scenario",
+    "prompt": "A low-level analog audio signal must travel a long distance through an electrically noisy building. Which connection is preferred?",
+    "choices": [
+      "Unbalanced audio with the shield removed",
+      "Speaker-level output connected directly to a microphone input",
+      "A video-only distribution amplifier",
+      "Balanced audio over an appropriate twisted-pair or shielded cable"
+    ],
+    "answer": 3,
+    "explanation": "Balanced circuitry rejects interference induced equally into the conductors and is the normal choice for long professional analog audio runs.",
+    "studyNote": "Balanced circuitry rejects interference induced equally into the conductors and is the normal choice for long professional analog audio runs.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, pp. 71-75; Ch. 7, pp. 149-150",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “Unbalanced audio with the shield removed” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Balanced audio over an appropriate twisted-pair or shielded cable.” Balanced circuitry rejects interference induced equally into the conductors and is the normal choice for long professional analog audio runs.",
+      "Not this one: “Speaker-level output connected directly to a microphone input” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Balanced audio over an appropriate twisted-pair or shielded cable.” Balanced circuitry rejects interference induced equally into the conductors and is the normal choice for long professional analog audio runs.",
+      "Not this one: “A video-only distribution amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Balanced audio over an appropriate twisted-pair or shielded cable.” Balanced circuitry rejects interference induced equally into the conductors and is the normal choice for long professional analog audio runs.",
+      "Correct: Balanced circuitry rejects interference induced equally into the conductors and is the normal choice for long professional analog audio runs. Decision cue: match the exact function, relationship, or documented process named in the question."
+    ]
+  },
+  {
+    "id": 1073,
+    "legacyId": 73,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Provide AV support",
+    "topic": "AEC scenario",
+    "prompt": "Remote participants hear their own speech return after it comes from the local room loudspeakers and enters the local microphones. Which processing is needed?",
+    "choices": [
+      "Acoustic echo cancellation",
+      "A video scaler",
+      "A DHCP reservation",
+      "A projector distribution amplifier"
+    ],
+    "answer": 0,
+    "explanation": "AEC removes the far-end loudspeaker contribution from the local microphone send, reducing the returned acoustic echo.",
+    "studyNote": "AEC removes the far-end loudspeaker contribution from the local microphone send, reducing the returned acoustic echo.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 16, p. 337",
+    "chapter": 16,
+    "rationales": [
+      "Correct: AEC removes the far-end loudspeaker contribution from the local microphone send, reducing the returned acoustic echo. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “A video scaler” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Acoustic echo cancellation.” AEC removes the far-end loudspeaker contribution from the local microphone send, reducing the returned acoustic echo.",
+      "Not this one: “A DHCP reservation” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Acoustic echo cancellation.” AEC removes the far-end loudspeaker contribution from the local microphone send, reducing the returned acoustic echo.",
+      "Not this one: “A projector distribution amplifier” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Acoustic echo cancellation.” AEC removes the far-end loudspeaker contribution from the local microphone send, reducing the returned acoustic echo."
+    ]
+  },
+  {
+    "id": 1074,
+    "legacyId": 74,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Provide AV support",
+    "topic": "Mix-minus scenario",
+    "prompt": "A presenter should receive all program and remote participants but should not receive the presenter’s own microphone back in the monitor feed. What is required?",
+    "choices": [
+      "A full mix containing the presenter twice",
+      "A mix-minus feed",
+      "A louder power amplifier only",
+      "A different display refresh rate"
+    ],
+    "answer": 1,
+    "explanation": "A mix-minus feed contains the needed mix minus the recipient’s own source, preventing distracting self-return.",
+    "studyNote": "A mix-minus feed contains the needed mix minus the recipient’s own source, preventing distracting self-return.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 4, p. 73; Glossary, mix-minus system",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: “A full mix containing the presenter twice” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A mix-minus feed.” A mix-minus feed contains the needed mix minus the recipient’s own source, preventing distracting self-return.",
+      "Correct: A mix-minus feed contains the needed mix minus the recipient’s own source, preventing distracting self-return. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “A louder power amplifier only” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A mix-minus feed.” A mix-minus feed contains the needed mix minus the recipient’s own source, preventing distracting self-return.",
+      "Not this one: “A different display refresh rate” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “A mix-minus feed.” A mix-minus feed contains the needed mix minus the recipient’s own source, preventing distracting self-return."
+    ]
+  },
+  {
+    "id": 1075,
+    "legacyId": 75,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Troubleshoot and repair AV solutions",
+    "topic": "Troubleshooting process",
+    "prompt": "An installed room has no image. What is the strongest first troubleshooting approach?",
+    "choices": [
+      "Replace every device in the rack before testing",
+      "Change several settings at once so the fault clears faster",
+      "Confirm the exact symptom, check simple causes such as power and source selection, then trace the signal path to isolate the failed stage",
+      "Assume the display is defective because it is the final device"
+    ],
+    "answer": 2,
+    "explanation": "Good troubleshooting identifies the symptom, checks obvious causes, divides or traces the signal path, changes one variable at a time, then verifies and documents the repair.",
+    "studyNote": "Good troubleshooting identifies the symptom, checks obvious causes, divides or traces the signal path, changes one variable at a time, then verifies and documents the repair.",
+    "source": "CTS Exam Guide, 3rd ed., Ch. 22, pp. 465-487; Ch. 18, pp. 418-420",
+    "chapter": 22,
+    "rationales": [
+      "Not this one: “Replace every device in the rack before testing” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Confirm the exact symptom, check simple causes such as power and source selection, then trace the signal path to isolate the failed stage.” Good troubleshooting identifies the symptom, checks obvious causes, divides or traces the signal path, changes one variable at a time, then verifies and documents the repair.",
+      "Not this one: “Change several settings at once so the fault clears faster” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Confirm the exact symptom, check simple causes such as power and source selection, then trace the signal path to isolate the failed stage.” Good troubleshooting identifies the symptom, checks obvious causes, divides or traces the signal path, changes one variable at a time, then verifies and documents the repair.",
+      "Correct: Good troubleshooting identifies the symptom, checks obvious causes, divides or traces the signal path, changes one variable at a time, then verifies and documents the repair. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "Not this one: “Assume the display is defective because it is the final device” is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: “Confirm the exact symptom, check simple causes such as power and source selection, then trace the signal path to isolate the failed stage.” Good troubleshooting identifies the symptom, checks obvious causes, divides or traces the signal path, changes one variable at a time, then verifies and documents the repair."
+    ]
+  }
+]

@@ -1,16 +1,18 @@
 # Aureum Study Hall — CTS Practice
 
-Aureum Study Hall is a free, independent study series. CTS is the first release: a local-first practice app with a 300-question source-grounded bank.
+Aureum Study Hall is a free, independent study series. CTS is the first release: a local-first practice app with a 300-question source-grounded mastery bank plus a newly edited 75-question Final Cram collection.
 
 [Open Aureum Study Hall — CTS](https://mayowa-007.github.io/aureum-study-hall-cts/)
 
 ## What learners get
 
-- 20-question quick drills, 60-question deep practice, a 115-question / 150-minute simulation, or the complete 300-question mastery bank.
-- Blueprint-balanced sessions or focused practice for any CTS duty.
-- Timed and study modes, shuffle, flags, resume, detailed rationales, and six interaction styles.
-- Responsive mobile exam layouts with press-and-hold rationale decoding, an accessible Hint Lens, and the existing desktop Control shortcut.
-- Full Fish Audio narration architecture with question, response, rationale, review, and interface scripts; clear mobile/desktop controls; auto-read; replay; and three playback speeds.
+- 20-question quick drills, 60-question deep practice, a curated Final Cram 75, a 115-question / 150-minute simulation, or the complete 300-question mastery bank.
+- Blueprint-balanced sessions or focused practice for any CTS exam area.
+- Exam-faithful timed sessions with four choices and one best answer; clearly labeled custom interactions remain in study mode.
+- Deterministic shuffle sets that group by concept and best answer, preventing semantically repeated variants in normal timed sessions.
+- Responsive mobile layouts with larger question text, press-and-hold answer help, a plain-language Answer Help button, and the desktop Control shortcut.
+- Complete Fish Audio S2.1 Pro read-aloud coverage: 2,211 static question, response, rationale, review, and interface clips; auto-read; replay; and three playback speeds.
+- Neutral gold selected states with explicit check marks, so emerald/crimson decorative color is never mistaken for correctness.
 - Local attempt history, missed-question practice, CSV export, and printable/PDF-ready reports.
 - Installable offline behavior after the first visit.
 
@@ -32,6 +34,12 @@ npm run narration:dry-run
 `audits/narration-plan.json` records clip count, text volume, estimated duration, file size, and estimated provider cost. The live voice pack is pinned to the user-approved Fish Audio S2.1 Pro voice reference. Actual generation is deliberately gated: `npm run narration:generate` does nothing useful unless `FISH_AUDIO_API_KEY`, `FISH_REFERENCE_ID`, and `FISH_TTS_MODEL` are present in the private process environment, and the underlying generator receives its explicit `--execute` flag.
 
 Generated audio belongs in `public/audio/narration/clips/`. The app reads `pack.json`, never a private configuration file. Until a pack is present, the UI states that scripts are ready and the voice is pending rather than pretending narration is available.
+
+The Final Cram importer keeps the supplied standalone HTML as the review source while producing normalized, stable IDs:
+
+```powershell
+node scripts/import-final-cram.mjs <path-to-Aureum-CTS-75-Question-Final-Cram-Exam.html>
+```
 
 ## Run locally
 

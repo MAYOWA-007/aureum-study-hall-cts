@@ -3,15 +3,18 @@ import { dirname, resolve } from "node:path";
 
 const args = new Set(process.argv.slice(2));
 const execute = args.has("--execute");
+const force = args.has("--force");
 const manifest = JSON.parse(await readFile(resolve("public/audio/narration/manifest.json"), "utf8"));
 const packPath = resolve("public/audio/narration/pack.json");
 const limitArg = process.argv.find((value) => value.startsWith("--limit="));
 const kindArg = process.argv.find((value) => value.startsWith("--kind="));
 const questionArg = process.argv.find((value) => value.startsWith("--question="));
+const questionsArg = process.argv.find((value) => value.startsWith("--questions="));
 const concurrencyArg = process.argv.find((value) => value.startsWith("--concurrency="));
 const limit = limitArg ? Math.max(1, Number(limitArg.split("=")[1])) : Number.POSITIVE_INFINITY;
 const kind = kindArg?.split("=")[1];
 const questionId = questionArg ? Number(questionArg.split("=")[1]) : null;
+const questionIds = new Set((questionsArg?.split("=")[1] ?? "").split(",").filter(Boolean).map(Number));
 const concurrency = Math.min(5, Math.max(1, concurrencyArg ? Number(concurrencyArg.split("=")[1]) : 3));
 
 async function existsWithAudio(path) {
@@ -21,17 +24,19 @@ async function existsWithAudio(path) {
 const selected = manifest.clips
   .filter((clip) => !kind || clip.kind === kind)
   .filter((clip) => questionId === null || clip.questionId === questionId)
+  .filter((clip) => questionIds.size === 0 || (clip.questionId !== undefined && questionIds.has(clip.questionId)))
   .slice(0, limit);
 const missing = [];
 const available = new Set();
 for (const clip of manifest.clips) {
   const output = resolve("public", clip.audioPath.replace(/^\.\//, ""));
-  if (await existsWithAudio(output)) available.add(clip.id);
-  else if (selected.some((candidate) => candidate.id === clip.id)) missing.push({ clip, output });
+  const isSelected = selected.some((candidate) => candidate.id === clip.id);
+  if (await existsWithAudio(output) && !(force && isSelected)) available.add(clip.id);
+  else if (isSelected) missing.push({ clip, output });
 }
 
 const bytes = missing.reduce((sum, item) => sum + Buffer.byteLength(item.clip.ttsText, "utf8"), 0);
-console.log(`${execute ? "EXECUTE" : "DRY RUN"}: ${missing.length} missing clips selected; ${bytes.toLocaleString()} UTF-8 bytes.`);
+console.log(`${execute ? "EXECUTE" : "DRY RUN"}: ${missing.length} ${force ? "selected or stale" : "missing"} clips; ${bytes.toLocaleString()} UTF-8 bytes.`);
 if (!execute) {
   console.log("No API request was made. Add --execute only after the exact Fish voice and model are approved.");
   process.exit(0);
