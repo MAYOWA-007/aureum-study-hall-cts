@@ -249,6 +249,62 @@ function choiceRationale(question: BaseQuestion, index: number, hotspotId?: stri
 const LONG_PRESS_MS = 520;
 const MATRIX_GLYPHS = "01<>/\\[]{}#*+=-";
 
+function useModalDialog(onClose: () => void) {
+  const panelRef = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  useEffect(() => {
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const panel = panelRef.current;
+    const getFocusable = () => panel
+      ? Array.from(panel.querySelectorAll<HTMLElement>('button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])'))
+      : [];
+
+    const initialTarget = getFocusable()[0] ?? panel;
+    initialTarget?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.stopPropagation();
+        onCloseRef.current();
+        return;
+      }
+      if (event.key !== "Tab" || !panel) return;
+      const focusable = getFocusable();
+      if (!focusable.length) {
+        event.preventDefault();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      previouslyFocused?.focus?.();
+    };
+  }, []);
+
+  const onBackdropMouseDown = useCallback((event: ReactMouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) onCloseRef.current();
+  }, []);
+
+  return { panelRef, onBackdropMouseDown };
+}
+
 function MatrixSwapText({ option, hint, active, as = "p" }: { option: string; hint: string; active: boolean; as?: "p" | "span" }) {
   const [displayText, setDisplayText] = useState(option);
 
@@ -711,6 +767,7 @@ export default function Home() {
   if (screen === "start") {
     return (
       <main className="landing emerald-theme">
+        <a className="skip-link" href="#main-content">Skip to session builder</a>
         <section className="hero-shell">
           <div className="hero-kicker"><img className="seal" src="./favicon-512.png" alt="" /> Aureum Study Hall</div>
           <div className="hero-grid">
@@ -718,13 +775,13 @@ export default function Home() {
               <p className="eyebrow">CTS® practice • {TOTAL_QUESTIONS}-question mastery bank</p>
               <h1>Build the judgment<br />behind the signal.</h1>
               <p className="lede">Free, independent practice grounded in the third-edition CTS Exam Guide and calibrated to the current four-duty outline. Your work stays on this device.</p>
-              <div className="session-builder" aria-label="Build a practice session">
+              <div id="main-content" tabIndex={-1} className="session-builder" aria-label="Build a practice session">
                 <div className="builder-heading"><span>01</span><div><b>Choose your session</b><small>Start small, use the curated final review, simulate the official pace, or work the complete bank.</small></div></div>
                 <div className="size-options">
                   {SESSION_SIZES.map((size) => <button key={size} className={sessionSize === size ? "active" : ""} onClick={() => setSessionSize(size)}><b>{size}</b><small>{size === 20 ? "Quick drill" : size === 60 ? "Deep practice" : size === 75 ? "Final cram" : size === 115 ? "Exam simulation" : "Full bank study"}</small></button>)}
                 </div>
                 <label className="duty-select"><span>Coverage</span><select disabled={sessionSize === 75} value={sessionSize === 75 ? "all" : sessionDuty} onChange={(event) => setSessionDuty(event.target.value as SessionDuty)}><option value="all">{sessionSize === 75 ? "Curated high-yield final review" : "All four exam areas — blueprint balanced"}</option>{(Object.keys(domainMeta) as Domain[]).map((domain) => <option value={domain} key={domain}>Exam area {domain} — {domainMeta[domain].name}</option>)}</select></label>
-                <div className="session-preview"><b>{selectedQuestionCount} questions</b><span>{sessionSize === 300 ? "Untimed complete study" : `${formatTime(examSeconds(selectedQuestionCount))} timed pace`}</span><span>{sessionSize === 75 ? "75 newly edited single-best-answer questions" : sessionDuty === "all" ? "Blueprint balanced" : `Focused on exam area ${sessionDuty}`}</span></div>
+                <div className="session-preview" aria-live="polite"><b>{selectedQuestionCount} questions</b><span>{sessionSize === 300 ? "Untimed complete study" : `${formatTime(examSeconds(selectedQuestionCount))} timed pace`}</span><span>{sessionSize === 75 ? "75 newly edited single-best-answer questions" : sessionDuty === "all" ? "Blueprint balanced" : `Focused on exam area ${sessionDuty}`}</span></div>
               </div>
               <div className="hero-actions">
                 <button className="primary-btn" onClick={() => start(sessionSize === 300 ? "study" : "exam")}>{sessionSize === 300 ? "Begin full-bank study" : "Begin timed session"} <span>→</span></button>
@@ -790,6 +847,7 @@ export default function Home() {
     const filtered = orderedQuestions.filter((q) => reviewFilter === "all" ? true : reviewFilter === "missed" ? !isCorrect(q, answers[q.id]) : q.domain === reviewFilter);
     return (
       <main className="results-page emerald-theme">
+        <a className="skip-link" href="#main-content">Skip to results summary</a>
         <header className="results-hero">
           <button className="brand-button" onClick={() => setScreen("start")}><img className="seal small" src="./favicon-512.png" alt="" /> Aureum Study Hall</button>
           <button className="secondary-btn compact" onClick={() => setShowSources(true)}>Sources</button>
@@ -798,7 +856,7 @@ export default function Home() {
           <h1>{percent >= 80 ? "Strong command." : percent >= 70 ? "Building consistency." : "Your next study map is ready."}</h1>
           <p className="lede">Review the evidence behind every response, then retake with a clean slate when you are ready.</p>
         </header>
-        <section className="results-body">
+        <section id="main-content" tabIndex={-1} className="results-body">
           <div className="report-overview" aria-label="Attempt report summary">
             <div><small>Session rating</small><strong>{rating}</strong><span>{percent}% across this {sessionTotal}-question session</span></div>
             <div><small>Answered accuracy</small><strong>{attemptedAccuracy}%</strong><span>{score} correct from {sessionAnsweredCount} answered</span></div>
@@ -855,9 +913,10 @@ export default function Home() {
 
   return (
     <main className="exam-page emerald-theme">
+      <a className="skip-link" href="#main-content">Skip to current question</a>
       <header className="exam-header">
         <button className="brand-button" onClick={returnToStart}><img className="seal small" src="./favicon-512.png" alt="" /><span>Aureum Study Hall</span></button>
-        <div className="header-progress"><span style={{ width: `${progress}%` }} /><b>{currentIndex + 1}</b><small>of {sessionTotal}</small>{shuffleOn && <em>Set {sessionSeed}</em>}</div>
+        <div className="header-progress"><span style={{ width: `${progress}%` }} /><b>{currentIndex + 1}</b><small>of {sessionTotal}</small>{shuffleOn && <em>Set {sessionSeed}</em>}{mode === "exam" && <b className={`mobile-timer ${timeLeft < 900 ? "urgent" : ""}`} aria-label={`Time remaining ${formatTime(timeLeft)}`}>{formatTime(timeLeft)}</b>}</div>
         <div className="header-tools">
           {mode === "exam" && <div className={`timer ${timeLeft < 900 ? "urgent" : ""}`}><span>Time</span><b>{formatTime(timeLeft)}</b></div>}
           <button className="icon-btn" onClick={() => setShowSources(true)} aria-label="Open sources">⌁</button>
@@ -887,7 +946,7 @@ export default function Home() {
           </div>
         </aside>
 
-        <section className="question-stage">
+        <section id="main-content" tabIndex={-1} className="question-stage">
           {!railOpen && <button className="rail-reopen" onClick={() => setRailOpen(true)}><small>Click here to</small><span>Open question rail →</span></button>}
           <div className="question-number"><span>{String(currentIndex + 1).padStart(3, "0")}</span><button className={flagged.includes(question.id) ? "flagged" : ""} onClick={toggleFlag}>{flagged.includes(question.id) ? "◆ Flagged" : "◇ Flag for review"}</button></div>
           <h1>{visiblePrompt(question)}</h1>
@@ -902,7 +961,7 @@ export default function Home() {
           {question.type !== "single" && <div className="practice-format-note"><b>Study activity</b><span>This interaction teaches the concept in a hands-on format. The CTS exam itself uses four choices and one best answer.</span></div>}
           <QuestionInput question={question} response={response} setResponse={setResponse} moveStep={moveStep} controlHeld={controlHeld} hintLens={hintLens} />
           {mode === "study" && isChecked && (
-            <div className={`feedback ${correctNow ? "correct" : "incorrect"}`}>
+            <div className={`feedback ${correctNow ? "correct" : "incorrect"}`} role="status" aria-live="polite">
               <b>{correctNow ? "Correct." : "Not quite."}</b>
               {!correctNow && <p><strong>Best answer:</strong> {correctLabel(question)}</p>}
               <p>{question.studyNote ?? question.explanation}</p><cite>{question.source}</cite>
@@ -961,10 +1020,15 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
       </div>
     );
   }
-  if (question.type === "numeric") return <div className={`numeric-entry ${controlHeld || hintLens ? "hints-on" : ""}`}><label>Enter your answer</label><div><input inputMode="decimal" type="number" step="any" value={typeof response === "string" ? response : ""} onChange={(event) => setResponse(event.target.value)} autoFocus /><span>{question.unit}</span></div><small>Use numbers only. A reasonable rounding tolerance is accepted where appropriate.</small><em className="interaction-rationale">{question.interactionRationale}</em></div>;
+  if (question.type === "numeric") {
+    const inputId = `numeric-answer-${question.id}`;
+    const unitId = `numeric-unit-${question.id}`;
+    const noteId = `numeric-note-${question.id}`;
+    return <div className={`numeric-entry ${controlHeld || hintLens ? "hints-on" : ""}`}><label htmlFor={inputId}>Enter your answer{question.unit ? ` (${question.unit})` : ""}</label><div><input id={inputId} aria-describedby={`${unitId} ${noteId}`} inputMode="decimal" type="number" step="any" value={typeof response === "string" ? response : ""} onChange={(event) => setResponse(event.target.value)} /><span id={unitId}>{question.unit}</span></div><small id={noteId}>Use numbers only. A reasonable rounding tolerance is accepted where appropriate.</small><em className="interaction-rationale">{question.interactionRationale}</em></div>;
+  }
   if (question.type === "order") {
     const order = (response as string[]) ?? shuffledSteps(question);
-    return <div className={`order-task ${controlHeld || hintLens ? "hints-on" : ""}`}><p className="interaction-hint">Use the arrow controls to arrange the steps from first to last.</p>{order.map((step, index) => <div className="order-row" key={step}><span>{index + 1}</span><p>{step}</p><div><button aria-label="Move up" disabled={index === 0} onClick={() => moveStep(index, -1)}>↑</button><button aria-label="Move down" disabled={index === order.length - 1} onClick={() => moveStep(index, 1)}>↓</button></div></div>)}<em className="interaction-rationale">{question.interactionRationale}</em></div>;
+    return <div className={`order-task ${controlHeld || hintLens ? "hints-on" : ""}`} role="group" aria-label="Arrange steps in sequence"><p className="interaction-hint">Use the arrow controls to arrange the steps from first to last.</p>{order.map((step, index) => <div className="order-row" key={step}><span>{index + 1}</span><p>{step}</p><div><button type="button" aria-label={`Move step ${index + 1} up: ${step}`} disabled={index === 0} onClick={() => moveStep(index, -1)}>↑</button><button type="button" aria-label={`Move step ${index + 1} down: ${step}`} disabled={index === order.length - 1} onClick={() => moveStep(index, 1)}>↓</button></div></div>)}<em className="interaction-rationale">{question.interactionRationale}</em></div>;
   }
   if (question.type === "hotspot") return (
     <div className={`hotspot-wrap ${controlHeld ? "hints-on" : ""}`}>
@@ -998,13 +1062,16 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
 }
 
 function Navigator({ orderedQuestions, current, answers, flagged, onChoose, onClose, onSubmit }: { orderedQuestions: BaseQuestion[]; current: number; answers: Record<number, AnswerValue>; flagged: number[]; onChoose: (index: number) => void; onClose: () => void; onSubmit: () => void }) {
-  return <div className="modal-backdrop"><section className="navigator-panel" role="dialog" aria-modal="true"><div className="modal-head"><div><p className="eyebrow">Session navigator</p><h2>{orderedQuestions.length} questions</h2></div><button onClick={onClose} aria-label="Close navigator">×</button></div><div className="legend"><span><i className="done" />Answered</span><span><i className="flag" />Flagged</span><span><i />Open</span></div><div className="question-grid">{orderedQuestions.map((q, index) => <button key={q.id} className={`${answered(q, answers[q.id]) ? "done" : ""} ${flagged.includes(q.id) ? "flag" : ""} ${current === index ? "current" : ""}`} onClick={() => onChoose(index)} aria-label={`Position ${index + 1}, ${q.collection === "final-cram" ? `Final Cram question ${q.legacyId}` : `source question ${q.id}`}`}>{q.collection === "final-cram" ? q.legacyId : q.id}</button>)}</div><div className="navigator-footer"><button className="secondary-btn compact" onClick={onClose}>Return to question</button><button className="primary-btn compact" onClick={onSubmit}>End session</button></div></section></div>;
+  const { panelRef, onBackdropMouseDown } = useModalDialog(onClose);
+  return <div className="modal-backdrop" onMouseDown={onBackdropMouseDown}><section ref={panelRef} tabIndex={-1} className="navigator-panel" role="dialog" aria-modal="true" aria-labelledby="navigator-modal-title"><div className="modal-head"><div><p className="eyebrow">Session navigator</p><h2 id="navigator-modal-title">{orderedQuestions.length} questions</h2></div><button type="button" onClick={onClose} aria-label="Close navigator">×</button></div><div className="legend"><span><i className="done" aria-hidden="true" />Answered</span><span><i className="flag" aria-hidden="true" />Flagged</span><span><i aria-hidden="true" />Open</span></div><div className="question-grid">{orderedQuestions.map((q, index) => <button type="button" key={q.id} aria-current={current === index ? "step" : undefined} className={`${answered(q, answers[q.id]) ? "done" : ""} ${flagged.includes(q.id) ? "flag" : ""} ${current === index ? "current" : ""}`} onClick={() => onChoose(index)} aria-label={`Position ${index + 1}, ${q.collection === "final-cram" ? `Final Cram question ${q.legacyId}` : `source question ${q.id}`}${answered(q, answers[q.id]) ? ", answered" : ", open"}${flagged.includes(q.id) ? ", flagged" : ""}`}>{q.collection === "final-cram" ? q.legacyId : q.id}</button>)}</div><div className="navigator-footer"><button type="button" className="secondary-btn compact" onClick={onClose}>Return to question</button><button type="button" className="primary-btn compact" onClick={onSubmit}>End session</button></div></section></div>;
 }
 
 function SubmitModal({ total, answeredCount, flagged, onCancel, onSubmit }: { total: number; answeredCount: number; flagged: number; onCancel: () => void; onSubmit: () => void }) {
-  return <div className="modal-backdrop"><section className="submit-modal" role="dialog" aria-modal="true"><span className="seal">A</span><p className="eyebrow">Ready to score?</p><h2>End this {total}-question session</h2><p>You answered <b>{answeredCount}</b>, left <b>{total - answeredCount}</b> open, and flagged <b>{flagged}</b> for review. You will still receive a complete study report.</p><div><button className="secondary-btn" onClick={onCancel}>Keep working</button><button className="primary-btn" onClick={onSubmit}>End and score</button></div></section></div>;
+  const { panelRef, onBackdropMouseDown } = useModalDialog(onCancel);
+  return <div className="modal-backdrop" onMouseDown={onBackdropMouseDown}><section ref={panelRef} tabIndex={-1} className="submit-modal" role="dialog" aria-modal="true" aria-labelledby="submit-modal-title"><span className="seal" aria-hidden="true">A</span><p className="eyebrow">Ready to score?</p><h2 id="submit-modal-title">End this {total}-question session</h2><p>You answered <b>{answeredCount}</b>, left <b>{total - answeredCount}</b> open, and flagged <b>{flagged}</b> for review. You will still receive a complete study report.</p><div><button type="button" className="secondary-btn" onClick={onCancel}>Keep working</button><button type="button" className="primary-btn" onClick={onSubmit}>End and score</button></div></section></div>;
 }
 
 function SourcesModal({ onClose }: { onClose: () => void }) {
-  return <div className="modal-backdrop"><section className="sources-modal" role="dialog" aria-modal="true"><div className="modal-head"><div><p className="eyebrow">Research ledger</p><h2>Primary confirmation sources</h2></div><button onClick={onClose} aria-label="Close sources">×</button></div><p className="source-intro">The original practice bank was developed from the CTS Certified Technology Specialist Exam Guide, Third Edition, then checked against the current official outline and primary technical sources below. Citations identify the learning basis; the copyrighted guide itself is not included.</p><div className="source-list">{researchSources.map((source, index) => <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>{String(index + 1).padStart(2, "0")}</span><p>{source.label}</p><b>↗</b></a>)}</div><p className="fine-print">Independent study material. Not affiliated with, sponsored by, or endorsed by AVIXA. CTS® and AVIXA® are marks of AVIXA, Inc. No live exam questions are included.</p></section></div>;
+  const { panelRef, onBackdropMouseDown } = useModalDialog(onClose);
+  return <div className="modal-backdrop" onMouseDown={onBackdropMouseDown}><section ref={panelRef} tabIndex={-1} className="sources-modal" role="dialog" aria-modal="true" aria-labelledby="sources-modal-title"><div className="modal-head"><div><p className="eyebrow">Research ledger</p><h2 id="sources-modal-title">Primary confirmation sources</h2></div><button type="button" onClick={onClose} aria-label="Close sources">×</button></div><p className="source-intro">The original practice bank was developed from the CTS Certified Technology Specialist Exam Guide, Third Edition, then checked against the current official outline and primary technical sources below. Citations identify the learning basis; the copyrighted guide itself is not included.</p><div className="source-list">{researchSources.map((source, index) => <a href={source.url} target="_blank" rel="noreferrer" key={source.url}><span>{String(index + 1).padStart(2, "0")}</span><p>{source.label}</p><b aria-hidden="true">↗</b></a>)}</div><p className="fine-print">Independent study material. Not affiliated with, sponsored by, or endorsed by AVIXA. CTS® and AVIXA® are marks of AVIXA, Inc. No live exam questions are included.</p></section></div>;
 }
