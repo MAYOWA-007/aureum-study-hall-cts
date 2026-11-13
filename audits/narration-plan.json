@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T06:52:36.528Z",
+  "generatedAt": "2026-11-13T19:07:01.430Z",
   "questionCount": 375,
   "masteryBankQuestionCount": 300,
   "finalCramQuestionCount": 75,
@@ -10,14 +10,14 @@
     "rationale": 1457,
     "review": 375
   },
-  "totalUtf8Bytes": 1066161,
-  "estimatedWords": 159503,
-  "estimatedMinutesAt145Wpm": 1100,
-  "estimatedMp3MegabytesAt64Kbps": 528,
+  "totalUtf8Bytes": 1066385,
+  "estimatedWords": 159727,
+  "estimatedMinutesAt145Wpm": 1101.6,
+  "estimatedMp3MegabytesAt64Kbps": 528.8,
   "priceEstimate": {
     "basis": "Fish Audio public pricing checked 2026-07-22; verify again before generation",
     "usdPerMillionUtf8Bytes": 15,
-    "estimatedUsd": 15.99
+    "estimatedUsd": 16
   },
   "safety": {
     "apiKeyInManifest": false,

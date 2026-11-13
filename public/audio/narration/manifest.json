@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "series": "Aureum Study Hall",
   "project": "CTS",
-  "generatedAt": "2026-07-26T06:52:36.528Z",
+  "generatedAt": "2026-11-13T19:07:01.430Z",
   "voiceStatus": "approved",
   "approvedVoice": {
     "provider": "Fish Audio",
@@ -16609,7 +16609,7 @@
       "label": "Question 119",
       "questionId": 119,
       "text": "Exam area A. Topic: Site Environment. A client needs a display system for a room that will be used for inspecting detailed drawings of computer system networks. Which of the online DISCAS tools should be used to make the calculations for screen size, viewer distance, and content size? Choose the single best answer. Option A. Projected image system contrast ratio (PISCR). Option B. Analytical decision-making (ADM). Option C. Basic decision-making (BDM). Option D. Passive viewing.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: Site Environment. A client needs a display system for a room that will be used for inspecting detailed drawings of computer system networks. Which of the online DISCAS tools should be used to make the calculations for screen size, viewer distance, and content size? Choose the single best answer. Option A. Projected image system contrast ratio (PISCR). Option B. Analytical decision-making (ADM). Option C. Basic decision-making (BDM). Option D. Passive viewing.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: Site Environment. A client needs a display system for a room that will be used for inspecting detailed drawings of computer system networks. Which of the online D I S C A S tools should be used to make the calculations for screen size, viewer distance, and content size? Choose the single best answer. Option A. Projected image system contrast ratio (PISCR). Option B. Analytical decision-making (ADM). Option C. Basic decision-making (BDM). Option D. Passive viewing.",
       "audioPath": "./audio/narration/clips/q119-question.mp3",
       "segments": [
         {
@@ -30555,7 +30555,7 @@
       "label": "Question 222",
       "questionId": 222,
       "text": "Exam area A. Topic: Digital video path compatibility. A source, matrix switcher, extender, and display all have digital video connectors. What must still be verified end to end? Choose the single best answer. Option A. Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance. Option B. That every connector shell is the same color. Option C. Only the display's native resolution. Option D. That the source cable is the shortest item in the rack.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: Digital video path compatibility. A source, matrix switcher, extender, and display all have digital video connectors. What must still be verified end to end? Choose the single best answer. Option A. Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance. Option B. That every connector shell is the same color. Option C. Only the display's native resolution. Option D. That the source cable is the shortest item in the rack.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: Digital video path compatibility. A source, matrix switcher, extender, and display all have digital video connectors. What must still be verified end to end? Choose the single best answer. Option A. Required format, resolution, frame rate, color, bandwidth, content protection, E D I D behavior, and supported distance. Option B. That every connector shell is the same color. Option C. Only the display's native resolution. Option D. That the source cable is the shortest item in the rack.",
       "audioPath": "./audio/narration/clips/q222-question.mp3",
       "segments": [
         {
@@ -30594,7 +30594,7 @@
       "label": "Question 222, option A rationale",
       "questionId": 222,
       "text": "Option A. Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance. Correct. Correct: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. CTS cue: distinguish continuously variable waveforms from discrete encoded states, and separate sampling, bit depth, bit rate, and compression.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance. Correct. Correct: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. C T S cue: distinguish continuously variable waveforms from discrete encoded states, and separate sampling, bit depth, bit rate, and compression.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Required format, resolution, frame rate, color, bandwidth, content protection, E D I D behavior, and supported distance. Correct. Correct: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. C T S cue: distinguish continuously variable waveforms from discrete encoded states, and separate sampling, bit depth, bit rate, and compression.",
       "audioPath": "./audio/narration/clips/q222-option-a-rationale.mp3",
       "segments": [
         {
@@ -30613,7 +30613,7 @@
       "label": "Question 222, option B rationale",
       "questionId": 222,
       "text": "Option B. That every connector shell is the same color. Incorrect. Not this one: \"That every connector shell is the same color\" relies on an absolute or shortcut that skips required verification, coordination, safety, or documentation. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. That every connector shell is the same color. Incorrect. Not this one: \"That every connector shell is the same color\" relies on an absolute or shortcut that skips required verification, coordination, safety, or documentation. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. That every connector shell is the same color. Incorrect. Not this one: \"That every connector shell is the same color\" relies on an absolute or shortcut that skips required verification, coordination, safety, or documentation. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, E D I D behavior, and supported distance.",
       "audioPath": "./audio/narration/clips/q222-option-b-rationale.mp3",
       "segments": [
         {
@@ -30632,7 +30632,7 @@
       "label": "Question 222, option C rationale",
       "questionId": 222,
       "text": "Option C. Only the display's native resolution. Incorrect. Not this one: \"Only the display's native resolution\" relies on an absolute or shortcut that skips required verification, coordination, safety, or documentation. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Only the display's native resolution. Incorrect. Not this one: \"Only the display's native resolution\" relies on an absolute or shortcut that skips required verification, coordination, safety, or documentation. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Only the display's native resolution. Incorrect. Not this one: \"Only the display's native resolution\" relies on an absolute or shortcut that skips required verification, coordination, safety, or documentation. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, E D I D behavior, and supported distance.",
       "audioPath": "./audio/narration/clips/q222-option-c-rationale.mp3",
       "segments": [
         {
@@ -30651,7 +30651,7 @@
       "label": "Question 222, option D rationale",
       "questionId": 222,
       "text": "Option D. That the source cable is the shortest item in the rack. Incorrect. Not this one: \"That the source cable is the shortest item in the rack\" names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. That the source cable is the shortest item in the rack. Incorrect. Not this one: \"That the source cable is the shortest item in the rack\" names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. That the source cable is the shortest item in the rack. Incorrect. Not this one: \"That the source cable is the shortest item in the rack\" names a related term or action, but its function does not match the specific definition or decision requested here. Decisive rule: A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. Best answer: Required format, resolution, frame rate, color, bandwidth, content protection, E D I D behavior, and supported distance.",
       "audioPath": "./audio/narration/clips/q222-option-d-rationale.mp3",
       "segments": [
         {
@@ -30670,7 +30670,7 @@
       "label": "Question 222 review",
       "questionId": 222,
       "text": "Study review. The best answer is: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance. A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. CTS cue: distinguish continuously variable waveforms from discrete encoded states, and separate sampling, bit depth, bit rate, and compression. The source citation remains visible on screen for independent review.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: Required format, resolution, frame rate, color, bandwidth, content protection, EDID behavior, and supported distance. A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. C T S cue: distinguish continuously variable waveforms from discrete encoded states, and separate sampling, bit depth, bit rate, and compression. The source citation remains visible on screen for independent review.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: Required format, resolution, frame rate, color, bandwidth, content protection, E D I D behavior, and supported distance. A shared connector does not guarantee an interoperable path; every link and active device must support the required signal and negotiation features. C T S cue: distinguish continuously variable waveforms from discrete encoded states, and separate sampling, bit depth, bit rate, and compression. The source citation remains visible on screen for independent review.",
       "audioPath": "./audio/narration/clips/q222-review.mp3",
       "segments": [
         {
@@ -43335,7 +43335,7 @@
       "label": "Final Cram question 12",
       "questionId": 1012,
       "text": "Exam area A. Topic: EDID. What information does EDID communicate? Choose the single best answer. Option A. The encryption key used to protect copyrighted content. Option B. The IP address assigned by a DHCP server. Option C. The amplifier power required by a loudspeaker. Option D. A digital display's supported capabilities to the connected video source.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: EDID. What information does EDID communicate? Choose the single best answer. Option A. The encryption key used to protect copyrighted content. Option B. The I P address assigned by a DHCP server. Option C. The amplifier power required by a loudspeaker. Option D. A digital display's supported capabilities to the connected video source.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: E D I D. What information does E D I D communicate? Choose the single best answer. Option A. The encryption key used to protect copyrighted content. Option B. The I P address assigned by a DHCP server. Option C. The amplifier power required by a loudspeaker. Option D. A digital display's supported capabilities to the connected video source.",
       "audioPath": "./audio/narration/clips/q1012-question.mp3",
       "segments": [
         {
@@ -43374,7 +43374,7 @@
       "label": "Question 1012, option A rationale",
       "questionId": 1012,
       "text": "Option A. The encryption key used to protect copyrighted content. Incorrect. Not this one: \"The encryption key used to protect copyrighted content\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. The encryption key used to protect copyrighted content. Incorrect. Not this one: \"The encryption key used to protect copyrighted content\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. The encryption key used to protect copyrighted content. Incorrect. Not this one: \"The encryption key used to protect copyrighted content\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" E D I D tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
       "audioPath": "./audio/narration/clips/q1012-option-a-rationale.mp3",
       "segments": [
         {
@@ -43393,7 +43393,7 @@
       "label": "Question 1012, option B rationale",
       "questionId": 1012,
       "text": "Option B. The IP address assigned by a DHCP server. Incorrect. Not this one: \"The IP address assigned by a DHCP server\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. The I P address assigned by a DHCP server. Incorrect. Not this one: \"The I P address assigned by a DHCP server\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. The I P address assigned by a DHCP server. Incorrect. Not this one: \"The I P address assigned by a DHCP server\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" E D I D tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
       "audioPath": "./audio/narration/clips/q1012-option-b-rationale.mp3",
       "segments": [
         {
@@ -43412,7 +43412,7 @@
       "label": "Question 1012, option C rationale",
       "questionId": 1012,
       "text": "Option C. The amplifier power required by a loudspeaker. Incorrect. Not this one: \"The amplifier power required by a loudspeaker\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. The amplifier power required by a loudspeaker. Incorrect. Not this one: \"The amplifier power required by a loudspeaker\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. The amplifier power required by a loudspeaker. Incorrect. Not this one: \"The amplifier power required by a loudspeaker\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A digital display's supported capabilities to the connected video source.\" E D I D tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal.",
       "audioPath": "./audio/narration/clips/q1012-option-c-rationale.mp3",
       "segments": [
         {
@@ -43431,7 +43431,7 @@
       "label": "Question 1012, option D rationale",
       "questionId": 1012,
       "text": "Option D. A digital display's supported capabilities to the connected video source. Correct. Correct: EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. Decision cue: match the exact function, relationship, or documented process named in the question.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. A digital display's supported capabilities to the connected video source. Correct. Correct: EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. A digital display's supported capabilities to the connected video source. Correct. Correct: E D I D tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. Decision cue: match the exact function, relationship, or documented process named in the question.",
       "audioPath": "./audio/narration/clips/q1012-option-d-rationale.mp3",
       "segments": [
         {
@@ -43450,7 +43450,7 @@
       "label": "Final Cram question 12 review",
       "questionId": 1012,
       "text": "Study review. The best answer is: A digital display's supported capabilities to the connected video source. EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. The source citation remains visible on screen for independent review.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: A digital display's supported capabilities to the connected video source. EDID tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. The source citation remains visible on screen for independent review.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: A digital display's supported capabilities to the connected video source. E D I D tells the source about display capabilities such as supported resolutions and formats so the source can produce a compatible signal. The source citation remains visible on screen for independent review.",
       "audioPath": "./audio/narration/clips/q1012-review.mp3",
       "segments": [
         {
@@ -43477,7 +43477,7 @@
       "label": "Final Cram question 13",
       "questionId": 1013,
       "text": "Exam area A. Topic: HDCP. What is HDCP used for in a digital video signal path? Choose the single best answer. Option A. Content protection and authentication of compliant source, transport, and display devices. Option B. Automatic assignment of network addresses. Option C. Conversion of one resolution into another. Option D. Rejection of common-mode analog audio noise.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: HDCP. What is HDCP used for in a digital video signal path? Choose the single best answer. Option A. Content protection and authentication of compliant source, transport, and display devices. Option B. Automatic assignment of network addresses. Option C. Conversion of one resolution into another. Option D. Rejection of common-mode analog audio noise.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: H D C P. What is H D C P used for in a digital video signal path? Choose the single best answer. Option A. Content protection and authentication of compliant source, transport, and display devices. Option B. Automatic assignment of network addresses. Option C. Conversion of one resolution into another. Option D. Rejection of common-mode analog audio noise.",
       "audioPath": "./audio/narration/clips/q1013-question.mp3",
       "segments": [
         {
@@ -43516,7 +43516,7 @@
       "label": "Question 1013, option A rationale",
       "questionId": 1013,
       "text": "Option A. Content protection and authentication of compliant source, transport, and display devices. Correct. Correct: HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works. Decision cue: match the exact function, relationship, or documented process named in the question.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Content protection and authentication of compliant source, transport, and display devices. Correct. Correct: HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Content protection and authentication of compliant source, transport, and display devices. Correct. Correct: H D C P is a content-protection system. A failure in authentication can block protected content even when the physical video link works. Decision cue: match the exact function, relationship, or documented process named in the question.",
       "audioPath": "./audio/narration/clips/q1013-option-a-rationale.mp3",
       "segments": [
         {
@@ -43535,7 +43535,7 @@
       "label": "Question 1013, option B rationale",
       "questionId": 1013,
       "text": "Option B. Automatic assignment of network addresses. Incorrect. Not this one: \"Automatic assignment of network addresses\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. Automatic assignment of network addresses. Incorrect. Not this one: \"Automatic assignment of network addresses\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. Automatic assignment of network addresses. Incorrect. Not this one: \"Automatic assignment of network addresses\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" H D C P is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
       "audioPath": "./audio/narration/clips/q1013-option-b-rationale.mp3",
       "segments": [
         {
@@ -43554,7 +43554,7 @@
       "label": "Question 1013, option C rationale",
       "questionId": 1013,
       "text": "Option C. Conversion of one resolution into another. Incorrect. Not this one: \"Conversion of one resolution into another\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Conversion of one resolution into another. Incorrect. Not this one: \"Conversion of one resolution into another\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Conversion of one resolution into another. Incorrect. Not this one: \"Conversion of one resolution into another\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" H D C P is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
       "audioPath": "./audio/narration/clips/q1013-option-c-rationale.mp3",
       "segments": [
         {
@@ -43573,7 +43573,7 @@
       "label": "Question 1013, option D rationale",
       "questionId": 1013,
       "text": "Option D. Rejection of common-mode analog audio noise. Incorrect. Not this one: \"Rejection of common-mode analog audio noise\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. Rejection of common-mode analog audio noise. Incorrect. Not this one: \"Rejection of common-mode analog audio noise\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. Rejection of common-mode analog audio noise. Incorrect. Not this one: \"Rejection of common-mode analog audio noise\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Content protection and authentication of compliant source, transport, and display devices.\" H D C P is a content-protection system. A failure in authentication can block protected content even when the physical video link works.",
       "audioPath": "./audio/narration/clips/q1013-option-d-rationale.mp3",
       "segments": [
         {
@@ -43592,7 +43592,7 @@
       "label": "Final Cram question 13 review",
       "questionId": 1013,
       "text": "Study review. The best answer is: Content protection and authentication of compliant source, transport, and display devices. HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works. The source citation remains visible on screen for independent review.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: Content protection and authentication of compliant source, transport, and display devices. HDCP is a content-protection system. A failure in authentication can block protected content even when the physical video link works. The source citation remains visible on screen for independent review.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: Content protection and authentication of compliant source, transport, and display devices. H D C P is a content-protection system. A failure in authentication can block protected content even when the physical video link works. The source citation remains visible on screen for independent review.",
       "audioPath": "./audio/narration/clips/q1013-review.mp3",
       "segments": [
         {
@@ -46175,7 +46175,7 @@
       "label": "Final Cram question 32",
       "questionId": 1032,
       "text": "Exam area A. Topic: Default gateway. When an IP device must reach a destination outside its local subnet, where does it normally send the traffic first? Choose the single best answer. Option A. Its EDID table. Option B. Its audio distribution amplifier. Option C. Its reflected ceiling plan. Option D. Its configured default gateway or router.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: Default gateway. When an I P device must reach a destination outside its local subnet, where does it normally send the traffic first? Choose the single best answer. Option A. Its EDID table. Option B. Its audio distribution amplifier. Option C. Its reflected ceiling plan. Option D. Its configured default gateway or router.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: Default gateway. When an I P device must reach a destination outside its local subnet, where does it normally send the traffic first? Choose the single best answer. Option A. Its E D I D table. Option B. Its audio distribution amplifier. Option C. Its reflected ceiling plan. Option D. Its configured default gateway or router.",
       "audioPath": "./audio/narration/clips/q1032-question.mp3",
       "segments": [
         {
@@ -46214,7 +46214,7 @@
       "label": "Question 1032, option A rationale",
       "questionId": 1032,
       "text": "Option A. Its EDID table. Incorrect. Not this one: \"Its EDID table\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Its configured default gateway or router.\" The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Its EDID table. Incorrect. Not this one: \"Its EDID table\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Its configured default gateway or router.\" The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Its E D I D table. Incorrect. Not this one: \"Its E D I D table\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Its configured default gateway or router.\" The default gateway is the local router used to reach other networks when the destination is not on the local subnet.",
       "audioPath": "./audio/narration/clips/q1032-option-a-rationale.mp3",
       "segments": [
         {
@@ -46317,7 +46317,7 @@
       "label": "Final Cram question 33",
       "questionId": 1033,
       "text": "Exam area A. Topic: DHCP. What does DHCP automate? Choose the single best answer. Option A. Assignment of IP addresses and other network parameters to devices. Option B. Authentication of HDCP-protected content. Option C. Conversion of line level to speaker level. Option D. Creation of as-built drawings.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: DHCP. What does DHCP automate? Choose the single best answer. Option A. Assignment of I P addresses and other network parameters to devices. Option B. Authentication of HDCP-protected content. Option C. Conversion of line level to speaker level. Option D. Creation of as-built drawings.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area A. Topic: DHCP. What does DHCP automate? Choose the single best answer. Option A. Assignment of I P addresses and other network parameters to devices. Option B. Authentication of H D C P-protected content. Option C. Conversion of line level to speaker level. Option D. Creation of as-built drawings.",
       "audioPath": "./audio/narration/clips/q1033-question.mp3",
       "segments": [
         {
@@ -46375,7 +46375,7 @@
       "label": "Question 1033, option B rationale",
       "questionId": 1033,
       "text": "Option B. Authentication of HDCP-protected content. Incorrect. Not this one: \"Authentication of HDCP-protected content\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Assignment of IP addresses and other network parameters to devices.\" DHCP automatically supplies addressing information such as IP address, subnet mask, gateway, and related parameters.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. Authentication of HDCP-protected content. Incorrect. Not this one: \"Authentication of HDCP-protected content\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Assignment of I P addresses and other network parameters to devices.\" DHCP automatically supplies addressing information such as I P address, subnet mask, gateway, and related parameters.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. Authentication of H D C P-protected content. Incorrect. Not this one: \"Authentication of H D C P-protected content\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Assignment of I P addresses and other network parameters to devices.\" DHCP automatically supplies addressing information such as I P address, subnet mask, gateway, and related parameters.",
       "audioPath": "./audio/narration/clips/q1033-option-b-rationale.mp3",
       "segments": [
         {
@@ -48021,7 +48021,7 @@
       "label": "Final Cram question 45",
       "questionId": 1045,
       "text": "Exam area B. Topic: Static IP and DHCP. Which statement correctly compares a static IP configuration with DHCP? Choose the single best answer. Option A. A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters. Option B. A static IP is assigned by EDID; DHCP is assigned by HDCP. Option C. A static IP works only on fiber; DHCP works only on copper. Option D. A static IP is an audio level; DHCP is a loudspeaker load.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area B. Topic: Static I P and DHCP. Which statement correctly compares a static I P configuration with DHCP? Choose the single best answer. Option A. A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters. Option B. A static I P is assigned by EDID; DHCP is assigned by HDCP. Option C. A static I P works only on fiber; DHCP works only on copper. Option D. A static I P is an audio level; DHCP is a loudspeaker load.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area B. Topic: Static I P and DHCP. Which statement correctly compares a static I P configuration with DHCP? Choose the single best answer. Option A. A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters. Option B. A static I P is assigned by E D I D; DHCP is assigned by H D C P. Option C. A static I P works only on fiber; DHCP works only on copper. Option D. A static I P is an audio level; DHCP is a loudspeaker load.",
       "audioPath": "./audio/narration/clips/q1045-question.mp3",
       "segments": [
         {
@@ -48079,7 +48079,7 @@
       "label": "Question 1045, option B rationale",
       "questionId": 1045,
       "text": "Option B. A static IP is assigned by EDID; DHCP is assigned by HDCP. Incorrect. Not this one: \"A static IP is assigned by EDID; DHCP is assigned by HDCP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters.\" Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. A static I P is assigned by EDID; DHCP is assigned by HDCP. Incorrect. Not this one: \"A static I P is assigned by EDID; DHCP is assigned by HDCP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters.\" Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. A static I P is assigned by E D I D; DHCP is assigned by H D C P. Incorrect. Not this one: \"A static I P is assigned by E D I D; DHCP is assigned by H D C P\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"A static configuration is deliberately fixed or reserved; DHCP automatically supplies addressing parameters.\" Static or reserved addresses provide predictable device addressing, while DHCP automates assignment from an address pool.",
       "audioPath": "./audio/narration/clips/q1045-option-b-rationale.mp3",
       "segments": [
         {
@@ -48589,7 +48589,7 @@
       "label": "Final Cram question 49",
       "questionId": 1049,
       "text": "Exam area B. Topic: Critical path. Which project-scheduling concept identifies task dependencies and determines the project completion date? Choose the single best answer. Option A. Critical path schedule. Option B. EDID table. Option C. Signal-to-noise ratio. Option D. Reflected ceiling plan.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area B. Topic: Critical path. Which project-scheduling concept identifies task dependencies and determines the project completion date? Choose the single best answer. Option A. Critical path schedule. Option B. EDID table. Option C. Signal-to-noise ratio. Option D. Reflected ceiling plan.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area B. Topic: Critical path. Which project-scheduling concept identifies task dependencies and determines the project completion date? Choose the single best answer. Option A. Critical path schedule. Option B. E D I D table. Option C. Signal-to-noise ratio. Option D. Reflected ceiling plan.",
       "audioPath": "./audio/narration/clips/q1049-question.mp3",
       "segments": [
         {
@@ -48647,7 +48647,7 @@
       "label": "Question 1049, option B rationale",
       "questionId": 1049,
       "text": "Option B. EDID table. Incorrect. Not this one: \"EDID table\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Critical path schedule.\" The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. EDID table. Incorrect. Not this one: \"EDID table\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Critical path schedule.\" The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. E D I D table. Incorrect. Not this one: \"E D I D table\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Critical path schedule.\" The critical path schedule reveals activity interdependence, time and resource trade-offs, and the sequence that governs completion.",
       "audioPath": "./audio/narration/clips/q1049-option-b-rationale.mp3",
       "segments": [
         {
@@ -50861,7 +50861,7 @@
       "label": "Final Cram question 65",
       "questionId": 1065,
       "text": "Exam area D. Topic: EDID troubleshooting scenario. A laptop connected through an extender outputs a resolution the display does not support. Which communication mechanism should be checked first? Choose the single best answer. Option A. EDID. Option B. HDCP. Option C. Phantom power. Option D. IGMP.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area D. Topic: EDID troubleshooting scenario. A laptop connected through an extender outputs a resolution the display does not support. Which communication mechanism should be checked first? Choose the single best answer. Option A. EDID. Option B. HDCP. Option C. Phantom power. Option D. IGMP.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area D. Topic: E D I D troubleshooting scenario. A laptop connected through an extender outputs a resolution the display does not support. Which communication mechanism should be checked first? Choose the single best answer. Option A. E D I D. Option B. H D C P. Option C. Phantom power. Option D. IGMP.",
       "audioPath": "./audio/narration/clips/q1065-question.mp3",
       "segments": [
         {
@@ -50900,7 +50900,7 @@
       "label": "Question 1065, option A rationale",
       "questionId": 1065,
       "text": "Option A. EDID. Correct. Correct: EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output. Decision cue: match the exact function, relationship, or documented process named in the question.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. EDID. Correct. Correct: EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. E D I D. Correct. Correct: E D I D is the capability exchange that guides source resolution and format selection. A missing or incorrect E D I D can cause an incompatible output. Decision cue: match the exact function, relationship, or documented process named in the question.",
       "audioPath": "./audio/narration/clips/q1065-option-a-rationale.mp3",
       "segments": [
         {
@@ -50919,7 +50919,7 @@
       "label": "Question 1065, option B rationale",
       "questionId": 1065,
       "text": "Option B. HDCP. Incorrect. Not this one: \"HDCP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"EDID.\" EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. HDCP. Incorrect. Not this one: \"HDCP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"EDID.\" EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. H D C P. Incorrect. Not this one: \"H D C P\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"E D I D.\" E D I D is the capability exchange that guides source resolution and format selection. A missing or incorrect E D I D can cause an incompatible output.",
       "audioPath": "./audio/narration/clips/q1065-option-b-rationale.mp3",
       "segments": [
         {
@@ -50938,7 +50938,7 @@
       "label": "Question 1065, option C rationale",
       "questionId": 1065,
       "text": "Option C. Phantom power. Incorrect. Not this one: \"Phantom power\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"EDID.\" EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Phantom power. Incorrect. Not this one: \"Phantom power\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"EDID.\" EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Phantom power. Incorrect. Not this one: \"Phantom power\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"E D I D.\" E D I D is the capability exchange that guides source resolution and format selection. A missing or incorrect E D I D can cause an incompatible output.",
       "audioPath": "./audio/narration/clips/q1065-option-c-rationale.mp3",
       "segments": [
         {
@@ -50957,7 +50957,7 @@
       "label": "Question 1065, option D rationale",
       "questionId": 1065,
       "text": "Option D. IGMP. Incorrect. Not this one: \"IGMP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"EDID.\" EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. IGMP. Incorrect. Not this one: \"IGMP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"EDID.\" EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. IGMP. Incorrect. Not this one: \"IGMP\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"E D I D.\" E D I D is the capability exchange that guides source resolution and format selection. A missing or incorrect E D I D can cause an incompatible output.",
       "audioPath": "./audio/narration/clips/q1065-option-d-rationale.mp3",
       "segments": [
         {
@@ -50976,7 +50976,7 @@
       "label": "Final Cram question 65 review",
       "questionId": 1065,
       "text": "Study review. The best answer is: EDID. EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output. The source citation remains visible on screen for independent review.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: EDID. EDID is the capability exchange that guides source resolution and format selection. A missing or incorrect EDID can cause an incompatible output. The source citation remains visible on screen for independent review.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: E D I D. E D I D is the capability exchange that guides source resolution and format selection. A missing or incorrect E D I D can cause an incompatible output. The source citation remains visible on screen for independent review.",
       "audioPath": "./audio/narration/clips/q1065-review.mp3",
       "segments": [
         {
@@ -51003,7 +51003,7 @@
       "label": "Final Cram question 66",
       "questionId": 1066,
       "text": "Exam area D. Topic: HDCP troubleshooting scenario. A computer desktop displays normally, but protected streaming video produces a blank image through the same HDMI path. What is the most likely issue? Choose the single best answer. Option A. Incorrect microphone impedance. Option B. HDCP authentication or compliance failure. Option C. Insufficient phantom power. Option D. An open loudspeaker circuit.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area D. Topic: HDCP troubleshooting scenario. A computer desktop displays normally, but protected streaming video produces a blank image through the same H D M I path. What is the most likely issue? Choose the single best answer. Option A. Incorrect microphone impedance. Option B. HDCP authentication or compliance failure. Option C. Insufficient phantom power. Option D. An open loudspeaker circuit.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area D. Topic: H D C P troubleshooting scenario. A computer desktop displays normally, but protected streaming video produces a blank image through the same H D M I path. What is the most likely issue? Choose the single best answer. Option A. Incorrect microphone impedance. Option B. H D C P authentication or compliance failure. Option C. Insufficient phantom power. Option D. An open loudspeaker circuit.",
       "audioPath": "./audio/narration/clips/q1066-question.mp3",
       "segments": [
         {
@@ -51042,7 +51042,7 @@
       "label": "Question 1066, option A rationale",
       "questionId": 1066,
       "text": "Option A. Incorrect microphone impedance. Incorrect. Not this one: \"Incorrect microphone impedance\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"HDCP authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Incorrect microphone impedance. Incorrect. Not this one: \"Incorrect microphone impedance\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"HDCP authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. Incorrect microphone impedance. Incorrect. Not this one: \"Incorrect microphone impedance\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"H D C P authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to H D C P authentication or compliance.",
       "audioPath": "./audio/narration/clips/q1066-option-a-rationale.mp3",
       "segments": [
         {
@@ -51061,7 +51061,7 @@
       "label": "Question 1066, option B rationale",
       "questionId": 1066,
       "text": "Option B. HDCP authentication or compliance failure. Correct. Correct: Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance. Decision cue: match the exact function, relationship, or documented process named in the question.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. HDCP authentication or compliance failure. Correct. Correct: Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance. Decision cue: match the exact function, relationship, or documented process named in the question.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option B. H D C P authentication or compliance failure. Correct. Correct: Because unprotected content passes, the basic path is operating. Failure only with protected content points to H D C P authentication or compliance. Decision cue: match the exact function, relationship, or documented process named in the question.",
       "audioPath": "./audio/narration/clips/q1066-option-b-rationale.mp3",
       "segments": [
         {
@@ -51080,7 +51080,7 @@
       "label": "Question 1066, option C rationale",
       "questionId": 1066,
       "text": "Option C. Insufficient phantom power. Incorrect. Not this one: \"Insufficient phantom power\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"HDCP authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Insufficient phantom power. Incorrect. Not this one: \"Insufficient phantom power\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"HDCP authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option C. Insufficient phantom power. Incorrect. Not this one: \"Insufficient phantom power\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"H D C P authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to H D C P authentication or compliance.",
       "audioPath": "./audio/narration/clips/q1066-option-c-rationale.mp3",
       "segments": [
         {
@@ -51099,7 +51099,7 @@
       "label": "Question 1066, option D rationale",
       "questionId": 1066,
       "text": "Option D. An open loudspeaker circuit. Incorrect. Not this one: \"An open loudspeaker circuit\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"HDCP authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. An open loudspeaker circuit. Incorrect. Not this one: \"An open loudspeaker circuit\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"HDCP authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option D. An open loudspeaker circuit. Incorrect. Not this one: \"An open loudspeaker circuit\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"H D C P authentication or compliance failure.\" Because unprotected content passes, the basic path is operating. Failure only with protected content points to H D C P authentication or compliance.",
       "audioPath": "./audio/narration/clips/q1066-option-d-rationale.mp3",
       "segments": [
         {
@@ -51118,7 +51118,7 @@
       "label": "Final Cram question 66 review",
       "questionId": 1066,
       "text": "Study review. The best answer is: HDCP authentication or compliance failure. Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance. The source citation remains visible on screen for independent review.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: HDCP authentication or compliance failure. Because unprotected content passes, the basic path is operating. Failure only with protected content points to HDCP authentication or compliance. The source citation remains visible on screen for independent review.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Study review. The best answer is: H D C P authentication or compliance failure. Because unprotected content passes, the basic path is operating. Failure only with protected content points to H D C P authentication or compliance. The source citation remains visible on screen for independent review.",
       "audioPath": "./audio/narration/clips/q1066-review.mp3",
       "segments": [
         {
@@ -51571,7 +51571,7 @@
       "label": "Final Cram question 70",
       "questionId": 1070,
       "text": "Exam area D. Topic: IGMP scenario. A multicast AV stream is flooding switch ports that did not request it. Which network function is most directly relevant? Choose the single best answer. Option A. HDCP authentication. Option B. IGMP group management, commonly used with multicast-aware switching. Option C. Audio gain structure. Option D. Projector lens shift.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area D. Topic: IGMP scenario. A multicast A V stream is flooding switch ports that did not request it. Which network function is most directly relevant? Choose the single best answer. Option A. HDCP authentication. Option B. IGMP group management, commonly used with multicast-aware switching. Option C. Audio gain structure. Option D. Projector lens shift.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area D. Topic: IGMP scenario. A multicast A V stream is flooding switch ports that did not request it. Which network function is most directly relevant? Choose the single best answer. Option A. H D C P authentication. Option B. IGMP group management, commonly used with multicast-aware switching. Option C. Audio gain structure. Option D. Projector lens shift.",
       "audioPath": "./audio/narration/clips/q1070-question.mp3",
       "segments": [
         {
@@ -51610,7 +51610,7 @@
       "label": "Question 1070, option A rationale",
       "questionId": 1070,
       "text": "Option A. HDCP authentication. Incorrect. Not this one: \"HDCP authentication\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"IGMP group management, commonly used with multicast-aware switching.\" IGMP communicates IPv4 multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. HDCP authentication. Incorrect. Not this one: \"HDCP authentication\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"IGMP group management, commonly used with multicast-aware switching.\" IGMP communicates I P version four multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. H D C P authentication. Incorrect. Not this one: \"H D C P authentication\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"IGMP group management, commonly used with multicast-aware switching.\" IGMP communicates I P version four multicast group membership so the network can limit delivery to interested receivers rather than treating the stream like broadcast traffic.",
       "audioPath": "./audio/narration/clips/q1070-option-a-rationale.mp3",
       "segments": [
         {
@@ -51713,7 +51713,7 @@
       "label": "Final Cram question 71",
       "questionId": 1071,
       "text": "Exam area C. Topic: QoS scenario. During heavy network use, real-time voice and video become delayed and uneven. Which feature should be reviewed to prioritize time-sensitive traffic? Choose the single best answer. Option A. EDID. Option B. Bonding. Option C. Quality of service (QoS). Option D. Throw ratio.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area C. Topic: QoS scenario. During heavy network use, real-time voice and video become delayed and uneven. Which feature should be reviewed to prioritize time-sensitive traffic? Choose the single best answer. Option A. EDID. Option B. Bonding. Option C. Quality of service (QoS). Option D. Throw ratio.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Exam area C. Topic: QoS scenario. During heavy network use, real-time voice and video become delayed and uneven. Which feature should be reviewed to prioritize time-sensitive traffic? Choose the single best answer. Option A. E D I D. Option B. Bonding. Option C. Quality of service (QoS). Option D. Throw ratio.",
       "audioPath": "./audio/narration/clips/q1071-question.mp3",
       "segments": [
         {
@@ -51752,7 +51752,7 @@
       "label": "Question 1071, option A rationale",
       "questionId": 1071,
       "text": "Option A. EDID. Incorrect. Not this one: \"EDID\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Quality of service (QoS).\" QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
-      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. EDID. Incorrect. Not this one: \"EDID\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Quality of service (QoS).\" QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
+      "ttsText": "[clear, calm, professional instructor; measured pace; warm but precise] Option A. E D I D. Incorrect. Not this one: \"E D I D\" is a related-looking option but does not satisfy the definition, calculation, or project step in this scenario. Best answer: \"Quality of service (QoS).\" QoS manages traffic through prioritization and bandwidth allocation to preserve the usefulness of delay-sensitive services.",
       "audioPath": "./audio/narration/clips/q1071-option-a-rationale.mp3",
       "segments": [
         {
