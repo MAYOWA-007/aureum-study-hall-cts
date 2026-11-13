@@ -27,7 +27,8 @@ self.addEventListener("fetch", (event) => {
   }
   event.respondWith(
     caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
-      if (!response.ok || response.status !== 200) return response;
+      if (!response.ok) return response;
+      if (response.status !== 200) return response;
       const copy = response.clone();
       void caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy)).catch(() => {});
       return response;

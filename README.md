@@ -34,7 +34,7 @@ npm run narration:dry-run
 
 `audits/narration-plan.json` records clip count, text volume, estimated duration, file size, and estimated provider cost. The live voice pack is pinned to the user-approved Fish Audio S2.1 Pro voice reference. Actual generation is deliberately gated: `npm run narration:generate` does nothing useful unless `FISH_AUDIO_API_KEY`, `FISH_REFERENCE_ID`, and `FISH_TTS_MODEL` are present in the private process environment, and the underlying generator receives its explicit `--execute` flag.
 
-Generated audio belongs in `public/audio/narration/clips/`. The app reads `pack.json`, never a private configuration file. Until a pack is present, the UI states that scripts are ready and the voice is pending rather than pretending narration is available.
+Generated audio belongs in `public/audio/narration/clips/`. The app reads `pack.json`, never a private configuration file. When static MP3 clips are pending generation, the player automatically falls back to built-in browser Web Speech synthesis using phonetic AV acronym rules (DISCAS, ISCR, EDID, HDCP, SDVoE, AES67, AVB, WLL, RT60, PAG/NAG, EPR) with live transcript segment highlighting.
 
 The Final Cram importer keeps the supplied standalone HTML as the review source while producing normalized, stable IDs:
 

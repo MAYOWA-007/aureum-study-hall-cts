@@ -170,3 +170,41 @@ test("ships CTS-specific branding and a ready-to-upload social carousel", async 
     assert.equal(png.readUInt32BE(20), 1350, `${name} must be 1350 px tall`);
   }
 });
+
+test("enforces WCAG 2.2 AA accessibility, modal focus trapping, LAN/private-browsing safety, and cross-device safeguards", async () => {
+  const [page, player, css, indexHtml, manifest, serviceWorker] = await Promise.all([
+    readFile(new URL("app/page.tsx", root), "utf8"),
+    readFile(new URL("app/narration-player.tsx", root), "utf8"),
+    readFile(new URL("app/globals.css", root), "utf8"),
+    readFile(new URL("index.html", root), "utf8"),
+    readFile(new URL("public/manifest.webmanifest", root), "utf8"),
+    readFile(new URL("public/service-worker.js", root), "utf8"),
+  ]);
+
+  assert.match(indexHtml, /viewport-fit=cover/, "safe-area-inset requires viewport-fit=cover on notched/home-indicator devices");
+  assert.match(indexHtml, /rel="apple-touch-icon"/);
+
+  const parsedManifest = JSON.parse(manifest);
+  assert.ok(parsedManifest.icons.every((icon) => icon.purpose !== "any maskable"), "PWA icons should separate 'any' and 'maskable' purposes");
+
+  assert.match(serviceWorker, /response\.status !== 200/, "service worker must skip 206 Partial Content audio responses before cache.put");
+
+  assert.match(page, /function useModalDialog/, "all modal dialogs should trap focus, lock scroll, and restore focus");
+  assert.match(page, /aria-labelledby="navigator-modal-title"/);
+  assert.match(page, /aria-labelledby="submit-modal-title"/);
+  assert.match(page, /aria-labelledby="sources-modal-title"/);
+  assert.match(page, /className="skip-link"/);
+  assert.match(page, /htmlFor=\{inputId\}/, "numeric input must have an associated label");
+  assert.match(page, /role="status" aria-live="polite"/, "study-mode check-answer feedback must announce via polite live region");
+  assert.match(page, /if \(event\.ctrlKey \|\| event\.metaKey \|\| event\.altKey\) return/, "modifier-chord shortcuts like Ctrl+1 must not select answers");
+  assert.match(page, /crypto\.getRandomValues/, "session seed generator must fall back when crypto.randomUUID is unavailable over HTTP LAN");
+  assert.match(page, /start\(mode, questionIds\)/, "retaking a session must preserve study vs timed mode");
+  assert.match(page, /className=\{`mobile-timer/, "timed mode must keep a visible timer on <=900px viewports");
+
+  assert.match(player, /prepareSpeechText\(clip\.text\)/, "Web Speech fallback should use phonetic AV acronym rules");
+  assert.match(player, /utterance\.onboundary/, "Web Speech fallback should advance live transcript segments");
+
+  assert.match(css, /--gold-dark:#7a5818/, "gold-dark token must meet 4.5:1 AA contrast on warm paper");
+  assert.match(css, /--muted:#555a53/, "muted text token must meet 4.5:1 AA contrast on warm paper");
+  assert.match(css, /@media \(pointer:coarse\)/, "coarse pointers should use 16px form controls to prevent iOS Safari auto-zoom");
+});

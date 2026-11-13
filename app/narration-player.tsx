@@ -5,6 +5,7 @@ import type { BaseQuestion } from "./question-bank";
 import {
   interfaceNarrationClips,
   NARRATION_REQUEST_EVENT,
+  prepareSpeechText,
   questionNarrationClip,
   reviewNarrationClip,
   type NarrationClip,
@@ -43,12 +44,15 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
   const [currentClip, setCurrentClip] = useState<NarrationClip>(() => contextClip(context, question));
   const [activeSegment, setActiveSegment] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const currentClipRef = useRef(currentClip);
   const questionClip = useMemo(() => contextClip(context, question), [context, question]);
   const reviewClip = useMemo(() => question ? reviewNarrationClip(question) : null, [question]);
   const guideClip = useMemo(() => interfaceNarrationClips.find((clip) => clip.id === (context === "exam" ? "interface-exam-controls" : context === "landing" ? "interface-session-builder" : "")) ?? null, [context]);
   const availableClipIds = useMemo(() => new Set(pack?.availableClipIds ?? []), [pack]);
   const packReady = pack?.status === "ready" || pack?.status === "partial";
+  const speechSupported = typeof window !== "undefined" && "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+  const canRead = packReady || speechSupported;
 
   useEffect(() => {
     try {
@@ -65,12 +69,23 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(NARRATION_PREFERENCES_KEY, JSON.stringify({ enabled, autoRead, rate }));
+    try {
+      localStorage.setItem(NARRATION_PREFERENCES_KEY, JSON.stringify({ enabled, autoRead, rate }));
+    } catch {}
   }, [enabled, autoRead, rate]);
 
   useEffect(() => {
     currentClipRef.current = currentClip;
   }, [currentClip]);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [open]);
 
   useEffect(() => {
     const audio = new Audio();
@@ -90,6 +105,10 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
       audio.pause();
       audio.removeAttribute("src");
       audioRef.current = null;
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        try { window.speechSynthesis.cancel(); } catch {}
+      }
+      utteranceRef.current = null;
     };
   }, []);
 
@@ -101,10 +120,46 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
     currentClipRef.current = clip;
     setCurrentClip(clip);
     setActiveSegment(0);
-    if (!enabled || !packReady || !availableClipIds.has(clip.id)) {
+    if (!enabled) {
       setPlayback("pending");
       setOpen(true);
       return;
+    }
+    if (!packReady || !availableClipIds.has(clip.id)) {
+      if (speechSupported) {
+        audioRef.current?.pause();
+        try { window.speechSynthesis.cancel(); } catch {}
+        const spoken = prepareSpeechText(clip.text);
+        const utterance = new SpeechSynthesisUtterance(spoken);
+        utteranceRef.current = utterance;
+        utterance.rate = rate;
+        utterance.onstart = () => {
+          if (utteranceRef.current === utterance) setPlayback("playing");
+        };
+        utterance.onboundary = (event) => {
+          if (utteranceRef.current !== utterance || spoken.length <= 0) return;
+          setActiveSegment(segmentAtProgress(clip, event.charIndex / spoken.length));
+        };
+        utterance.onend = () => {
+          if (utteranceRef.current !== utterance) return;
+          setPlayback("ended");
+          setActiveSegment(Math.max(0, clip.segments.length - 1));
+        };
+        utterance.onerror = (event) => {
+          if (utteranceRef.current !== utterance) return;
+          if (event.error === "canceled" || event.error === "interrupted") return;
+          setPlayback("pending");
+        };
+        window.speechSynthesis.speak(utterance);
+        return;
+      }
+      setPlayback("pending");
+      setOpen(true);
+      return;
+    }
+    if (speechSupported) {
+      utteranceRef.current = null;
+      try { window.speechSynthesis.cancel(); } catch {}
     }
     const audio = audioRef.current;
     if (!audio) return;
@@ -122,7 +177,7 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
       setPlayback("gesture");
       setOpen(true);
     }
-  }, [availableClipIds, enabled, packReady, playback, rate]);
+  }, [availableClipIds, enabled, packReady, playback, rate, speechSupported]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -130,10 +185,14 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
       audio.pause();
       audio.currentTime = 0;
     }
+    if (speechSupported) {
+      utteranceRef.current = null;
+      try { window.speechSynthesis.cancel(); } catch {}
+    }
     setCurrentClip(questionClip);
     setActiveSegment(0);
     setPlayback("idle");
-    if (context === "exam" && enabled && autoRead && packReady && availableClipIds.has(questionClip.id)) {
+    if (context === "exam" && enabled && autoRead && ((packReady && availableClipIds.has(questionClip.id)) || speechSupported)) {
       void playClip(questionClip, true);
     }
   }, [questionClip.id]); // Auto-read only when the question itself changes.
@@ -141,9 +200,13 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
   useEffect(() => {
     if (!enabled) {
       audioRef.current?.pause();
+      if (speechSupported) {
+        utteranceRef.current = null;
+        try { window.speechSynthesis.cancel(); } catch {}
+      }
       setPlayback("idle");
     }
-  }, [enabled]);
+  }, [enabled, speechSupported]);
 
   useEffect(() => {
     const handleRequest = (event: Event) => {
@@ -157,6 +220,11 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
   const togglePlayback = () => {
     if (playback === "playing") {
       audioRef.current?.pause();
+      if (speechSupported) {
+        utteranceRef.current = null;
+        try { window.speechSynthesis.cancel(); } catch {}
+      }
+      setPlayback("paused");
       return;
     }
     void playClip(currentClip.id === questionClip.id || currentClip.id === reviewClip?.id ? currentClip : questionClip);
@@ -164,19 +232,19 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
 
   const statusCopy = !pack
     ? "Checking voice pack…"
-    : pack.status === "awaiting_voice"
-      ? "Scripts ready · awaiting your Fish voice"
-      : pack.status === "awaiting_generation"
-        ? "S2.1 Pro voice selected · generation pending"
-        : playback === "playing"
-        ? `Reading ${currentClip.label}`
-        : playback === "gesture"
-          ? "Tap play once to allow audio"
-          : playback === "pending"
-            ? "This clip is queued for the voice pack"
-            : playback === "error"
-              ? "Audio could not be loaded"
-              : enabled ? "Read aloud is on · ready" : "Read aloud is off";
+    : playback === "playing"
+      ? `Reading ${currentClip.label}`
+      : pack.status === "awaiting_voice"
+        ? "Scripts ready · awaiting your Fish voice"
+        : pack.status === "awaiting_generation"
+          ? enabled ? "Browser voice ready · Fish S2.1 Pro queued" : "S2.1 Pro voice selected · generation pending"
+          : playback === "gesture"
+            ? "Tap play once to allow audio"
+            : playback === "pending"
+              ? "This clip is queued for the voice pack"
+              : playback === "error"
+                ? "Audio could not be loaded"
+                : enabled ? "Read aloud is on · ready" : "Read aloud is off";
 
   return (
     <aside className={`narrator-dock ${open ? "open" : ""} ${enabled ? "enabled" : ""}`} aria-label="Read-aloud controls">
@@ -184,10 +252,10 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
         <section className="narrator-panel">
           <div className="narrator-head">
             <div><span className="narrator-kicker">Aureum voice layer</span><h2>Read aloud</h2></div>
-            <button className="narrator-close" onClick={() => setOpen(false)} aria-label="Close read-aloud controls">×</button>
+            <button type="button" className="narrator-close" onClick={() => setOpen(false)} aria-label="Close read-aloud controls">×</button>
           </div>
 
-          <button className="narrator-power" role="switch" aria-checked={enabled} onClick={() => setEnabled((value) => !value)}>
+          <button type="button" className="narrator-power" role="switch" aria-checked={enabled} onClick={() => setEnabled((value) => !value)}>
             <span className="voice-orb" aria-hidden="true"><i /><i /><i /><i /></span>
             <span><b>{enabled ? "Read aloud on" : "Read aloud off"}</b><small>{statusCopy}</small></span>
             <em aria-hidden="true"><i /></em>
@@ -199,24 +267,24 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
           </div>
 
           <div className="narrator-controls">
-            <button onClick={togglePlayback} disabled={!enabled || !packReady} aria-label={playback === "playing" ? "Pause reading" : "Read this aloud"}>{playback === "playing" ? "Ⅱ" : "▶"}<span>{playback === "playing" ? "Pause" : "Read"}</span></button>
-            <button onClick={() => void playClip(currentClip, true)} disabled={!enabled || !packReady} aria-label="Restart reading">↺<span>Restart</span></button>
-            {guideClip && <button onClick={() => void playClip(guideClip, true)} disabled={!enabled || !packReady} aria-label="Read interface guide">◇<span>{context === "exam" ? "Controls" : "Session guide"}</span></button>}
-            {context === "exam" && reviewClip && <button onClick={() => void playClip(reviewClip, true)} disabled={!enabled || !packReady || !reviewAvailable} aria-label="Read study review">◎<span>Review</span></button>}
+            <button type="button" onClick={togglePlayback} disabled={!enabled || !canRead} aria-label={playback === "playing" ? "Pause reading" : "Read this aloud"}>{playback === "playing" ? "Ⅱ" : "▶"}<span>{playback === "playing" ? "Pause" : "Read"}</span></button>
+            <button type="button" onClick={() => void playClip(currentClip, true)} disabled={!enabled || !canRead} aria-label="Restart reading">↺<span>Restart</span></button>
+            {guideClip && <button type="button" onClick={() => void playClip(guideClip, true)} disabled={!enabled || !canRead} aria-label="Read interface guide">◇<span>{context === "exam" ? "Controls" : "Session guide"}</span></button>}
+            {context === "exam" && reviewClip && <button type="button" onClick={() => void playClip(reviewClip, true)} disabled={!enabled || !canRead || !reviewAvailable} aria-label="Read study review">◎<span>Review</span></button>}
           </div>
 
           <div className="narrator-settings">
-            <button className={autoRead ? "active" : ""} aria-pressed={autoRead} onClick={() => setAutoRead((value) => !value)}><span>Auto-read new questions</span><b>{autoRead ? "On" : "Off"}</b></button>
+            <button type="button" className={autoRead ? "active" : ""} aria-pressed={autoRead} onClick={() => setAutoRead((value) => !value)}><span>Auto-read new questions</span><b>{autoRead ? "On" : "Off"}</b></button>
             <label><span>Playback pace</span><select value={rate} onChange={(event) => setRate(Number(event.target.value))}><option value={0.85}>Calm · 0.85×</option><option value={1}>Standard · 1×</option><option value={1.15}>Focused · 1.15×</option></select></label>
           </div>
 
-          {!packReady && <p className="voice-pack-note"><b>No voice has been chosen.</b> The complete scripts and private generation pipeline are ready; this public page cannot contact Fish Audio or spend credits.</p>}
+          {!packReady && <p className="voice-pack-note"><b>{pack?.status === "awaiting_generation" ? "Static MP3 pack pending." : "No voice has been chosen."}</b> The complete scripts and private generation pipeline are ready; browser speech is available now without contacting Fish Audio or spending credits.</p>}
         </section>
       )}
-      <button className="narrator-trigger" onClick={() => setOpen((value) => !value)} aria-expanded={open}>
+      <button type="button" className="narrator-trigger" onClick={() => setOpen((value) => !value)} aria-expanded={open}>
         <span className="voice-orb compact-orb" aria-hidden="true"><i /><i /><i /><i /></span>
-        <span><b>Read aloud</b><small>{pack?.status === "awaiting_voice" ? "Voice pending" : pack?.status === "awaiting_generation" ? "S2.1 Pro queued" : enabled ? playback === "playing" ? "Reading now" : "On" : "Off"}</small></span>
-        <em>{open ? "×" : "⌃"}</em>
+        <span><b>Read aloud</b><small>{playback === "playing" ? "Reading now" : pack?.status === "awaiting_voice" ? "Voice pending" : pack?.status === "awaiting_generation" ? (enabled ? "Browser voice" : "S2.1 Pro queued") : enabled ? "On" : "Off"}</small></span>
+        <em aria-hidden="true">{open ? "×" : "⌃"}</em>
       </button>
     </aside>
   );
