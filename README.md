@@ -13,7 +13,7 @@ Aureum Study Hall is a free, independent study series. CTS is the first release:
 - Responsive mobile and tablet layouts with larger question text, visible timed-exam clock on narrow screens, notched safe-area insets, 16px touch inputs to prevent iOS Safari auto-zoom, press-and-hold answer help, a plain-language Answer Help button, and the desktop Control shortcut.
 - WCAG 2.2 AA accessibility: high-contrast text and focus-visible rings across light and dark surfaces, keyboard skip links, modal focus trapping with Escape/backdrop dismissal, and screen-reader live status announcements.
 - Complete Fish Audio S2.1 Pro read-aloud coverage: 2,211 static question, response, rationale, review, and interface clips; auto-read; replay; and three playback speeds.
-- Neutral gold selected states with explicit check marks, so emerald/crimson decorative color is never mistaken for correctness.
+- Tokenized site-wide exam themes (`Emerald` for CTS, `Crimson` for CTS-I, `Sapphire` for CTS-D) paired with neutral gold selected states and explicit check marks, so decorative color is never mistaken for correctness.
 - Local attempt history, missed-question practice, CSV export, and printable/PDF-ready reports.
 - Installable offline behavior after the first visit.
 
