@@ -1,13 +1,13 @@
-# Aureum Study Hall — CTS Practice
+# Aureum Study Hall — CTS, CTS-I & CTS-D Practice
 
-Aureum Study Hall is a free, independent study series. CTS is the first release: a local-first practice app with a 300-question source-grounded mastery bank plus a newly edited 75-question Final Cram collection.
+Aureum Study Hall is a free, independent study series. This release expands the local-first practice app into a 1,125-question suite across three AVIXA certifications—**CTS®** (General), **CTS-I®** (Installation), and **CTS-D®** (Design)—each with a 300-question source-grounded mastery bank plus a 75-question Final Cram collection. The app defaults to **CTS®** and provides a trinary exam selector in the hero bar.
 
 [Open Aureum Study Hall — CTS](https://mayowa-007.github.io/aureum-study-hall-cts/)
 
 ## What learners get
 
 - 20-question quick drills, 60-question deep practice, a curated Final Cram 75, a 115-question / 150-minute simulation, or the complete 300-question mastery bank.
-- Blueprint-balanced sessions or focused practice for any CTS exam area.
+- Trinary exam switcher (`CTS` | `CTS-I` | `CTS-D`, defaulting to `CTS`) with blueprint-balanced sessions or focused practice for any exam area (`A–D` for CTS and CTS-D; `A–F` for CTS-I).
 - Exam-faithful timed sessions with four choices and one best answer; clearly labeled custom interactions remain in study mode.
 - Deterministic shuffle sets that group by concept and best answer, preventing semantically repeated variants in normal timed sessions.
 - Responsive mobile and tablet layouts with larger question text, visible timed-exam clock on narrow screens, notched safe-area insets, 16px touch inputs to prevent iOS Safari auto-zoom, press-and-hold answer help, a plain-language Answer Help button, and the desktop Control shortcut.
@@ -19,7 +19,7 @@ Aureum Study Hall is a free, independent study series. CTS is the first release:
 
 ## Privacy and architecture
 
-This release is a static React/Vite site. It has no backend, Firebase project, authentication, payment system, account tracking, or analytics. Session and history data are stored only in the learner's browser using `localStorage`, with graceful fallback when storage is restricted or full, and deterministic seed generation that works over both HTTPS and plain HTTP LAN dev servers.
+This release is a static React/Vite site with per-bank bundle splitting (`vendor`, `bank-cts`, `bank-ctsi`, `bank-ctsd` via `vite.config.ts`). It has no backend, Firebase project, authentication, payment system, account tracking, or analytics. Session and history data are stored only in the learner's browser using isolated per-exam `localStorage` keys (`aureum-study-hall-cts-*`, `aureum-study-hall-cts-i-*`, `aureum-study-hall-cts-d-*`), with graceful fallback when storage is restricted or full, and deterministic seed generation that works over both HTTPS and plain HTTP LAN dev servers.
 
 The deployed app never sends text or credentials to Fish Audio. Narration is generated privately into static MP3 files, then played and cached on demand by the browser (skipping partial `206` audio range responses so service-worker caching stays error-free across mobile and desktop browsers). The Fish API key must remain in the private shell environment and must never be added to this repository.
 
@@ -32,7 +32,7 @@ npm run narration:manifest
 npm run narration:dry-run
 ```
 
-`audits/narration-plan.json` records clip count, text volume, estimated duration, file size, and estimated provider cost. The live voice pack is pinned to the user-approved Fish Audio S2.1 Pro voice reference. Actual generation is deliberately gated: `npm run narration:generate` does nothing useful unless `FISH_AUDIO_API_KEY`, `FISH_REFERENCE_ID`, and `FISH_TTS_MODEL` are present in the private process environment, and the underlying generator receives its explicit `--execute` flag.
+`audits/narration-plan.json` records CTS clip count, text volume, estimated duration, file size, and estimated provider cost, while `audits/narration-plan-multi.json` tracks all three exam tracks (`2,211` clips per exam) and writes per-exam manifests (`manifest.json`, `manifest-cts-i.json`, `manifest-cts-d.json`) and packs (`pack.json`, `pack-cts-i.json`, `pack-cts-d.json`). The live voice pack is pinned to the user-approved Fish Audio S2.1 Pro voice reference. Actual generation is deliberately gated: `npm run narration:generate` does nothing useful unless `FISH_AUDIO_API_KEY`, `FISH_REFERENCE_ID`, and `FISH_TTS_MODEL` are present in the private process environment, and the underlying generator receives its explicit `--execute` flag.
 
 Generated audio belongs in `public/audio/narration/clips/`. The app reads `pack.json`, never a private configuration file. When static MP3 clips are pending generation, the player automatically falls back to built-in browser Web Speech synthesis using phonetic AV acronym rules (DISCAS, ISCR, EDID, HDCP, SDVoE, AES67, AVB, WLL, RT60, PAG/NAG, EPR) with live transcript segment highlighting.
 
@@ -58,4 +58,4 @@ npm run dev
 
 The CTS® questions are original practice items developed from the *CTS Certified Technology Specialist Exam Guide, Third Edition* and checked against the current official outline and primary technical sources. The CTS-I® 300-question mastery bank and 75-question Final Cram collection cover AVIXA's 6-duty installation blueprint (Duties A–F) grounded in the *CTS-I Certified Technology Specialist–Installation Exam Guide, Second Edition*. The CTS-D® 300-question mastery bank and 75-question Final Cram collection cover AVIXA's 4-duty design blueprint (Duties A–D) and AV engineering formulas grounded in the *CTS-D Certified Technology Specialist–Design Exam Guide, Second Edition*. The copyrighted guides themselves and live exam questions are not included.
 
-Independent study material. Not affiliated with, sponsored by, or endorsed by AVIXA. CTS® and AVIXA® are marks of AVIXA, Inc. No practice product can guarantee a pass or predict a live exam.
+Independent study material. Not affiliated with, sponsored by, or endorsed by AVIXA. CTS®, CTS-I®, CTS-D®, and AVIXA® are marks of AVIXA, Inc. No practice product can guarantee a pass or predict a live exam.

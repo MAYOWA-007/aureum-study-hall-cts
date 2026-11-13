@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { BaseQuestion } from "./question-bank";
+import type { BaseQuestion, ExamId } from "./question-bank";
 import {
+  getInterfaceNarrationClips,
   interfaceNarrationClips,
   NARRATION_REQUEST_EVENT,
   prepareSpeechText,
@@ -17,9 +18,11 @@ type PlaybackState = "idle" | "loading" | "playing" | "paused" | "ended" | "gest
 
 const NARRATION_PREFERENCES_KEY = "aureum-study-hall-cts-narration-v1";
 
-function contextClip(context: NarrationContext, question?: BaseQuestion) {
-  if (context === "exam" && question) return questionNarrationClip(question);
-  return interfaceNarrationClips.find((clip) => clip.id === (context === "results" ? "interface-results" : "interface-welcome")) ?? interfaceNarrationClips[0];
+function contextClip(context: NarrationContext, question?: BaseQuestion, examId: ExamId = "cts") {
+  if (context === "exam" && question) return questionNarrationClip(question, examId);
+  const clips = getInterfaceNarrationClips(examId);
+  const targetSuffix = context === "results" ? "interface-results" : "interface-welcome";
+  return clips.find((clip) => clip.id.endsWith(targetSuffix)) ?? clips[0] ?? interfaceNarrationClips[0];
 }
 
 function segmentAtProgress(clip: NarrationClip, progress: number) {
@@ -34,21 +37,25 @@ function segmentAtProgress(clip: NarrationClip, progress: number) {
   return Math.max(0, clip.segments.length - 1);
 }
 
-export function NarrationPlayer({ context, question, reviewAvailable = false }: { context: NarrationContext; question?: BaseQuestion; reviewAvailable?: boolean }) {
+export function NarrationPlayer({ context, question, reviewAvailable = false, examId = "cts" }: { context: NarrationContext; question?: BaseQuestion; reviewAvailable?: boolean; examId?: ExamId }) {
   const [open, setOpen] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [autoRead, setAutoRead] = useState(false);
   const [rate, setRate] = useState(1);
   const [pack, setPack] = useState<NarrationPackDescriptor | null>(null);
   const [playback, setPlayback] = useState<PlaybackState>("idle");
-  const [currentClip, setCurrentClip] = useState<NarrationClip>(() => contextClip(context, question));
+  const [currentClip, setCurrentClip] = useState<NarrationClip>(() => contextClip(context, question, examId));
   const [activeSegment, setActiveSegment] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const currentClipRef = useRef(currentClip);
-  const questionClip = useMemo(() => contextClip(context, question), [context, question]);
-  const reviewClip = useMemo(() => question ? reviewNarrationClip(question) : null, [question]);
-  const guideClip = useMemo(() => interfaceNarrationClips.find((clip) => clip.id === (context === "exam" ? "interface-exam-controls" : context === "landing" ? "interface-session-builder" : "")) ?? null, [context]);
+  const questionClip = useMemo(() => contextClip(context, question, examId), [context, question, examId]);
+  const reviewClip = useMemo(() => question ? reviewNarrationClip(question, examId) : null, [question, examId]);
+  const guideClip = useMemo(() => {
+    const clips = getInterfaceNarrationClips(examId);
+    const suffix = context === "exam" ? "interface-exam-controls" : context === "landing" ? "interface-session-builder" : "";
+    return suffix ? clips.find((clip) => clip.id.endsWith(suffix)) ?? null : null;
+  }, [context, examId]);
   const availableClipIds = useMemo(() => new Set(pack?.availableClipIds ?? []), [pack]);
   const packReady = pack?.status === "ready" || pack?.status === "partial";
   const speechSupported = typeof window !== "undefined" && "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
@@ -61,12 +68,15 @@ export function NarrationPlayer({ context, question, reviewAvailable = false }: 
       setAutoRead(Boolean(saved.autoRead));
       if ([0.85, 1, 1.15].includes(saved.rate)) setRate(saved.rate);
     } catch {}
+  }, []);
 
-    void fetch(new URL("./audio/narration/pack.json", document.baseURI), { cache: "no-cache" })
+  useEffect(() => {
+    const packUrl = examId === "cts" ? "./audio/narration/pack.json" : `./audio/narration/pack-${examId}.json`;
+    void fetch(new URL(packUrl, document.baseURI), { cache: "no-cache" })
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("Narration pack unavailable")))
       .then((value: NarrationPackDescriptor) => setPack(value))
       .catch(() => setPack({ schemaVersion: 1, status: "awaiting_voice", provider: "Fish Audio", model: null, voiceReferenceId: null, generatedAt: null, availableClipIds: [] }));
-  }, []);
+  }, [examId]);
 
   useEffect(() => {
     try {

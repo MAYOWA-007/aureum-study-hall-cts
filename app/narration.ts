@@ -1,4 +1,4 @@
-import type { BaseQuestion } from "./question-bank";
+import type { BaseQuestion, ExamId } from "./question-bank";
 
 export type NarrationClipKind = "interface" | "question" | "rationale" | "review";
 
@@ -42,6 +42,8 @@ function cleanVisibleText(value: string) {
 
 export function prepareSpeechText(value: string) {
   return cleanVisibleText(value)
+    .replace(/\bCTS-I\b/g, "C T S I")
+    .replace(/\bCTS-D\b/g, "C T S D")
     .replace(/\bCTS\b/g, "C T S")
     .replace(/\bAVIXA\b/g, "A V I X A")
     .replace(/\bDISCAS\b/g, "D I S C A S")
@@ -81,6 +83,10 @@ export function prepareSpeechText(value: string) {
     .replace(/°F/g, " degrees Fahrenheit")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function prefixId(id: string, examId: ExamId = "cts") {
+  return examId === "cts" ? id : `${examId}-${id}`;
 }
 
 function makeClip(id: string, kind: NarrationClipKind, label: string, segments: NarrationSegment[], questionId?: number): NarrationClip {
@@ -143,9 +149,9 @@ function spokenQuestionLabel(question: BaseQuestion) {
     : `Question ${question.id}`;
 }
 
-export function questionNarrationClip(question: BaseQuestion): NarrationClip {
+export function questionNarrationClip(question: BaseQuestion, examId: ExamId = "cts"): NarrationClip {
   return makeClip(
-    `q${String(question.id).padStart(3, "0")}-question`,
+    prefixId(`q${String(question.id).padStart(3, "0")}-question`, examId),
     "question",
     spokenQuestionLabel(question),
     [
@@ -157,9 +163,9 @@ export function questionNarrationClip(question: BaseQuestion): NarrationClip {
   );
 }
 
-export function reviewNarrationClip(question: BaseQuestion): NarrationClip {
+export function reviewNarrationClip(question: BaseQuestion, examId: ExamId = "cts"): NarrationClip {
   return makeClip(
-    `q${String(question.id).padStart(3, "0")}-review`,
+    prefixId(`q${String(question.id).padStart(3, "0")}-review`, examId),
     "review",
     `${spokenQuestionLabel(question)} review`,
     [
@@ -172,12 +178,12 @@ export function reviewNarrationClip(question: BaseQuestion): NarrationClip {
   );
 }
 
-export function rationaleNarrationClips(question: BaseQuestion): NarrationClip[] {
+export function rationaleNarrationClips(question: BaseQuestion, examId: ExamId = "cts"): NarrationClip[] {
   const choices = question.type === "hotspot" ? question.hotspots?.map((spot) => spot.label) : question.choices;
   if (!choices?.length) {
     if (!question.interactionRationale) return [];
     return [makeClip(
-      `q${String(question.id).padStart(3, "0")}-interaction-rationale`,
+      prefixId(`q${String(question.id).padStart(3, "0")}-interaction-rationale`, examId),
       "rationale",
       `Interaction rationale ${question.id}`,
       [{ label: "Rationale", text: question.interactionRationale }],
@@ -194,7 +200,7 @@ export function rationaleNarrationClips(question: BaseQuestion): NarrationClip[]
       ? question.explanation
       : `${choice} does not best satisfy the condition in the prompt. The guide-supported response is ${bestAnswer(question)}.`);
     return makeClip(
-      `q${String(question.id).padStart(3, "0")}-option-${LETTERS[index].toLowerCase()}-rationale`,
+      prefixId(`q${String(question.id).padStart(3, "0")}-option-${LETTERS[index].toLowerCase()}-rationale`, examId),
       "rationale",
       `Question ${question.id}, option ${LETTERS[index]} rationale`,
       [
@@ -206,28 +212,33 @@ export function rationaleNarrationClips(question: BaseQuestion): NarrationClip[]
   });
 }
 
-export const interfaceNarrationClips: NarrationClip[] = [
-  makeClip("interface-welcome", "interface", "Welcome", [
-    { label: "Welcome", text: "Welcome to Aureum Study Hall, C T S practice." },
-    { label: "Purpose", text: "Build the judgment behind the signal with original, source-grounded practice." },
-    { label: "Privacy", text: "Your session and attempt history remain in this browser. No account is required." },
-  ]),
-  makeClip("interface-session-builder", "interface", "Session builder", [
-    { label: "Session choices", text: "Choose a quick drill, deep practice, the curated seventy-five-question Final Cram, the official-pace simulation, or complete bank study." },
-    { label: "Coverage", text: "Practice all four exam areas in blueprint balance, or focus on one exam area." },
-    { label: "Modes", text: "Timed mode uses four choices and one best answer. Study mode also includes clearly labeled hands-on learning activities." },
-  ]),
-  makeClip("interface-exam-controls", "interface", "Exam controls", [
-    { label: "Navigation", text: "Use Previous and Next to move through the session. Flag any question you want to revisit." },
-    { label: "Answer help", text: "On desktop, hold Control to preview why each choice fits or does not fit. On touch devices, press and hold an option. The Answer Help button also reveals the explanation without selecting the response." },
-    { label: "Read aloud", text: "Use the read-aloud controls to replay the question, adjust playback speed, or automatically read each new question." },
-  ]),
-  makeClip("interface-results", "interface", "Results guide", [
-    { label: "Results", text: "Your study report separates overall score, answered accuracy, exam-area performance, and blueprint-task performance." },
-    { label: "Review", text: "Open each review item to compare your response, the best answer, the explanation, and its source citation." },
-    { label: "Next step", text: "You can practice missed items, download a C S V report, print a P D F, or build another session." },
-  ]),
-];
+export function getInterfaceNarrationClips(examId: ExamId = "cts"): NarrationClip[] {
+  const spokenExam = examId === "cts-i" ? "C T S I installation" : examId === "cts-d" ? "C T S D design" : "C T S";
+  return [
+    makeClip(prefixId("interface-welcome", examId), "interface", "Welcome", [
+      { label: "Welcome", text: `Welcome to Aureum Study Hall, ${spokenExam} practice.` },
+      { label: "Purpose", text: "Build the judgment behind the signal with original, source-grounded practice." },
+      { label: "Privacy", text: "Your session and attempt history remain in this browser. No account is required." },
+    ]),
+    makeClip(prefixId("interface-session-builder", examId), "interface", "Session builder", [
+      { label: "Session choices", text: "Choose a quick drill, deep practice, the curated seventy-five-question Final Cram, the official-pace simulation, or complete bank study." },
+      { label: "Coverage", text: examId === "cts-i" ? "Practice all six exam areas in blueprint balance, or focus on one exam area." : "Practice all four exam areas in blueprint balance, or focus on one exam area." },
+      { label: "Modes", text: "Timed mode uses four choices and one best answer. Study mode also includes clearly labeled hands-on learning activities." },
+    ]),
+    makeClip(prefixId("interface-exam-controls", examId), "interface", "Exam controls", [
+      { label: "Navigation", text: "Use Previous and Next to move through the session. Flag any question you want to revisit." },
+      { label: "Answer help", text: "On desktop, hold Control to preview why each choice fits or does not fit. On touch devices, press and hold an option. The Answer Help button also reveals the explanation without selecting the response." },
+      { label: "Read aloud", text: "Use the read-aloud controls to replay the question, adjust playback speed, or automatically read each new question." },
+    ]),
+    makeClip(prefixId("interface-results", examId), "interface", "Results guide", [
+      { label: "Results", text: "Your study report separates overall score, answered accuracy, exam-area performance, and blueprint-task performance." },
+      { label: "Review", text: "Open each review item to compare your response, the best answer, the explanation, and its source citation." },
+      { label: "Next step", text: "You can practice missed items, download a C S V report, print a P D F, or build another session." },
+    ]),
+  ];
+}
+
+export const interfaceNarrationClips: NarrationClip[] = getInterfaceNarrationClips("cts");
 
 export const NARRATION_REQUEST_EVENT = "aureum:narration-request";
 
@@ -236,13 +247,13 @@ export function requestNarrationClip(clip: NarrationClip) {
   window.dispatchEvent(new CustomEvent(NARRATION_REQUEST_EVENT, { detail: { clip } }));
 }
 
-export function buildNarrationManifest(questionBank: BaseQuestion[]) {
+export function buildNarrationManifest(questionBank: BaseQuestion[], examId: ExamId = "cts") {
   return [
-    ...interfaceNarrationClips,
+    ...getInterfaceNarrationClips(examId),
     ...questionBank.flatMap((question) => [
-      questionNarrationClip(question),
-      ...rationaleNarrationClips(question),
-      reviewNarrationClip(question),
+      questionNarrationClip(question, examId),
+      ...rationaleNarrationClips(question, examId),
+      reviewNarrationClip(question, examId),
     ]),
   ];
 }

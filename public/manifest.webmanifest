@@ -1,7 +1,7 @@
 {
-  "name": "Aureum Study Hall — CTS Practice",
+  "name": "Aureum Study Hall — CTS, CTS-I & CTS-D Practice",
   "short_name": "Aureum CTS",
-  "description": "Free, independent CTS certification practice with 300 original source-grounded questions.",
+  "description": "Free, independent CTS, CTS-I, and CTS-D certification practice with source-grounded mastery questions.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

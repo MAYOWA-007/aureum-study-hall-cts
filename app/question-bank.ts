@@ -1,7 +1,12 @@
 import parsed from "./questions.generated.json";
 import parsedFinalCram from "./final-cram.generated.json";
+import parsedCtsi from "./questions-ctsi.generated.json";
+import parsedFinalCramCtsi from "./final-cram-ctsi.generated.json";
+import parsedCtsd from "./questions-ctsd.generated.json";
+import parsedFinalCramCtsd from "./final-cram-ctsd.generated.json";
 
-export type Domain = "A" | "B" | "C" | "D";
+export type ExamId = "cts" | "cts-i" | "cts-d";
+export type Domain = "A" | "B" | "C" | "D" | "E" | "F";
 export type QuestionType = "single" | "hotspot" | "connect" | "order" | "numeric" | "multi";
 
 export type Hotspot = { id: string; label: string; x: number; y: number; w: number; h: number };
@@ -937,12 +942,12 @@ function wrongChoiceLesson(question: BaseQuestion, choice: string, correct: stri
   return `Not this one: ${contrast}. Decisive rule: ${why}. Best answer: ${correct}.`;
 }
 
-function studyNote(question: BaseQuestion) {
+function studyNote(question: BaseQuestion, cueLabel = "CTS cue") {
   const why = cleanText(question.explanation).replace(/[.;]+$/, "");
-  return `${why}. CTS cue: ${decisionCue(question)}.`;
+  return `${why}. ${cueLabel}: ${decisionCue(question)}.`;
 }
 
-function buildRationales(question: BaseQuestion) {
+function buildRationales(question: BaseQuestion, cueLabel = "CTS cue") {
   if (!question.choices?.length) return undefined;
   const answerIndexes = question.type === "multi"
     ? ((question.answer as number[]) ?? [])
@@ -951,22 +956,75 @@ function buildRationales(question: BaseQuestion) {
   const why = cleanText(question.explanation).replace(/[.;]+$/, "");
   return question.choices.map((choice, index) => {
     if (answerIndexes.includes(index)) {
-      return `Correct: ${why}. CTS cue: ${decisionCue(question)}.`;
+      return `Correct: ${why}. ${cueLabel}: ${decisionCue(question)}.`;
     }
     return wrongChoiceLesson(question, choice, correct, why);
   });
 }
 
-function enrichQuestion(question: BaseQuestion) {
-  const task = taskOverrides[question.id] ?? canonicalTasks[question.task] ?? question.task;
+function enrichQuestion(question: BaseQuestion, applyCtsTaskMap = true, cueLabel = "CTS cue") {
+  const task = applyCtsTaskMap ? (taskOverrides[question.id] ?? canonicalTasks[question.task] ?? question.task) : question.task;
   const enriched = { ...question, task };
-  const note = studyNote(enriched);
+  const note = enriched.studyNote ?? studyNote(enriched, cueLabel);
   return {
     ...enriched,
     studyNote: note,
-    interactionRationale: enriched.choices?.length ? undefined : `Work from the governing relationship or dependency, not from memory alone. ${note}`,
-    rationales: buildRationales(enriched),
+    interactionRationale: enriched.choices?.length ? undefined : (enriched.interactionRationale ?? `Work from the governing relationship or dependency, not from memory alone. ${note}`),
+    rationales: enriched.rationales?.length ? enriched.rationales : buildRationales(enriched, cueLabel),
   };
+}
+
+function normalizeAdditionalBank(rawQuestions: BaseQuestion[], cueLabel: string): BaseQuestion[] {
+  return rawQuestions.map((question) => {
+    const changed: BaseQuestion = {
+      ...question,
+      prompt: cleanText(question.prompt),
+      explanation: cleanText(question.explanation),
+      choices: question.choices?.map(cleanText),
+    };
+    if (changed.type === "numeric" || changed.type === "order") {
+      return enrichQuestion({ ...changed, choices: undefined, answer: undefined, rationales: undefined }, false, cueLabel);
+    }
+    if (changed.type === "multi") {
+      return enrichQuestion(changed, false, cueLabel);
+    }
+    if (HOTSPOT_IDS.has(changed.id) && changed.choices && typeof changed.answer === "number") {
+      const transformed: BaseQuestion = {
+        ...changed,
+        type: "hotspot",
+        prompt: /Select the correct labeled region in the diagram\./i.test(changed.prompt)
+          ? changed.prompt
+          : `${changed.prompt} Select the correct labeled region in the diagram.`,
+        hotspots: changed.hotspots?.length
+          ? changed.hotspots
+          : changed.choices.map((label, index) => ({ id: String(index), label, ...hotspotPositions[index] })),
+        answer: String(changed.answer),
+      };
+      return enrichQuestion(transformed, false, cueLabel);
+    }
+    if (CONNECT_IDS.has(changed.id) && changed.choices && typeof changed.answer === "number") {
+      const transformed: BaseQuestion = {
+        ...changed,
+        type: "connect",
+        prompt: /Draw the connection from the prompt node to the best destination\./i.test(changed.prompt)
+          ? changed.prompt
+          : `${changed.prompt} Draw the connection from the prompt node to the best destination.`,
+        answer: String(changed.answer),
+      };
+      return enrichQuestion(transformed, false, cueLabel);
+    }
+    return enrichQuestion(changed, false, cueLabel);
+  });
+}
+
+function normalizeFinalCramBank(rawQuestions: BaseQuestion[], cueLabel: string): BaseQuestion[] {
+  return rawQuestions.map((question) => enrichQuestion({
+    ...question,
+    collection: "final-cram",
+    prompt: cleanText(question.prompt),
+    explanation: cleanText(question.explanation),
+    choices: question.choices?.map(cleanText),
+  }, false, cueLabel));
 }
 
 const base = (parsed as BaseQuestion[]).map((question) => {
@@ -1051,7 +1109,15 @@ export const questions: BaseQuestion[] = [...base, ...auditedServiceQuestions];
 export const finalCramQuestions: BaseQuestion[] = parsedFinalCram as BaseQuestion[];
 export const allQuestions: BaseQuestion[] = [...questions, ...finalCramQuestions];
 
-export const domainMeta: Record<Domain, { name: string; weight: string }> = {
+export const ctsiQuestions: BaseQuestion[] = normalizeAdditionalBank(parsedCtsi as BaseQuestion[], "CTS-I cue");
+export const ctsiFinalCramQuestions: BaseQuestion[] = normalizeFinalCramBank(parsedFinalCramCtsi as BaseQuestion[], "CTS-I cue");
+export const ctsiAllQuestions: BaseQuestion[] = [...ctsiQuestions, ...ctsiFinalCramQuestions];
+
+export const ctsdQuestions: BaseQuestion[] = normalizeAdditionalBank(parsedCtsd as BaseQuestion[], "CTS-D cue");
+export const ctsdFinalCramQuestions: BaseQuestion[] = normalizeFinalCramBank(parsedFinalCramCtsd as BaseQuestion[], "CTS-D cue");
+export const ctsdAllQuestions: BaseQuestion[] = [...ctsdQuestions, ...ctsdFinalCramQuestions];
+
+export const domainMeta: Record<"A" | "B" | "C" | "D", { name: string; weight: string }> = {
   A: { name: "Creating AV Solutions", weight: "35%" },
   B: { name: "Implementing AV Solutions", weight: "30%" },
   C: { name: "Supporting AV System Operation", weight: "15%" },
@@ -1077,3 +1143,136 @@ export const researchSources = [
   { label: "Shure — Microphone Placement and Feedback", url: "https://www.shure.com/en-US/docs/guide/SM58" },
   { label: "OSHA — Electrical Grounding", url: "https://www.osha.gov/etools/construction/electrical-incidents/grounding" },
 ];
+
+export type ExamConfig = {
+  id: ExamId;
+  code: "CTS" | "CTS-I" | "CTS-D";
+  specialty: string;
+  themeClass: "emerald-theme" | "crimson-theme" | "sapphire-theme";
+  themeColorHex: string;
+  heroHeadline: [string, string];
+  heroLede: string;
+  coverageAllLabel: string;
+  cardFlourish: string;
+  cardEyebrow: string;
+  cardFinePrint: string;
+  integrityNote: string;
+  sourceIntro: string;
+  storageKey: string;
+  historyKey: string;
+  domains: Domain[];
+  domainMeta: Partial<Record<Domain, { name: string; weight: string; weightNum: number }>>;
+  questions: BaseQuestion[];
+  finalCramQuestions: BaseQuestion[];
+  allQuestions: BaseQuestion[];
+  researchSources: { label: string; url: string }[];
+};
+
+export const EXAM_ORDER: ExamId[] = ["cts", "cts-i", "cts-d"];
+
+export const examConfigs: Record<ExamId, ExamConfig> = {
+  cts: {
+    id: "cts",
+    code: "CTS",
+    specialty: "General Certification",
+    themeClass: "emerald-theme",
+    themeColorHex: "#07392e",
+    heroHeadline: ["Build the judgment", "behind the signal."],
+    heroLede: "Free, independent practice grounded in the third-edition CTS Exam Guide and calibrated to the current four-duty outline. Your work stays on this device.",
+    coverageAllLabel: "All four exam areas — blueprint balanced",
+    cardFlourish: "MM",
+    cardEyebrow: "Inside Aureum CTS",
+    cardFinePrint: "The 115-question simulation uses the official 150-minute pace and only single-best-answer questions. Custom learning activities appear in study mode. Progress saves only in this browser.",
+    integrityNote: "AVIXA states that the live CTS exam uses four response alternatives and one best answer. Timed practice now follows that response format. Labeled choices, matching, ordering, numeric, and multi-select exercises are clearly marked study activities—not actual or leaked exam questions. No practice tool can guarantee a pass or predict a live exam.",
+    sourceIntro: "The original practice bank was developed from the CTS Certified Technology Specialist Exam Guide, Third Edition, then checked against the current official outline and primary technical sources below. Citations identify the learning basis; the copyrighted guide itself is not included.",
+    storageKey: "aureum-study-hall-cts-session-v1",
+    historyKey: "aureum-study-hall-cts-history-v1",
+    domains: ["A", "B", "C", "D"],
+    domainMeta: {
+      A: { name: "Creating AV Solutions", weight: "35%", weightNum: 0.35 },
+      B: { name: "Implementing AV Solutions", weight: "30%", weightNum: 0.30 },
+      C: { name: "Supporting AV System Operation", weight: "15%", weightNum: 0.15 },
+      D: { name: "Servicing AV Solutions", weight: "20%", weightNum: 0.20 },
+    },
+    questions,
+    finalCramQuestions,
+    allQuestions,
+    researchSources,
+  },
+  "cts-i": {
+    id: "cts-i",
+    code: "CTS-I",
+    specialty: "Installation Specialist",
+    themeClass: "crimson-theme",
+    themeColorHex: "#5d101e",
+    heroHeadline: ["Master the craft", "inside the rack & room."],
+    heroLede: "Advanced installation practice grounded in the second-edition CTS-I Exam Guide and calibrated to AVIXA’s six-duty CTS-I Exam Content Outline and Job Task Analysis.",
+    coverageAllLabel: "All six exam areas — blueprint balanced",
+    cardFlourish: "CTS·I",
+    cardEyebrow: "Inside Aureum CTS-I",
+    cardFinePrint: "Covers pre-installation readiness, ongoing field coordination, rough-in rigging & conduit math, rack build (F502.01), audio/video calibration & verification (ANSI/AVIXA 10), closeout, and post-project maintenance.",
+    integrityNote: "AVIXA’s live CTS-I examination tests installation, verification, closeout, and troubleshooting competencies across six duties using four-choice questions. Timed practice uses single-best-answer questions, while study mode unlocks hands-on calculations, sequencing, hotspot, and connection drills.",
+    sourceIntro: "The CTS-I practice bank was developed from the CTS-I Certified Technology Specialist–Installation Exam Guide, Second Edition (Andy Ciddor) and verified against the current AVIXA CTS-I Exam Content Outline and Job Task Analysis.",
+    storageKey: "aureum-study-hall-cts-i-session-v1",
+    historyKey: "aureum-study-hall-cts-i-history-v1",
+    domains: ["A", "B", "C", "D", "E", "F"],
+    domainMeta: {
+      A: { name: "Implement Pre-Installation Activities", weight: "17%", weightNum: 0.17 },
+      B: { name: "Practice Ongoing Project Responsibilities", weight: "12%", weightNum: 0.12 },
+      C: { name: "Conduct Site Rough-In/First-Fix", weight: "12%", weightNum: 0.12 },
+      D: { name: "Install AV Systems", weight: "39%", weightNum: 0.39 },
+      E: { name: "Perform AV Systems Closeout", weight: "12%", weightNum: 0.12 },
+      F: { name: "Conduct Post Project Activities", weight: "8%", weightNum: 0.08 },
+    },
+    questions: ctsiQuestions,
+    finalCramQuestions: ctsiFinalCramQuestions,
+    allQuestions: ctsiAllQuestions,
+    researchSources: [
+      { label: "AVIXA CTS-I Exam Content Outline (2023/2024 JTA)", url: "https://www.avixa.org/certification-section/cts-i" },
+      { label: "AVIXA CTS-I Job Task Analysis (2023)", url: "https://www.avixa.org/certification-section/cts-i" },
+      { label: "CTS-I Certified Technology Specialist–Installation Exam Guide, 2nd Ed.", url: "https://www.avixa.org/training-section/books-study-guides" },
+      { label: "ANSI/INFOCOMM 10:2013 — AV Systems Performance Verification", url: "https://www.avixa.org/resources/standards/av-systems-performance-verification" },
+      { label: "AVIXA F502.01:2018 — Rack Building for Audiovisual Systems", url: "https://www.avixa.org/resources/standards/published-standards" },
+      { label: "AVIXA F501.01:2015 — Cable Labeling for Audiovisual Systems", url: "https://www.avixa.org/resources/standards/cable-labeling-for-av-systems" },
+      { label: "ANSI/INFOCOMM V201.01 — Image System Contrast Ratio (ISCR)", url: "https://www.avixa.org/resources/standards/image-system-contrast-ratio" },
+      { label: "ANSI/CTA/INFOCOMM J-STD-710 — Audio, Video and Control Architectural Drawing Symbols", url: "https://www.avixa.org/resources/standards/published-standards" },
+    ],
+  },
+  "cts-d": {
+    id: "cts-d",
+    code: "CTS-D",
+    specialty: "Design Specialist",
+    themeClass: "sapphire-theme",
+    themeColorHex: "#0b2540",
+    heroHeadline: ["Engineer the space", "before the first pull."],
+    heroLede: "Advanced AV system design practice grounded in the second-edition CTS-D Exam Guide, AVIXA’s master formula sheet, and the four-duty CTS-D Exam Content Outline.",
+    coverageAllLabel: "All four exam areas — blueprint balanced",
+    cardFlourish: "CTS·D",
+    cardEyebrow: "Inside Aureum CTS-D",
+    cardFinePrint: "Covers needs assessment & program reports, allied-trade A/E coordination (structural, MEP, acoustics, IT/security), DISCAS/ISCR/PAG-NAG/EPR engineering calculations, and D401.01 design deployment.",
+    integrityNote: "AVIXA’s live CTS-D examination evaluates needs assessment, allied-trade coordination, conceptual and final AV engineering design, and deployment verification using four-choice questions. Timed practice follows that format; study mode includes calculation, sequencing, hotspot, and connection activities.",
+    sourceIntro: "The CTS-D practice bank was developed from the CTS-D Certified Technology Specialist–Design Exam Guide, Second Edition (Andy Ciddor), the 2024 AVIXA CTS-D Master Formula Sheet, and the official CTS-D Exam Content Outline and Job Task Analysis.",
+    storageKey: "aureum-study-hall-cts-d-session-v1",
+    historyKey: "aureum-study-hall-cts-d-history-v1",
+    domains: ["A", "B", "C", "D"],
+    domainMeta: {
+      A: { name: "Conduct a Needs Assessment", weight: "20%", weightNum: 0.20 },
+      B: { name: "Coordinate with Other Professionals", weight: "28%", weightNum: 0.28 },
+      C: { name: "Develop and Document AV Designs", weight: "38%", weightNum: 0.38 },
+      D: { name: "Deploy AV Designs", weight: "14%", weightNum: 0.14 },
+    },
+    questions: ctsdQuestions,
+    finalCramQuestions: ctsdFinalCramQuestions,
+    allQuestions: ctsdAllQuestions,
+    researchSources: [
+      { label: "AVIXA CTS-D Exam Content Outline (2023/2024 JTA)", url: "https://www.avixa.org/certification-section/cts-d" },
+      { label: "AVIXA CTS-D Job Task Analysis (2023)", url: "https://www.avixa.org/certification-section/cts-d" },
+      { label: "AVIXA CTS-D Master List of Formulas and Symbology Descriptions (2024)", url: "https://www.avixa.org/certification-section/cts-d" },
+      { label: "CTS-D Certified Technology Specialist–Design Exam Guide, 2nd Ed.", url: "https://www.avixa.org/training-section/books-study-guides" },
+      { label: "ANSI/AVIXA V202.01:2016 — Display Image Size for 2D Content (DISCAS)", url: "https://www.avixa.org/resources/standards/published-standards" },
+      { label: "ANSI/INFOCOMM V201.01 — Image System Contrast Ratio (ISCR)", url: "https://www.avixa.org/resources/standards/image-system-contrast-ratio" },
+      { label: "ANSI/INFOCOMM A102.01 — Audio Coverage Uniformity in Listener Areas", url: "https://www.avixa.org/resources/standards/audio-coverage-uniformity" },
+      { label: "AVIXA D401.01 — Design Documentation for Audiovisual Systems", url: "https://www.avixa.org/resources/standards/published-standards" },
+    ],
+  },
+};

@@ -1,5 +1,15 @@
 const CACHE_NAME = "aureum-study-hall-cts-v4";
-const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon-192.png", "./favicon-512.png", "./audio/narration/manifest.json", "./audio/narration/pack.json"];
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./favicon-192.png",
+  "./favicon-512.png",
+  "./audio/narration/manifest.json",
+  "./audio/narration/pack.json",
+  "./audio/narration/pack-cts-i.json",
+  "./audio/narration/pack-cts-d.json",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
@@ -18,8 +28,10 @@ self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
     event.respondWith(
       fetch(event.request).then((response) => {
-        const copy = response.clone();
-        void caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy));
+        if (response.ok && response.status === 200) {
+          const copy = response.clone();
+          void caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy)).catch(() => {});
+        }
         return response;
       }).catch(() => caches.match("./index.html")),
     );
