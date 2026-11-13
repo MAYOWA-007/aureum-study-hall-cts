@@ -18,9 +18,9 @@ Aureum Study Hall is a free, independent study series. CTS is the first release:
 
 ## Privacy and architecture
 
-This release is a static React/Vite site. It has no backend, Firebase project, authentication, payment system, account tracking, or analytics. Session and history data are stored only in the learner's browser using `localStorage`.
+This release is a static React/Vite site. It has no backend, Firebase project, authentication, payment system, account tracking, or analytics. Session and history data are stored only in the learner's browser using `localStorage`, with graceful fallback when storage is restricted or full, and deterministic seed generation that works over both HTTPS and plain HTTP LAN dev servers.
 
-The deployed app never sends text or credentials to Fish Audio. Narration is generated privately into static MP3 files, then played and cached on demand by the browser. The Fish API key must remain in the private shell environment and must never be added to this repository.
+The deployed app never sends text or credentials to Fish Audio. Narration is generated privately into static MP3 files, then played and cached on demand by the browser (skipping partial `206` audio range responses so service-worker caching stays error-free across mobile and desktop browsers). The Fish API key must remain in the private shell environment and must never be added to this repository.
 
 ## Narration workflow
 

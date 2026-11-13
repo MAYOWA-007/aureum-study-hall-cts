@@ -54,7 +54,31 @@ function seededRandom(seed: string) {
 }
 
 function newSessionSeed() {
-  return crypto.randomUUID().replaceAll("-", "").slice(0, 8).toUpperCase();
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID().replaceAll("-", "").slice(0, 8).toUpperCase();
+  }
+  if (typeof crypto !== "undefined" && typeof crypto.getRandomValues === "function") {
+    const bytes = new Uint8Array(4);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("").toUpperCase();
+  }
+  return Math.floor(Math.random() * 0xffffffff).toString(16).padStart(8, "0").toUpperCase();
+}
+
+function safeSetStorage(key: string, value: string) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Ignore storage quota or private-mode errors so active study sessions keep running.
+  }
+}
+
+function safeRemoveStorage(key: string) {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    // Ignore restricted-storage errors.
+  }
 }
 
 function shuffledIds(source: number[], random = Math.random) {
@@ -206,17 +230,20 @@ function correctLabel(question: BaseQuestion) {
   return question.choices?.[Number(question.answer)] ?? "";
 }
 
-function choiceRationale(question: BaseQuestion, index: number) {
+function choiceRationale(question: BaseQuestion, index: number, hotspotId?: string) {
   const correct = question.type === "multi"
     ? ((question.answer as number[]) ?? []).includes(index)
-    : Number(question.answer) === index;
+    : question.type === "hotspot"
+      ? question.answer === (hotspotId ?? question.hotspots?.[index]?.id)
+      : Number(question.answer) === index;
   const auditedRationale = question.rationales?.[index];
   if (auditedRationale) {
     const normalized = auditedRationale.replace(/^(Correct|Incorrect)\s*[:—-]\s*/i, "");
     return `${correct ? "Correct" : "Incorrect"} — ${normalized}`;
   }
   if (correct) return `Correct — ${question.explanation}`;
-  return `Incorrect — “${question.choices?.[index] ?? "This option"}” does not fit the condition in the prompt; the guide-supported response is “${correctLabel(question)}.”`;
+  const label = question.type === "hotspot" ? question.hotspots?.[index]?.label : question.choices?.[index];
+  return `Incorrect — “${label ?? "This option"}” does not fit the condition in the prompt; the guide-supported response is “${correctLabel(question)}.”`;
 }
 
 const LONG_PRESS_MS = 520;
@@ -467,7 +494,7 @@ export default function Home() {
 
   useEffect(() => {
     if (screen !== "exam") return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, sessionSeed, attemptStartedAt }));
+    safeSetStorage(STORAGE_KEY, JSON.stringify({ mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, sessionSeed, attemptStartedAt }));
   }, [screen, mode, currentIndex, answers, flagged, checked, timeLeft, shuffleOn, questionIds, sessionSize, sessionDuty, sessionSeed, attemptStartedAt]);
 
   useEffect(() => {
@@ -501,8 +528,10 @@ export default function Home() {
         setShowNavigator(false);
         setShowSubmit(false);
         setShowSources(false);
+        setHintLens(false);
         return;
       }
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
       if (screen !== "exam" || showNavigator || showSubmit || showSources || !/^[1-5]$/.test(event.key)) return;
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement || event.target instanceof HTMLTextAreaElement) return;
       const index = Number(event.key) - 1;
@@ -536,10 +565,10 @@ export default function Home() {
     setHistory((current) => {
       if (current.some((attempt) => attempt.id === summary.id)) return current;
       const next = [summary, ...current].slice(0, 12);
-      localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+      safeSetStorage(HISTORY_KEY, JSON.stringify(next));
       return next;
     });
-    localStorage.removeItem(STORAGE_KEY);
+    safeRemoveStorage(STORAGE_KEY);
     setHasSaved(false);
   }, [screen, attemptStartedAt, mode, orderedQuestions, sessionAnsweredCount, score, sessionDuty]);
 
@@ -567,24 +596,41 @@ export default function Home() {
   function resume() {
     try {
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
-      setMode(saved.mode ?? "exam");
-      setCurrentIndex(saved.currentIndex ?? 0);
-      setAnswers(saved.answers ?? {});
-      setFlagged(saved.flagged ?? []);
-      setChecked(saved.checked ?? []);
-      setTimeLeft(saved.timeLeft ?? examSeconds(validQuestionOrder(saved.questionIds) ? saved.questionIds.length : OFFICIAL_EXAM_QUESTIONS));
       const restoredOrder = validQuestionOrder(saved.questionIds) ? saved.questionIds : [...standardQuestionIds];
+      const rawIndex = typeof saved.currentIndex === "number" && Number.isFinite(saved.currentIndex) ? Math.floor(saved.currentIndex) : 0;
+      const clampedIndex = Math.min(Math.max(0, rawIndex), Math.max(0, restoredOrder.length - 1));
+      setMode(saved.mode === "study" ? "study" : "exam");
+      setCurrentIndex(clampedIndex);
+      setAnswers(saved.answers && typeof saved.answers === "object" && !Array.isArray(saved.answers) ? saved.answers : {});
+      setFlagged(Array.isArray(saved.flagged) ? saved.flagged : []);
+      setChecked(Array.isArray(saved.checked) ? saved.checked : []);
+      setTimeLeft(typeof saved.timeLeft === "number" && Number.isFinite(saved.timeLeft) && saved.timeLeft >= 0 ? saved.timeLeft : examSeconds(restoredOrder.length));
       setQuestionIds(restoredOrder);
       setShuffleOn(Boolean(saved.shuffleOn));
       setSessionSize(SESSION_SIZES.includes(saved.sessionSize) ? saved.sessionSize : 115);
       setSessionDuty(["all", "A", "B", "C", "D"].includes(saved.sessionDuty) ? saved.sessionDuty : "all");
       setSessionSeed(typeof saved.sessionSeed === "string" ? saved.sessionSeed : newSessionSeed());
-      setAttemptStartedAt(saved.attemptStartedAt ?? new Date().toISOString());
+      setAttemptStartedAt(typeof saved.attemptStartedAt === "string" ? saved.attemptStartedAt : new Date().toISOString());
       setScreen("exam");
       window.scrollTo({ top: 0, behavior: "auto" });
     } catch {
       start("exam");
     }
+  }
+
+  function returnToStart() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setHasSaved(validQuestionOrder(parsed.questionIds));
+      } else {
+        setHasSaved(false);
+      }
+    } catch {
+      setHasSaved(false);
+    }
+    setScreen("start");
   }
 
   function toggleFlag() {
@@ -780,14 +826,18 @@ export default function Home() {
             </div>
           </div>
           <div className="review-list">
-            {filtered.map((q) => {
+            {filtered.length === 0 ? (
+              <div className="review-empty">
+                <p>{reviewFilter === "missed" ? "No missed items in this session. Switch to All to review every response." : "No questions matched this filter."}</p>
+              </div>
+            ) : filtered.map((q) => {
               const correct = isCorrect(q, answers[q.id]);
               return <details className={`review-item ${correct ? "right" : "wrong"}`} key={q.id}><summary><span>{correct ? "✓" : "×"}</span><b>{q.collection === "final-cram" ? `FC${q.legacyId}` : String(q.id).padStart(3, "0")}</b><p>{visiblePrompt(q)}</p><small>{q.topic}</small></summary><div className="review-content"><div><small>Your response</small><p>{responseLabel(q, answers[q.id])}</p></div><div><small>Best answer</small><p>{correctLabel(q)}</p></div><div className="explanation"><small>Why</small><p>{q.explanation}</p><cite>{q.source}</cite></div><div className="study-takeaway"><small>Study takeaway</small><p>{q.studyNote ?? q.explanation}</p></div>{q.rationales?.length ? <div className="choice-review"><small>Choice-by-choice reasoning</small><ol>{q.rationales.map((rationale, index) => <li key={index}><b>{letters[index]}. {q.choices?.[index]}</b><p>{rationale}</p></li>)}</ol></div> : q.interactionRationale ? <div className="choice-review"><small>Interaction reasoning</small><p>{q.interactionRationale}</p></div> : null}</div></details>;
             })}
           </div>
           <div className="results-actions">
             {score < sessionTotal && <button className="primary-btn" onClick={practiceMissed}>Practice {sessionTotal - score} review items</button>}
-            <button className="secondary-btn" onClick={() => start("exam", questionIds)}>Retake this session</button>
+            <button className="secondary-btn" onClick={() => start(mode, questionIds)}>Retake this session</button>
             <button className="secondary-btn" onClick={downloadResults}>Download CSV report</button>
             <button className="secondary-btn" onClick={printResults}>Print / save PDF</button>
             <button className="text-btn results-home" onClick={() => setScreen("start")}>Build another session</button>
@@ -806,7 +856,7 @@ export default function Home() {
   return (
     <main className="exam-page emerald-theme">
       <header className="exam-header">
-        <button className="brand-button" onClick={() => setScreen("start")}><img className="seal small" src="./favicon-512.png" alt="" /><span>Aureum Study Hall</span></button>
+        <button className="brand-button" onClick={returnToStart}><img className="seal small" src="./favicon-512.png" alt="" /><span>Aureum Study Hall</span></button>
         <div className="header-progress"><span style={{ width: `${progress}%` }} /><b>{currentIndex + 1}</b><small>of {sessionTotal}</small>{shuffleOn && <em>Set {sessionSeed}</em>}</div>
         <div className="header-tools">
           {mode === "exam" && <div className={`timer ${timeLeft < 900 ? "urgent" : ""}`}><span>Time</span><b>{formatTime(timeLeft)}</b></div>}
@@ -921,7 +971,7 @@ function QuestionInput({ question, response, setResponse, moveStep, controlHeld,
       <p className="interaction-hint">Choose one clearly labeled answer area. A check mark and “Selected” label will confirm your choice.</p>
       <div className="labeled-choice-board" aria-label="Labeled answer choices">
         {question.hotspots?.map((spot, index) => (
-          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
+          <HotspotOption key={spot.id} label={letters[index]} option={spot.label} hint={choiceRationale(question, index, spot.id)} selected={response === spot.id} forcedHint={hintLens && pinnedHint === index} onHint={() => narrateHint(index)} onSelect={() => chooseOrHint(index, () => setResponse(spot.id))} />
         ))}
       </div>
     </div>
