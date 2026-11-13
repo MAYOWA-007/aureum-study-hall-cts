@@ -1,0 +1,2027 @@
+[
+  {
+    "id": 1001,
+    "legacyId": 1,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Identify functional requirements",
+    "topic": "Five-step needs analysis order",
+    "prompt": "Which sequence places the five AV needs-analysis steps in their proper order prior to selecting equipment?",
+    "choices": [
+      "Ask Questions -> Review Documentation -> Evaluate Site / Benchmark -> Program Meetings -> Program Report",
+      "Review Documentation -> Ask Questions -> Program Meetings -> Evaluate Site -> Program Report",
+      "Ask Questions -> Evaluate Site -> Program Meetings -> Review Documentation -> Program Report",
+      "Evaluate Site -> Ask Questions -> Review Documentation -> Program Report -> Program Meetings"
+    ],
+    "answer": 0,
+    "explanation": "Needs analysis progresses through five discovery steps before hardware selection: Ask Questions, Review Existing Documentation, Evaluate the Site / Benchmarking, Conduct Program Meetings, and Create the Concept Design / Program Report.",
+    "studyNote": "Needs-analysis sequence: Ask Questions -> Review Docs -> Evaluate Site/Benchmark -> Program Meetings -> Program Report.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 3, pp. 41-48",
+    "chapter": 3,
+    "rationales": [
+      "Correct: Needs analysis moves from stakeholder questions and document review through site/benchmark evaluation and program meetings to the Program Report.",
+      "Not this one: Stakeholder questioning precedes document review, and site evaluation precedes program meetings.",
+      "Not this one: Reviewing existing architectural and IT documentation occurs before on-site evaluation and program meetings.",
+      "Not this one: The Concept Design / Program Report is the final deliverable produced after program meetings conclude."
+    ]
+  },
+  {
+    "id": 1002,
+    "legacyId": 2,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Identify functional requirements",
+    "topic": "Exploration vs Sensation vs Instruction AV experiences",
+    "prompt": "A museum features an interactive holographic gallery where visitors manipulate virtual 3D artifacts. Which AV experience category best describes this environment?",
+    "choices": [
+      "Exploration",
+      "Instruction",
+      "Sensation",
+      "Passive paging"
+    ],
+    "answer": 0,
+    "explanation": "Exploration describes an experience where participants actively discover and interact with real or virtual content, whereas Instruction transfers knowledge to absorbing learners and Sensation delights or amazes passive audiences.",
+    "studyNote": "Match participant mode: Interact + Inform = Collaboration; Absorb + Inform = Instruction; Interact + Entertain = Exploration; Absorb + Entertain = Sensation.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 3, pp. 33-36",
+    "chapter": 3,
+    "rationales": [
+      "Correct: Exploration engages participants in discovering and interacting with real or virtual content in an entertaining, self-guided manner.",
+      "Not this one: Instruction transfers structured knowledge to participants who primarily absorb content rather than self-directing interactive discovery.",
+      "Not this one: Sensation aims to delight, amaze, or amuse participants who absorb the spectacle without interactive manipulation.",
+      "Not this one: Passive paging is not one of the four AV experience types on the Chapter 3 continuum."
+    ]
+  },
+  {
+    "id": 1003,
+    "legacyId": 3,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Identify functional requirements",
+    "topic": "Comfortable horizontal and vertical head rotation limits",
+    "prompt": "When evaluating seating sightlines, what is the comfortable horizontal head rotation range to either side of center?",
+    "choices": [
+      "About 15 degrees, because human peripheral vision cannot detect movement beyond narrow focal limits",
+      "About 30 degrees, because eye rotation alone provides full peripheral coverage across display boundaries",
+      "About 75 degrees, because swiveling conference chairs eliminate physical neck strain over extended meetings",
+      "About 45 degrees, as sustained neck rotation causes viewer fatigue"
+    ],
+    "answer": 3,
+    "explanation": "While average horizontal head rotation reaches ~55° (and ~45° comfortably), forcing viewers to hold a rotated neck posture causes fatigue and strain over a session, so primary content must stay within the natural visual field.",
+    "studyNote": "Horizontal head rotation: 45° comfortable (55° average); vertical head rotation: ≤30° comfortable. Do not count on neck movement to fix bad sightlines.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 4, pp. 74-77",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: A 15-degree arc represents primary eye rotation without head movement rather than comfortable head rotation.",
+      "Not this one: Thirty degrees is narrower than the comfortable head rotation limit of 45 degrees to either side.",
+      "Not this one: Seventy-five degrees exceeds the comfortable head rotation limit and causes physical discomfort during extended sessions.",
+      "Correct: Comfortable horizontal head rotation reaches approximately 45 degrees each side, and sustained rotation beyond this range induces neck strain."
+    ]
+  },
+  {
+    "id": 1004,
+    "legacyId": 4,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Identify functional requirements",
+    "topic": "Passive viewing vs Full-motion video categories",
+    "prompt": "Under ANSI/AVIXA V201.01 (ISCR), what minimum contrast ratios apply to Passive Viewing and Full-Motion Video?",
+    "choices": [
+      "5:1 for Passive Viewing and 50:1 for Analytical Decision Making",
+      "7:1 for Passive Viewing and 80:1 for Full-Motion Video",
+      "15:1 for Basic Decision Making and 50:1 for Analytical Decision Making",
+      "50:1 for Analytical Decision Making and 80:1 for Full-Motion Video"
+    ],
+    "answer": 1,
+    "explanation": "General transit signage where viewers glance briefly without making critical decisions is Passive Viewing (7:1 minimum contrast), whereas cinema/home-theater playback is Full-Motion Video (80:1 minimum contrast).",
+    "studyNote": "ISCR minimums: Passive = 7:1, BDM = 15:1, ADM = 50:1, Full-motion video = 80:1.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 5, pp. 91-94, 102-105",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Passive viewing requires a minimum contrast ratio of 7:1 rather than 5:1.",
+      "Correct: Under ANSI/AVIXA V201.01 (ISCR), Passive Viewing requires at least 7:1 contrast, and Full-Motion Video requires at least 80:1.",
+      "Not this one: 15:1 is the threshold for Basic Decision Making, and 50:1 is for Analytical Decision Making.",
+      "Not this one: This option pairs Analytical Decision Making with Full-Motion Video rather than Passive Viewing."
+    ]
+  },
+  {
+    "id": 1005,
+    "legacyId": 5,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Identify functional requirements",
+    "topic": "Discoverability vs Understanding in user interface design",
+    "prompt": "In user interface design, how do the fundamental concepts of discoverability and understanding differ?",
+    "choices": [
+      "Discoverability assesses network latency on touch panels, whereas understanding measures processor clock speeds",
+      "Discoverability measures wireless roaming signal strength, whereas understanding verifies graphic user interface color calibration",
+      "Discoverability determines physical button tactile feedback depth, whereas understanding governs system reboot sequence timing",
+      "Discoverability identifies possible actions, while understanding reveals what the controls mean"
+    ],
+    "answer": 3,
+    "explanation": "Human-centered design rests on discoverability (knowing what actions are possible and how to trigger them) and understanding (grasping how the product is meant to be used).",
+    "studyNote": "Discoverability = 'What can I do and where do I press?' Understanding = 'How is this system meant to be used?'",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 15, pp. 304-307",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Network latency and processor speed are hardware performance metrics, not user interface design principles.",
+      "Not this one: Wireless signal strength and color calibration do not relate to human interface discoverability and comprehension.",
+      "Not this one: Button travel depth and boot timing are mechanical and electrical specifications rather than usability concepts.",
+      "Correct: Discoverability allows the user to determine what actions are possible, while understanding clarifies how to operate the system."
+    ]
+  },
+  {
+    "id": 1006,
+    "legacyId": 6,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review or formulate client technology master plan",
+    "topic": "Routine network bandwidth ceiling (50% of ready capacity)",
+    "prompt": "When planning AV traffic on a shared enterprise LAN, what maximum percentage of ready capacity should routine AV traffic consume?",
+    "choices": [
+      "No more than 25% of ready bandwidth capacity during peak operational hours",
+      "No more than 50% of ready available capacity",
+      "Up to 75% of nominal switch port link capacity across all active virtual networks",
+      "Up to 90% of theoretical backbone throughput under unmanaged multicast conditions"
+    ],
+    "answer": 1,
+    "explanation": "On a shared network, routine AV traffic should be planned to consume no more than 50% of ready (available) capacity so bursts do not saturate the LAN; an isolated AV-only LAN can safely use a higher percentage.",
+    "studyNote": "Shared network routine AV cap = ≤50% of ready capacity (and streaming share ≈ 20% of rated capacity: 70% × 30%).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 16, pp. 321-323",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Budgeting only 25% is unnecessarily restrictive for routine traffic planning on modern switched infrastructure.",
+      "Correct: AVIXA best practice recommends budgeting no more than 50% of ready capacity on shared enterprise networks for routine AV traffic.",
+      "Not this one: Budgeting 75% leaves insufficient headroom for unexpected traffic bursts and network management overhead.",
+      "Not this one: A 90% allocation risks packet drops and buffer bloat during bursty traffic conditions."
+    ]
+  },
+  {
+    "id": 1007,
+    "legacyId": 7,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review or formulate client technology master plan",
+    "topic": "IEEE 802.11 Wi-Fi generations and 802.11ah (Wi-Fi HaLow) role",
+    "prompt": "How does IEEE 802.11ah (Wi-Fi HaLow) differ in application from IEEE 802.11ac and 802.11ax?",
+    "choices": [
+      "802.11ah uses sub-1 GHz frequencies for long-range IoT control rather than high-bandwidth media",
+      "802.11ah operates in the 60 GHz millimetric band to deliver uncompressed multi-channel video streams",
+      "802.11ah requires dedicated shielded twisted-pair cabling infrastructure rather than wireless RF transmission",
+      "802.11ah provides full duplex gigabit streaming speeds optimized for uncompressed Dante audio distribution"
+    ],
+    "answer": 0,
+    "explanation": "Wi-Fi 4 (802.11n), Wi-Fi 5 (802.11ac), and Wi-Fi 6/6E (802.11ax) serve general wireless LAN traffic, whereas 802.11ah (Wi-Fi HaLow) trades throughput for low power and range - making it suitable for AV control, not AV-over-IP streaming.",
+    "studyNote": "802.11n = Wi-Fi 4; 802.11ac = Wi-Fi 5; 802.11ax = Wi-Fi 6/6E; 802.11ah (HaLow) = AV control/IoT only, not AVoIP.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 16, pp. 326-328",
+    "chapter": 16,
+    "rationales": [
+      "Correct: IEEE 802.11ah operates in sub-gigahertz spectrum, providing extended range and low power for IoT and control rather than high-speed video.",
+      "Not this one: 60 GHz operation describes IEEE 802.11ad/ay (WiGig), not 802.11ah HaLow.",
+      "Not this one: IEEE 802.11ah is an over-the-air wireless RF standard, not a wired twisted-pair specification.",
+      "Not this one: Wi-Fi HaLow is designed for low data rates and cannot support uncompressed gigabit audio streaming."
+    ]
+  },
+  {
+    "id": 1008,
+    "legacyId": 8,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review or formulate client technology master plan",
+    "topic": "Security posture classification (lax, realistic, paranoid)",
+    "prompt": "Who establishes an organization's AV security posture, and how does the designer determine it?",
+    "choices": [
+      "The equipment manufacturer establishes it; the designer reviews published device firmware compliance certifications",
+      "The local electrical inspector establishes it; the designer consults regional building code ordinances",
+      "The client establishes it; the designer analyzes operations, data sensitivity, and risk profile",
+      "The structured cabling contractor establishes it; the designer verifies category cable plenum fire safety ratings"
+    ],
+    "answer": 2,
+    "explanation": "Security posture is always set by the client, not the AV designer; the designer uncovers it through seven steps: mission, concept of operations, data importance, risk profile, stakeholders, governance, and project constraints.",
+    "studyNote": "The client sets the security posture; the designer surfaces it early before design sign-off using the 7-step posture discovery process.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 18, pp. 370-374",
+    "chapter": 18,
+    "rationales": [
+      "Not this one: Equipment manufacturers provide hardware security features but do not define the organization's security posture.",
+      "Not this one: Electrical inspectors enforce electrical and life safety codes, not organizational cybersecurity policies.",
+      "Correct: The client defines the security posture; the designer uncovers it by evaluating mission goals, operational risks, and data sensitivity.",
+      "Not this one: Cabling contractors follow physical installation specifications and do not dictate organizational security posture."
+    ]
+  },
+  {
+    "id": 1009,
+    "legacyId": 9,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review or formulate client technology master plan",
+    "topic": "Direct-view display luminance range (350 cd/m2 indoor vs 6500 cd/m2 outdoor)",
+    "prompt": "What typical direct-view display luminance levels distinguish indoor meeting spaces from outdoor digital signage?",
+    "choices": [
+      "Around 50 cd/m² for indoor meeting rooms and 500 cd/m² for exterior signage displays",
+      "Around 150 cd/m² for indoor meeting rooms and 1,500 cd/m² for exterior signage displays",
+      "Around 350 cd/m² for indoor meeting rooms and 6,500 cd/m² for exterior signage displays",
+      "Around 1,000 cd/m² for indoor meeting rooms and 25,000 cd/m² for exterior signage displays"
+    ],
+    "answer": 2,
+    "explanation": "Direct-view flat panels typically operate around 350 cd/m² (nits) in indoor meeting or hospitality environments and up to roughly 6,500 cd/m² to overcome direct sunlight in outdoor digital signage.",
+    "studyNote": "Direct-view display brightness benchmark: ~350 cd/m² (nits) indoor meeting room vs. up to ~6,500 cd/m² outdoor signage.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 5, pp. 114-116",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: 50 cd/m² is too dim for typical conference rooms, and 500 cd/m² cannot overcome outdoor ambient daylight.",
+      "Not this one: 150 cd/m² is characteristic of dim home environments, and 1,500 cd/m² is insufficient for direct sun exposure.",
+      "Correct: Indoor commercial displays typically output around 350 cd/m², while outdoor direct-sun displays require roughly 6,500 cd/m².",
+      "Not this one: 1,000 cd/m² causes visual discomfort in standard indoor rooms, and 25,000 cd/m² exceeds standard direct-view signage levels."
+    ]
+  },
+  {
+    "id": 1010,
+    "legacyId": 10,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review or formulate client technology master plan",
+    "topic": "Computer-driven vs built-in vs traditional processor control trade-offs",
+    "prompt": "What is a primary vulnerability of hosting AV control on a standard commercial desktop operating system?",
+    "choices": [
+      "Inability to render high-resolution user interface graphics across networked display devices",
+      "Requirement for specialized pneumatic physical control relays to interface with AV components",
+      "Incompatibility with standard local area network transport protocols and IP routing",
+      "Dependence on third-party operating system updates and potential scaling instability"
+    ],
+    "answer": 3,
+    "explanation": "While computer-driven control supports BYOD and web access at low hardware cost, it depends on third-party operating system versions/updates and often struggles to scale with the reliability of dedicated control processors.",
+    "studyNote": "Control platform risks: Traditional = cost/proprietary training; Computer-driven = OS dependency/scaling; Cloud = outage cost; Custom = owner maintenance burden.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 15, pp. 299-302",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Desktop operating systems excel at rendering rich high-resolution graphics on connected screens.",
+      "Not this one: Modern AV control interfaces rely on IP, serial, and relay signals, not pneumatic controls.",
+      "Not this one: Commercial operating systems natively support standard IP networking and routing protocols.",
+      "Correct: Desktop operating systems introduce risks from unmanaged automated updates, driver changes, and lifecycle instability."
+    ]
+  },
+  {
+    "id": 1011,
+    "legacyId": 11,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Generate and/or Review the Program Report",
+    "topic": "Alternative industry names for the Concept Design / Program Report",
+    "prompt": "Which industry titles refer to the deliverable functionally equivalent to the Concept Design or Program Report?",
+    "choices": [
+      "The AV Narrative, the Discovery Phase Report, or the Return Brief",
+      "Bill of Materials, Cable Pull Schedule, or Device Master Index",
+      "As-Built Drawing Package, Punch Snag List, or Certificate of Occupancy",
+      "Commissioning Field Report, Acceptance Sign-Off Form, or Lien Waiver Record"
+    ],
+    "answer": 0,
+    "explanation": "Chapter 3 notes that the Concept Design / Program Report - which records nontechnical functional descriptions and probable cost after needs analysis - is also called the AV narrative, discovery phase report, or return brief.",
+    "studyNote": "Concept Design / Program Report synonyms: AV Narrative, Discovery Phase Report, Return Brief.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 3, pp. 46-49",
+    "chapter": 3,
+    "rationales": [
+      "Correct: Industry practice frequently refers to the concept design or program report as an AV narrative, discovery report, or return brief.",
+      "Not this one: Bills of materials and cable schedules are detailed construction deliverables created during later engineering phases.",
+      "Not this one: As-built drawings, punch lists, and certificates of occupancy are project closeout and facility documents.",
+      "Not this one: Commissioning reports, sign-offs, and lien waivers belong to the verification and project closeout phases."
+    ]
+  },
+  {
+    "id": 1012,
+    "legacyId": 12,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Generate and/or Review the Program Report",
+    "topic": "Closed-ended stakeholder questions for factual project constraints",
+    "prompt": "A designer asks a facility manager, 'On what exact date will the equipment room be accessible?' Which question type is this?",
+    "choices": [
+      "Open-ended question, designed to explore broad operational philosophies and subjective user preferences",
+      "Closed-ended question, used to obtain specific, unambiguous facts such as dates, counts, or yes/no confirmations",
+      "Directive question, structured to steer the stakeholder toward approving a preferred vendor hardware platform",
+      "Rhetorical question, intended to confirm consensus without requiring an explicit response from participants"
+    ],
+    "answer": 1,
+    "explanation": "Closed-ended questions ask for a specific fact, number, date, or yes/no response, complementing open-ended questions (which explore needs broadly) and directive questions (which guide toward a solution).",
+    "studyNote": "Question types: Open-ended = get client talking/thinking; Closed-ended = get specific facts/dates; Directive = guide toward a practical option.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 3, pp. 42-44",
+    "chapter": 3,
+    "rationales": [
+      "Not this one: Open-ended questions encourage expansive discussion rather than pinpointing a specific date or figure.",
+      "Correct: Closed-ended questions target unambiguous, specific factual information such as dates, quantities, or binary decisions.",
+      "Not this one: Directive questions lead the respondent toward a specific conclusion or solution rather than requesting a scheduling fact.",
+      "Not this one: Rhetorical questions make an assertion rather than requesting vital project coordination data."
+    ]
+  },
+  {
+    "id": 1013,
+    "legacyId": 13,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Generate and/or Review the Program Report",
+    "topic": "Furniture dimension standards for adult conference tables and chairs",
+    "prompt": "What standard dimensions guide adult conference room table height, table width per person, and aisle clearance?",
+    "choices": [
+      "600 mm table height, 450 to 550 mm table width per seated person, and 500 to 600 mm aisle circulation",
+      "680 mm table height, 500 to 600 mm table width per seated person, and 600 to 700 mm aisle circulation",
+      "735 mm table height, 600 to 750 mm width per person, and 750 to 900 mm aisles",
+      "850 mm table height, 800 to 950 mm table width per seated person, and 1,100 to 1,300 mm aisle circulation"
+    ],
+    "answer": 2,
+    "explanation": "Standard adult furniture ergonomics specify a 735 mm (29 in.) table height (range 635–815 mm), 915 mm (36 in.) counter height, 600–750 mm (24–30 in.) table width per person, 750–900 mm (30–36 in.) aisle circulation, and ≥1,220 mm (48 in.) from seated table edge to obstruction.",
+    "studyNote": "Table height = 735 mm (29 in.); per-person width = 600–750 mm (24–30 in.); aisle = 750–900 mm (30–36 in.); table-to-wall = ≥1,220 mm (48 in.).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 4, pp. 82-86",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: A 600 mm table height is too low for standard adult seating ergonomics and causes knee interference.",
+      "Not this one: These dimensions represent undersized seating allocations that restrict user comfort and circulation.",
+      "Correct: Standard adult ergonomics specify a 735 mm table height, 600 to 750 mm width per seated occupant, and 750 to 900 mm aisle clearance.",
+      "Not this one: An 850 mm table height exceeds standard desk ergonomics and approaches standing counter height."
+    ]
+  },
+  {
+    "id": 1014,
+    "legacyId": 14,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Generate and/or Review the Program Report",
+    "topic": "Estimate vs Quote vs Opinion of Probable Cost in program documentation",
+    "prompt": "During design development, a designer prepares an approximate line-item calculation of equipment and labor. What is this figure called?",
+    "choices": [
+      "A Binding Vendor Quote",
+      "An Estimate",
+      "A Final Closeout Invoice",
+      "A Liquidated Damages Penalty"
+    ],
+    "answer": 1,
+    "explanation": "On the budget terminology ladder, an Opinion of Probable Cost is an early pre-design projection, an Estimate is an approximate line-item calculation of equipment and labor, and a Quote is a detailed, enforceable price offer based on the completed design.",
+    "studyNote": "Cost progression: Opinion of Probable Cost (early guess) → Estimate (line-item approximation) → Quote (enforceable offer after design).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 3, pp. 48-51",
+    "chapter": 3,
+    "rationales": [
+      "Not this one: A Quote is an enforceable offer submitted by a provider in response to an RFP after the AV design is complete.",
+      "Correct: An Estimate is an approximate line-item calculation of equipment and labor that is more accurate than an early Opinion of Probable Cost.",
+      "Not this one: An invoice bills for work performed under an executed contract.",
+      "Not this one: Liquidated damages are contractual penalties for late completion, not a design cost projection."
+    ]
+  },
+  {
+    "id": 1015,
+    "legacyId": 15,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Generate and/or Review the Program Report",
+    "topic": "Sightline vs viewing angle distinction in program space planning",
+    "prompt": "Why must an AV designer evaluate sightline and viewing angle as separate ergonomic criteria?",
+    "choices": [
+      "Sightline applies to acoustic coverage distribution, while viewing angle governs projector lens focal length calculation",
+      "Sightline determines ceiling speaker grid layout, while viewing angle dictates microphone polar pattern selection",
+      "Sightline measures horizontal aisle circulation clearance, while viewing angle governs screen brightness reflectance",
+      "A clear sightline can still suffer from excessive off-axis viewing angles that distort images"
+    ],
+    "answer": 3,
+    "explanation": "Sightline is an unobstructed line of view between the observer and the target, whereas viewing angle measures how far off-axis the observer sits relative to the display surface; good sightlines can coexist with poor viewing angles.",
+    "studyNote": "Unobstructed sightline ≠ good viewing angle! Check both vertical/horizontal sightline clearances and the 60° DISCAS viewing arc.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 4, pp. 76-81",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: Sightline and viewing angle both evaluate visual geometry rather than acoustic loudspeaker coverage.",
+      "Not this one: Sightline and viewing angle are visual criteria, not audio transducer placement parameters.",
+      "Not this one: Neither term relates to aisle circulation width or screen gain reflectance properties.",
+      "Correct: A viewer may have an unobstructed view of the screen while still sitting at an extreme angle that degrades contrast and geometry."
+    ]
+  },
+  {
+    "id": 1016,
+    "legacyId": 16,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with architectural/interior design professionals",
+    "topic": "Task illuminance target range (150 lux min, 320 lux preferred)",
+    "prompt": "For presentation rooms where participants take notes during slide projection, what task illuminance levels are recommended on work surfaces?",
+    "choices": [
+      "25 lux (2.3 fc) minimum, with 50 lux (4.6 fc) preferred across work areas",
+      "50 lux (4.6 fc) minimum, with 100 lux (9.3 fc) preferred across work areas",
+      "150 lux (14 fc) minimum and 320 lux (30 fc) preferred, kept off the projection screen",
+      "500 lux (46 fc) minimum, with 1,000 lux (93 fc) preferred across work areas"
+    ],
+    "answer": 2,
+    "explanation": "Chapter 8 specifies a minimum of 150 lux (14 fc) and a preferred level of 320 lux (30 fc) for horizontal task lighting on work surfaces, zoned and aimed away from projection screens.",
+    "studyNote": "Task light levels: 150 lux (14 fc) minimum; 320 lux (30 fc) preferred; keep within ÷3 to ×3 of screen white luminance.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 8, pp. 172-176",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: 25 lux is insufficient for reading and writing, creating excessive visual fatigue in training spaces.",
+      "Not this one: 50 lux is inadequate task lighting for detailed note-taking during meetings.",
+      "Correct: AVIXA guidelines recommend a minimum of 150 lux (14 fc) and a preferred level of 320 lux (30 fc) for task surfaces, directed away from screens.",
+      "Not this one: 500 to 1,000 lux produces excessive spill light that washes out projection contrast."
+    ]
+  },
+  {
+    "id": 1017,
+    "legacyId": 17,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with architectural/interior design professionals",
+    "topic": "Lamp vs luminaire terminology and luminous efficacy (lm/W)",
+    "prompt": "In lighting design, what distinguishes a lamp from a luminaire, and what does luminous efficacy measure?",
+    "choices": [
+      "A lamp produces light, a luminaire is the complete fixture, and efficacy measures lumens per watt",
+      "A lamp is the ceiling recessed housing, a luminaire is the glass lens optic, and efficacy measures correlated color temperature",
+      "A lamp is the mounting bracket assembly, a luminaire is the electrical ballast, and efficacy measures total chromaticity rendering",
+      "A lamp is the automated dimmer rack, a luminaire is the architectural enclosure, and efficacy measures beam spread angle"
+    ],
+    "answer": 0,
+    "explanation": "'Lamp' refers to the light source itself, while 'luminaire' is the complete lighting fixture assembly; luminous efficacy equals initial lumen output divided by nominal electrical watts (lm/W).",
+    "studyNote": "Lamp = light source; Luminaire = complete fixture (optics, housing, PSU, mount); Efficacy = lumens ÷ watts (lm/W).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 8, pp. 166-171",
+    "chapter": 8,
+    "rationales": [
+      "Correct: The lamp is the light-emitting component, the luminaire is the complete fixture including housing and optics, and efficacy is light output per electrical watt (lm/W).",
+      "Not this one: The luminaire includes the housing and optics, while color temperature measures spectral hue in kelvins rather than efficacy.",
+      "Not this one: Ballasts and brackets are fixture components, while chromaticity rendering is quantified by CRI or TM-30, not efficacy.",
+      "Not this one: Dimmers regulate electrical power and beam spread measures optical distribution, neither of which defines efficacy."
+    ]
+  },
+  {
+    "id": 1018,
+    "legacyId": 18,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with architectural/interior design professionals",
+    "topic": "Direct glare vs indirect glare (veiling reflections) in display spaces",
+    "prompt": "How does direct glare differ from indirect glare (veiling reflections) in an audiovisual presentation environment?",
+    "choices": [
+      "Direct glare degrades sound propagation paths, while indirect glare causes high-frequency reverberation across interior boundaries",
+      "Direct glare originates at the source, while indirect glare reflects off surfaces into the eyes",
+      "Direct glare is caused by high-gain projection screens, while indirect glare results from improper video scaler refresh rates",
+      "Direct glare occurs during daylight operations, while indirect glare occurs under artificial LED luminaires at night"
+    ],
+    "answer": 1,
+    "explanation": "Direct glare comes straight from a light source into the eye or camera; indirect glare (veiling reflections) bounces off shiny tabletops, floors, or glass displays to veil the image and reduce contrast.",
+    "studyNote": "Direct glare = light source straight into eye/camera; Indirect glare (veiling reflection) = specular bounce off shiny surfaces.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 8, pp. 165-167, 179",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: Glare is an optical phenomenon involving light distribution, having no impact on acoustical wave propagation.",
+      "Correct: Direct glare shines directly from a light fixture or window into the viewer's eyes, while indirect glare bounces off reflective surfaces like tables or displays.",
+      "Not this one: Glare relates to ambient light paths and surface reflections, not video scaler frame refresh synchronization.",
+      "Not this one: Both direct and indirect glare can occur under natural daylight or artificial architectural lighting at any hour."
+    ]
+  },
+  {
+    "id": 1019,
+    "legacyId": 19,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with structural professionals",
+    "topic": "ADA reach ranges for side approach (15-54 in) vs forward approach (15-48 in)",
+    "prompt": "Under ADA accessibility standards, how do allowable control panel reach ranges differ between side approach and forward-only approach?",
+    "choices": [
+      "Side approach allows 250 to 1,500 mm AFF; forward approach restricts control mounting to 450 to 1,350 mm AFF",
+      "Side approach allows 400 to 1,600 mm AFF; forward approach restricts control mounting to 500 to 1,400 mm AFF",
+      "Side approach allows 380 to 1,370 mm AFF; forward approach permits 380 to 1,220 mm AFF",
+      "Side approach allows 500 to 1,800 mm AFF; forward approach restricts control mounting to 600 to 1,500 mm AFF"
+    ],
+    "answer": 2,
+    "explanation": "Per the ADA guidance, operator controls must sit between 380 mm (15 in.) and 1,370 mm (54 in.) AFF for a side approach, and between 380 mm (15 in.) and 1,220 mm (48 in.) AFF for a forward-only approach.",
+    "studyNote": "ADA control heights: Forward approach = 380–1,220 mm (15–48 in.); Side approach = 380–1,370 mm (15–54 in.); Wall protrusion = ≤100 mm (4 in.); Headroom = ≥2,030 mm (80 in.).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 9, pp. 185-188",
+    "chapter": 9,
+    "rationales": [
+      "Not this one: The minimum reach height is 380 mm (15 in.), and 1,500 mm exceeds allowable ADA side reach limits.",
+      "Not this one: ADA guidelines specify 380 mm as the lower limit and 1,370 mm (54 in.) as the maximum side reach height.",
+      "Correct: ADA guidelines allow reach heights between 380 mm (15 in.) and 1,370 mm (54 in.) AFF for side approach, and up to 1,220 mm (48 in.) AFF for forward approach.",
+      "Not this one: Maximum forward reach is capped at 1,220 mm (48 in.) AFF, and 1,800 mm is well beyond accessible reach standards."
+    ]
+  },
+  {
+    "id": 1020,
+    "legacyId": 20,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with structural professionals",
+    "topic": "Structural fastener failure modes: shear, tension, pull-out, and improper load math",
+    "prompt": "What characterizes shear failure, tensile failure, and pull-out failure in structural mounting hardware?",
+    "choices": [
+      "Shear loosens the bolt through mechanical vibration, tension causes galvanic corrosion, and pull-out breaks structural backing studs",
+      "Shear fractures the mounting bracket welds, tension strips internal screw threads, and pull-out deflects the ceiling unistrut channel",
+      "Shear damages the fastener surface coating, tension causes fatigue micro-fractures, and pull-out loosens lock washers under cyclic loads",
+      "Shear cuts the shaft, tension stretches the bolt, and pull-out extracts the anchor from substrate"
+    ],
+    "answer": 3,
+    "explanation": "Fasteners fail in distinct ways: shear slices across the bolt cross-section under perpendicular load, tensile stress stretches/breaks the bolt along its length, and pull-out extracts the anchor from the host material.",
+    "studyNote": "Fastener failure modes: Shear (slicing across shaft), Tensile (stretching/snapping along axis), Pull-out (leaving wall/ceiling substrate).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 9, pp. 187-191",
+    "chapter": 9,
+    "rationales": [
+      "Not this one: Shear is a direct transverse mechanical load, not vibration-induced thread loosening or galvanic corrosion.",
+      "Not this one: Shear failure specifically describes transverse slicing of the fastener shaft, not weld fracture.",
+      "Not this one: Shear failure and tensile failure are structural yield conditions, not surface coating abrasion or washer fatigue.",
+      "Correct: Shear failure occurs perpendicular to the fastener axis, tensile failure pulls along its length, and pull-out extracts the anchor from the host structure."
+    ]
+  },
+  {
+    "id": 1021,
+    "legacyId": 21,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with structural professionals",
+    "topic": "ASTM/SAE bolt head radial markings vs ISO numeric property classes",
+    "prompt": "An overhead rigging inspection reveals an unmarked bolt and a bolt with three radial lines. How should these be evaluated?",
+    "choices": [
+      "Reject the unmarked Grade 2 bolt; use at least the three-line Grade 5 or ISO 8.8 bolt",
+      "Accept the unmarked bolt because fewer head markings indicate higher ductility and tensile load resistance",
+      "Accept both fasteners because all threaded steel hardware provides an identical structural 5:1 working load safety rating",
+      "Reject both fasteners because overhead audiovisual suspensions mandate six-line Grade 8 bolts for secondary safety attachments"
+    ],
+    "answer": 0,
+    "explanation": "On ASTM/SAE bolts, more radial bumps/lines on the head mean higher strength (no marks = Grade 2, three marks = Grade 5, six marks = Grade 8); on ISO metric bolts, higher numbers (such as 8.8 or 10.9) indicate higher strength. Overhead AV mounts require at least Grade 5 or ISO 8.8.",
+    "studyNote": "Bolt ratings: Require ≥ ASTM/SAE Grade 5 (3 radial lines on head) or ≥ ISO Property Class 8.8. Never use unmarked Grade 2 hardware.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 9, pp. 189-192",
+    "chapter": 9,
+    "rationales": [
+      "Correct: Unmarked bolts are low-strength Grade 2; overhead AV rigging requires at least Grade 5 (three radial lines) or ISO Property Class 8.8.",
+      "Not this one: On ASTM/SAE fasteners, radial lines indicate higher tensile strength; an unmarked head denotes low-strength Grade 2.",
+      "Not this one: Hardware grades vary widely in tensile and shear strength; fasteners cannot be assumed to share identical ratings.",
+      "Not this one: Grade 5 or ISO 8.8 fasteners are acceptable for standard engineered overhead suspensions meeting required safety factors."
+    ]
+  },
+  {
+    "id": 1022,
+    "legacyId": 22,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with mechanical, electrical, and plumbing professionals",
+    "topic": "Isolated ground vs standard protective earth vs technical power",
+    "prompt": "How does an isolated ground system reduce ground-loop hum while preserving electrical safety?",
+    "choices": [
+      "It disconnects the equipment safety grounding conductor from building earth to eliminate circulating chassis currents",
+      "It insulates the safety ground back to the main service panel, isolating neutral noise",
+      "It routes earth fault currents through structural building steel rather than metallic conduit to minimize electromagnetic induction",
+      "It inserts a capacitive filter network in series with the protective bonding conductor to block low-frequency 60 Hz current flow"
+    ],
+    "answer": 1,
+    "explanation": "Isolated ground (and technical power) keeps the protective-earth conductor continuous for safety fault protection, but insulates it from local subpanel enclosures and neutral returns until a single bond at the main service entrance.",
+    "studyNote": "Isolated ground / technical power = continuous safety earth insulated from local subpanels/building steel back to the main service ground point.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 10, pp. 211-215",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Disconnecting the safety ground eliminates the fault current path, creating a severe life-safety hazard.",
+      "Correct: An isolated ground runs an insulated ground wire directly to the main service bonding point, preventing panel noise while maintaining fault protection.",
+      "Not this one: Fault current paths must follow low-impedance copper conductors back to source, not opportunistic building steel.",
+      "Not this one: Electrical codes strictly prohibit series components or capacitors in protective grounding paths."
+    ]
+  },
+  {
+    "id": 1023,
+    "legacyId": 23,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with mechanical, electrical, and plumbing professionals",
+    "topic": "Capacitive reactance (XC) vs inductive reactance (XL) in AC circuits",
+    "prompt": "How do capacitive reactance (XC) and inductive reactance (XL) respond as AC signal frequency increases?",
+    "choices": [
+      "Both XC and XL remain constant across all audio frequencies like pure DC resistance",
+      "XC increases as frequency rises, while XL decreases as frequency rises across reactive networks",
+      "XC decreases as frequency rises, while XL increases as frequency rises",
+      "XC decreases at higher frequencies, while XL remains constant regardless of applied circuit frequency"
+    ],
+    "answer": 2,
+    "explanation": "Capacitive reactance XC falls as frequency rises (so parallel capacitance between conductors in a long cable increasingly shunts high frequencies to ground), while inductive reactance XL rises as frequency rises; combined with DC resistance R, they form total AC impedance Z.",
+    "studyNote": "Frequency ↑ → Capacitive reactance XC ↓ (shunts high frequencies in long cables) and Inductive reactance XL ↑.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 10, pp. 206-209",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Reactance is frequency-dependent, unlike pure DC resistance which is invariant with frequency.",
+      "Not this one: Capacitive reactance is inversely proportional to frequency, whereas inductive reactance is directly proportional to frequency.",
+      "Correct: Capacitive reactance (XC = 1 / (2*pi*f*C)) decreases with frequency, whereas inductive reactance (XL = 2*pi*f*L) increases with frequency.",
+      "Not this one: Inductive reactance rises linearly with frequency rather than remaining constant."
+    ]
+  },
+  {
+    "id": 1024,
+    "legacyId": 24,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with mechanical, electrical, and plumbing professionals",
+    "topic": "Signal ground vs supply ground vs safety ground distinction",
+    "prompt": "Why do engineering standards distinguish among signal ground, supply ground, and safety ground in system drawings?",
+    "choices": [
+      "They designate separate phase legs in three-phase alternating-current electrical power distribution switchboards",
+      "They indicate whether cables require plenum-rated jacketing, riser-rated insulation, or armored conduit protection",
+      "They distinguish between analog microphone cabling, line-level balanced audio interconnects, and digital AES signals",
+      "They serve separate functions: circuit reference, power return, and fault-current life safety protection"
+    ],
+    "answer": 3,
+    "explanation": "Signal ground, supply ground, and safety ground perform distinct roles; using the generic word 'ground' without naming which of the three is meant causes dangerous or noisy miswiring.",
+    "studyNote": "Always name which 'ground' you mean: Signal ground (audio/video reference), Supply ground (power return), or Safety ground (protective earth / EGC).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 10, pp. 210-214",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Phase legs carry active AC line voltage, whereas grounds provide references, returns, and safety paths.",
+      "Not this one: Plenum and riser ratings govern cable jacket flammability and smoke emission, not grounding roles.",
+      "Not this one: Signal levels describe audio voltage ranges rather than electrical and electronic grounding functions.",
+      "Correct: Signal ground establishes internal zero-volt references, supply ground returns power current, and safety ground shunts fault current."
+    ]
+  },
+  {
+    "id": 1025,
+    "legacyId": 25,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with IT and network security professionals",
+    "topic": "Physical topology vs logical topology independence in AV networks",
+    "prompt": "What is the difference between physical network topology and logical network topology?",
+    "choices": [
+      "Physical topology shows hardware cabling layout; logical topology describes data flow paths",
+      "Physical topology applies to copper Ethernet cabling, while logical topology describes single-mode optical fiber runs",
+      "Physical topology defines network subnet IP addressing, while logical topology determines switch rack mounting locations",
+      "Physical topology specifies VLAN identification tags, while logical topology governs hardware power consumption limits"
+    ],
+    "answer": 0,
+    "explanation": "Physical topology maps the physical placement of nodes and cabling links, whereas logical topology maps how data frames and packets flow across segments and VLANs; they are independent and both are needed for capacity planning.",
+    "studyNote": "Physical topology = where cables/switches sit; Logical topology = how data flows across segments/VLANs.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 16, pp. 319-322",
+    "chapter": 16,
+    "rationales": [
+      "Correct: Physical topology maps physical cable connections and device locations, while logical topology defines how data packets traverse the network.",
+      "Not this one: Physical and logical topologies apply across all transmission media, including copper, fiber, and wireless.",
+      "Not this one: IP subnetting is part of logical architecture, while rack placement is part of physical deployment.",
+      "Not this one: VLAN tagging is a logical segmentation technique, while power consumption is an electrical specification."
+    ]
+  },
+  {
+    "id": 1026,
+    "legacyId": 26,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with IT and network security professionals",
+    "topic": "Managed switch vs unmanaged switch requirements for AV over IP",
+    "prompt": "Why do networked AV protocols like Dante and AES67 require managed network switches?",
+    "choices": [
+      "To boost Category 6A Ethernet transmission line voltages across extended horizontal cable runs",
+      "To configure VLANs, DiffServ QoS priority queues, and IGMP multicast snooping",
+      "To convert balanced analog audio signals into uncompressed digital transport streams automatically",
+      "To provide battery backup power to connected endpoints during building utility outages"
+    ],
+    "answer": 1,
+    "explanation": "Unmanaged switches simply forward frames with zero configuration; networked AV protocols require managed switches to configure QoS, VLANs, IGMP multicast control, and port diagnostics.",
+    "studyNote": "Real-time networked AV requires managed switches for VLANs, QoS (DiffServ), IGMP snooping, and port monitoring.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 16, pp. 321-324, 338-341",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Switches do not alter Ethernet physical layer signaling voltages to extend cable reach.",
+      "Correct: Managed switches allow essential traffic management features including QoS queuing, IGMP snooping, and VLAN segmentation.",
+      "Not this one: Analog-to-digital conversion occurs in audio endpoints and DSPs, not within network switches.",
+      "Not this one: Battery backup is supplied by uninterruptible power supplies (UPS), not standard managed switch hardware."
+    ]
+  },
+  {
+    "id": 1027,
+    "legacyId": 27,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with IT and network security professionals",
+    "topic": "Threat logic formula (Threat = Vulnerability + Actor/Exploit Intent)",
+    "prompt": "In networked AV cybersecurity, how is a security threat defined in relation to a vulnerability?",
+    "choices": [
+      "A threat is an unpatched hardware bug that causes physical power supply failures on network switches",
+      "A threat is an unauthorized Category 6 cable connection that exceeds maximum channel length limits",
+      "A threat is a vulnerability combined with an actor intending to exploit it",
+      "A threat is a high-temperature alarm triggered by inadequate HVAC cooling inside an equipment rack"
+    ],
+    "answer": 2,
+    "explanation": "Chapter 18 defines threat logic as: Threat = Vulnerability + an actor/process seeking to exploit it, and advises designers to assume known vulnerabilities will be exploited.",
+    "studyNote": "Threat = Vulnerability + someone/something that wants to exploit it. Assume known vulnerabilities WILL be exploited.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 18, pp. 376-379",
+    "chapter": 18,
+    "rationales": [
+      "Not this one: Hardware component failures are reliability issues rather than deliberate security threats.",
+      "Not this one: Exceeding Ethernet cable distance limits causes transmission attenuation, not an intentional security exploit.",
+      "Correct: Cybersecurity defines Threat = Vulnerability + an actor or mechanism with the capability and intent to exploit it.",
+      "Not this one: Thermal overload is an environmental operating condition, not an active security threat."
+    ]
+  },
+  {
+    "id": 1028,
+    "legacyId": 28,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with acoustical professionals",
+    "topic": "Five properties of sound in an acoustical review",
+    "prompt": "Which five sequential properties of sound frame an acoustical evaluation from source to listener?",
+    "choices": [
+      "Compression, amplification, equalization, distribution, and reproduction",
+      "Sampling, quantization, encoding, transmission, and digital decoding",
+      "Reflection, refraction, diffraction, diffusion, and thermal absorption",
+      "Production, propagation, control, interaction, and reception"
+    ],
+    "answer": 3,
+    "explanation": "Chapter 11 organizes acoustical analysis around five properties of sound: Production, Propagation, Control, Interaction, and Reception.",
+    "studyNote": "Five properties of sound (Ch 11): Production → Propagation → Control → Interaction → Reception.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 11, pp. 225-227",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: Compression, EQ, and distribution are audio signal processing functions rather than basic acoustic properties.",
+      "Not this one: Sampling, quantization, and encoding describe digital audio conversion rather than architectural acoustics.",
+      "Not this one: Reflection, diffraction, and absorption are specific wave behaviors under the broader category of interaction.",
+      "Correct: AVIXA acoustical framework outlines five sound properties: Production, Propagation, Control, Interaction, and Reception."
+    ]
+  },
+  {
+    "id": 1029,
+    "legacyId": 29,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with acoustical professionals",
+    "topic": "Conservation of acoustic energy at a boundary (reflection, absorption, transmission)",
+    "prompt": "When sound energy strikes an interior wall, which three physical interactions conserve total energy?",
+    "choices": [
+      "Reflection, absorption, and transmission",
+      "Compression, rarefaction, and phase cancellation",
+      "Equalization, amplification, and loudspeaker attenuation",
+      "Diffraction, electromagnetic induction, and resonance"
+    ],
+    "answer": 0,
+    "explanation": "At any boundary, incident sound energy splits into reflected, absorbed, and transmitted fractions; because reverberation and standing waves are physical room behaviors, there is no way to 'equalize a room' electronically.",
+    "studyNote": "Boundary energy conservation: Incident = Reflected + Absorbed + Transmitted. You cannot equalize a room's physical acoustics!",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 11 & Chapter 14, pp. 226-228, 291-293",
+    "chapter": 11,
+    "rationales": [
+      "Correct: At any boundary, incident acoustic energy is conserved across three physical paths: reflection, absorption, and transmission.",
+      "Not this one: Compression and rarefaction describe acoustic pressure wave propagation through air, not boundary partition outcomes.",
+      "Not this one: Equalization and amplification are active electronic signal modifications rather than acoustic boundary interactions.",
+      "Not this one: Electromagnetic induction is an electrical property, not an acoustic wave interaction at a physical boundary."
+    ]
+  },
+  {
+    "id": 1030,
+    "legacyId": 30,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with acoustical professionals",
+    "topic": "Sabin unit definition and absorption coefficients above 1.0",
+    "prompt": "In architectural acoustics, what does one sabin represent, and why can laboratory absorption coefficients exceed 1.00?",
+    "choices": [
+      "One sabin equals 60 decibels of sound attenuation; room boundary resonance boosts laboratory readings above 1.00",
+      "One sabin equals unit area of total absorption; edge diffraction can push coefficients above 1.00",
+      "One sabin represents high acoustic reflection from dense concrete; microphone calibration errors cause readings above 1.00",
+      "One sabin measures ambient background noise; high relative humidity in test chambers pushes measured absorption above 1.00"
+    ],
+    "answer": 1,
+    "explanation": "A sabin represents one unit area (1 m² or 1 ft²) of complete absorption (equivalent to an open window, coefficient 1.00); diffraction around sample edges in reverberation rooms can yield apparent coefficients slightly above 1.0.",
+    "studyNote": "1 sabin = 1 unit area (m² or ft²) of open window (α = 1.00). Edge diffraction in lab tests can make α appear > 1.0.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 11, pp. 231-234",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: 60 dB describes reverberation time decay (RT60), not the definition of an absorption sabin.",
+      "Correct: A sabin equals 1 m² or 1 ft² of 100% absorption (like an open window); edge diffraction in test chambers can yield apparent coefficients > 1.0.",
+      "Not this one: Sabins measure sound absorption rather than reflection, and concrete has an absorption coefficient near zero.",
+      "Not this one: Ambient noise and humidity affect sound propagation, but do not define the sabin unit of absorption."
+    ]
+  },
+  {
+    "id": 1031,
+    "legacyId": 31,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with life safety and security professionals",
+    "topic": "Fatal ground-fault current threshold (120-230 mA across 1 kOhm body resistance)",
+    "prompt": "Why do standard 15 A or 20 A branch breakers fail to protect humans from fatal electrocution during ground faults?",
+    "choices": [
+      "Branch circuit breakers respond to overvoltage transients rather than detecting physical current flow",
+      "Human body resistance is around 100 kΩ, limiting total fault current flow to negligible levels",
+      "Lethal ventricular fibrillation occurs at 120 to 230 mA, far below breaker trip thresholds",
+      "Standard breakers require three-phase neutral current to detect hazardous ground fault leakage conditions"
+    ],
+    "answer": 2,
+    "explanation": "Overcurrent breakers protect building wiring from overload/short-circuit fires at 15–20 A, whereas a fatal shock through a ~1 kΩ human body requires only ~120 to 230 mA; earth-leakage devices (GFCI/RCD) trip at 10–100 mA within 5–100 ms to save lives.",
+    "studyNote": "Overload breaker protects wire (15–20 A); RCD/GFCI protects people (trips at 10–100 mA in 5–100 ms; 120–230 mA across ~1 kΩ body is fatal).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 10, pp. 209-212",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Circuit breakers trip on thermal overload and magnetic overcurrent, not voltage transients.",
+      "Not this one: Typical human body resistance is roughly 1 kΩ under shock conditions, allowing lethal current flow.",
+      "Correct: Standard circuit breakers trip at 15–20 A to prevent wire fire; human electrocution is fatal at 120–230 mA, requiring GFCI/RCD protection.",
+      "Not this one: Branch breakers operate on single-phase circuits and do not depend on three-phase neutral current balance."
+    ]
+  },
+  {
+    "id": 1032,
+    "legacyId": 32,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with life safety and security professionals",
+    "topic": "Three stakeholder groups in networked AV security (Operational, Network, Physical)",
+    "prompt": "Which three distinct stakeholder groups must an AV designer engage when coordinating networked AV security?",
+    "choices": [
+      "Operational data owners, network infrastructure administrators, and physical facility security",
+      "Marketing communications leads, commercial catering vendors, and exterior landscape maintenance personnel",
+      "Audiovisual equipment manufacturer sales reps, electrical conduit subcontractors, and drywall installers",
+      "Warehouse logistics clerks, freight transport coordinators, and corporate accounts payable specialists"
+    ],
+    "answer": 0,
+    "explanation": "Comprehensive AV security coordination requires engaging Operational stakeholders (data/content owners), Network stakeholders (IT/firewall/routing administrators), and Physical security stakeholders (facility access, cabinet locks, visual privacy).",
+    "studyNote": "Three security stakeholder areas: Operational (data owners), Network (IT/firewalls/ports), and Physical (spaces/racks/tamper).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 18, pp. 372-375",
+    "chapter": 18,
+    "rationales": [
+      "Correct: Comprehensive AV security requires coordinating data owners (operational), IT managers (network), and facility access personnel (physical).",
+      "Not this one: Marketing, catering, and landscaping personnel do not manage technical network or physical AV security.",
+      "Not this one: Sales representatives and trade subcontractors supply equipment and infrastructure rather than organizational security governance.",
+      "Not this one: Warehouse and accounting clerks handle shipping logistics and commercial invoicing rather than system security."
+    ]
+  },
+  {
+    "id": 1033,
+    "legacyId": 33,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with life safety and security professionals",
+    "topic": "Power strip daisy-chaining rules and bundled power cable heat hazard",
+    "prompt": "What electrical safety precautions govern power strip usage and tightly bundled AC mains cables?",
+    "choices": [
+      "Daisy-chaining up to five commercial power strips in series safely expands branch circuit capacity",
+      "Avoid daisy-chaining power strips, and provide adequate ventilation around bundled mains cords",
+      "Tightly wrapping high-current power cables with thermal fiberglass insulation improves AC power factor",
+      "Removing equipment protective bonding ground pins stops electromagnetic interference on rack PDUs"
+    ],
+    "answer": 1,
+    "explanation": "Daisy-chaining free-standing power strips is a code violation and overload risk, and tightly bundling high-current power cables traps heat, degrades insulation, and creates a fire hazard.",
+    "studyNote": "Never daisy-chain free-standing power strips, and keep high-current power cables ventilated rather than tightly bundled.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 10, pp. 213-216, 220",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Connecting power strips in series violates electrical fire codes and causes branch circuit overloads.",
+      "Correct: Code prohibits daisy-chaining power strips, and tightly bundling AC mains cords traps heat, creating a fire hazard.",
+      "Not this one: Wrapping mains cords in insulation causes severe thermal buildup and degrades cable insulation.",
+      "Not this one: Removing ground pins defeats the fault current return path and creates a hazardous shock risk."
+    ]
+  },
+  {
+    "id": 1034,
+    "legacyId": 34,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with site or project specific professionals",
+    "topic": "De facto standards vs formal ANSI/ISO standards in trade coordination",
+    "prompt": "What distinguishes a de facto standard from a formal standard accredited by ANSI or ISO?",
+    "choices": [
+      "A de facto standard is a legally binding municipal building ordinance enforced by local safety inspectors",
+      "A de facto standard prohibits third-party hardware manufacturers from designing interoperable interface connections",
+      "A de facto standard achieves widespread market adoption without formal standards body ratification",
+      "A de facto standard is an encrypted proprietary specification accessible to licensed corporate members"
+    ],
+    "answer": 2,
+    "explanation": "A formal standard is developed by a recognized standards organization (such as ANSI/AVIXA, ISO, or IEEE), whereas a de facto standard achieves widespread adoption through industry practice without necessarily having formal standards-body ratification.",
+    "studyNote": "Formal standard = ratified by an accredited standards body (ANSI/AVIXA, ISO); De facto standard = widely adopted by market/industry practice.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 7, pp. 152-155",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: De facto standards are market conventions, not legally binding municipal building codes.",
+      "Not this one: De facto standards foster broad industry interoperability through voluntary commercial adoption.",
+      "Correct: A de facto standard gains dominance through broad industry usage rather than through formal ratification by an accredited standards organization.",
+      "Not this one: De facto standards arise through open or widespread commercial implementation rather than confidential encryption."
+    ]
+  },
+  {
+    "id": 1035,
+    "legacyId": 35,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with site or project specific professionals",
+    "topic": "ANSI/AVIXA 2M-2010 and D401.01 standard guide for design and coordination",
+    "prompt": "Which AVIXA standard guide defines the four-phase project framework, deliverables, and coordination processes?",
+    "choices": [
+      "ANSI/AVIXA F501.01:2015 Cable Labeling Standard",
+      "ANSI/AVIXA V201.01:2021 Image System Contrast Ratio",
+      "ANSI/AVIXA F502.01:2018 Rack Building Standard",
+      "ANSI/AVIXA 2M-2010 / ANSI/AVIXA D401.01"
+    ],
+    "answer": 3,
+    "explanation": "ANSI/AVIXA 2M-2010 (revised as ANSI/AVIXA D401.01) is the Standard Guide for Audiovisual Systems Design and Coordination Processes, defining project phases, deliverables, meetings, and the ~150-item coordination checklist.",
+    "studyNote": "D401.01 (updating 2M-2010) = Standard Guide for AV Systems Design and Coordination Processes (4 phases + 150-item checklist).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 3, Chapter 7, & Chapter 19, pp. 31-35, 154, 388-392",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: ANSI/AVIXA F501.01 governs cable labeling specifications, not overall project coordination processes.",
+      "Not this one: ANSI/AVIXA V201.01 standardizes Image System Contrast Ratio (ISCR) measurement and verification.",
+      "Not this one: ANSI/AVIXA F502.01 specifies physical equipment rack design and assembly practices.",
+      "Correct: ANSI/AVIXA 2M-2010 (updated as ANSI/AVIXA D401.01) defines project phases, deliverables, and coordination checklists."
+    ]
+  },
+  {
+    "id": 1036,
+    "legacyId": 36,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with site or project specific professionals",
+    "topic": "Milestones on Gantt charts and logic networks",
+    "prompt": "In project scheduling documentation, what is a milestone and how is it represented on network diagrams?",
+    "choices": [
+      "A major event with zero duration, depicted as a diamond or triangle",
+      "A recurring weekly site coordination meeting, depicted as an open green circle",
+      "An extended physical cable pull operation, depicted as a continuous thick horizontal bar",
+      "An unapproved contractor change order request, depicted as a dashed diagonal hazard line"
+    ],
+    "answer": 0,
+    "explanation": "A milestone marks a key project checkpoint (deliverable sign-off, payment point, equipment delivery, or calibration completion) and is depicted on logic network and Gantt diagrams as a diamond or triangle symbol.",
+    "studyNote": "Milestone = key checkpoint/deliverable/approval event (shown as a diamond or triangle on logic network and schedule diagrams).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 7, pp. 156-160",
+    "chapter": 7,
+    "rationales": [
+      "Correct: A milestone represents a key project checkpoint (such as design sign-off or completion) with zero duration, shown as a diamond or triangle.",
+      "Not this one: Recurring coordination meetings are scheduled operational tasks with defined durations.",
+      "Not this one: Extended cable installations are summary activities with duration, displayed as task bars on Gantt charts.",
+      "Not this one: Change order requests are commercial contract administrative items, not schedule logic milestones."
+    ]
+  },
+  {
+    "id": 1037,
+    "legacyId": 37,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "Projector throw distance calculation from screen width and throw ratio",
+    "prompt": "A 16:9 projection screen is 3.2 m wide. The lens throw ratio is 1.5:1 to 2.0:1. What is the throw distance range?",
+    "choices": [
+      "2.4 m minimum to 3.2 m maximum",
+      "4.8 m minimum to 6.4 m maximum",
+      "6.4 m minimum to 8.0 m maximum",
+      "9.6 m minimum to 12.8 m maximum"
+    ],
+    "answer": 1,
+    "explanation": "Throw Distance = Screen Width × Throw Ratio. For a 3.2 m wide image and a 1.5–2.0:1 zoom lens, minimum throw = 3.2 × 1.5 = 4.8 m and maximum throw = 3.2 × 2.0 = 6.4 m.",
+    "studyNote": "Throw Distance = Image Width × Throw Ratio. Always use image WIDTH (never height or diagonal) in the throw formula!",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 5 & Appendix A, pp. 110-112, 412",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Throw distance equals screen width multiplied by throw ratio, yielding 4.8 m to 6.4 m.",
+      "Correct: Throw distance = Screen Width * Throw Ratio. Minimum throw = 3.2 * 1.5 = 4.8 m, and maximum throw = 3.2 * 2.0 = 6.4 m.",
+      "Not this one: 6.4 m is the maximum throw distance with this lens, not the lower bound.",
+      "Not this one: These distances assume a much longer telephoto lens with a 3.0:1 to 4.0:1 throw ratio."
+    ]
+  },
+  {
+    "id": 1038,
+    "legacyId": 38,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "DISCAS ADM image height formula from element height and %EH",
+    "prompt": "Under ANSI/AVIXA V202.01 (DISCAS), what defines element height for Analytical Decision-Making (ADM)?",
+    "choices": [
+      "Ten percent of overall screen height, evaluated from a fixed seated eye height position",
+      "Three percent of image height, restricted to a maximum 15-degree vertical viewing boundary",
+      "One pixel or line pair, with no recommended vertical viewing angle limit",
+      "A fixed 16-point typographical font height, measured from the farthest seated viewing location"
+    ],
+    "answer": 2,
+    "explanation": "In DISCAS Analytical Decision-Making (ADM), the critical element is a single pixel (line pair) so native pixel detail is resolved at the farthest viewer distance, with a 60° horizontal viewing arc and no recommended vertical angle cap.",
+    "studyNote": "DISCAS ADM: Element = 1 pixel (line pair), 60° horizontal arc, no vertical angle limit, 50:1 minimum ISCR contrast.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 5, pp. 95-101",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Sizing based on percentage of screen height applies to legacy rule-of-thumb methods, not DISCAS ADM.",
+      "Not this one: Three percent element height applies to Basic Decision-Making (%EH), not Analytical Decision-Making.",
+      "Correct: In DISCAS ADM, element height is one pixel (line pair) so viewers resolve native detail, with no recommended vertical angle limit.",
+      "Not this one: Font height definitions belong to Basic Decision-Making text sizing rather than pixel-level ADM."
+    ]
+  },
+  {
+    "id": 1039,
+    "legacyId": 39,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "Loudspeaker 6 dB-down coverage angle and standing vs seated ear height",
+    "prompt": "When calculating ceiling loudspeaker coverage for spaces where occupants stand and sit, which ear height should be used?",
+    "choices": [
+      "Floor level, because sound pressure distribution must be calculated relative to finished floor datum",
+      "Seated ear height, because seated listeners experience greater high-frequency acoustic attenuation",
+      "Average ceiling height, because coverage cones expand symmetrically from ceiling boundary planes",
+      "Use standing listener ear height and the loudspeaker's 6 dB-down coverage angle at the target frequency"
+    ],
+    "answer": 3,
+    "explanation": "Loudspeaker coverage angle is defined by the −6 dB points at the target frequency, and if standing audiences are possible, standing ear height must be used because it is closer to the ceiling and produces a smaller coverage circle.",
+    "studyNote": "Coverage diameter D = 2(H − h) tan(C∠/2): use standing ear height if standing occurs, and use the −6 dB polar angle at the target frequency.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 6, pp. 129-132",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: Measuring to the floor ignores listener head position and results in undersized speaker quantities.",
+      "Not this one: Seated ear height increases distance to the speaker, overestimating coverage diameter for standing guests.",
+      "Not this one: Calculating from ceiling height would yield a coverage distance and circle diameter of zero.",
+      "Correct: Standing ear height reduces (H - h), producing a smaller coverage circle; spacing must satisfy the standing condition."
+    ]
+  },
+  {
+    "id": 1040,
+    "legacyId": 40,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "Uncompressed 1080p30 8-bit 4:4:4 vs 4:2:0 video bit-rate comparison",
+    "prompt": "Comparing uncompressed 1920 × 1080, 8-bit, 30 fps video prior to 8b/10b line-coding overhead, what are the raw bit rates for 4:4:4 (k = 3) versus 4:2:0 (k = 1.5) chroma sampling?",
+    "choices": [
+      "2.99 Gbps for 4:4:4 and 1.49 Gbps for 4:2:0",
+      "1.87 Gbps for 4:4:4 and 933.1 Mbps for 4:2:0",
+      "1.49 Gbps for 4:4:4 and 995.3 Mbps for 4:2:0",
+      "1.49 Gbps for 4:4:4 and 746.5 Mbps for 4:2:0"
+    ],
+    "answer": 3,
+    "explanation": "Raw payload = 1920 × 1080 × 8 × 30 × 3 = 1,492,992,000 bps (~1.49 Gbps) for 4:4:4. Switching to 4:2:0 changes k from 3 to 1.5, halving raw payload to ~746.5 Mbps.",
+    "studyNote": "4:2:0 (k = 1.5) halves the raw uncompressed bit rate of 4:4:4 (k = 3); 4:2:2 (k = 2) uses two-thirds.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 12, pp. 247-250",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: 2.99 Gbps calculates 60 fps instead of 30 fps.",
+      "Not this one: 1.87 Gbps includes the 1.25× 8b/10b line-coding factor excluded by the stem.",
+      "Not this one: 995.3 Mbps corresponds to 4:2:2 subsampling (k = 2) rather than 4:2:0 (k = 1.5).",
+      "Correct: At 30 fps, 8-bit 1080p raw payload is 1.49 Gbps at 4:4:4 (k = 3) and half that (746.5 Mbps) at 4:2:0 (k = 1.5)."
+    ]
+  },
+  {
+    "id": 1041,
+    "legacyId": 41,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "Network control forms: point-to-point, broadcast, multidrop, and IP",
+    "prompt": "In control network topologies, what distinguishes a broadcast network from a multidrop network?",
+    "choices": [
+      "Broadcast uses one transmitter; multidrop shares media among multiple transmitters and receivers",
+      "Broadcast connects two dedicated devices via RS-232, while multidrop routes uncompressed Dante audio",
+      "Broadcast requires physical homerun cables to every device, while multidrop uses optical fiber lasers",
+      "Broadcast operates without network addressing, while multidrop assigns static IP addresses to endpoints"
+    ],
+    "answer": 0,
+    "explanation": "Point-to-point links two devices; broadcast has one transmitter and many addressed receivers; multidrop has multiple transmitters and receivers on one shared medium (requiring addressing and contention control); IP routes multidrop traffic across networks.",
+    "studyNote": "Control network forms: Point-to-point (2 devices), Broadcast (1 Tx, many addressed Rx), Multidrop (many Tx + many Rx, needs contention control), IP (routed across networks).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 15, pp. 302-304",
+    "chapter": 15,
+    "rationales": [
+      "Correct: Broadcast features a single transmitter sending to addressed receivers; multidrop allows multiple transmitters and receivers on shared media.",
+      "Not this one: Point-to-point links connect two devices via RS-232, whereas broadcast and multidrop support multiple endpoints.",
+      "Not this one: Homerun star cabling describes physical layout rather than logical broadcast or multidrop protocol structure.",
+      "Not this one: Both broadcast and multidrop control networks require device addressing to direct messages to intended targets."
+    ]
+  },
+  {
+    "id": 1042,
+    "legacyId": 42,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "Microphone polar patterns: omni, cardioid, hypercardioid, supercardioid, figure-8",
+    "prompt": "How do hypercardioid and supercardioid microphone patterns differ from standard cardioid in directional response?",
+    "choices": [
+      "They provide uniform 360-degree acoustic pickup while eliminating off-axis high-frequency phase coloration",
+      "They offer narrower frontal pickup and greater side rejection, but introduce a rear lobe",
+      "They exhibit identical sensitivity in front and back while creating deep acoustic nulls on the sides",
+      "They reject acoustic energy from the front while focusing sensitivity along floor boundary surfaces"
+    ],
+    "answer": 1,
+    "explanation": "Cardioid rejects rear sound; hypercardioid and supercardioid tighten frontal directionality and side rejection at the expense of a small rear lobe (so monitors/speakers must not sit directly behind them); figure-eight picks up front and rear equally.",
+    "studyNote": "Polar patterns: Omni (all directions), Cardioid (front, rejects rear), Hyper/Supercardioid (narrower front, small rear lobe), Bidirectional/Figure-8 (front + rear, rejects sides).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 6, pp. 137-141",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: Uniform 360-degree pickup describes an omnidirectional microphone pattern, not hypercardioid or supercardioid.",
+      "Correct: Hypercardioid and supercardioid narrow frontal pickup and increase side rejection compared to cardioid, but exhibit a rear sensitivity lobe.",
+      "Not this one: Equal front and rear pickup with deep side nulls describes a bidirectional (figure-eight) polar pattern.",
+      "Not this one: Directional microphones maintain primary sensitivity on-axis in front, not away from the front."
+    ]
+  },
+  {
+    "id": 1043,
+    "legacyId": 43,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Create conceptual AV design",
+    "topic": "Downward expander hazard in live amplified sound reinforcement",
+    "prompt": "Why should audio expanders generally be avoided in live amplified sound reinforcement systems?",
+    "choices": [
+      "Expanders convert balanced analog microphone signals into uncompressed multi-channel digital audio",
+      "Expanders restrict total acoustic dynamic range to unity, causing audible distortion across loudspeakers",
+      "Dynamic gain expansion alters acoustic loop gain unpredictably, risking severe acoustic feedback",
+      "Expanders invert electrical polarity on connected power amplifiers, triggering thermal circuit protection"
+    ],
+    "answer": 2,
+    "explanation": "While expanders (and companders) are useful in recording and wireless/broadcast transmission, using expanders in live sound reinforcement alters loop gain unpredictably and can trigger severe feedback.",
+    "studyNote": "Keep expanders for recording/transmission - avoid expanders in live sound reinforcement because they can trigger sudden feedback.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 14, pp. 287-289",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Expanders are dynamic audio processors, not analog-to-digital audio converters.",
+      "Not this one: Limiters, not expanders, restrict dynamic range; expanders increase dynamic range below threshold.",
+      "Correct: Expanders dynamically change gain based on signal level, which can destabilize acoustic loop gain in live spaces and trigger feedback.",
+      "Not this one: Signal expansion modifies dynamic amplitude; it does not invert electrical polarity or trip power supplies."
+    ]
+  },
+  {
+    "id": 1044,
+    "legacyId": 44,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "Unequal parallel loudspeaker impedance calculation",
+    "prompt": "An 8-ohm loudspeaker and a 16-ohm loudspeaker are wired in parallel. What is their combined impedance?",
+    "choices": [
+      "2.67 ohms",
+      "4.00 ohms",
+      "4.80 ohms",
+      "5.33 ohms"
+    ],
+    "answer": 3,
+    "explanation": "For unequal parallel impedances, ZT = 1 ÷ (1/8 + 1/16) = 1 ÷ (0.125 + 0.0625) = 1 ÷ 0.1875 ≈ 5.33 Ω. Notice that parallel impedance is always less than the smallest individual branch impedance (8 Ω).",
+    "studyNote": "Parallel impedance is ALWAYS smaller than the lowest individual speaker impedance! 8 Ω || 16 Ω = 5.33 Ω.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 6 & Appendix A, pp. 134-136, 413",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: 2.67 ohms would result from three 8-ohm loudspeakers connected in parallel.",
+      "Not this one: 4.00 ohms is the parallel impedance of two 8-ohm loudspeakers.",
+      "Not this one: 4.80 ohms is incorrect parallel calculation; ZT = 1 / (1/8 + 1/16) = 5.33 ohms.",
+      "Correct: Parallel impedance ZT = 1 / (1/8 + 1/16) = 1 / (0.125 + 0.0625) = 1 / 0.1875 = 5.33 ohms."
+    ]
+  },
+  {
+    "id": 1045,
+    "legacyId": 45,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "Inverse-square law sound pressure change over distance (20 log D1/D2)",
+    "prompt": "A loudspeaker produces 88 dB SPL at 2 m in a free field. What is the sound pressure level at 8 m?",
+    "choices": [
+      "76 dB SPL",
+      "82 dB SPL",
+      "85 dB SPL",
+      "94 dB SPL"
+    ],
+    "answer": 0,
+    "explanation": "Each doubling of distance drops SPL by 6 dB under the inverse-square law: from 2 m to 4 m is −6 dB, and from 4 m to 8 m is another −6 dB (−12 dB total), reducing 88 dB SPL to 76 dB SPL.",
+    "studyNote": "Distance dB change = 20 log(D1 ÷ D2) → −6 dB per distance doubling. Quadrupling distance (2 m → 8 m) = −12 dB.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 6 & Appendix A, pp. 122-126, 412",
+    "chapter": 6,
+    "rationales": [
+      "Correct: Inverse-square law states SPL drops 6 dB per distance doubling; moving from 2 m to 8 m (two doublings) reduces level by 12 dB, from 88 to 76 dB SPL.",
+      "Not this one: 82 dB SPL represents a single distance doubling (from 2 m to 4 m), not out to 8 m.",
+      "Not this one: 85 dB SPL reflects a 3 dB loss, which applies to electrical power halving rather than acoustic distance doubling.",
+      "Not this one: Sound pressure decreases with distance in a free field rather than increasing."
+    ]
+  },
+  {
+    "id": 1046,
+    "legacyId": 46,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "Moiré patterns in staging/wardrobe spiking interframe codec bit rates",
+    "prompt": "How does a fine repetitive background pattern affect an interframe video codec like H.264 or H.265?",
+    "choices": [
+      "The repetitive pattern compresses to near-zero bit rate due to spatial pixel prediction efficiency across frames",
+      "Minor motion causes interframe changes, forcing frequent intracoded refreshes that spike bit rates",
+      "The pattern forces the video encoder to downscale 1080p progressive content into standard definition interlaced video",
+      "The optical interference causes HDMI transmitters to drop high-bandwidth digital content protection handshakes"
+    ],
+    "answer": 1,
+    "explanation": "Interframe codecs rely on sending only differences between frames (P/B frames); tight patterns and moiré shimmer across frames, forcing constant high-data intra-coded refreshes that spike bit rate or degrade image quality.",
+    "studyNote": "Avoid tight patterns/stripes in camera rooms: they cause optical moiré AND force interframe codecs to send full frames constantly, spiking bandwidth.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 8 & Chapter 12, pp. 179-180, 251-253",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: Fine repeating patterns shimmer across frames with slight camera motion, preventing efficient spatial or temporal compression.",
+      "Correct: Shimmering moiré patterns cause high interframe variance, forcing codecs to send heavy intra-refresh data that drives up bandwidth.",
+      "Not this one: Codecs adapt quantization and bit allocation to complex textures rather than altering scan format or resolution.",
+      "Not this one: Background pattern texture has no relationship to digital HDMI HDCP cryptographic handshakes."
+    ]
+  },
+  {
+    "id": 1047,
+    "legacyId": 47,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "Downscaling 4K60 10-bit 4:4:4 (~16 Gbps) when site infrastructure is constrained",
+    "prompt": "A client requests uncompressed 4K60 10-bit 4:4:4 video, but the network link is limited to 10 Gbps. What should the designer do?",
+    "choices": [
+      "Terminate video distribution over twisted-pair copper and replace with analog RGBHV coaxial cabling",
+      "Transmit the 16 Gbps stream across the 10 Gbps link and rely on network switch buffer oversubscription",
+      "Adjust frame rate, chroma subsampling, or bit depth to fit bandwidth, and demonstrate options",
+      "Install inline digital video scalers to upconvert the signal to 8K resolution to force hardware compression"
+    ],
+    "answer": 2,
+    "explanation": "When raw throughput (4096 × 2160 × 60 × 10 × 3 ≈ 16 Gbps) exceeds pathway or budget limits, work backward by lowering frame rate (30 fps), chroma subsampling (4:2:0/4:2:2), or bit depth (8-bit) and demonstrate the trade-off to the client.",
+    "studyNote": "If 4K60 10-bit 4:4:4 (~16 Gbps) exceeds link capacity, step down frame rate (30 fps), subsampling (4:2:0), or bit depth (8-bit) and demo to the client.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 13, pp. 259-262",
+    "chapter": 13,
+    "rationales": [
+      "Not this one: Replacing modern digital video infrastructure with obsolete analog RGBHV coax does not solve bandwidth limits.",
+      "Not this one: Transmitting 16 Gbps onto a 10 Gbps link causes catastrophic packet loss, frame dropping, and video failure.",
+      "Correct: Reduce bandwidth by adjusting frame rate (e.g., 30 fps), chroma subsampling (4:2:2 or 4:2:0), or bit depth (8-bit), and verify client acceptance.",
+      "Not this one: Scaling to 8K resolution dramatically increases raw data rate rather than fitting into a 10 Gbps pathway."
+    ]
+  },
+  {
+    "id": 1048,
+    "legacyId": 48,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "Quality-driven vs availability-driven streaming design revisions",
+    "prompt": "In streaming system design, what distinguishes an availability-driven approach from a quality-driven approach?",
+    "choices": [
+      "Availability mandates uncompressed baseband transmission, while quality relies on public internet peer-to-peer distribution",
+      "Availability limits display resolution to standard definition, while quality eliminates hardware video decoders entirely",
+      "Availability applies to local HDMI matrix switchers, while quality governs long-distance SDI broadcast distribution links",
+      "Availability prioritizes bandwidth reduction; quality prioritizes high bitrate and QoS bandwidth reservations"
+    ],
+    "answer": 3,
+    "explanation": "If network availability governs, the designer lowers stream bit rate/resolution/fps or deploys multicast/edge caching; if quality governs (mission-critical), the designer adds network capacity, applies high QoS, or reserves bandwidth via RSVP.",
+    "studyNote": "Availability governs → lower bitrate/res/fps, use multicast or cache servers. Quality governs → add bandwidth, high DiffServ QoS, or RSVP.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 17, pp. 351-355",
+    "chapter": 17,
+    "rationales": [
+      "Not this one: Availability-driven architectures reduce bitrates using compression; they do not require uncompressed baseband transmission.",
+      "Not this one: Neither approach eliminates hardware video decoders; decoder hardware is required to decompress stream payloads.",
+      "Not this one: Availability versus quality trade-offs govern networked streaming architecture, not local baseband matrix switchers.",
+      "Correct: When network availability governs, reduce bitrate/resolution or use caching; when quality governs, allocate bandwidth and enforce QoS."
+    ]
+  },
+  {
+    "id": 1049,
+    "legacyId": 49,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "Audio sampling rate changes (48 kHz to 96/192 kHz) impact on channel count",
+    "prompt": "How does quadrupling digital audio sampling rate from 48 kHz to 192 kHz affect link capacity?",
+    "choices": [
+      "It quadruples per-channel data rate, reducing simultaneous channel count on fixed links",
+      "It reduces required transmission bandwidth by 75% due to improved Nyquist quantization filtering",
+      "It alters analog microphone preamplifier impedance matching across balanced balanced input stages",
+      "It allows high-volume multi-channel audio transport across unmanaged 100 Mbps Ethernet network switches"
+    ],
+    "answer": 0,
+    "explanation": "Because Audio Bit Rate = Sampling Rate × Bit Depth × Channels, jumping from 48 kHz to 96 kHz (2×) or 192 kHz (4×) multiplies bandwidth proportionally and reduces how many channels fit on a given link.",
+    "studyNote": "Audio Bit Rate = Fs × Bit Depth × Channels (+ overhead). Doubling or quadrupling Fs (48 → 96 → 192 kHz) multiplies bandwidth and cuts max channel count.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 12 & Chapter 16, pp. 246-248, 340",
+    "chapter": 12,
+    "rationales": [
+      "Correct: Audio Bit Rate = Sampling Rate * Bit Depth * Channels; quadrupling sampling rate quadruples bandwidth and reduces channel capacity.",
+      "Not this one: Higher sampling rates generate more samples per second, multiplying data rate rather than decreasing it.",
+      "Not this one: Sampling rate is a digital conversion parameter that has no effect on analog microphone impedance.",
+      "Not this one: Higher sample rates increase packet throughput, quickly saturating 100 Mbps links with high channel counts."
+    ]
+  },
+  {
+    "id": 1050,
+    "legacyId": 50,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Revise conceptual design to be compatible with site conditions and/or A&E drawing package",
+    "topic": "RF wireless control spectrum planning and avoiding overlap",
+    "prompt": "What must a designer do before specifying RF wireless control tablets alongside Wi-Fi and DECT systems?",
+    "choices": [
+      "Operate wireless transmitters on identical RF channels to achieve constructive signal reinforcement",
+      "Conduct an RF spectrum survey and develop a frequency coordination plan",
+      "Enclose wireless antennas inside grounded rigid steel conduit to suppress electromagnetic radiation",
+      "Substitute high-gain directional antennas with infrared blast emitters inside enclosed equipment racks"
+    ],
+    "answer": 1,
+    "explanation": "RF control technologies (Wi-Fi, Bluetooth, Zigbee, UWB, DECT, ISM bands) share crowded spectrum; without a coordinated wireless spectrum plan, overlapping or adjacent channels cause dropouts and control failure.",
+    "studyNote": "Always build an RF spectrum plan before specifying wireless control or microphones - overlapping/adjacent channels cause interference.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 15, pp. 302-304",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Placing multiple systems on the same frequency causes co-channel interference and communication dropouts.",
+      "Correct: Conducting an RF spectrum analysis and coordinating frequencies avoids interference between control devices, Wi-Fi, and intercoms.",
+      "Not this one: Placing antennas inside grounded steel conduit blocks radio frequency signals, rendering wireless control inoperable.",
+      "Not this one: Infrared emitters require line-of-sight and cannot provide roaming mobile tablet control."
+    ]
+  },
+  {
+    "id": 1051,
+    "legacyId": 51,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "Category 7, 7A, and 8 shielding and connector differences in final specs",
+    "prompt": "How do Category 7, 7A, and 8 cables differ from Category 6A regarding shielding and connectors?",
+    "choices": [
+      "They are unshielded twisted-pair cables supporting 100 Gbps transmission up to 500 meters over copper",
+      "They utilize standard 3-pin XLR audio connectors and conform strictly to legacy TIA/EIA commercial standards",
+      "They require shielding; Cat 7/7A use non-RJ45 connectors, and Cat 8 is distance-limited",
+      "They operate on single-mode optical fiber protocols while maintaining mechanical compatibility with RJ-11 jacks"
+    ],
+    "answer": 2,
+    "explanation": "Cat 7, 7A, and 8 must all be shielded; Cat 7/7A are ISO (not TIA/EIA) standards using non-RJ-45 connectors, and Cat 8 runs 40 Gbps up to 30 m (8.1 uses RJ-45; 8.2 does not).",
+    "studyNote": "Cat 6 = 10G to 55m; Cat 6A = 10G to 100m; Cat 7/7A = shielded, non-TIA, non-RJ45; Cat 8 = shielded, 2 GHz, 40G to 30m (8.1 RJ45, 8.2 not).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 16, pp. 324-326",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Cat 7, 7A, and 8 mandate shielded construction and cannot achieve 500-meter reach over twisted-pair copper.",
+      "Not this one: High-frequency data cables do not use XLR audio connectors, and Cat 7/7A are ISO/IEC standards, not TIA/EIA.",
+      "Correct: Cat 7/7A/8 require shielding; Cat 7/7A use proprietary non-RJ-45 interfaces, and Cat 8 runs 40 Gbps up to 30 meters (Cat 8.1 uses RJ-45).",
+      "Not this one: Category cables are copper twisted pairs, not optical fiber, and do not interface with RJ-11 telephone plugs."
+    ]
+  },
+  {
+    "id": 1052,
+    "legacyId": 52,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "TMDS (Transition-Minimized Differential Signaling) and DDC roles in HDMI/DVI",
+    "prompt": "How do Transition-Minimized Differential Signaling (TMDS) and Display Data Channel (DDC) function in HDMI?",
+    "choices": [
+      "TMDS supplies AC mains power to displays; DDC carries balanced analog stereo line-level audio signals",
+      "TMDS transmits analog component video sync pulses; DDC monitors remote control infrared receiver codes",
+      "TMDS regulates 5-volt hot plug detection logic; DDC transports uncompressed 48 Gbps baseband video frames",
+      "TMDS carries digital video and audio; DDC handles EDID capabilities and HDCP handshakes"
+    ],
+    "answer": 3,
+    "explanation": "HDMI and DVI use TMDS (balanced differential twisted pairs) to carry the high-speed video/audio payload, while the Display Data Channel (DDC, an I²C-based bus) carries EDID and HDCP handshakes.",
+    "studyNote": "HDMI/DVI architecture: TMDS = balanced twisted-pair high-speed video/audio transport; DDC = EDID + HDCP handshake channel; HPD = 5 V connection detect.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 13, pp. 262-269",
+    "chapter": 13,
+    "rationales": [
+      "Not this one: TMDS and DDC are digital communication buses; neither carries AC mains power or analog audio signals.",
+      "Not this one: TMDS carries high-speed digital video and audio data, not analog component video sync pulses.",
+      "Not this one: The Display Data Channel carries low-speed I²C metadata, while TMDS carries high-speed digital video.",
+      "Correct: TMDS uses differential pairs for high-speed digital video/audio payload, while DDC carries low-speed EDID and HDCP metadata."
+    ]
+  },
+  {
+    "id": 1053,
+    "legacyId": 53,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "GPIO contact closure vs analog voltage ramp control points",
+    "prompt": "What is the operational difference between a GPIO contact closure and an analog voltage control point?",
+    "choices": [
+      "GPIO switches binary on/off states; analog voltage provides continuous variable level control",
+      "GPIO transmits uncompressed multi-channel digital audio, while analog voltage routes IP multicast video packets",
+      "GPIO requires line-of-sight optical transmission, while analog voltage modulates high-frequency RF carrier waves",
+      "GPIO supplies three-phase alternating current power, while analog voltage provides balanced low-voltage microphone bias"
+    ],
+    "answer": 0,
+    "explanation": "General Purpose Input/Output (GPIO) contact closures open or close a dry circuit for simple on/off/trigger actions, while analog voltage ramps (e.g., 0–10 V) vary voltage continuously to set proportional levels.",
+    "studyNote": "Simplest control points: Contact closure (GPIO) = binary open/close relay; Analog voltage = variable voltage ramp (one wire per signal or multiplexed with common ground).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 15, pp. 302-304",
+    "chapter": 15,
+    "rationales": [
+      "Correct: GPIO contact closures trigger binary conditions (e.g., screen up/down), while analog voltage ramps (0–10 V) control continuous levels.",
+      "Not this one: GPIO and analog voltage are control interfaces; neither transports digital audio or packetized video.",
+      "Not this one: GPIO and analog control operate over copper wiring circuits rather than optical or wireless RF paths.",
+      "Not this one: Control points are low-voltage signaling circuits, not three-phase mains power or microphone phantom supplies."
+    ]
+  },
+  {
+    "id": 1054,
+    "legacyId": 54,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "Passive LC crossover networks: series bandpass vs parallel high/low-pass and notch",
+    "prompt": "How do reactive capacitors and inductors behave when combined in passive audio filter networks?",
+    "choices": [
+      "Capacitors and inductors maintain identical reactive impedances across all operating audio frequencies",
+      "Series LC forms bandpass filters; parallel combinations form high-pass, low-pass, or notch responses",
+      "Capacitive reactance rises with frequency, while inductive reactance falls toward zero at high frequencies",
+      "Series and parallel reactive circuits require external 240-volt AC power supplies to filter audio signals"
+    ],
+    "answer": 1,
+    "explanation": "Because XC falls with frequency and XL rises with frequency, their intersection defines the crossover frequency: series and parallel LC combinations form passive high-pass, low-pass, bandpass, and notch filters.",
+    "studyNote": "XC falls with f; XL rises with f. Their intersection is the crossover/resonant point used in passive crossovers and notch/bandpass filters.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 10, pp. 207-209",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Capacitive reactance decreases with frequency, while inductive reactance increases with frequency.",
+      "Correct: Combining L and C creates resonant filtering: series LC circuits create bandpass filters, while parallel networks form notch or crossover slopes.",
+      "Not this one: Capacitive reactance is inversely related to frequency, and inductive reactance is directly related to frequency.",
+      "Not this one: Passive LC filter networks operate on signal power and do not require external AC mains power supplies."
+    ]
+  },
+  {
+    "id": 1055,
+    "legacyId": 55,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "SDR (24/32 bpp) vs HDR (10/12/16 bits per channel = 30/36/48 bpp) bit depth",
+    "prompt": "How many total bits per pixel correspond to 8-bit SDR RGB compared to 10-bit and 12-bit HDR?",
+    "choices": [
+      "8 bpp for 8-bit SDR; 10 bpp for 10-bit HDR and 12 bpp for 12-bit HDR across all channels",
+      "16 bpp for 8-bit SDR; 20 bpp for 10-bit HDR and 24 bpp for 12-bit HDR across all channels",
+      "24 bpp for 8-bit SDR; 30 bpp for 10-bit HDR and 36 bpp for 12-bit HDR",
+      "32 bpp for 8-bit SDR; 64 bpp for 10-bit HDR and 128 bpp for 12-bit HDR across all channels"
+    ],
+    "answer": 2,
+    "explanation": "With three color channels (R, G, B), 8-bit SDR equals 3 × 8 = 24 bits per pixel (or 32 bpp with an 8-bit alpha channel), while 10-, 12-, and 16-bit HDR equal 30, 36, and 48 bits per pixel respectively.",
+    "studyNote": "Bits per pixel (4:4:4 RGB): 8-bit SDR = 24 bpp (32 bpp w/ alpha); 10-bit HDR = 30 bpp; 12-bit HDR = 36 bpp; 16-bit HDR = 48 bpp.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 12, pp. 247-249",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: Total bits per pixel equals bits per channel multiplied by three color channels (R, G, B), not the per-channel bit depth.",
+      "Not this one: RGB video utilizes three color channels, so 8-bit color equals 24 bpp (8 * 3), not 16 bpp.",
+      "Correct: Standard 8-bit RGB uses 3 * 8 = 24 bpp (32 bpp with alpha); 10-bit HDR uses 3 * 10 = 30 bpp; 12-bit HDR uses 3 * 12 = 36 bpp.",
+      "Not this one: 32 bpp represents 8-bit RGBA; 64 and 128 bpp exceed standard video transmission bit depths."
+    ]
+  },
+  {
+    "id": 1056,
+    "legacyId": 56,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "IPv4 (224.0.0.0/4) and IPv6 (ff00::/8) multicast address blocks",
+    "prompt": "Which IP address blocks are designated by IANA for IPv4 and IPv6 multicast traffic?",
+    "choices": [
+      "10.0.0.0/8 for IPv4 multicast, and fe80::/10 for IPv6 multicast",
+      "172.16.0.0/12 for IPv4 multicast, and fc00::/7 for IPv6 multicast",
+      "192.168.0.0/16 for IPv4 multicast, and ::1/128 for IPv6 multicast",
+      "224.0.0.0/4 for IPv4 multicast, and ff00::/8 for IPv6 multicast"
+    ],
+    "answer": 3,
+    "explanation": "IPv4 multicast uses the Class D block 224.0.0.0/4 (224.0.0.0 through 239.255.255.255, with administratively scoped private enterprise groups typically in 239.x.x.x), and IPv6 multicast uses ff00::/8.",
+    "studyNote": "Multicast address ranges: IPv4 = 224.0.0.0/4 (224.0.0.0–239.255.255.255); IPv6 = ff00::/8.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 17, pp. 358-361",
+    "chapter": 17,
+    "rationales": [
+      "Not this one: 10.0.0.0/8 is private unicast IPv4, and fe80::/10 is link-local unicast IPv6.",
+      "Not this one: 172.16.0.0/12 is private unicast IPv4, and fc00::/7 is unique local unicast IPv6.",
+      "Not this one: 192.168.0.0/16 is private unicast IPv4, and ::1/128 is the IPv6 loopback address.",
+      "Correct: IANA reserves Class D 224.0.0.0/4 (224.0.0.0 to 239.255.255.255) for IPv4 multicast and ff00::/8 for IPv6 multicast."
+    ]
+  },
+  {
+    "id": 1057,
+    "legacyId": 57,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Produce final design and drawing package",
+    "topic": "Lighting dimmer types: leading-edge triac, trailing-edge MOSFET/IGBT, PWM DC LED",
+    "prompt": "How do trailing-edge phase dimmers and DC PWM dimmers match different architectural lighting loads?",
+    "choices": [
+      "Trailing-edge dims mains LEDs smoothly; PWM dims constant-voltage DC LED strips",
+      "Leading-edge SCR dimmers provide smooth dimming for constant-voltage DC LED tape",
+      "Trailing-edge dimmers are used for three-phase high-voltage metal halide stadium floodlights",
+      "DC PWM dimming regulates mains voltage sine waves by adjusting AC utility line frequency"
+    ],
+    "answer": 0,
+    "explanation": "Matching the dimmer topology to the luminaire driver prevents flicker, buzz, and premature failure: reverse phase (trailing edge) suits mains LEDs/CFLs, constant-voltage PWM suits fixed-voltage DC LEDs, and constant-current suits current-driven LED arrays.",
+    "studyNote": "Dimmer matching: Forward phase (triac/SCR, leading edge) = incandescent; Reverse phase (MOSFET/IGBT, trailing edge) = mains LED/CFL; Sine-wave = quietest; DC PWM/current = DC LEDs.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 8, pp. 176-178",
+    "chapter": 8,
+    "rationales": [
+      "Correct: Trailing-edge (reverse phase) dimming suits mains-voltage LED lamps, while constant-voltage PWM modulates DC LED strip loads.",
+      "Not this one: Leading-edge forward phase dimmers chop AC line voltage and are incompatible with low-voltage DC LED strips.",
+      "Not this one: High-intensity discharge lamps require specialized ballasts and cannot be dimmed using standard phase-cut dimmers.",
+      "Not this one: PWM dimming switches low-voltage DC rapidly, having no interaction with building AC utility line frequency."
+    ]
+  },
+  {
+    "id": 1058,
+    "legacyId": 58,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "Audio sampling rates by format (8 kHz phone, 44.1 kHz CD, 48 kHz DVD, 96/192 kHz Blu-ray)",
+    "prompt": "What standard digital audio sampling rates correspond to telephone voice, audio CD, and video production?",
+    "choices": [
+      "4 kHz for telephone systems, 22.05 kHz for audio CD, and 32 kHz for broadcast video production",
+      "8 kHz for telephone, 44.1 kHz for audio CD, and 48 kHz for video production",
+      "16 kHz for telephone systems, 48 kHz for audio CD, and 96 kHz for broadcast video production",
+      "32 kHz for telephone systems, 88.2 kHz for audio CD, and 192 kHz for broadcast video production"
+    ],
+    "answer": 1,
+    "explanation": "Standard digital audio sampling rates are 8 kHz (telephone), 44.1 kHz (CD), 48 kHz (DVD and standard broadcast/AV video), 96 or 192 kHz (Blu-ray/high-res), and 2.82 MHz (SACD DSD).",
+    "studyNote": "Audio sample rates: 8 kHz (phone), 44.1 kHz (CD), 48 kHz (DVD/pro AV), 96/192 kHz (Blu-ray), 2.82 MHz (SACD).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 12, pp. 246-248",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: Standard telephone audio uses 8 kHz sampling, and audio CDs require 44.1 kHz.",
+      "Correct: Standard digital audio sampling rates are 8 kHz (voice telephony), 44.1 kHz (CD), and 48 kHz (professional video and DVD).",
+      "Not this one: Audio CDs sample at 44.1 kHz, while 48 kHz is the professional video standard.",
+      "Not this one: 32 kHz is legacy broadcast FM/DAT, and 88.2 kHz is high-resolution audio mastering."
+    ]
+  },
+  {
+    "id": 1059,
+    "legacyId": 59,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "Frame rate vs refresh rate and interlaced (1080i) vs progressive (1080p) scanning",
+    "prompt": "In digital video, what is the difference between frame rate, refresh rate, and interlaced scanning?",
+    "choices": [
+      "Frame rate measures display panel luminance; refresh rate measures cable bandwidth; interlaced paints progressive frames",
+      "Frame rate governs audio clock sync; refresh rate dictates scaler aspect ratio; interlaced sends horizontal scan lines simultaneously",
+      "Frame rate is source fps; refresh rate is display updates; interlaced paints alternating fields",
+      "Frame rate measures video bit depth; refresh rate governs HDMI HDCP handshakes; interlaced doubles vertical screen resolution"
+    ],
+    "answer": 2,
+    "explanation": "Frame rate is determined by the source content (fps), while refresh rate (Hz) is how fast the display updates; 1080i splits each frame into two 540-line odd/even fields, whereas 1080p draws the complete 1,080-line frame each pass.",
+    "studyNote": "Frame rate = source output (fps); Refresh rate = display redraw (Hz, keep ≥ frame rate). 1080i = two 540-line odd/even fields; 1080p = full 1080-line progressive frames.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 13, pp. 258-261",
+    "chapter": 13,
+    "rationales": [
+      "Not this one: Frame rate and refresh rate are temporal metrics, not luminance or cable bandwidth measurements.",
+      "Not this one: Frame and refresh rates describe visual image updates, not audio clocking or aspect ratio scaling.",
+      "Correct: Frame rate (fps) is content generation speed, refresh rate (Hz) is screen redraw frequency, and interlaced video alternates odd/even fields.",
+      "Not this one: Bit depth and HDCP are signal and encryption parameters, not frame timing or scanning mechanisms."
+    ]
+  },
+  {
+    "id": 1060,
+    "legacyId": 60,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "Ingest point and transcoder sizing in streaming system documentation",
+    "prompt": "In enterprise streaming architecture, what functions are performed by ingest points and transcoders?",
+    "choices": [
+      "Ingest points cool rack equipment; transcoders regulate incoming three-phase electrical utility power supplies",
+      "Ingest points decrypt HDCP licenses; transcoders terminate horizontal coaxial cable transmission lines",
+      "Ingest points amplify analog microphone audio; transcoders modulate high-frequency RF broadcast transmitters",
+      "Ingest points receive source content; transcoders convert streams between formats and bitrates"
+    ],
+    "answer": 3,
+    "explanation": "Ingest is the entry point where media enters the network (computers, capture appliances, cameras), and a transcoder converts streams from one codec/resolution/bitrate to another so diverse client endpoints can play them.",
+    "studyNote": "Ingest = where content enters the streaming network (count concurrent channels to size servers); Transcoder = converts stream formats/bitrates for endpoints.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 17, pp. 347-351",
+    "chapter": 17,
+    "rationales": [
+      "Not this one: Rack cooling and electrical power regulation are facility infrastructure functions, not streaming media roles.",
+      "Not this one: Ingest and transcoding do not strip HDCP encryption or terminate physical coaxial cables.",
+      "Not this one: Audio amplification and RF modulation occur in physical sound and broadcast hardware, not streaming servers.",
+      "Correct: Ingest points capture and encode incoming media streams, while transcoders re-encode media into various formats and bitrates for endpoints."
+    ]
+  },
+  {
+    "id": 1061,
+    "legacyId": 61,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "ANSI/IES/AVIXA RP-38-17 lighting standard for videoconferencing rooms",
+    "prompt": "Which joint standard defines lighting performance criteria for small-to-medium videoconferencing rooms?",
+    "choices": [
+      "ANSI/IES/AVIXA RP-38-17",
+      "ANSI/AVIXA F502.01:2018 Rack Building Standard",
+      "ANSI/AVIXA A102.01 Audio Coverage Uniformity",
+      "IEEE Std 1100-2005 Emerald Book Standard"
+    ],
+    "answer": 0,
+    "explanation": "ANSI/IES/AVIXA RP-38 (Lighting Performance for Small-to-Medium-Sized Videoconferencing Rooms) defines illuminance, color rendering, color temperature, and surface reflectance criteria for 3-to-25-person videoconference rooms.",
+    "studyNote": "RP-38 (IES/AVIXA) = Lighting Performance for Small-to-Medium-Sized Videoconferencing Rooms (3 to 25 seats).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 8 & Appendix B, pp. 171-175, 418",
+    "chapter": 8,
+    "rationales": [
+      "Correct: ANSI/IES/AVIXA RP-38-17 defines lighting criteria (illuminance, uniformity, CRI, CCT) for small-to-medium videoconferencing rooms.",
+      "Not this one: ANSI/AVIXA F502.01 standardizes equipment rack fabrication and cable management.",
+      "Not this one: ANSI/AVIXA A102.01 standardizes sound pressure level coverage uniformity in listening spaces.",
+      "Not this one: IEEE Std 1100 (Emerald Book) covers electrical powering and grounding of electronic equipment."
+    ]
+  },
+  {
+    "id": 1062,
+    "legacyId": 62,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "Filter Q (quality factor) definition and parametric EQ notch vs shaping",
+    "prompt": "On a parametric equalizer band, what does the parameter Q (Quality Factor) define?",
+    "choices": [
+      "The total electrical wattage output of the power amplifier driving the loudspeaker",
+      "The ratio of center frequency to bandwidth at the 3 dB-down points",
+      "The number of open microphones gated active simultaneously in an automatic DSP mixer",
+      "The queue packet buffer depth of an Ethernet network switch supporting audio streaming"
+    ],
+    "answer": 1,
+    "explanation": "Filter Q describes the selectivity (sharpness) of an equalizer band at the 3 dB points: high Q creates a narrow surgical notch (ideal for fixed-mic feedback suppression), while low Q creates a gentle, wide tonal shelf/bell.",
+    "studyNote": "Filter Q = filter selectivity/sharpness: High Q = tight, narrow notch (feedback/resonance); Low Q = wide, gentle tonal shaping.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 14, pp. 291-294",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Amplifier output power is measured in electrical watts, not filter quality factor.",
+      "Correct: Filter Q = center frequency divided by bandwidth (f0 / delta-f) at -3 dB points; high Q produces a narrow notch, low Q a broad curve.",
+      "Not this one: Number of open microphones (NOM) is an acoustic automixing parameter, not filter selectivity.",
+      "Not this one: Network queue depth measures packet buffer capacity in memory, not audio equalization bandwidth."
+    ]
+  },
+  {
+    "id": 1063,
+    "legacyId": 63,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "Electrical Power Required at the Loudspeaker (EPR) Calculation",
+    "prompt": "A speech reinforcement design requires Lp = 85 dB SPL at listener distance D2 = 10 m with H = 10 dB headroom, using a loudspeaker rated at Ls = 95 dB SPL (Wref = 1 W at Dr = 1 m). Using EPR = 10^((Lp + H - Ls + 20 log10(D2 ÷ Dr)) ÷ 10) × Wref, what power is required?",
+    "choices": [
+      "10 W",
+      "20 W",
+      "100 W",
+      "1,000 W"
+    ],
+    "answer": 2,
+    "explanation": "Distance loss = 20 log10(10 ÷ 1) = 20 dB. Exponent = (85 + 10 - 95 + 20) ÷ 10 = 20 ÷ 10 = 2.0, so EPR = 10^2 × 1 W = 100 W.",
+    "studyNote": "In EPR, sum required SPL + headroom - sensitivity + 20 log(D2/Dr), divide by 10, and take 10^x.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 6 & Appendix A, pp. 136-141, 414",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: 10 W omits the 10 dB system headroom term H from the exponent.",
+      "Not this one: 20 W multiplies the decibel difference linearly instead of raising 10 to the exponent.",
+      "Correct: (85 + 10 - 95 + 20) ÷ 10 = 2, and 10^2 × 1 W = 100 W.",
+      "Not this one: 1,000 W adds an extra 10 dB to the numerator, yielding 10^3 W."
+    ]
+  },
+  {
+    "id": 1064,
+    "legacyId": 64,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Finalize project documentation",
+    "topic": "AVIXA UX701.01 User Experience Design standard four-phase cycle",
+    "prompt": "Which AVIXA standard defines the four-phase user experience process for audiovisual control interfaces?",
+    "choices": [
+      "ANSI/AVIXA F501.01 Cable Labeling Standard",
+      "ANSI/AVIXA S601.01 Energy Management Standard",
+      "AVIXA UX701.01 (User Experience Design for Audiovisual Systems)",
+      "ANSI/AVIXA V201.01 Image System Contrast Ratio"
+    ],
+    "answer": 2,
+    "explanation": "AVIXA UX701.01 (User Experience Design for Audiovisual Systems) formalizes the user-centered iterative lifecycle - Understand, Plan/Specify, Produce, and Evaluate - for designing intuitive AV control interfaces.",
+    "studyNote": "UX701.01 = User Experience Design for AV Systems (4 iterative phases: Understand → Plan/Specify → Produce → Evaluate).",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 15 & Appendix B, pp. 305-308, 419",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: ANSI/AVIXA F501.01 establishes cable identification and labeling conventions.",
+      "Not this one: ANSI/AVIXA S601.01 standardizes audiovisual system energy management and monitoring.",
+      "Correct: AVIXA UX701.01 formalizes the four-phase UX design cycle: Understand, Plan/Specify, Produce, and Evaluate.",
+      "Not this one: ANSI/AVIXA V201.01 standardizes display Image System Contrast Ratio testing."
+    ]
+  },
+  {
+    "id": 1065,
+    "legacyId": 65,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Support project execution activities",
+    "topic": "Change-one-thing-at-a-time rule and written log in field troubleshooting",
+    "prompt": "Why must troubleshooting proceed by changing only one variable at a time?",
+    "choices": [
+      "To ensure that equipment chassis ground bonding wires remain disconnected during testing",
+      "To comply with municipal structural building codes regarding electrical component replacement",
+      "To reset network switch firmware versions to factory default configurations",
+      "To isolate root cause accurately without masking symptoms or introducing new faults"
+    ],
+    "answer": 3,
+    "explanation": "Both Chapter 13 and Chapter 19 emphasize the golden rule of troubleshooting: change only one variable at a time, test the result, and log each step so you can revert ineffective changes and isolate the true root cause.",
+    "studyNote": "Golden troubleshooting rule: Change ONE thing at a time, test, and document in a written log.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 13 & Chapter 19, pp. 270-273, 396-399",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: Safety ground bonding must always remain connected during all testing and operation.",
+      "Not this one: Changing one variable at a time is an engineering troubleshooting method, not a structural building code.",
+      "Not this one: Troubleshooting isolates specific faults; it does not automatically reset switch firmware.",
+      "Correct: Modifying one variable at a time ensures that any observed change in system behavior can be definitively attributed to that action."
+    ]
+  },
+  {
+    "id": 1066,
+    "legacyId": 66,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Support project execution activities",
+    "topic": "Unmanaged switcher EDID disconnect/reconnect dropout hazard",
+    "prompt": "What causes a 6-second black screen when switching inputs on an unmanaged HDMI switcher?",
+    "choices": [
+      "Disconnection of the HPD line and DDC channel, forcing renegotiation of EDID and HDCP",
+      "Excessive attenuation along passive HDMI cables requiring active equalization booster amps",
+      "Thermal overload tripping internal circuit breakers on the video display power supply",
+      "Incompatible Category 6A twisted-pair cable termination causing loss of Ethernet clock sync"
+    ],
+    "answer": 0,
+    "explanation": "Unmanaged switchers break and remake the physical HPD/DDC path on every switch event, restarting EDID and HDCP handshakes; switchers with internal EDID/HDCP management (or source-side EDID emulators) maintain continuous handshakes.",
+    "studyNote": "Unmanaged HDMI switchers drop HPD/DDC on switch → restarts EDID/HDCP handshake → picture loss. Use managed switchers or source-side EDID emulators.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 13, pp. 268-272",
+    "chapter": 13,
+    "rationales": [
+      "Correct: Unmanaged switchers break the physical Hot Plug Detect and DDC lines, forcing a complete EDID handshake and HDCP re-authentication.",
+      "Not this one: Cable attenuation causes digital sparklies or cliff-effect dropouts, not recurring 6-second re-syncs upon switching.",
+      "Not this one: Switching delay is an HDMI handshake issue, not a display power supply thermal overload trip.",
+      "Not this one: Ethernet clock synchronization relates to networked audio/video transport, not local HDMI DDC switching."
+    ]
+  },
+  {
+    "id": 1067,
+    "legacyId": 67,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Support project execution activities",
+    "topic": "Duplicate MAC address or IP conflict isolation during integration",
+    "prompt": "Two endpoints intermittently drop offline whenever both are powered on simultaneously. What fault should be investigated first?",
+    "choices": [
+      "Improper acoustic loudspeaker coverage cone overlap across the audience listening plane",
+      "An IP address conflict or duplicate MAC address on the local subnet",
+      "Excessive ambient room lighting color rendering index degradation near display surfaces",
+      "Use of low-grade structural mounting bolts on overhead display support unistrut brackets"
+    ],
+    "answer": 1,
+    "explanation": "When two network nodes alternate dropping offline whenever both are active, the classic culprit is a duplicate IPv4 address (often from manual static IPs colliding with DHCP) or a duplicate 48-bit MAC address.",
+    "studyNote": "Intermittent alternating network dropouts when two devices are on = check for duplicate IP address (use Reserve DHCP!) or duplicate MAC address.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 16, pp. 320-322, 331-333",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Loudspeaker coverage overlap affects acoustic uniformity, not network device connectivity.",
+      "Correct: When two devices drop offline only when both are active, the primary cause is an IP address conflict or duplicate MAC address.",
+      "Not this one: Lighting color rendering (CRI) impacts visual perception, not Layer 2 or Layer 3 network communication.",
+      "Not this one: Structural mounting hardware provides physical support and has no effect on network device communication."
+    ]
+  },
+  {
+    "id": 1068,
+    "legacyId": 68,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Support project execution activities",
+    "topic": "Automatic Gain Control (AGC) feedback risk on live amplified microphones",
+    "prompt": "Why does enabling Automatic Gain Control on a live lectern microphone channel cause feedback when the presenter pauses?",
+    "choices": [
+      "AGC lowers preamplifier gain by 40 dB, shifting the operational noise floor into clipping",
+      "AGC inverts audio phase across the power amplifier output, inducing destructive acoustic feedback",
+      "AGC raises gain during silence to maintain target level, causing NAG to exceed PAG",
+      "AGC modulates high-frequency pilot tones that excite structural resonance in the lectern assembly"
+    ],
+    "answer": 2,
+    "explanation": "Automatic Gain Control (AGC) dynamically increases gain when input level drops; on an open microphone in a room with live loudspeakers, AGC boosts gain during quiet pauses until the acoustic loop goes unstable and feeds back.",
+    "studyNote": "Beware enabling AGC on live amplified microphones: during silence, AGC boosts gain to chase a target level and drives the system into feedback!",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 14, pp. 288-291",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: AGC increases gain during silence rather than lowering it, which pulls up background noise and room bleed.",
+      "Not this one: Feedback from AGC is caused by excess loop gain, not electrical output phase inversion.",
+      "Correct: During speech pauses, AGC automatically boosts channel gain toward its target level; this increases system gain until NAG > PAG and feedback occurs.",
+      "Not this one: AGC adjusts audio signal gain dynamically; it does not inject pilot tones or structural vibrations."
+    ]
+  },
+  {
+    "id": 1069,
+    "legacyId": 69,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Verify system performance",
+    "topic": "ISCR 10% failure threshold example for BDM (15:1 -> 13.5:1)",
+    "prompt": "Under a 10% tolerance rule, what reading triggers failure when verifying ISCR for a 15:1 Basic Decision-Making space?",
+    "choices": [
+      "Any measurement below 10.0:1",
+      "Any measurement below 12.0:1",
+      "Any measurement below 13.0:1",
+      "Any measurement below 13.5:1"
+    ],
+    "answer": 3,
+    "explanation": "For BDM (15:1 target), 10% of 15 is 1.5, so 15 − 1.5 = 13.5:1; per Chapter 19's worked example, any of the five viewing locations measuring below 13.5:1 (>10% below minimum) fails verification (while Chapter 5's strict V201.01 rule requires all five to meet 15:1).",
+    "studyNote": "ISCR 5 positions: nearest L/R, farthest L/R, and center. Ch 5: all 5 must meet minimum (BDM 15:1); Ch 19 worked rule: >10% below minimum (<13.5:1 for BDM) fails.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 5 & Chapter 19, pp. 102-105, 398-401",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: 10.0:1 represents a 33% drop below the 15:1 target, far exceeding the 10% tolerance limit.",
+      "Not this one: 12.0:1 represents a 20% drop below 15:1, well past the 10% threshold.",
+      "Not this one: 13.0:1 represents more than a 13% drop below the required 15:1 ratio.",
+      "Correct: For a 15:1 BDM requirement, a 10% margin is 1.5, meaning any measurement below 13.5:1 fails the verification test."
+    ]
+  },
+  {
+    "id": 1070,
+    "legacyId": 70,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Verify system performance",
+    "topic": "Standards hierarchy for A/V lip-sync verification (ITU-R BT.1359-1, EBU R37, ATSC IS-19)",
+    "prompt": "Which standards hierarchy establishes reference sync tolerances (+15 ms lead to −45 ms lag) for broadcast lip-sync verification?",
+    "choices": [
+      "ITU-R BT.1359-1, followed by EBU Recommendation R37, and ATSC IS-19",
+      "ANSI/AVIXA V201.01, followed by DISCAS V202.01, and S601.01",
+      "IEEE 802.11ax, followed by RFC 1918, and IANA Port Assignment List",
+      "ANSI-J-STD-710, followed by ISO 19650, and National Electrical Code"
+    ],
+    "answer": 0,
+    "explanation": "Chapter 19 cites ITU-R BT.1359-1, EBU Recommendation R37, and ATSC IS-19 as the authoritative reference order for audio/video lip-sync tolerances (+15 ms lead / −45 ms lag for television; +40 ms / −60 ms default).",
+    "studyNote": "Lip-sync standards reference order: (1) ITU-R BT.1359-1, (2) EBU R37, (3) ATSC IS-19. Tolerances: TV = +15 / −45 ms; Default AV = +40 / −60 ms.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 19, pp. 401-404",
+    "chapter": 19,
+    "rationales": [
+      "Correct: Broadcast standards establish lip-sync tolerance via ITU-R BT.1359-1, EBU Recommendation R37, and ATSC IS-19.",
+      "Not this one: These are AVIXA standards for contrast ratio, display sizing, and energy management, not audio/video sync.",
+      "Not this one: IEEE 802.11ax and RFC 1918 govern wireless networking and IP addressing, not lip-sync tolerances.",
+      "Not this one: J-STD-710, ISO 19650, and the NEC govern drawing symbols, building information modeling (BIM), and electrical codes."
+    ]
+  },
+  {
+    "id": 1071,
+    "legacyId": 71,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Verify system performance",
+    "topic": "Video Camera Image Size Verification Calculation",
+    "prompt": "During camera commissioning, a presenter stands D = 5.0 m from a PTZ lens set to a horizontal angle of view A = 30° (where tan 15° = 0.268 and tan 30° = 0.577). Using IS = 2 × D × tan(A ÷ 2), what is the captured horizontal image width?",
+    "choices": [
+      "1.34 m",
+      "2.68 m",
+      "2.89 m",
+      "5.77 m"
+    ],
+    "answer": 1,
+    "explanation": "Using IS = 2 × D × tan(A ÷ 2): half-angle = 15°, so IS = 2 × 5.0 m × tan(15°) = 10 × 0.268 = 2.68 m.",
+    "studyNote": "Halve the camera lens angle A before taking the tangent, then multiply by 2 × D.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 13 & Appendix A, pp. 266-270, 412",
+    "chapter": 13,
+    "rationales": [
+      "Not this one: 1.34 m forgets to multiply the right-triangle half-width by 2.",
+      "Correct: IS = 2 × 5.0 × tan(15°) = 10 × 0.268 = 2.68 m.",
+      "Not this one: 2.89 m computes D × tan(30°) without halving A or multiplying by 2.",
+      "Not this one: 5.77 m uses tan(30°) instead of tan(15°), forgetting to divide angle A by 2."
+    ]
+  },
+  {
+    "id": 1072,
+    "legacyId": 72,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Verify system performance",
+    "topic": "Verifying 16-zone checkerboard vs 18% white window sequential contrast patterns",
+    "prompt": "Under ANSI/AVIXA V201.01 (ISCR), how do the average-luminance and sequential contrast test patterns differ?",
+    "choices": [
+      "Average-luminance uses solid primary color bars; sequential uses a calibrated grayscale staircase pattern",
+      "Average-luminance uses a 16-zone checkerboard; sequential uses an 18% white window followed by black",
+      "Average-luminance measures off-axis viewing angles; sequential measures projector throw distance ratios",
+      "Average-luminance evaluates ambient room lighting; sequential measures audio sound pressure levels"
+    ],
+    "answer": 1,
+    "explanation": "ISCR defines two test pattern methods: the 16-zone black-and-white checkerboard (average of 8 white zones ÷ average of 8 black zones) for intra-frame contrast, and an 18%-area 100%-white window pattern paired with a full-black screen for sequential contrast.",
+    "studyNote": "ISCR test patterns: Checkerboard = 16-zone (8 white ÷ 8 black); Sequential = 18%-screen-area 100%-white window reading ÷ full-black reading.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 5 & Chapter 19, pp. 102-105, 398-401",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: Color bars and grayscale staircases evaluate color reproduction and gamma, not ISCR contrast ratios.",
+      "Correct: ISCR uses a 16-zone black/white checkerboard for intra-frame average contrast, and an 18% white window paired with full black for sequential contrast.",
+      "Not this one: Viewing angles and throw ratios describe room and lens geometry, not contrast measurement test patterns.",
+      "Not this one: Contrast measurements evaluate display optical luminance; neither pattern measures sound pressure level."
+    ]
+  },
+  {
+    "id": 1073,
+    "legacyId": 73,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Conduct project close out activities",
+    "topic": "Six verification phases in chronological order (Pre-integration to Final Acceptance)",
+    "prompt": "Which sequence lists all six project verification and closeout phases in correct chronological order?",
+    "choices": [
+      "Concept Design, Systems Integration, Closeout, Pre-Integration, Post-Integration, and Substantial Completion",
+      "Systems Integration, Post-Integration, Final Acceptance, Closeout, Pre-Integration, and Substantial Completion",
+      "Pre-Integration → Systems Integration → Post-Integration → Substantial/Practical Completion → Closeout → Final Acceptance",
+      "Substantial Completion, Pre-Integration, Systems Integration, Closeout, Post-Integration, and Final Acceptance"
+    ],
+    "answer": 2,
+    "explanation": "Chapter 19's six implementation verification gates progress strictly from Pre-Integration to Systems Integration, Post-Integration, Substantial/Practical Completion, Closeout, and Final Acceptance.",
+    "studyNote": "Memorize the 6 verification gates in order: Pre-Integration → Systems Integration → Post-Integration → Substantial Completion → Closeout → Final Acceptance.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 19, pp. 389-393",
+    "chapter": 19,
+    "rationales": [
+      "Not this one: Concept Design precedes integration, and closeout cannot precede pre-integration or post-integration.",
+      "Not this one: Final Acceptance is the last milestone and cannot occur before closeout or substantial completion.",
+      "Correct: The chronological verification sequence progresses from Pre-Integration through Systems Integration, Post-Integration, Substantial Completion, Closeout, and Final Acceptance.",
+      "Not this one: Substantial completion occurs after integration is verified, not before pre-integration testing."
+    ]
+  },
+  {
+    "id": 1074,
+    "legacyId": 74,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Conduct project close out activities",
+    "topic": "Audit logs and nonrepudiation handover at closeout",
+    "prompt": "Why must closeout verification confirm that accounting audit logging is active on networked AV processors?",
+    "choices": [
+      "To boost digital video frame rates from 30 fps to 60 fps across local network segments",
+      "To enable unauthenticated guest users to access administrative system configuration menus",
+      "To provide battery backup power to network switches during building utility outages",
+      "To record actions and identities, providing nonrepudiation and forensic root-cause data"
+    ],
+    "answer": 3,
+    "explanation": "In the Triple-A framework, Accounting maintains audit trails of logins, failures, and configuration changes - providing nonrepudiation (proof of who did what) and forensic data for security and root-cause analysis.",
+    "studyNote": "Triple-A Accounting = audit logs of logins/actions → required for nonrepudiation, intrusion detection, and root-cause analysis.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 18, pp. 375-380",
+    "chapter": 18,
+    "rationales": [
+      "Not this one: Audit logging does not alter video frame rate or network transmission bandwidth.",
+      "Not this one: Accounting tracks user actions; it does not grant unauthenticated access to administrative settings.",
+      "Not this one: Battery backup is supplied by uninterruptible power supplies (UPS), not audit logging software.",
+      "Correct: Accounting logs establish an immutable audit trail of who accessed the system and what actions were performed, ensuring nonrepudiation."
+    ]
+  },
+  {
+    "id": 1075,
+    "legacyId": 75,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Conduct project close out activities",
+    "topic": "Closeout Handover of Warranty Terms, Spares, and Service SLAs",
+    "prompt": "During Final Acceptance of an enterprise campus AV deployment, which closeout package items transition ongoing system support cleanly to the owner's operations team?",
+    "choices": [
+      "Warranty start/expiration dates, attic-stock spare inventory, and service SLA escalation contacts",
+      "Preliminary stakeholder interview transcripts and rejected conceptual room sketches",
+      "Subcontractor payroll timesheets and confidential manufacturer dealer-margin tables",
+      "Uncompiled proprietary source-code locks that block future owner maintenance"
+    ],
+    "answer": 0,
+    "explanation": "At closeout and Final Acceptance, transitioning to day-two operations requires documented warranty dates, turned-over spare parts/attic stock, as-built records, and service SLA contact procedures.",
+    "studyNote": "Closeout handover equips day-two support with warranty dates, spare inventory, as-builts, and service escalation paths.",
+    "source": "Official CTS-D Exam Guide, 2nd ed., Chapter 19, pp. 401-406",
+    "chapter": 19,
+    "rationales": [
+      "Correct: Documented warranty dates, spare-parts inventory, and service SLA contacts enable smooth day-two operational support.",
+      "Not this one: Early discovery notes and rejected concept sketches are historical design records, not operational support tools.",
+      "Not this one: Internal labor timesheets and dealer net margins are contractor accounting records outside closeout turnover.",
+      "Not this one: Closeout must follow agreed software/code escrow and licensing deliverables rather than locking out support."
+    ]
+  }
+]

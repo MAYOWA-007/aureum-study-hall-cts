@@ -1,0 +1,2027 @@
+[
+  {
+    "id": 1001,
+    "legacyId": 1,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review AV Project Documentation",
+    "topic": "Resolving Structural Conflicts via Request for Information (RFI)",
+    "prompt": "While reviewing vertical section drawings before rough-in, the CTS-I sees a structural steel header occupying the ceiling cavity designated for a recessed projection screen. What action should the installer take first?",
+    "choices": [
+      "Submit a documented Request for Information (RFI) through the project manager before cutting ceiling framing",
+      "Notch the bottom flange of the steel header on site to clear the screen housing",
+      "Surface-mount the screen below the ceiling grid without consulting the design team",
+      "Order a smaller flat-panel display and bill the cost difference at project closeout"
+    ],
+    "answer": 0,
+    "explanation": "When drawings reveal a structural obstruction or trade clash, the installer must halt affected rough-in and submit a formal RFI through the project manager for architect/engineer resolution.",
+    "studyNote": "Escalate structural or A&E drawing clashes via a formal RFI before altering mounts, framing, or specified equipment.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 4, pp. 57-64",
+    "chapter": 4,
+    "rationales": [
+      "Correct: Documenting the structural clash in a formal RFI obtains authorized architectural and engineering direction before field work proceeds.",
+      "Not this one: Cutting or drilling structural steel members is strictly prohibited and creates a severe life-safety hazard.",
+      "Not this one: Changing mounting height and aesthetic integration without written approval violates the project scope.",
+      "Not this one: Substituting specified hardware unilaterally bypasses engineering review and formal change-order approval."
+    ]
+  },
+  {
+    "id": 1002,
+    "legacyId": 2,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review AV Project Documentation",
+    "topic": "Three-Cable Conduit Jam Ratio Calculation",
+    "prompt": "A conduit schedule routes three cables with outer diameters of 7 mm, 8 mm, and 9 mm through a conduit with a 24 mm inner diameter. Using JAM = ID ÷ ((OD₁ + OD₂ + OD₃) ÷ 3), what is the jam ratio and required action?",
+    "choices": [
+      "Jam ratio is 3.0, falling in the 2.8 to 3.2 danger zone and requiring a larger conduit",
+      "Jam ratio is 1.0, allowing the pull to proceed with standard wire lubricant",
+      "Jam ratio is 3.4, clearing the jamming zone without pathway changes",
+      "Jam ratio is 9.0, exceeding the 40% cross-sectional conduit fill limit"
+    ],
+    "answer": 0,
+    "explanation": "Average cable OD = (7 + 8 + 9) ÷ 3 = 8 mm, so JAM = 24 ÷ 8 = 3.0. Because 2.8 to 3.2 risks wedging three cables at bends, the conduit should be upsized.",
+    "studyNote": "Three-cable jam ratio = ID ÷ average OD; avoid values between 2.8 and 3.2 by upsizing the conduit.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 122-125",
+    "chapter": 6,
+    "rationales": [
+      "Correct: Dividing the 24 mm ID by the 8 mm average OD yields 3.0, which sits inside the 2.8 to 3.2 three-cable jamming danger zone.",
+      "Not this one: 1.0 divides by the sum of outer diameters (24 mm) instead of the three-cable average (8 mm).",
+      "Not this one: 3.4 divides 24 mm by only the smallest 7 mm cable rather than the average of all three cables.",
+      "Not this one: 9.0 multiplies instead of dividing and confuses jam ratio with cross-sectional fill percentage."
+    ]
+  },
+  {
+    "id": 1003,
+    "legacyId": 3,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review AV Project Documentation",
+    "topic": "Matching A&E Drawing Packages to Field Questions",
+    "prompt": "Before suspending a motorized projection screen in an acoustic ceiling, which A&E drawings should the installer check to locate load-bearing steel and avoid ceiling fixture clashes?",
+    "choices": [
+      "Architectural interior elevations and telecom riser diagrams",
+      "Mechanical ductwork plans and electrical panelboard schedules",
+      "Plumbing riser diagrams and room finish schedules",
+      "Structural framing plans and reflected ceiling plans"
+    ],
+    "answer": 3,
+    "explanation": "Structural framing plans identify load-bearing beams and slabs, while the Reflected Ceiling Plan (RCP) coordinates ceiling grid layout across lighting, HVAC diffusers, sprinklers, and AV devices.",
+    "studyNote": "Pair Structural drawings for overhead load support with the Reflected Ceiling Plan (RCP) for ceiling grid clash coordination.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 4, pp. 57-60",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: Interior elevations and telecom risers show wall faces and vertical backbone cabling, not overhead beams or ceiling grids.",
+      "Not this one: Mechanical plans and panel schedules detail ductwork and circuit breakers rather than structural framing and full ceiling layouts.",
+      "Not this one: Plumbing risers and finish schedules cover piping and surface materials, not structural steel or ceiling grid coordinates.",
+      "Correct: Structural plans locate load-bearing members and the RCP shows all ceiling-mounted fixtures in floor-plan orientation."
+    ]
+  },
+  {
+    "id": 1004,
+    "legacyId": 4,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review AV Project Documentation",
+    "topic": "U.S. Customary 1/4-Inch Scale Proportion Math",
+    "prompt": "A floor plan has a scale of 1/4 inch equals 1 foot. A conduit measures 8 inches on paper. What is its actual length?",
+    "choices": [
+      "16 ft",
+      "2 ft",
+      "64 ft",
+      "32 ft"
+    ],
+    "answer": 3,
+    "explanation": "Converting 1/4 inch to decimal gives 0.25 in. per foot. Dividing 8 in. by 0.25 in./ft yields 32 ft.",
+    "studyNote": "For 1/4 in. = 1 ft scale, divide measured inches by 0.25 (or multiply by 4); for 1/8 in. = 1 ft, divide by 0.125 (or multiply by 8).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 4, pp. 65-67",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: 16 ft would correspond to a 1/2 in. = 1 ft scale.",
+      "Not this one: 2 ft multiplies 8 by 0.25 instead of dividing by 0.25.",
+      "Not this one: 64 ft would correspond to a 1/8 in. = 1 ft scale.",
+      "Correct: Dividing 8 measured inches by 0.25 in./ft equals 32 ft."
+    ]
+  },
+  {
+    "id": 1005,
+    "legacyId": 5,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Review AV Project Documentation",
+    "topic": "Client Fee versus Project Cost and Markup",
+    "prompt": "In AV project financial management, why must the client fee exceed direct labor and material costs?",
+    "choices": [
+      "To cover company overhead expenses and provide business profit",
+      "To comply with commercial audiovisual equipment retail price maintenance legislation",
+      "To fund unexpected emergency warranty replacement parts during the closeout phase",
+      "To offset mandatory freight shipping surcharges assessed by overseas hardware vendors"
+    ],
+    "answer": 0,
+    "explanation": "Charging a fee equal to direct cost leaves nothing to pay business overhead (rent, insurance, taxes, benefits) or generate profit; Client Fee = Cost + Markup.",
+    "studyNote": "Distinguish Project Budget (allocated labor/materials) from Client Fee (direct cost + overhead/profit markup).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 3, pp. 36-37",
+    "chapter": 3,
+    "rationales": [
+      "Correct: Client fee must cover direct project costs plus markup for company operating overhead and profit.",
+      "Not this one: Integrator pricing is determined by market rates and markup structures rather than legal retail price maintenance.",
+      "Not this one: Contingencies and warranty costs should be budgeted in project estimates rather than ad-hoc fee padding.",
+      "Not this one: Shipping freight is a direct project cost rather than the primary justification for overhead markup."
+    ]
+  },
+  {
+    "id": 1006,
+    "legacyId": 6,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Conduct Site Survey",
+    "topic": "Verifying Ceiling-Tile-to-Slab Clearance and Obstructions",
+    "prompt": "Why must an installer inspect above drop-ceiling tiles during a site survey rather than relying solely on the Reflected Ceiling Plan?",
+    "choices": [
+      "To confirm that acoustic ceiling tiles meet local seismic deflection ratings for ceiling speakers",
+      "To verify clearance and identify unmapped ductwork, plumbing, or structural framing",
+      "To verify that plenum return-air flow rates meet manufacturer thermal ventilation requirements",
+      "To check whether ceiling grid suspension wires are bonded to the building lightning arrestor system"
+    ],
+    "answer": 1,
+    "explanation": "Field-installed HVAC ducts, sprinkler pipes, and structural trusses frequently deviate from design prints; visually inspecting and measuring above the ceiling tiles prevents rough-in collisions.",
+    "studyNote": "Always open ceiling tiles during the site survey to verify vertical plenum depth, structural attachment points, and trade obstructions.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 5, pp. 85-87",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Seismic bracing inspections involve structural engineering checks rather than general overhead clearance surveys.",
+      "Correct: Visual inspection above tiles reveals unmapped HVAC ducts, pipes, and beams that block recessed equipment.",
+      "Not this one: Plenum air velocity is an HVAC balancing task rather than an AV site clearance survey step.",
+      "Not this one: Drop-ceiling grid wire bonding falls under electrical codes rather than AV survey inspections."
+    ]
+  },
+  {
+    "id": 1007,
+    "legacyId": 7,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Conduct Site Survey",
+    "topic": "Surveying Wireless RF Spectrum and Antenna Line of Sight",
+    "prompt": "During a pre-installation site survey for wireless microphones and Wi-Fi control, what onsite RF evaluation is required?",
+    "choices": [
+      "Measure electromagnetic shielding attenuation provided by architectural window glass coatings",
+      "Test the electrical conductivity of raised floor access tiles across the stage performance area",
+      "Calculate microwave absorption losses caused by decorative drywall finishes and acoustical fabric",
+      "Scan local RF spectrum for interference and confirm line-of-sight antenna locations"
+    ],
+    "answer": 3,
+    "explanation": "Surveying the venue's RF environment with a spectrum/wireless analyzer identifies active local frequencies and ensures remote antennas have clear line-of-sight placement away from metal walls or racks.",
+    "studyNote": "Survey local RF spectrum early, coordinate frequencies (`DOC-103`), and plan antenna locations with line of sight and ≥ 300 mm clearance from metal.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 9, pp. 213-214; Chapter 12, p. 305",
+    "chapter": 9,
+    "rationales": [
+      "Not this one: Architectural glazing attenuation is evaluated during structural envelope engineering rather than wireless RF surveys.",
+      "Not this one: Floor tile conductivity relates to static discharge management rather than UHF wireless microphone coordination.",
+      "Not this one: Wall fabric microwave absorption applies to specialized radar systems rather than UHF audio systems.",
+      "Correct: Scanning active RF channels prevents interference and verifies clean line-of-sight antenna mounting points."
+    ]
+  },
+  {
+    "id": 1008,
+    "legacyId": 8,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Conduct Site Survey",
+    "topic": "Surveying Throw Distance vs. Mount Center Reference Points",
+    "prompt": "Why must an installer account for the distance between the projector lens reference mark and ceiling mount center?",
+    "choices": [
+      "Projector horizontal keystone correction limits depend directly on the mount offset distance",
+      "The offset dimension determines the required electrical branch circuit conduit diameter",
+      "Throw distance measures from the lens, while pipes anchor at the mount center",
+      "Cooling fan exhaust clearance requires fixed separation between mounting brackets and lens barrels"
+    ],
+    "answer": 2,
+    "explanation": "Throw distance is calculated from the front of the lens (or lens reference mark), while the suspension pipe attaches to the bracket's center of gravity behind the lens; failing to account for this offset misplaces the mount.",
+    "studyNote": "Never confuse the lens throw-distance reference point with the ceiling mount center point.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 10, pp. 256-257",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Keystone adjustments are digital image processing functions independent of mechanical mount offsets.",
+      "Not this one: Electrical conduit sizing depends on conductor count and gauge rather than mechanical mounting offsets.",
+      "Correct: Throw distance is referenced to the lens element, whereas structural pipes align with the mount center.",
+      "Not this one: Thermal exhaust clearances are specified in equipment manuals rather than dictated by mount hole spacing."
+    ]
+  },
+  {
+    "id": 1009,
+    "legacyId": 9,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Evaluate Overall Facility Readiness",
+    "topic": "Extra-Low Voltage (ELV) vs. Low Voltage (LV) AC Thresholds",
+    "prompt": "Under typical electrical safety standards, what AC voltage threshold separates Extra-Low Voltage (ELV) from Low Voltage (LV)?",
+    "choices": [
+      "24 V AC threshold between extra-low and low voltage systems",
+      "50 V AC threshold between extra-low and low voltage systems",
+      "70.7 V AC threshold between extra-low and low voltage systems",
+      "120 V AC threshold between extra-low and low voltage systems"
+    ],
+    "answer": 1,
+    "explanation": "Typical AHJ electrical classifications define Extra-Low Voltage (ELV) as less than 50 V AC and Low Voltage (LV) as approximately 50 V to 1,000 V AC.",
+    "studyNote": "Remember the 50 V AC boundary: ELV < 50 V AC; LV = 50 V to 1,000 V AC (which includes 70V/100V constant-voltage speaker lines at full swing and 120/230V mains).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 11, p. 269",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: While 24 V AC is common in HVAC and control systems, the formal safety code threshold is 50 V AC.",
+      "Correct: Electrical codes classify voltages under 50 V AC as Extra-Low Voltage and 50 V to 1000 V AC as Low Voltage.",
+      "Not this one: 70.7 V is a standard constant-voltage distributed audio distribution level, not the electrical code boundary.",
+      "Not this one: 120 V AC is standard North American mains supply voltage within the Low Voltage category."
+    ]
+  },
+  {
+    "id": 1010,
+    "legacyId": 10,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Evaluate Overall Facility Readiness",
+    "topic": "Mains Supply (Live/Hot) Fuse and Breaker Placement Rule",
+    "prompt": "In an AC electrical power distribution system feeding AV equipment, where must switches, fuses, and circuit breakers be installed?",
+    "choices": [
+      "In the ungrounded supply phase conductor",
+      "In the grounded neutral return circuit conductor",
+      "In the equipment grounding conductor path",
+      "In the isolated technical ground busbar tie"
+    ],
+    "answer": 0,
+    "explanation": "All overcurrent protection devices (fuses and circuit breakers) and power switches must be placed in the Supply (Live/Hot) conductor so that opening the switch or breaker removes live voltage from the load, while the Safety Earth remains uninterrupted.",
+    "studyNote": "Switches, fuses, and circuit breakers go strictly in the Supply (Live/Hot) conductor; the Safety Earth/Ground must NEVER be switched or fused.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 11, pp. 275-276",
+    "chapter": 11,
+    "rationales": [
+      "Correct: Overcurrent devices and switches must disconnect the ungrounded hot conductor to de-energize the equipment safely.",
+      "Not this one: Installing switches or breakers in the neutral conductor leaves the appliance hot when the circuit opens.",
+      "Not this one: Safety ground conductors must never be switched or fused because interrupting earth protection causes shock hazards.",
+      "Not this one: Technical ground paths must remain continuous and uninterrupted to ensure personal safety and fault clearance."
+    ]
+  },
+  {
+    "id": 1011,
+    "legacyId": 11,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Evaluate Overall Facility Readiness",
+    "topic": "Power Sequencer Readiness for High Inrush Current Loads",
+    "prompt": "Why is a programmable AC power sequencer required in venues with large audio amplifiers and high-output projectors?",
+    "choices": [
+      "To convert alternating current into high-efficiency direct current for digital signal processors",
+      "To stagger startup delays and prevent high inrush currents from tripping breakers",
+      "To balance three-phase electrical loads evenly across neutral busbars during peak operations",
+      "To regulate mains voltage fluctuations and correct power factor phase angle discrepancies"
+    ],
+    "answer": 1,
+    "explanation": "Power amplifiers, discharge lamps, and power supplies draw massive momentary inrush current when first energized; staggering turn-on in timed steps prevents tripping main breakers and also enforces 'amps on last / amps off first.'",
+    "studyNote": "Use power sequencers both to stagger heavy inrush current loads and to enforce audio power sequencing (Amps On Last / Amps Off First + 15s).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 11, pp. 274-275",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: AC power sequencers switch line voltages sequentially and do not perform AC to DC rectification.",
+      "Correct: Sequenced power activation staggers inrush currents and prevents main branch circuit breakers from tripping.",
+      "Not this one: Load balancing across phases is handled at the electrical distribution panel rather than by an AV sequencer.",
+      "Not this one: Voltage regulation and power factor correction require dedicated line conditioners or UPS systems."
+    ]
+  },
+  {
+    "id": 1012,
+    "legacyId": 12,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Prepare for Installation",
+    "topic": "Substructure 5:1 Load Calculation for Projector and Mount",
+    "prompt": "A projector weighs 34 kg and its mount weighs 7 kg. Applying a 5:1 safety factor, what load must the structure support?",
+    "choices": [
+      "41 kg",
+      "170 kg",
+      "205 kg",
+      "410 kg"
+    ],
+    "answer": 2,
+    "explanation": "Combined suspended weight = 34 kg + 7 kg = 41 kg (75 lb + 15 lb = 90 lb). Multiplying by the 5:1 safety factor gives 41 kg × 5 = 205 kg (~204 kg converted from 90 lb × 5 = 450 lb).",
+    "studyNote": "Always add the mount/hardware weight to the device weight BEFORE multiplying by 5: `(34 + 7) × 5 = 205 kg` (`450 lb`).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 2, p. 28; Chapter 7, pp. 157-159",
+    "chapter": 2,
+    "rationales": [
+      "Not this one: 41 kg is the combined static dead weight without applying the required 5:1 safety factor.",
+      "Not this one: 170 kg reflects the projector weight multiplied by 5 while ignoring the 7 kg mount bracket.",
+      "Correct: The total static weight of 41 kg multiplied by the 5:1 safety factor equals 205 kg.",
+      "Not this one: 410 kg reflects an erroneous 10:1 safety factor calculation."
+    ]
+  },
+  {
+    "id": 1013,
+    "legacyId": 13,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "A",
+    "task": "Prepare for Installation",
+    "topic": "Single-Cable Conduit Minimum Inside Diameter Calculation",
+    "prompt": "A single 12 mm outer-diameter fiber trunk cable must be pulled through a dedicated conduit. Using the single-cable capacity formula ID > √(OD² ÷ 0.53), what is the minimum whole-millimeter conduit inside diameter?",
+    "choices": [
+      "13 mm",
+      "17 mm",
+      "19 mm",
+      "22 mm"
+    ],
+    "answer": 1,
+    "explanation": "For one cable (53% maximum fill), ID > √(12² ÷ 0.53) = √(144 ÷ 0.53) = √271.7 = 16.48 mm, which rounds up to a minimum 17 mm conduit inside diameter.",
+    "studyNote": "Use fill factors 0.53 (1 cable), 0.31 (2 cables), and 0.40 (3+ cables) inside ID > √(sum of OD² ÷ fill factor).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 120-124",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: 13 mm forgets the square root or applies virtually 85% fill, violating the 53% single-cable limit.",
+      "Correct: √(144 ÷ 0.53) = 16.48 mm, requiring at least a 17 mm inner diameter.",
+      "Not this one: 19 mm applies the 0.40 three-cable fill factor (√(144 ÷ 0.40) = 18.97 mm) instead of 0.53.",
+      "Not this one: 22 mm applies the 0.31 two-cable fill factor (√(144 ÷ 0.31) = 21.55 mm) instead of 0.53."
+    ]
+  },
+  {
+    "id": 1014,
+    "legacyId": 14,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Complete Field Reports",
+    "topic": "Five Key Elements of a Project Driven by Client Need",
+    "prompt": "Audiovisual installation control balances five core elements: Scope, Time, Cost, Quality, and Risk. What factor must drive all five elements?",
+    "choices": [
+      "The contractor overtime schedule",
+      "The equipment vendor availability",
+      "The architectural interior design theme",
+      "The client need"
+    ],
+    "answer": 3,
+    "explanation": "All five key project elements - Scope, Time, Cost, Quality, and Risk - are driven by the client's need, which sets the benchmark for project quality.",
+    "studyNote": "Remember the 5 project elements (Scope, Time, Cost, Quality, Risk) and their driver: the client's need.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 3, pp. 34-36",
+    "chapter": 3,
+    "rationales": [
+      "Not this one: Contractor scheduling must adapt to project requirements rather than driving overall scope and quality standards.",
+      "Not this one: Vendor supply chain factors influence procurement schedules but do not establish the project purpose.",
+      "Not this one: Architectural aesthetics are a design constraint rather than the primary driver of project functional requirements.",
+      "Correct: Client needs define project objectives and establish the quality criteria against which all elements are judged."
+    ]
+  },
+  {
+    "id": 1015,
+    "legacyId": 15,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Complete Field Reports",
+    "topic": "Logging ANSI/INFOCOMM 10:2013 Six Verification Phases",
+    "prompt": "Which sequence correctly lists the verification phases and milestones defined in ANSI/INFOCOMM 10:2013?",
+    "choices": [
+      "Needs Analysis, Schematic Design, Design Development, Contract Award, Construction Administration, and Project Closeout",
+      "Pre-Integration, Systems Integration, Post-Integration, Substantial Completion, Closeout, and Final Acceptance",
+      "Sales Quoting, Material Procurement, Rough-In Installation, Cable Termination, Audio Commissioning, and Warranty Billing",
+      "Request for Information, Submittal Review, Rough-In Inspection, Change Order Approval, Punch List, and System Handoff"
+    ],
+    "answer": 1,
+    "explanation": "ANSI/INFOCOMM 10:2013 structures ~150 verification items across six chronological stages: Pre-Integration, Systems Integration, Post-Integration, Substantial/Practical Completion, Closeout, and Final Acceptance.",
+    "studyNote": "Memorize the 6 phases of ANSI/INFOCOMM 10:2013: Pre-Integration → Systems Integration → Post-Integration → Substantial Completion → Closeout → Final Acceptance.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 11, pp. 265-267",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: This sequence describes architectural design delivery phases rather than AV performance verification stages.",
+      "Correct: ANSI/INFOCOMM 10:2013 organizes verification across Pre-Integration, Integration, Post-Integration, Substantial Completion, Closeout, and Final Acceptance.",
+      "Not this one: This sequence outlines project commercial stages rather than standardized technical verification milestones.",
+      "Not this one: This sequence lists construction administration documentation steps rather than system performance verification stages."
+    ]
+  },
+  {
+    "id": 1016,
+    "legacyId": 16,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Complete Field Reports",
+    "topic": "Reporting Unpowered Copper Continuity Verification Before Energizing",
+    "prompt": "Why must continuity and short-circuit testing of copper cables be completed with all connected equipment unpowered?",
+    "choices": [
+      "To prevent meter damage and avoid shorting circuits before power-up",
+      "To prevent high-frequency noise interference from coupling into test meter leads",
+      "To allow cable insulation resistance to stabilize before testing dielectric strength",
+      "To avoid magnetic saturation in adjacent structured cabling bundles during measurement"
+    ],
+    "answer": 0,
+    "explanation": "Ohmmeter/continuity checks use an internal battery to measure resistance and must only be performed on unpowered circuits; catching shorts before power-up protects both the test meter and AV electronics.",
+    "studyNote": "Always zero/check multimeter leads and run continuity/resistance checks with circuit power OFF before energizing the rack.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 145-146; Chapter 11, p. 273",
+    "chapter": 6,
+    "rationales": [
+      "Correct: Measuring unpowered lines protects the meter and identifies dangerous short circuits before equipment is energized.",
+      "Not this one: Continuity testing uses DC resistance measurements that are unaffected by external high-frequency line noise.",
+      "Not this one: Standard continuity testing checks conductor integrity rather than high-voltage dielectric insulation breakdown.",
+      "Not this one: Low-current multimeter test signals do not generate magnetic fields capable of saturating adjacent cables."
+    ]
+  },
+  {
+    "id": 1017,
+    "legacyId": 17,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with Allied Trades",
+    "topic": "ANSI/INFOCOMM 2M-2010 Cross-Trade Coordination Standard",
+    "prompt": "Which ANSI/AVIXA standard defines audiovisual system design and coordination processes across project delivery phases?",
+    "choices": [
+      "AVIXA F501.01 standard for telecommunications and audiovisual cable labeling",
+      "ANSI/AVIXA V201.01 standard for image system contrast ratio verification",
+      "ANSI/INFOCOMM 2M-2010 (Standard Guide for Audiovisual Systems Design and Coordination Processes)",
+      "ANSI/AVIXA A102.01 standard for sound system audio coverage uniformity"
+    ],
+    "answer": 2,
+    "explanation": "ANSI/INFOCOMM 2M-2010 (updated toward D401.01) outlines the standard project phases, stakeholder roles, and allied-trade coordination processes for AV installations.",
+    "studyNote": "Match 2M-2010 to Design & Coordination Processes, 10:2013 to Performance Verification, F501.01 to Cable Labeling, and F502.01/02 to Racks.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 3, p. 34; Appendix B, p. 439",
+    "chapter": 3,
+    "rationales": [
+      "Not this one: AVIXA F501.01 establishes requirements for cable labeling identification and numbering formats.",
+      "Not this one: ANSI/AVIXA V201.01 establishes image system contrast ratios for display systems in ambient light.",
+      "Correct: ANSI/INFOCOMM 2M-2010 defines project phases, deliverables, and allied-trade coordination responsibilities.",
+      "Not this one: ANSI/AVIXA A102.01 specifies measurement methods for sound coverage uniformity in enclosed listening spaces."
+    ]
+  },
+  {
+    "id": 1018,
+    "legacyId": 18,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with Allied Trades",
+    "topic": "Fire Protection Sprinkler Clearance Coordination",
+    "prompt": "Why must ceiling-mounted AV devices maintain specified clearances from fire sprinkler heads and smoke detectors?",
+    "choices": [
+      "To prevent electromagnetic radiation from desensitizing addressable fire alarm loop controllers",
+      "To comply with national electrical code rules governing low-voltage Class 2 conductor separation",
+      "To avoid acoustic resonance coupling between ceiling speaker backcans and rigid fire piping",
+      "To prevent blocking sprinkler spray discharge and detector airflow sensing"
+    ],
+    "answer": 3,
+    "explanation": "AV equipment must never obstruct fire sprinkler spray patterns, dousers, or smoke detector airflows, nor should hot projector exhaust be aimed at thermally triggered sprinkler bulbs.",
+    "studyNote": "Check Fire Protection drawings and RCPs to keep projectors, screens, and speakers clear of sprinkler heads and smoke detectors.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 4, p. 58",
+    "chapter": 4,
+    "rationales": [
+      "Not this one: Standard AV equipment does not produce electromagnetic emissions capable of interfering with supervised fire alarm loops.",
+      "Not this one: Low-voltage conductor separation rules govern conduit and raceways rather than ceiling fixture physical clearances.",
+      "Not this one: Acoustic resonance concerns relate to building vibration isolation rather than life safety code clearances.",
+      "Correct: Clearances ensure AV equipment does not obstruct sprinkler spray patterns or inhibit smoke detection."
+    ]
+  },
+  {
+    "id": 1019,
+    "legacyId": 19,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Coordinate with Allied Trades",
+    "topic": "Coordinating Network Security (NAC, ACLs, and Least Privilege) with IT",
+    "prompt": "Under AVIXA RP-C303.01, what security model should an AV installer coordinate with IT network administrators?",
+    "choices": [
+      "Open subnet peering with promiscuous VLAN bridging across administrative switches",
+      "Least Privilege access with Network Access Control and Access Control Lists",
+      "Shared enterprise credentials with universal administrative rights across devices",
+      "Unrestricted multicast routing across default virtual local area network trunks"
+    ],
+    "answer": 1,
+    "explanation": "Enterprise AV cybersecurity follows the Principle of Least Privilege, using NAC (MAC/certificate authentication), ACLs, firewalls, and changing default passwords so devices only access authorized ports and peers.",
+    "studyNote": "Coordinate NAC, ACLs, firewall ports, VLANs, and Least Privilege with IT using the Network Device Inventory.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 12, pp. 303-304; Appendix B, p. 439",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: Open subnet peering and promiscuous bridging create severe security vulnerabilities and increase attack surfaces.",
+      "Correct: The Principle of Least Privilege combined with NAC and ACLs restricts device access to required ports and services.",
+      "Not this one: Shared administrative credentials violate core cybersecurity standards and prevent meaningful audit logging.",
+      "Not this one: Unrestricted multicast flooding degrades network performance and compromises broadcast domain separation."
+    ]
+  },
+  {
+    "id": 1020,
+    "legacyId": 20,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Address Needed Field Modifications",
+    "topic": "Distinguishing RFI, RFC, Change Order (CO), and CCD",
+    "prompt": "Which statement accurately describes the distinct roles of an RFI, an RFC, and a Change Order?",
+    "choices": [
+      "An RFI clarifies conflicts, an RFC proposes changes, and a signed Change Order amends the contract",
+      "An RFI authorizes contractor payment, an RFC orders field materials, and a Change Order clarifies scope",
+      "An RFI proposes contract scope adjustments, an RFC authorizes billing milestones, and a Change Order requests design drawings",
+      "An RFI certifies substantial completion, an RFC issues site directives, and a Change Order logs daily labor"
+    ],
+    "answer": 0,
+    "explanation": "The formal change-control chain uses an RFI to clarify questions/conflicts, an RFC to propose changes with cost/schedule impact, a signed CO to authorize contractual changes, or a written CCD for urgent owner/GC field directives.",
+    "studyNote": "RFI = question/conflict clarification; RFC = proposed modification + impact; CO = signed contract authorization; CCD = urgent written field directive.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 3, pp. 43-45",
+    "chapter": 3,
+    "rationales": [
+      "Correct: An RFI seeks clarification, an RFC proposes scope or cost adjustments, and an executed Change Order modifies the legal contract.",
+      "Not this one: An RFI never authorizes payments, and an RFC does not serve as a procurement purchase order.",
+      "Not this one: Scope adjustments are proposed via RFC and authorized via Change Order, not through the RFI clarification process.",
+      "Not this one: Substantial completion is certified through formal inspection certificates rather than RFIs or RFCs."
+    ]
+  },
+  {
+    "id": 1021,
+    "legacyId": 21,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Address Needed Field Modifications",
+    "topic": "Field Redline Escalation Chain (`Redline → PM → RFI/RFC → CO`)",
+    "prompt": "An installer discovers that a planned wall box location conflicts with a structural steel column. What is the proper procedure?",
+    "choices": [
+      "Relocate the wall box to adjacent drywall partitions and notify the client after installation",
+      "Modify the structural steel column flange using an abrasive grinder to create required depth",
+      "Stop, redline the drawings, consult the project manager, and await formal approval",
+      "Omit the wall box and coil the field cables inside the suspended ceiling for future trim-out"
+    ],
+    "answer": 2,
+    "explanation": "Installers must never make unilateral design or structural changes in the field; follow the chain: Stop → Consult PM/Designer → Redline drawing → Submit RFI/RFC → Execute after CO/approval.",
+    "studyNote": "Never improvise design changes onsite; always escalate via Redline → PM/Designer → RFI/RFC → CO.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 5, pp. 95-97",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Field installers must never unilaterally move device locations without engineering review and documentation.",
+      "Not this one: Cutting or grinding structural steel columns is a severe building code and life safety violation.",
+      "Correct: The installer must stop, mark redlines, consult project management, and wait for formal RFI or change approval.",
+      "Not this one: Abandoning specified infrastructure without authorization violates the contracted scope of work."
+    ]
+  },
+  {
+    "id": 1022,
+    "legacyId": 22,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "B",
+    "task": "Address Needed Field Modifications",
+    "topic": "Re-Calibrating System Optimization Chain After Device Replacement",
+    "prompt": "Why does replacing an audio processor in a System Optimization calibrated system require downstream recalibration?",
+    "choices": [
+      "Digital signal processors operate on proprietary clock sync frequencies that drift over time",
+      "System Optimization mandates fixed 0 dBu voltage levels across balanced analog audio connections",
+      "Replacement processors alter line impedance and require manual transformer tapping adjustments",
+      "Each stage gain is matched to the specific clipping threshold of upstream equipment"
+    ],
+    "answer": 3,
+    "explanation": "In Unity Gain, every device outputs the same fixed reference (0.775 V or 1.23 V), making units directly swappable; in System Optimization, each stage is calibrated relative to the clip point of the preceding device, so replacing one device requires recalibrating downstream stages.",
+    "studyNote": "Unity Gain = fast & component-swappable (~60 dB S/N); System Optimization = max S/N & aligned headroom, but requires recalibration if a device is swapped.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 331-334",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Clock synchronization affects digital audio streaming timing rather than analog stage gain calibration.",
+      "Not this one: Unity Gain establishes standardized reference levels, whereas System Optimization matches dynamic headroom.",
+      "Not this one: Modern line-level audio circuits use low source impedance bridging rather than transformer impedance matching.",
+      "Correct: System Optimization tailors each gain stage to the clipping point of preceding devices, requiring recalibration when hardware changes."
+    ]
+  },
+  {
+    "id": 1023,
+    "legacyId": 23,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Deinstallation of Existing Equipment and Cabling",
+    "topic": "Testing Legacy Gear Before De-Installation and Removing Abandoned Cables",
+    "prompt": "When upgrading an AV system with reused speakers and switcher, what two steps are required during de-installation?",
+    "choices": [
+      "Cut existing wiring flush with walls and ship all components to the factory for recertification",
+      "Benchmark existing equipment before removal and remove all abandoned cabling",
+      "Reterminate legacy video cables with compression connectors and coil them above the ceiling",
+      "Re-flash legacy equipment firmware to latest builds before evaluating mechanical audio components"
+    ],
+    "answer": 1,
+    "explanation": "Testing legacy gear before removal proves whether it works prior to being touched, and pulling out all unused cables prevents abandoned-cable fire/code violations.",
+    "studyNote": "Test before you touch (benchmark legacy gear before de-installing) and remove all abandoned cables from plenums and raceways.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 5, pp. 89-91",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Cutting cabling flush prevents re-use and violates requirements to remove abandoned plenum cables.",
+      "Correct: Testing existing gear establishes baseline functionality, and codes require removing abandoned cabling.",
+      "Not this one: Leaving abandoned cables in ceiling plenums violates electrical and fire safety codes.",
+      "Not this one: Firmware flashing should not precede basic functional verification of legacy equipment."
+    ]
+  },
+  {
+    "id": 1024,
+    "legacyId": 24,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Mount Substructure and Rigging",
+    "topic": "Five Mechanical Failure Modes of AV Mounts",
+    "prompt": "In structural mounting analysis, what are the primary mechanical failure modes that cause mounted AV equipment to fall?",
+    "choices": [
+      "Improper load calculations, fastener shear, bolt tensile failure, and anchor pull-out",
+      "Digital keystone distortion, thermal shutdown, HDMI handshake failure, and EDID timeout",
+      "Conductive heat transfer, air convection stalling, acoustic reflection, and modal resonance",
+      "Galvanic corrosion between cables, improper grounding, phase cancellation, and jitter"
+    ],
+    "answer": 0,
+    "explanation": "The five mounting failure modes are improper load calculation, fastener shearing, fastener tensile strength failure, substrate pull-out, and improper bolt placement (especially missing top bolts on cantilevered brackets).",
+    "studyNote": "Know the 5 mounting failure modes: Load calculation error, Shearing, Tensile failure, Pull-out, and Improper bolt placement.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 7, pp. 159-162",
+    "chapter": 7,
+    "rationales": [
+      "Correct: Mechanical mount failures stem from improper load ratings, shear stress, tensile bolt failure, or anchor pull-out.",
+      "Not this one: These are digital video and thermal operating symptoms rather than structural mechanical failure modes.",
+      "Not this one: These describe thermodynamic and acoustic behaviors rather than mechanical hardware fastening failures.",
+      "Not this one: These describe electrical, audio, and signal issues rather than physical structural rigging failures."
+    ]
+  },
+  {
+    "id": 1025,
+    "legacyId": 25,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Mount Substructure and Rigging",
+    "topic": "Locking Threaded Pipe Junctions Against Vibration and Rotation",
+    "prompt": "When suspending equipment from a threaded pipe, what must be done at every threaded pipe-to-flange connection?",
+    "choices": [
+      "Apply high-viscosity thread lubricant to ensure smooth swivel adjustments during alignment",
+      "Wrap pipe threads with Teflon sealing tape to eliminate mechanical acoustic vibration coupling",
+      "Mechanically lock the junction using a setscrew or through-bolt to prevent rotation",
+      "Weld the threaded joints solid to eliminate the need for structural safety cable attachments"
+    ],
+    "answer": 2,
+    "explanation": "Every threaded pipe connection in an overhead suspension mount must be mechanically locked with a tightened setscrew or through-bolt/cotter pin so panning the projector or building vibration cannot back the threads out.",
+    "studyNote": "Use continuous black-iron pipe (no couplings if avoidable) and lock every threaded junction with a setscrew or through-bolt.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 7, pp. 164-165; Chapter 10, p. 258",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: Lubricating suspension threads increases the danger of accidental unscrewing under vibration.",
+      "Not this one: Teflon tape reduces friction and promotes loosening of suspension joints under building vibration.",
+      "Correct: Setscrews or through-bolts mechanically lock threaded pipe fittings to prevent accidental unthreading.",
+      "Not this one: Welding fittings prevents field maintenance and does not replace secondary safety tether requirements."
+    ]
+  },
+  {
+    "id": 1026,
+    "legacyId": 26,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Mount Substructure and Rigging",
+    "topic": "Power Drill Safety: Unplugging Before Chucking Bits and Depth Control",
+    "prompt": "What safety precaution must be taken before changing bits in a mains-powered drill, and how should depth be controlled?",
+    "choices": [
+      "Engage the trigger lock while changing bits, and monitor motor amperage to control depth",
+      "Wear heavy leather gloves while holding the chuck under power, and gauge depth by sound",
+      "Switch the drill to reverse when seating the bit, and measure depth by counting chuck rotations",
+      "Unplug the drill before chucking bits, inspect behind surfaces, and use a depth stop"
+    ],
+    "answer": 3,
+    "explanation": "Always disconnect AC power before changing drill bits, verify no hidden utilities sit behind the surface, start slowly and straight without wobbling, and use a depth stop or tape marker on the bit.",
+    "studyNote": "Unplug drills before changing bits, drill straight (never wobble concrete holes), clean dust from masonry holes, and drill plastic slowly.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 7, pp. 170-172",
+    "chapter": 7,
+    "rationales": [
+      "Not this one: Locking the trigger on an energized tool creates severe entanglement and injury risks.",
+      "Not this one: Holding a motorized chuck while energized causes severe hand trauma, and sound is unreliable for depth control.",
+      "Not this one: Chucks must be tightened manually when unpowered, and rotational counting cannot determine drill depth accurately.",
+      "Correct: Disconnecting power prevents accidental startup, checking walls avoids hazards, and depth stops prevent overpenetration."
+    ]
+  },
+  {
+    "id": 1027,
+    "legacyId": 27,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Pull Cable",
+    "topic": "Conduit Inside Diameter Formula and Fill Factor Thresholds",
+    "prompt": "Which formula calculates minimum conduit inside diameter (ID) for multiple cables, and what fill factor applies for exactly two cables?",
+    "choices": [
+      "`ID = sqrt[ ÷ fp]`; where `fp = 0.31` (31%) for 2 cables (`0.53` for 1 cable, and `0.40` for 3 or more cables)",
+      "ID = [(d1 + d2 + ... + dn) ÷ fp], where fp = 0.53 applies to two cables in commercial installations",
+      "ID = sqrt[(d1² + d2² + ... + dn²) × fp], where fp = 0.40 applies to two cables in branch raceways",
+      "ID = [(d1² + d2² + ... + dn²) ÷ fp], where fp = 0.53 applies to two cables across structured raceways"
+    ],
+    "answer": 0,
+    "explanation": "Minimum conduit inside diameter is ID = sqrt[(d1² + d2² + … + dn²) ÷ fp], using fp = 0.53 for 1 cable, fp = 0.31 for 2 cables, and fp = 0.40 for 3 or more cables.",
+    "studyNote": "Memorize `ID = sqrt(Σ(d²) / fp)` and the three fill factors: 1 cable = 53% (`0.53`), 2 cables = 31% (`0.31`), 3+ cables = 40% (`0.40`).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 130-132, 151",
+    "chapter": 6,
+    "rationales": [
+      "Correct: The inside diameter formula uses root sum of squares divided by fill factor, where fp = 0.31 for two cables.",
+      "Not this one: Cable diameters cannot be summed linearly because conduit area scales with the square of the diameter.",
+      "Not this one: The fill factor must divide the squared sum rather than multiply it, and fp = 0.31 applies for two cables.",
+      "Not this one: This formula omits the square root operation and uses 0.53, which is the fill factor for a single cable."
+    ]
+  },
+  {
+    "id": 1028,
+    "legacyId": 28,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Pull Cable",
+    "topic": "Optical Fiber 4-Layer Concentric Construction (Inside to Outside)",
+    "prompt": "From the center outward, what are the four concentric layers of a standard optical fiber cable?",
+    "choices": [
+      "Outer Jacket, Strength Member, Buffer Coating, and Core",
+      "Core, Cladding, Coating, and Jacket",
+      "Conductive Core, Foam Dielectric, Foil Shield, and Outer Jacket",
+      "Optical Cladding, Refractive Core, Kevlar Strength Layer, and Outer Sheath"
+    ],
+    "answer": 1,
+    "explanation": "Optical fiber is built from the inside out: Core (carries light) → Cladding (lower refractive index glass that traps light in the core) → Coating/Buffer (protects glass) → Sheath/Jacket (with Kevlar strength members).",
+    "studyNote": "Fiber layers inside-out: Core → Cladding → Coating → Sheath.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 116-117",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: This lists layers in reverse order from outside inward rather than center outward.",
+      "Correct: Light travels through the Core, reflects off the Cladding, protected by the primary Coating and outer Jacket.",
+      "Not this one: These are the concentric components of a coaxial copper cable rather than an optical fiber.",
+      "Not this one: The core forms the innermost layer, surrounded by cladding of lower refractive index."
+    ]
+  },
+  {
+    "id": 1029,
+    "legacyId": 29,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Pull Cable",
+    "topic": "Category 5e, 6, 6A, and 8 Bandwidth and Speed Ratings",
+    "prompt": "Which pairing correctly matches Category twisted-pair cables with their rated bandwidth and performance?",
+    "choices": [
+      "Cat 5e rated to 250 MHz, Cat 6 rated to 500 MHz, Cat 6A rated to 1 GHz, and Cat 8 rated to 10 GHz",
+      "Cat 5e rated to 10 MHz, Cat 6 rated to 100 MHz, Cat 6A rated to 250 MHz, and Cat 8 rated to 500 MHz",
+      "Cat 5e (100 MHz), Cat 6 (250 MHz), Cat 6A (500 MHz), Cat 8 (2 GHz)",
+      "Cat 5e rated to 50 MHz, Cat 6 rated to 100 MHz, Cat 6A rated to 200 MHz, and Cat 8 rated to 1 GHz"
+    ],
+    "answer": 2,
+    "explanation": "Cat 5e is rated to 100 MHz (1 Gbps/100 m); Cat 6 to 250 MHz (10 Gbps/55 m); Cat 6A to 500 MHz (10 Gbps/100 m); and Cat 8 to 2 GHz (2000 MHz, 40 Gbps/30 m).",
+    "studyNote": "Memorize Cat frequencies & 10G/40G distances: Cat 5e = 100 MHz (1G/100m); Cat 6 = 250 MHz (10G/55m); Cat 6A = 500 MHz (10G/100m); Cat 8 = 2 GHz (40G/30m).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 114-116",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: These frequency ratings are overstated by a full tier across every listed cable category.",
+      "Not this one: These frequency ratings reflect legacy telecommunications standards rather than modern Ethernet ratings.",
+      "Correct: Cat 5e is rated to 100 MHz, Cat 6 to 250 MHz, Cat 6A to 500 MHz, and Cat 8 to 2000 MHz (2 GHz).",
+      "Not this one: These bandwidth ratings underestimate Cat 5e and Cat 6 capabilities under TIA/EIA standards."
+    ]
+  },
+  {
+    "id": 1030,
+    "legacyId": 30,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Pull Cable",
+    "topic": "Temperature Effects on Conductor Conductivity and Insulator Dielectric Strength",
+    "prompt": "How does exposure to elevated temperature affect the dielectric strength of cable insulation?",
+    "choices": [
+      "Higher temperature increases dielectric strength, improving capacitive isolation",
+      "Higher temperature stabilizes dielectric strength, preventing signal attenuation",
+      "Higher temperature converts polymer insulation into a crystalline semiconductor",
+      "Higher temperature decreases dielectric strength, increasing breakdown risk"
+    ],
+    "answer": 3,
+    "explanation": "Elevated temperatures reduce an insulator's dielectric strength - weakening its electrical isolation between conductors - which is why cables must be kept away from hot steam pipes, lighting ballasts, and unventilated heat sources.",
+    "studyNote": "High heat degrades cable insulator dielectric strength; route cables clear of hot pipes, transformers, and luminaires.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 6, pp. 109-110",
+    "chapter": 6,
+    "rationales": [
+      "Not this one: Elevated thermal conditions weaken dielectric insulation rather than improving capacitive isolation.",
+      "Not this one: Dielectric properties degrade significantly under heat rather than remaining stable.",
+      "Not this one: Cable jacketing polymers break down under heat rather than transforming into semiconductors.",
+      "Correct: Elevated temperatures reduce insulation dielectric strength, increasing signal leakage and electrical breakdown risks."
+    ]
+  },
+  {
+    "id": 1031,
+    "legacyId": 31,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "C",
+    "task": "Mount Substructure and Rigging",
+    "topic": "Handling Acoustic Drop-Ceiling Tiles with Clean Gloves",
+    "prompt": "Why should an installer wear clean gloves when handling mineral-fiber acoustic ceiling tiles?",
+    "choices": [
+      "To prevent skin oils and dirt from leaving permanent stains on porous tiles",
+      "To protect the installer from hazardous high-voltage static charges stored in acoustic tiles",
+      "To prevent skin contact from altering the acoustic noise reduction coefficient of the ceiling",
+      "To comply with mandatory environmental air quality regulations governing drop-ceiling grids"
+    ],
+    "answer": 0,
+    "explanation": "Porous white acoustic ceiling tiles absorb skin oils and dirt instantly, and replacement tiles rarely match the aged tint of existing ceilings; always handle tiles with clean gloves and cut holes on a clean surface.",
+    "studyNote": "Wear clean gloves when handling acoustic ceiling tiles and always remove the tile from the grid to hole-saw openings safely.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 9, pp. 221-222",
+    "chapter": 9,
+    "rationales": [
+      "Correct: Mineral fiber tiles absorb skin oils and dirt easily, creating noticeable marks that cannot be removed.",
+      "Not this one: Mineral acoustic tiles do not store high-voltage electrical charges.",
+      "Not this one: Surface skin oil smudges affect visual appearance rather than measurable acoustic absorption ratings.",
+      "Not this one: Wearing clean gloves is an installation quality practice rather than an environmental regulatory rule."
+    ]
+  },
+  {
+    "id": 1032,
+    "legacyId": 32,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Assemble AV Rack",
+    "topic": "Seven AV Equipment Rack Styles and Applications",
+    "prompt": "Which rack style pulls out and rotates for rear service access in tight millwork without rear doors?",
+    "choices": [
+      "A two-post open-frame telecommunications distribution rack anchored to finished floors",
+      "A slide-out (and rotating) millwork rack equipped with a properly dressed rear umbilical service loop",
+      "A wall-mounted double-hinged swing gate enclosure equipped with lockable vented side panels",
+      "A floor-standing gangable equipment enclosure with solid removable steel side panels"
+    ],
+    "answer": 1,
+    "explanation": "Slide-out (and rotating) racks mount on heavy-duty telescoping slides inside furniture or closets so the entire rack pulls out and rotates for rear wiring service where rear access doors are impossible.",
+    "studyNote": "Know the 7 rack styles: Wall-mount (swing-frame), Floor-standing, Open-frame, Two-post (telco), Slide-out/rotating, Mobile, and Portable shock-mounted.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 8, pp. 186-188",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: Two-post relay racks are open structural frames designed for telecommunications rooms rather than enclosed millwork.",
+      "Correct: Slide-out rotating racks allow complete rear access inside credenzas and tight millwork enclosures.",
+      "Not this one: Swing-gate wall racks require rear wall clearance and cannot slide out from deep millwork cabinetry.",
+      "Not this one: Fixed floor enclosures require generous rear and side aisle clearance for equipment maintenance."
+    ]
+  },
+  {
+    "id": 1033,
+    "legacyId": 33,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Assemble AV Rack",
+    "topic": "Blanking Panels and Rack Thermal Airflow Control",
+    "prompt": "Why does AVIXA F502.01 require solid blanking panels across unused front rack unit spaces in fan-cooled racks?",
+    "choices": [
+      "To shield sensitive audio preamplifiers from high-frequency wireless network interference",
+      "To provide mechanical structural bracing that prevents vertical rack rail deflection",
+      "To force intake air through equipment chassis and prevent hot exhaust recirculation",
+      "To increase total rack mass and lower mechanical resonance in high-SPL environments"
+    ],
+    "answer": 2,
+    "explanation": "Open front RU gaps allow pressurized cool intake air to escape out the front (or allow hot rear air to loop back to the front intake); blanking panels seal the front plane so cooling air must pass through the equipment.",
+    "studyNote": "Always install blanking panels over unused RU spaces to prevent hot-air recirculation and cool-air short-circuiting.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 8, pp. 191-193",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: Blanking panels manage thermal airflow patterns rather than providing RF shielding for internal chassis.",
+      "Not this one: Rack rail rigidity is maintained by rack frame cross-braces and equipment chassis rather than blanking plates.",
+      "Correct: Blanking panels prevent bypass airflow and stop hot exhaust air from looping back to front equipment intakes.",
+      "Not this one: Adding blanking panels does not significantly modify structural resonance frequencies of equipment racks."
+    ]
+  },
+  {
+    "id": 1034,
+    "legacyId": 34,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Assemble AV Rack",
+    "topic": "Bonding Multi-Bay Ganged Racks and Doors to Technical Ground",
+    "prompt": "Why must paint be scraped from rack bond points when connecting ground straps between ganged equipment racks?",
+    "choices": [
+      "Powder coat paint reacts electrochemically with copper lugs, accelerating galvanic corrosion",
+      "Paint prevents thermal conduction needed to dissipate power amplifier heat through the frame",
+      "Surface paint traps electrostatic charges that cause audio signal ground loops in preamps",
+      "Paint acts as an electrical insulator, preventing low-resistance bonding to ground"
+    ],
+    "answer": 3,
+    "explanation": "Powder coat and paint insulate metal surfaces; reliable grounding and Faraday EMI shielding require scraping bond points to bare metal, applying antioxidant, and bolting copper ground lugs/straps across frames, doors, and busbars.",
+    "studyNote": "Never rely on painted bolts or PDU rack ears for grounding; scrape to bare metal, apply antioxidant, and use copper ground straps to the rack grounding stud.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 8, pp. 194-197",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: While galvanic compatibility matters between metals, the immediate hazard of paint is electrical insulation.",
+      "Not this one: Equipment racks dissipate heat primarily through convection and forced airflow rather than metal frame conduction.",
+      "Not this one: Electrostatic charges on painted surfaces do not directly generate line-level audio ground loops.",
+      "Correct: Paint and powder coating are non-conductive insulators that prevent low-impedance electrical bonding."
+    ]
+  },
+  {
+    "id": 1035,
+    "legacyId": 35,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Wire the AV Equipment Rack",
+    "topic": "Voltage Ratio Between Mic Level and AC Mains (~50,000:1 / ~94 dB)",
+    "prompt": "Why does AVIXA F502.01 mandate opposite-side separation between AC mains and microphone wiring in an equipment rack?",
+    "choices": [
+      "Microphone preamplifiers draw excessive parasitic capacitance from high-voltage wiring runs",
+      "Category network signaling frequencies create destructive RF interference with audio shields",
+      "Large voltage differences cause magnetic induction that induces audible hum in microphone cables",
+      "Thermal radiation from AC conductors degrades microphone audio transformer core permeability"
+    ],
+    "answer": 2,
+    "explanation": "A 1–10 mV microphone signal is roughly 50,000 times smaller (~94 dB voltage difference) than a 100–240 V AC mains line; separating them onto opposite sides of the rack prevents inductive hum.",
+    "studyNote": "Mic level (`1–10 mV`) vs. AC mains (`100–240 V`) is a `50,000:1` (`~94 dB`) voltage ratio - keep them on opposite rack rails and cross only at `90°`.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 8, pp. 197-198",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: Voltage difference and magnetic induction cause hum, not parasitic capacitive current draw.",
+      "Not this one: RF interference from network cables is a separate concern from 50/60 Hz power mains hum induction.",
+      "Correct: The 50,000:1 voltage ratio between mains and mic lines causes magnetic induction if bundled together.",
+      "Not this one: Magnetic induction into low-level conductors causes hum, not thermal degradation of transformers."
+    ]
+  },
+  {
+    "id": 1036,
+    "legacyId": 36,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Wire the AV Equipment Rack",
+    "topic": "Anchoring Rack Bundles to Lacing Bars for Connector Strain Relief",
+    "prompt": "Why must rear rack cable bundles be secured to horizontal lacing bars behind equipment connectors?",
+    "choices": [
+      "To provide an auxiliary technical ground bond between the device chassis and structural rack rail",
+      "To improve thermal convective heat transfer across internal digital signal processing cards",
+      "To prevent electromagnetic crosstalk between adjacent balanced audio input channel pairs",
+      "To relieve strain and prevent cable weight from damaging connectors and solder joints"
+    ],
+    "answer": 3,
+    "explanation": "Securing cables to horizontal lacing bars with hook-and-loop ties relieves mechanical strain so the weight of the harness does not bend connectors or crack internal PCB solder joints.",
+    "studyNote": "Always support cable weight on horizontal and vertical lacing bars so connectors experience zero mechanical strain (`Systems Integration Verification`).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 8, pp. 200-202; Chapter 11, p. 266",
+    "chapter": 8,
+    "rationales": [
+      "Not this one: Technical grounding requires dedicated copper bonding jumpers rather than cable lacing bars.",
+      "Not this one: Lacing bars provide mechanical strain relief rather than aiding internal thermal heat dissipation.",
+      "Not this one: Cable shielding and twist rates minimize crosstalk rather than mechanical lacing bar attachments.",
+      "Correct: Lacing bars support harness weight so gravity and pulling tension do not damage delicate jacks and PCB solder joints."
+    ]
+  },
+  {
+    "id": 1037,
+    "legacyId": 37,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Distribute AV Equipment",
+    "topic": "Microphone Transducer Types (Dynamic, Condenser, Electret, MEMS) and Phantom Power",
+    "prompt": "Which microphone transducer uses a capacitor capsule and requires phantom power supplied on Pins 2 and 3?",
+    "choices": [
+      "A condenser microphone",
+      "A moving-coil dynamic microphone",
+      "A passive aluminum ribbon microphone",
+      "A piezoelectric contact crystal microphone"
+    ],
+    "answer": 0,
+    "explanation": "Condenser microphones work on electrostatic capacitance between a light diaphragm and backplate and require +12 V to +48 V DC phantom power (carried equally on XLR Pins 2 and 3, returning on Pin 1 shield).",
+    "studyNote": "Dynamic = moving coil + magnet, rugged, no power needed; Condenser = capacitor plate, wide response, requires +12–48 V DC phantom power; MEMS = silicon arrays for beamforming.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 9, pp. 209-211",
+    "chapter": 9,
+    "rationales": [
+      "Correct: Condenser microphones use a charged capacitor capsule and require 12 V to 48 V DC phantom power.",
+      "Not this one: Moving-coil dynamic microphones generate voltage through electromagnetic induction without external phantom power.",
+      "Not this one: Passive ribbon microphones use a corrugated metal strip in a magnetic field and do not use phantom power.",
+      "Not this one: Piezoelectric microphones generate voltage through mechanical crystal stress without DC phantom power."
+    ]
+  },
+  {
+    "id": 1038,
+    "legacyId": 38,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Distribute AV Equipment",
+    "topic": "Five Basic Components of a Video Signal (R, G, B, H, V)",
+    "prompt": "What are the five fundamental components of a full-bandwidth color video signal?",
+    "choices": [
+      "Luminance, Chrominance, Audio Carrier, Parity, and Frame Sync",
+      "Red, Green, Blue, Horizontal Sync, and Vertical Sync",
+      "Hue, Saturation, Brightness, Line Timing, and Subcarrier Clock",
+      "HDMI Data, DisplayPort Link, Audio Return, Clock, and Ground"
+    ],
+    "answer": 1,
+    "explanation": "Every foundational video signal comprises Red, Green, and Blue color channels plus Horizontal Sync (line-end timing) and Vertical Sync (top/bottom frame timing): R, G, B, H, and V.",
+    "studyNote": "Remember the 5 basic video signal components: R, G, B, H (horizontal line sync), and V (vertical frame sync).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 10, pp. 231-232",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: This describes composite and broadcast transmission elements rather than the fundamental RGBHV components.",
+      "Correct: Component video consists of Red, Green, and Blue color channels plus Horizontal and Vertical sync timing.",
+      "Not this one: Hue and saturation are color space attributes rather than discrete physical video signal channels.",
+      "Not this one: These are digital interface protocols and data lines rather than native analog color video components."
+    ]
+  },
+  {
+    "id": 1039,
+    "legacyId": 39,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Mount AV Equipment",
+    "topic": "Loudspeaker Dispersion Pattern and 1.4:1 Wall Reflection Ratio",
+    "prompt": "What minimum distance-to-wall ratio should a directional loudspeaker maintain relative to its pattern length to prevent early reflections?",
+    "choices": [
+      "A 0.5:1 distance ratio to maximize boundary bass loading effects",
+      "A 2.5:1 distance ratio to eliminate high-frequency acoustic shadowing",
+      "A 1.4:1 distance ratio to keep pattern boundaries off the wall",
+      "A 3.2:1 distance ratio to prevent standing wave modal room resonance"
+    ],
+    "answer": 2,
+    "explanation": "Early first reflections off adjacent side walls degrade speech intelligibility (%ALCONS/STI); maintaining at least a 1.4:1 pattern-length-to-wall distance ratio and aiming the horn axis at the seating area keeps direct sound dominant over wall reflections.",
+    "studyNote": "Aim directional speakers at listeners and keep the coverage pattern off walls (`1.4:1` distance-to-wall ratio).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 9, pp. 217-220",
+    "chapter": 9,
+    "rationales": [
+      "Not this one: A 0.5:1 ratio places the speaker too close to the wall, causing severe early reflections that ruin intelligibility.",
+      "Not this one: A 2.5:1 ratio is unnecessarily restrictive and does not reflect the standard AVIXA boundary guideline.",
+      "Correct: Maintaining at least a 1.4:1 ratio keeps the speaker coverage pattern off adjacent walls and preserves intelligibility.",
+      "Not this one: A 3.2:1 ratio is an excessive setback that does not match standard acoustic aiming criteria."
+    ]
+  },
+  {
+    "id": 1040,
+    "legacyId": 40,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Mount AV Equipment",
+    "topic": "DISCAS Display Bottom-Edge Floor Clearance and Sightlines",
+    "prompt": "Why should the bottom edge of a display be mounted at least 40 to 48 inches above finished floor in flat rooms?",
+    "choices": [
+      "To ensure unobstructed sightlines over seated participants while respecting viewing angles",
+      "To maintain required ADA architectural reach limits for wall-mounted equipment controls",
+      "To allow sufficient space beneath the display for stage-mounted center channel loudspeakers",
+      "To prevent thermal boundary layer interference caused by floor-mounted radiant heating vents"
+    ],
+    "answer": 0,
+    "explanation": "Mounting height balances unobstructed sightlines over the heads of seated participants and conference tables against the maximum 30° upward vertical viewing angle to the top of the image.",
+    "studyNote": "Verify sightlines from all seats: bottom of image clears heads/tables (`~40–48 in.` AFF typical) while top of image stays within the `30°` vertical viewing cone.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 10, pp. 244-248",
+    "chapter": 10,
+    "rationales": [
+      "Correct: Mounting at 40-48 inches allows rear viewers to see over front seated heads while keeping vertical viewing angles under 30 degrees.",
+      "Not this one: ADA reach limits govern interactive touch controls rather than passive display sightline clearances.",
+      "Not this one: Speaker placement must conform to display sightline requirements rather than dictating screen elevation.",
+      "Not this one: HVAC thermal convection is an architectural factor rather than the primary driver of display viewing geometry."
+    ]
+  },
+  {
+    "id": 1041,
+    "legacyId": 41,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Mount AV Equipment",
+    "topic": "Direct-View LED (dvLED) Pixel Pitch and Cabinet Seam Alignment",
+    "prompt": "Why must mounting frames for modular dvLED video walls be leveled to sub-millimeter tolerances before installing modules?",
+    "choices": [
+      "To maintain uniform thermal dissipation across the cabinet power supply cooling fins",
+      "To prevent visible dark or bright seam lines and protect edge diodes from crushing",
+      "To comply with seismic structural building codes governing planar deflection limits",
+      "To prevent high-frequency electromagnetic emissions from leaking between unshielded cabinet seams"
+    ],
+    "answer": 1,
+    "explanation": "Fine-pitch dvLED walls have no bezels; if adjacent cabinets are not coplanar (Z-axis) and spaced to exact pixel-pitch tolerances (X/Y axes), the human eye immediately sees dark gaps or bright seam lines, and edge diodes easily shear off.",
+    "studyNote": "Level and plumb the bottom ledger rail first, shim the frame flat (Z-axis) against wall high spots, and handle spare LED modules from the same production batch with ESD gloves.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 10, pp. 246-249",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: Frame leveling aligns pixel matrices rather than serving as the primary cooling mechanism for power supplies.",
+      "Correct: Sub-millimeter planar alignment prevents visible gaps or bright seam lines and stops fragile edge LEDs from crushing.",
+      "Not this one: While seismic stability matters, the strict sub-millimeter tolerance is required for optical seam alignment.",
+      "Not this one: LED module shielding is handled by cabinet gaskets rather than sub-millimeter frame shimming."
+    ]
+  },
+  {
+    "id": 1042,
+    "legacyId": 42,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Terminate Cables",
+    "topic": "Three C's of Coaxial Compression Termination",
+    "prompt": "What do the three C's represent when preparing precision 75-ohm coaxial cable for connector compression?",
+    "choices": [
+      "Conductance, Capacitance, and Characteristic impedance",
+      "Compression stroke, Crimp diameter, and Continuity",
+      "Cable gauge, Cut depth, and Connector collar length",
+      "Center pin, dielectric Core, and outer Cover braid"
+    ],
+    "answer": 3,
+    "explanation": "A precision rotary coax stripper scores the three concentric layers - Center conductor, dielectric Core, and braided Cover/jacket (the 3 C's) - without nicking the copper center wire or braid strands, preserving constant 75-ohm impedance.",
+    "studyNote": "Remember the 3 C's of Coaxial Termination (Center conductor, Core dielectric, Cover/shield braid) and use a calibrated rotary stripper + radial compression tool.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 5, pp. 86-88",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Conductance, capacitance, and impedance are electrical properties rather than physical cable prep layers.",
+      "Not this one: Compression stroke and crimp dimensions describe tool operations rather than cable stripping elements.",
+      "Not this one: Cable gauge and cut depth relate to stripper adjustment rather than the three cable component layers.",
+      "Correct: The three C's represent Center conductor, dielectric Core, and outer Cover braid stripped cleanly to exact dimensions."
+    ]
+  },
+  {
+    "id": 1043,
+    "legacyId": 43,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Terminate Cables",
+    "topic": "Optical Fiber End-Face Inspection and Cleaning Before Mating",
+    "prompt": "What procedure must an installer perform before mating an optical fiber connector into a transceiver?",
+    "choices": [
+      "Polish the ceramic ferrule tip using fine aluminum oxide abrasive paper on a rubber pad",
+      "Apply a thin layer of optical matching gel to the ferrule tip to reduce Fresnel reflection",
+      "Inspect the ferrule end-face with a microscope and clean it before mating",
+      "Look directly into the active fiber core to verify optical laser power transmission"
+    ],
+    "answer": 2,
+    "explanation": "A single dust particle on a 9 µm single-mode core blocks light and pits the glass when mated; always keep dust caps on, clean with optical-grade dry/wet-dry tools, inspect with a fiber microscope, and never view live fibers with the naked eye.",
+    "studyNote": "Inspect -> Clean -> Inspect every fiber end-face before mating, and never look into a fiber with the naked eye (invisible IR lasers damage the retina).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 5, pp. 90-93",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Field polishing applies only to epoxy polish field terminations, not routine connector patching.",
+      "Not this one: Index matching gel is used in mechanical splices, never on patchable connector ferrule mating faces.",
+      "Correct: Microscopic dust causes high insertion loss and damages glass; always inspect and clean before mating.",
+      "Not this one: Viewing active fiber with the naked eye causes irreversible retinal eye injury from invisible laser light."
+    ]
+  },
+  {
+    "id": 1044,
+    "legacyId": 44,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Terminate Cables",
+    "topic": "Solid-Core vs. Stranded Twisted-Pair Conductor Terminations",
+    "prompt": "Why must solid-core Category cable be terminated onto IDC punch-down blocks instead of standard crimp plugs?",
+    "choices": [
+      "Solid copper conductors cannot conduct Power over Ethernet current without melting IDC blocks",
+      "Standard crimp tangs slip off solid conductors, causing intermittent connections",
+      "Standard crimp plugs introduce excessive near-end crosstalk that violates Category link certification",
+      "IDC punch-down blocks are required by fire codes to maintain plenum smoke barrier ratings"
+    ],
+    "answer": 1,
+    "explanation": "Solid horizontal cable belongs in IDC keystone jacks/patch panels where V-blades grip the solid wire core; stranded cable belongs in flexible patch cords where piercing plug contacts grip the wire strands.",
+    "studyNote": "Solid-core cable = structured horizontal runs terminated on IDC keystone jacks/patch panels; Stranded cable = flexible equipment patch cords.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 5, pp. 82-85",
+    "chapter": 5,
+    "rationales": [
+      "Not this one: Solid copper conductors carry PoE power efficiently; melting does not occur in compliant installations.",
+      "Correct: Standard modular plug prongs slide off round solid conductors; IDC V-blades properly shear and grip solid copper.",
+      "Not this one: While poor terminations degrade crosstalk, the primary mechanical failure is intermittent open contact.",
+      "Not this one: Plenum fire ratings govern cable jackets and wall penetrations rather than the choice of termination hardware."
+    ]
+  },
+  {
+    "id": 1045,
+    "legacyId": 45,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Configure Network Properties of Equipment",
+    "topic": "OSI 7-Layer Reference Model: Layer 2 (MAC/Switch) vs. Layer 3 (IP/Router)",
+    "prompt": "In the OSI model, which layers handle MAC address switching and IP packet routing?",
+    "choices": [
+      "Layer 2 Data Link handles MAC switching, and Layer 3 Network handles IP routing",
+      "Layer 1 Physical handles MAC frame switching, and Layer 4 Transport handles logical IP packet routing",
+      "Layer 3 Network handles physical MAC switching, and Layer 2 Data Link handles inter-subnet IP routing",
+      "Layer 4 Transport handles MAC address switching, and Layer 7 Application handles IP packet routing"
+    ],
+    "answer": 0,
+    "explanation": "OSI Layer 2 (Data Link) forwards Ethernet frames within a local broadcast domain/VLAN using 48-bit MAC addresses; Layer 3 (Network) routes IP packets across different subnets using IP addresses and default gateways.",
+    "studyNote": "Memorize the OSI stack (`Please Do Not Throw Sausage Pizza Away`): L1 Physical (cables/bits), L2 Data Link (MAC/VLANs/Switches), L3 Network (IP/Routers), L4 Transport (TCP/UDP ports).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 12, pp. 281-285",
+    "chapter": 12,
+    "rationales": [
+      "Correct: Layer 2 forwards frames using physical MAC addresses; Layer 3 routes packets using logical IP addresses.",
+      "Not this one: Layer 1 specifies physical signaling, and Layer 4 manages end-to-end transport protocols like TCP and UDP.",
+      "Not this one: This reverses the roles; Layer 2 manages MAC switching while Layer 3 manages IP routing.",
+      "Not this one: Layer 4 manages port connections and transport sessions, while Layer 7 represents end-user applications."
+    ]
+  },
+  {
+    "id": 1046,
+    "legacyId": 46,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Configure Network Properties of Equipment",
+    "topic": "CIDR Subnet Masks, Host Range, and Default Gateway",
+    "prompt": "An AV device has IP 192.168.10.25/24 and Gateway 192.168.10.1. How many usable hosts exist, and when is the Gateway used?",
+    "choices": [
+      "256 usable hosts; the gateway is contacted for all local broadcast transmissions across the VLAN",
+      "128 usable hosts; the gateway is contacted to request dynamic network IP configurations from DHCP servers",
+      "254 usable hosts; the gateway is used to reach addresses outside the local subnet",
+      "254 usable hosts; the gateway is used to provide Power over Ethernet to connected switches"
+    ],
+    "answer": 2,
+    "explanation": "A `/24` (`255.255.255.0`) subnet has 8 host bits (`2^8 - 2 = 254` usable hosts from `.1` to `.254`, since `.0` is the Network ID and `.255` is Broadcast), and the Default Gateway routes traffic bound for other subnets.",
+    "studyNote": "`/24` (`255.255.255.0`) = `254` usable hosts (`.0` = Network ID, `.255` = Broadcast). A missing/wrong Default Gateway allows local-subnet ping to pass while off-subnet traffic fails.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 12, pp. 286-291",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: A /24 subnet has 256 total addresses, but network (.0) and broadcast (.255) reduce usable hosts to 254.",
+      "Not this one: /24 subnets support 254 hosts rather than 128, and gateways do not serve as DHCP servers by definition.",
+      "Correct: A /24 mask provides 254 usable hosts; packets bound for external subnets are directed to the default gateway.",
+      "Not this one: Gateways provide Layer 3 packet routing across subnets and do not supply Power over Ethernet voltage."
+    ]
+  },
+  {
+    "id": 1047,
+    "legacyId": 47,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Configure Network Properties of Equipment",
+    "topic": "IGMP Snooping and IGMP Querier for Multicast AV-over-IP",
+    "prompt": "What occurs on a network switch when multicast AV-over-IP encoders stream without IGMP Snooping enabled?",
+    "choices": [
+      "The switch converts multicast video into unicast TCP packets, introducing severe latency",
+      "The encoders disable their PoE power interfaces to prevent thermal overload in the rack",
+      "The switch isolates the streaming ports into an unroutable guest administrative VLAN",
+      "The switch floods multicast traffic to all ports, saturating network bandwidth"
+    ],
+    "answer": 3,
+    "explanation": "Without IGMP Snooping and an active IGMP Querier maintaining group membership tables, a Layer 2 switch floods multicast traffic to all ports in the VLAN just like broadcast traffic, overwhelming lower-bandwidth endpoints.",
+    "studyNote": "Multicast AV-over-IP (Dante multicast, AES67, SDVoE, NVX) requires **IGMP Snooping + an active IGMP Querier** on the VLAN to prevent switch-wide port flooding.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 12, pp. 295-299",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: Switches cannot convert multicast UDP video streams into unicast TCP sessions automatically.",
+      "Not this one: Excessive traffic does not trigger PoE power shutdown on transmitter interfaces.",
+      "Not this one: Switches do not quarantine ports for high traffic unless explicit port-security thresholds are violated.",
+      "Correct: Without IGMP snooping, multicast packets are treated as broadcast traffic and flooded out every switch port."
+    ]
+  },
+  {
+    "id": 1048,
+    "legacyId": 48,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Configure Network Properties of Equipment",
+    "topic": "IEEE 802.3af / 802.3at / 802.3bt PoE Wattage Classes and Total Switch PoE Budget",
+    "prompt": "A 370 W PoE switch powers twenty 22 W endpoints totaling 440 W. What occurs when total demand exceeds budget?",
+    "choices": [
+      "The switch draws auxiliary power from connected Cat 6A data pairs to meet demand",
+      "The switch denies power or reboots ports once cumulative draw exceeds 370 W",
+      "All ports operate normally because each individual endpoint consumes less than 30 W",
+      "The internal power supply reduces port voltage to 12 V DC to balance current draw"
+    ],
+    "answer": 1,
+    "explanation": "Installers must verify BOTH the per-port IEEE PoE standard (`802.3af` 15.4 W, `802.3at` PoE+ 30 W, `802.3bt` Type 3 60 W / Type 4 90–100 W at PSE) AND the switch's aggregate PoE wattage budget across all active ports.",
+    "studyNote": "Check both per-port PoE class (`802.3af` = 15.4 W PSE / 12.95 W PD; `802.3at` = 30 W / 25.5 W; `802.3bt` = 60 W / 90 W) AND total switch PoE power budget.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 12, pp. 292-294",
+    "chapter": 12,
+    "rationales": [
+      "Not this one: Ethernet switches cannot draw auxiliary power from connected data conductors.",
+      "Correct: Once cumulative load exceeds the switch PoE power budget, lower-priority ports lose power or reboot.",
+      "Not this one: Total power supply budget limits the switch regardless of whether individual ports stay within PoE+ ratings.",
+      "Not this one: PoE controllers do not drop voltage to 12 V; they cut port power when budget limits are breached."
+    ]
+  },
+  {
+    "id": 1049,
+    "legacyId": 49,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Configure Control and Device Settings",
+    "topic": "RS-232 vs. RS-422 / RS-485 Serial Control and Null-Modem TX/RX Crossover",
+    "prompt": "Why is RS-232 serial control limited to short distances and often requires a null-modem crossover cable?",
+    "choices": [
+      "RS-232 uses unbalanced single-ended signals and requires crossing TX and RX between DTE ports",
+      "RS-232 uses high-impedance balanced differential pairs that suffer from severe capacitive phase jitter",
+      "RS-232 requires bidirectional hardware handshaking voltages that degrade significantly beyond fifteen meters",
+      "RS-232 operates on proprietary clock frequencies that drift out of synchronization over long cable runs"
+    ],
+    "answer": 0,
+    "explanation": "RS-232 uses unbalanced voltage swings relative to signal ground (limiting runs to ~15 m / 50 ft) and requires TX->RX crossover between two DTE devices plus identical UART framing (`Baud, Data bits, Parity, Stop bits`). RS-422/485 use balanced differential pairs for runs up to ~1,200 m (4,000 ft) and multi-drop bus topologies.",
+    "studyNote": "RS-232 = unbalanced, point-to-point, ~50 ft max, pins 2 (RX), 3 (TX), 5 (GND) on DB-9; check TX/RX crossover and baud/parity/stop bits first when serial control fails.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 13, pp. 307-312",
+    "chapter": 13,
+    "rationales": [
+      "Correct: RS-232 is unbalanced and ground-referenced (limiting distance), requiring TX/RX crossover between two DTE devices.",
+      "Not this one: RS-232 is unbalanced single-ended, whereas RS-422 and RS-485 use balanced differential signaling.",
+      "Not this one: Simple 3-wire RS-232 control uses software handshaking rather than mandatory hardware voltage lines.",
+      "Not this one: RS-232 relies on asynchronous UART framing rather than centralized synchronous clock distribution."
+    ]
+  },
+  {
+    "id": 1050,
+    "legacyId": 50,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Configure Control and Device Settings",
+    "topic": "IR Control Emitters vs. Contact Closure (GPIO) and Relays",
+    "prompt": "What common installation issue causes an adhesive IR emitter on a display to ignore control commands intermittently?",
+    "choices": [
+      "Connecting the emitter to a low-voltage contact closure relay port on the processor",
+      "Reversing the signal and ground conductor polarity on the mono 3.5 mm control connector",
+      "Excessive emitter drive level or ambient light flooding the receiver photodiode",
+      "Using unshielded 18 AWG stranded wiring for the emitter extension run through ceiling conduit"
+    ],
+    "answer": 2,
+    "explanation": "IR photodiodes easily overload (saturate) when a stick-on emitter is driven too hard or when ambient sunlight hits the sensor; turning down the IR port modulation drive level and placing an opaque shield cap over the emitter cures intermittent IR failures.",
+    "studyNote": "If an IR emitter fails intermittently: (1) verify placement directly over the device's IR eye, (2) lower IR drive level to avoid sensor saturation, and (3) block ambient sunlight.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 13, pp. 312-315",
+    "chapter": 13,
+    "rationales": [
+      "Not this one: Plugging an IR emitter into a relay port produces zero signal rather than intermittent operation.",
+      "Not this one: Reversed polarity on an IR diode prevents operation entirely rather than causing intermittent reception.",
+      "Correct: Overdriving the IR emitter saturates the receiver diode, and ambient optical noise causes missed commands.",
+      "Not this one: 18 AWG wire gauge has low resistance and does not cause intermittent optical signaling failures."
+    ]
+  },
+  {
+    "id": 1051,
+    "legacyId": 51,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Test the AV System",
+    "topic": "Three Verification Phases of ANSI/INFOCOMM 10:2013",
+    "prompt": "Under ANSI/INFOCOMM 10:2013, what are the three progressive verification phases?",
+    "choices": [
+      "Architectural Programming Verification, Schematic Design Verification, and Construction Administration Verification",
+      "Rough-In Cable Verification, Structural Anchor Pull Verification, and Closeout Warranty Verification",
+      "Network Switch Configuration Verification, Audio Tuning Verification, and Control Software Verification",
+      "Component Verification, Systems Integration Verification, and Systems Performance Verification"
+    ],
+    "answer": 3,
+    "explanation": "ANSI/INFOCOMM 10:2013 structures verification into three phases: Component Verification (individual items/cables work), Systems Integration Verification (mounted/wired/labeled safely as a system), and Systems Performance Verification (meets measurable acoustic/visual/functional criteria).",
+    "studyNote": "Memorize the 3 verification tiers in ANSI/INFOCOMM 10:2013: Component Verification -> Systems Integration Verification -> Systems Performance Verification.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 11, pp. 263-270",
+    "chapter": 11,
+    "rationales": [
+      "Not this one: These describe architectural project delivery stages rather than audiovisual performance verification phases.",
+      "Not this one: Rough-in and structural checks are individual task milestones within Systems Integration Verification.",
+      "Not this one: Network, audio, and control checks are sub-tasks within the comprehensive performance verification framework.",
+      "Correct: ANSI/INFOCOMM 10:2013 establishes Component, Systems Integration, and Systems Performance verification phases."
+    ]
+  },
+  {
+    "id": 1052,
+    "legacyId": 52,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Test the AV System",
+    "topic": "70V / 100V Constant-Voltage Loudspeaker Sweep with an Impedance Meter",
+    "prompt": "Why must a 70V distributed speaker line be tested with an AC impedance meter rather than a DC ohmmeter?",
+    "choices": [
+      "DC multimeters emit high-voltage test spikes that damage loudspeaker voice coil adhesive bonds",
+      "Transformers present near-zero DC resistance, while an AC meter measures true operating impedance",
+      "AC impedance meters detect electromagnetic crosstalk between audio cables and building power conductors",
+      "Constant-voltage speaker transformers contain internal blocking capacitors that prevent DC current flow"
+    ],
+    "answer": 1,
+    "explanation": "Step-down transformers on 70 V/100 V speakers have very low DC winding resistance (~a few ohms), fooling a DC ohmmeter; only an AC impedance meter measures true impedance (`Z = E^2 / P`) across the parallel transformer primaries.",
+    "studyNote": "Always use an **AC Impedance Meter** (never a DC ohmmeter) to verify 70V/100V distributed speaker lines (`Z = V^2 / P_total`), and keep total wattage taps ≤ 80% of amplifier rating (`20% headroom`).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 9, pp. 214-217; Chapter 14, pp. 326-328",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Multimeter resistance testing uses low DC voltages that cannot damage loudspeaker voice coils.",
+      "Correct: Step-down transformer primaries have very low DC resistance; only AC test signals measure true inductive load impedance.",
+      "Not this one: Impedance meters measure electrical impedance across loads rather than line-to-line magnetic crosstalk.",
+      "Not this one: Standard 70V speaker transformers do not incorporate series DC-blocking capacitors in their primary windings."
+    ]
+  },
+  {
+    "id": 1053,
+    "legacyId": 53,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Test the AV System",
+    "topic": "Loudspeaker Polarity Testing Across a Multi-Speaker Room",
+    "prompt": "What occurs when one loudspeaker is wired with reversed polarity relative to adjacent speakers, and what tool verifies it?",
+    "choices": [
+      "Phase cancellation reduces low frequencies; an acoustic polarity tester verifies correct cone movement",
+      "Total amplifier impedance doubles; a digital multimeter measures differential voice coil resistance",
+      "Harmonic distortion increases across high frequencies; a real-time analyzer identifies phase inversion",
+      "Radio frequency interference enters the audio path; an inductive amplifier probe detects line polarity"
+    ],
+    "answer": 0,
+    "explanation": "When one speaker pushes outward on a positive pulse while its neighbor pulls inward (`180°` polarity reversal), low frequencies cancel out in the overlap zone; an acoustic pulse polarity tester checks every driver from the amplifier rack to the room.",
+    "studyNote": "Use an acoustic pulse **Polarity Tester** during commissioning to confirm all loudspeaker drivers move in the same polarity (`+` to `+`, `-` to `-`).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 328-329",
+    "chapter": 14,
+    "rationales": [
+      "Correct: Out-of-phase speakers cause destructive low-frequency cancellation; an acoustic polarity tester verifies proper movement.",
+      "Not this one: Reversing speaker polarity does not change electrical impedance and cannot be detected with a DC ohmmeter.",
+      "Not this one: Phase cancellation affects acoustic summation rather than producing non-linear harmonic distortion.",
+      "Not this one: Polarity reversal is an acoustic phase issue rather than an RF noise interference problem."
+    ]
+  },
+  {
+    "id": 1054,
+    "legacyId": 54,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "Audio Gain Structure: Unity Gain (1 kHz DMM) vs. System Optimization (Pink Noise + Clipping)",
+    "prompt": "What is the critical procedural difference between Unity Gain and System Optimization when setting gain structure?",
+    "choices": [
+      "Unity Gain requires power amplifiers connected at full load; System Optimization requires dummy load resistors",
+      "Unity Gain maximizes overall signal-to-noise ratio; System Optimization standardizes identical stage voltages",
+      "Unity Gain sets 1:1 voltage with amps unhooked; System Optimization trims stages below clipping",
+      "Unity Gain relies on automated pink noise sweeps; System Optimization utilizes manual 10 kHz test tones"
+    ],
+    "answer": 2,
+    "explanation": "Never feed a continuous full-scale 1 kHz test tone into connected loudspeakers! Unity Gain uses a 1 kHz sine wave and a DMM with amplifiers disconnected to verify 0 dB stage-to-stage unity; System Optimization uses pink noise to maximize signal-to-noise ratio just below clipping at each stage before setting final amplifier sensitivity.",
+    "studyNote": "Exam Distinction: **Unity Gain** = `1 kHz sine wave` + DMM + **Amps DISCONNECTED**. **System Optimization** = `Pink Noise` + `400 Hz` high-passed piezo clip detector to find clip points and back off for headroom.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 329-335",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Feeding high-level calibration tones into connected amplifiers during unity gain setup risks destroying speakers.",
+      "Not this one: System Optimization maximizes dynamic range and SNR, whereas Unity Gain establishes uniform 1:1 voltage gain.",
+      "Correct: Unity Gain establishes 0 dB reference with amps unhooked; System Optimization optimizes dynamic range below clipping.",
+      "Not this one: System Optimization typically uses pink noise and clip detection rather than manual 10 kHz tones."
+    ]
+  },
+  {
+    "id": 1055,
+    "legacyId": 55,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "RTA (Real-Time Analyzer) vs. Dual-Channel FFT Acoustic Analyzer",
+    "prompt": "Why is a dual-channel FFT analyzer superior to a single-channel RTA for sound system equalization?",
+    "choices": [
+      "It generates higher acoustic sound pressure levels during automated room sweep measurements",
+      "It eliminates the need for a calibrated omnidirectional measurement microphone in reflective rooms",
+      "It automatically recalibrates digital signal processor filter coefficients without human operator intervention",
+      "It compares output to input to display magnitude, phase, coherence, and time delay"
+    ],
+    "answer": 3,
+    "explanation": "A single-channel RTA is 'time-blind' and 'phase-blind' - it cannot distinguish a room reflection or acoustic cancellation null from a driver response dip. A Dual-Channel FFT compares the electronic reference signal to the mic signal to measure transfer function (magnitude, phase, coherence, and delay).",
+    "studyNote": "**RTA** = amplitude vs. frequency only (cannot see phase or arrival time). **Dual-Channel FFT** = compares Reference Input vs. Mic Input to measure magnitude, **phase**, **coherence**, and **impulse time delay**.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 336-339",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Measurement analyzers capture acoustic data and do not dictate the output SPL required for testing.",
+      "Not this one: Dual-channel FFT analyzers still require accurate calibrated measurement microphones for acoustic capture.",
+      "Not this one: While some software can calculate suggested filter values, dual-channel FFT is primarily a diagnostic tool.",
+      "Correct: Dual-channel FFT compares reference and measurement signals to reveal frequency response, phase, and time alignment."
+    ]
+  },
+  {
+    "id": 1056,
+    "legacyId": 56,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "Never Boost Deep Narrow Acoustic Cancellation Nulls with EQ",
+    "prompt": "Why should a technician never apply 15 dB of parametric EQ boost to correct an acoustic cancellation dip?",
+    "choices": [
+      "Parametric equalizers are technically incapable of applying positive boost filter adjustments below 500 Hz",
+      "Boosting increases direct and reflected sound equally, wasting amplifier power without fixing the null",
+      "Acoustic cancellations automatically shift center frequency when electronic equalizer boost filters are engaged",
+      "Boosting narrow frequency bands causes immediate thermal failure in passive loudspeaker crossover networks"
+    ],
+    "answer": 1,
+    "explanation": "Electronic EQ cannot cure an acoustic path-length phase cancellation: boosting the frequency boosts both the direct sound and the out-of-phase reflection equally, robbing amplifier headroom (+3 dB = 2x power; +15 dB = 31.6x power) and causing severe distortion. Use cut-mostly EQ on resonant peaks and fix nulls via speaker placement or acoustic treatment.",
+    "studyNote": "**Cut resonant peaks; never boost deep narrow acoustic cancellation nulls** with EQ - boosting nulls wastes amplifier headroom (`+3 dB = 2x watts`) without fixing phase cancellation.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 338-340",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Modern DSP parametric equalizers can apply boost or cut filters across the entire audible spectrum.",
+      "Correct: Phase cancellation nulls cannot be filled with EQ; boosting wastes headroom and causes booming elsewhere.",
+      "Not this one: Acoustic null frequencies depend on physical room dimensions and speaker placement, not electrical EQ settings.",
+      "Not this one: While severe clipping damages drivers, the fundamental reason is that phase cancellation nulls cannot be corrected with EQ."
+    ]
+  },
+  {
+    "id": 1057,
+    "legacyId": 57,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "Sound Pressure Level (SPL) Meter Weightings: dBA vs. dBC and Slow vs. Fast",
+    "prompt": "How do A-weighting and C-weighting differ when measuring sound pressure levels?",
+    "choices": [
+      "A-weighting rolls off low frequencies for ambient noise; C-weighting remains flat for program audio",
+      "A-weighting measures peak transient acoustic spikes; C-weighting averages root-mean-square levels over time",
+      "A-weighting applies to speech reinforcement indoors; C-weighting applies to outdoor environmental noise compliance",
+      "A-weighting captures high-frequency distortion; C-weighting evaluates room reverberation decay time characteristics"
+    ],
+    "answer": 0,
+    "explanation": "A-weighting (`dBA`) follows the 40-phon equal-loudness contour (heavily rolling off low bass) for quiet ambient noise and speech intelligibility surveys; C-weighting (`dBC`) has a nearly flat response across bass and treble for higher-SPL program measurements.",
+    "studyNote": "**dBA** = rolls off low bass, matches human ear at quiet/moderate levels (< 70–85 dB SPL, HVAC/ambient noise). **dBC** = flat bass response, used for loud program material (> 85 dB SPL) and subwoofers.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 335-337",
+    "chapter": 14,
+    "rationales": [
+      "Correct: A-weighting rolls off bass to mimic human hearing at moderate levels; C-weighting is flat across audible frequencies.",
+      "Not this one: Peak versus RMS level measurement is governed by meter response time settings (Fast/Slow/Peak), not weighting curves.",
+      "Not this one: Weighting choice depends on measured sound pressure level and spectrum rather than indoor versus outdoor venue type.",
+      "Not this one: Weighting curves adjust frequency sensitivity and do not directly measure distortion or reverberation decay time."
+    ]
+  },
+  {
+    "id": 1058,
+    "legacyId": 58,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "EDID 6-Step Handshake and Solving 'Works Direct, Fails Through Switcher'",
+    "prompt": "A laptop displays directly on a screen but blanks when routed through a 4K switcher. What causes this, and how is it resolved?",
+    "choices": [
+      "An HDCP key revocation occurs; cycle AC mains power on the display and reflash laptop graphics drivers",
+      "A Hot Plug Detect ground fault occurs; install a galvanic ground isolator on the HDMI patch cable",
+      "An EDID mismatch occurs; lock a compatible 1080p EDID profile to the switcher input",
+      "A TMDS clock jitter overload occurs; replace horizontal copper cabling with multimode optical fiber"
+    ],
+    "answer": 2,
+    "explanation": "EDID is the unencrypted capability table read over the DDC (I2C) channel after Hot-Plug Detect (+5 V HPD) asserts. In a matrix switcher, managing and locking the input EDID slot to match the common denominator capability of all sinks ensures reliable source output.",
+    "studyNote": "Know the 6-step EDID handshake (1. Connect -> 2. +5V Hot Plug Detect -> 3. Sink sends EDID -> 4. Source reads EDID -> 5. Source sets resolution/refresh -> 6. Video outputs) and fix matrix handshake mismatches with **EDID Management**.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 341-345",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: While HDCP can cause blank screens, the symptom of working direct but failing through a switcher points to EDID negotiation.",
+      "Not this one: Hot Plug Detect is a DC voltage signal; ground isolators are not standard HDMI troubleshooting tools for EDID failure.",
+      "Correct: The switcher input EDID table advertises unsupported timings; locking a common compatible EDID resolves the conflict.",
+      "Not this one: EDID configuration mismatches must be resolved before suspecting physical cable bandwidth or clock jitter issues."
+    ]
+  },
+  {
+    "id": 1059,
+    "legacyId": 59,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "HDCP 2.2 Key Limits, Repeater Hop Depth, and Non-Compliant Sink Symptom",
+    "prompt": "Why do displays on an HDMI splitter lose video when a non-HDCP capture card is plugged into an open output?",
+    "choices": [
+      "The capture card introduces a 50 Hz ground loop that destabilizes HDMI transition-minimized differential signaling",
+      "The capture card draws excessive 5 V DC current from the splitter, collapsing the hot plug detect bus voltage",
+      "The HDMI splitter runs out of internal TMDS clock buffer memory and shuts down video transmission channels",
+      "The non-compliant device fails authentication, prompting the source to mute protected video"
+    ],
+    "answer": 3,
+    "explanation": "HDCP encrypts protected content across every repeater level and downstream sink. Under HDCP 2.2 (up to 32 devices and 4 repeater levels), if one active branch fails HDCP authentication or the source runs out of KSV keys, protected video is muted or replaced with snow/error screens.",
+    "studyNote": "HDCP 2.2 max capacity = **32 downstream devices** across **4 repeater levels**. Diagnose HDCP vs. EDID: if unprotected PC desktop works at 4K60 but a Blu-ray/streaming player blanks or shows snow, it is an **HDCP** authentication/key-limit issue.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 14, pp. 345-348",
+    "chapter": 14,
+    "rationales": [
+      "Not this one: Ground loops cause audio hum or video hum bars in analog systems, not complete HDCP content muting.",
+      "Not this one: While HPD relies on 5V signaling, an unauthenticated sink specifically triggers HDCP digital encryption shutdown.",
+      "Not this one: Distribution amplifiers do not experience clock buffer memory exhaustion from connecting capture devices.",
+      "Correct: Under HDCP rules, connecting an unauthenticated sink can cause the source to revoke transmission across all splitter branches."
+    ]
+  },
+  {
+    "id": 1060,
+    "legacyId": 60,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "D",
+    "task": "Calibrate the AV System",
+    "topic": "ANSI/AVIXA V201.01 ISCR Contrast Ratio Tiers (7:1, 15:1, 50:1, 80:1)",
+    "prompt": "When verifying Image System Contrast Ratio (ISCR) under ambient room lighting per ANSI/AVIXA V201.01, which minimum contrast ratios apply to Analytical Decision Making versus Full Motion Video?",
+    "choices": [
+      "7:1 for Analytical Decision Making and 15:1 for Full Motion Video",
+      "15:1 for Analytical Decision Making and 50:1 for Full Motion Video",
+      "50:1 for Analytical Decision Making and 80:1 for Full Motion Video",
+      "80:1 for Analytical Decision Making and 50:1 for Full Motion Video"
+    ],
+    "answer": 2,
+    "explanation": "ANSI/AVIXA V201.01 (and the AVIXA Master Formula Sheet) specifies four minimum contrast ratios: 7:1 for Passive Viewing, 15:1 for Basic Decision Making, 50:1 for Analytical Decision Making, and 80:1 for Full Motion Video.",
+    "studyNote": "ISCR contrast tiers: 7:1 Passive, 15:1 Basic Decision Making, 50:1 Analytical Decision Making, 80:1 Full Motion Video.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 10 & ANSI/AVIXA V201.01, pp. 244-248",
+    "chapter": 10,
+    "rationales": [
+      "Not this one: 7:1 applies to Passive Viewing and 15:1 applies to Basic Decision Making presentations.",
+      "Not this one: 15:1 is the Basic Decision Making minimum and 50:1 is the Analytical Decision Making minimum.",
+      "Correct: Analytical Decision Making (CAD, medical, art) requires 50:1 and Full Motion Video (home theater/cinema) requires 80:1.",
+      "Not this one: This reverses the Analytical Decision Making (50:1) and Full Motion Video (80:1) contrast requirements."
+    ]
+  },
+  {
+    "id": 1061,
+    "legacyId": 61,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Demonstrate to Client that System Performs to Specifications",
+    "topic": "Internal Punch List Inspection vs. Formal Client Acceptance Walkthrough",
+    "prompt": "Why must the AV installation team complete an internal punch list before scheduling the client acceptance walkthrough?",
+    "choices": [
+      "To resolve deficiencies internally, protecting project credibility and facilitating formal client sign-off",
+      "To ensure that all manufacturer hardware warranties expire prior to substantial completion site certification",
+      "To allow the general contractor to backcharge the client for completed architectural drywall and electrical work",
+      "To prevent the client from requesting contracted operations and maintenance training documentation packages"
+    ],
+    "answer": 0,
+    "explanation": "Conducting a thorough internal pre-closeout inspection and clearing internal punch-list defects before the client walkthrough ensures the acceptance demonstration runs smoothly and minimizes client-generated punch items.",
+    "studyNote": "Always run an internal pre-closeout verification and clear internal punch items before inviting the client to the formal acceptance demonstration.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 363-367",
+    "chapter": 15,
+    "rationales": [
+      "Correct: Catching and fixing flaws internally ensures a smooth acceptance walkthrough and accelerates client sign-off.",
+      "Not this one: Warranties typically commence at substantial completion rather than expiring during installation punch walks.",
+      "Not this one: Internal AV punch lists are quality management tools, not mechanisms for general contractor backcharges.",
+      "Not this one: Operations and maintenance documentation is a mandatory closeout deliverable, not something avoided by punch lists."
+    ]
+  },
+  {
+    "id": 1062,
+    "legacyId": 62,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Demonstrate to Client that System Performs to Specifications",
+    "topic": "Handling Client Scope Additions Requested During Final Acceptance Walkthrough",
+    "prompt": "A client requests additional microphones and programming during final acceptance sign-off. How should the installer respond?",
+    "choices": [
+      "Refuse to complete the walkthrough and immediately remove the installed equipment from the premises",
+      "Obtain sign-off on the contracted scope and document new requests as a separate change order",
+      "Perform the additional programming on site and supply the extra wireless microphones without additional billing",
+      "Sign the client acceptance document on behalf of the project manager and invoice the original contract balance"
+    ],
+    "answer": 1,
+    "explanation": "A closeout acceptance walkthrough verifies conformance to the contracted Scope of Work and approved Change Orders. New feature requests discovered at closeout must be separated from contract punch items and quoted via a formal Change Order or follow-on work order so baseline acceptance and invoicing are not held hostage.",
+    "studyNote": "Separate genuine contract deficiencies (**Punch List**) from new post-installation feature requests (**Change Order / new quote**) so closeout sign-off is not delayed.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 365-368",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Walking off the job damages client relationships and violates contractual dispute resolution procedures.",
+      "Correct: Baseline contract acceptance must be secured first, with scope additions quoted via a formal Change Order.",
+      "Not this one: Giving away equipment and engineering labor without approval erodes project profitability and creates scope creep.",
+      "Not this one: Installers cannot forge client signatures or unilaterally certify substantial completion for billing."
+    ]
+  },
+  {
+    "id": 1063,
+    "legacyId": 63,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Demonstrate to Client that System Performs to Specifications",
+    "topic": "Commissioning Test Report Deliverables (SPL, STI/%ALCONS, ISCR, Cable Certs)",
+    "prompt": "What objective evidence must accompany a live demonstration to prove an installation meets performance standards?",
+    "choices": [
+      "A verbal assurance from the lead technician confirming satisfactory subjective audio quality",
+      "Manufacturer promotional brochures illustrating product specifications and warranty terms",
+      "Signed, dated commissioning test reports containing quantitative measurement data",
+      "Photographs of equipment delivery pallets staged inside the completed facility loading dock"
+    ],
+    "answer": 2,
+    "explanation": "Formal performance verification under ANSI/INFOCOMM 10:2013 requires documented test reports showing actual measured values (SPL, STI, ISCR, cable certs, impedance) compared against the specified acceptance criteria.",
+    "studyNote": "Closeout verification combines a live functional walkthrough with written **Test & Commissioning Reports** proving quantitative pass/fail metrics.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 11, pp. 268-271; Chapter 15, pp. 366-369",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Verbal assurances are subjective and do not satisfy ANSI/INFOCOMM 10:2013 objective performance criteria.",
+      "Not this one: Manufacturer marketing brochures list theoretical ratings rather than actual verified field performance.",
+      "Correct: ANSI/INFOCOMM 10:2013 requires documented test reports showing measured data like SPL, STI, ISCR, and cable certs.",
+      "Not this one: Delivery photographs verify logistics delivery but prove nothing regarding functional technical performance."
+    ]
+  },
+  {
+    "id": 1064,
+    "legacyId": 64,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Provide Training on AV System Operation",
+    "topic": "Tailoring End-User Training vs. Technical Administrator Training Tiers",
+    "prompt": "Why should closeout training be divided into separate sessions for non-technical presenters and technical administrators?",
+    "choices": [
+      "Presenters must learn DSP firmware flashing, while technicians must focus on basic microphone handling techniques",
+      "Facility security policies prohibit non-technical personnel from viewing touchpanel graphical user interfaces",
+      "Separate training sessions allow the installation contractor to double the total billed labor training hours",
+      "Presenters require operational training, while technicians require maintenance and configuration procedures"
+    ],
+    "answer": 3,
+    "explanation": "Overwhelming everyday presenters with DSP IP addresses and rack breaker sequences causes confusion and support calls; tailoring training by audience role (End-User Operational vs. Technical Support/Admin) ensures each group masters the tasks relevant to their role.",
+    "studyNote": "Segment closeout training by audience: **End-Users** (simple daily operation + 1-page Quick Reference Card) vs. **Technical/IT Admins** (rack boot sequence, IP/DSP passwords, diagnostics, first-line troubleshooting).",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 370-372",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Presenters do not need DSP firmware instruction, and technicians require far more than basic microphone usage.",
+      "Not this one: Presenters interact directly with touchpanels; security policies do not restrict normal user interface operation.",
+      "Not this one: Role-based training aims to maximize instruction effectiveness rather than arbitrarily inflating billing hours.",
+      "Correct: Tailoring training ensures end users master meeting workflows without being overwhelmed by technical maintenance details."
+    ]
+  },
+  {
+    "id": 1065,
+    "legacyId": 65,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Provide Training on AV System Operation",
+    "topic": "Collecting Training Attendance Sign-In Sheets and Recording Video Walkthroughs",
+    "prompt": "Why is collecting signed training attendance sheets and recording sessions critical during project closeout?",
+    "choices": [
+      "To prove contractual training completion and provide an onboarding resource for future staff",
+      "To satisfy national fire protection standards governing commercial facility emergency evacuation training",
+      "To transfer legal liability for hardware equipment failures directly to individual client employees",
+      "To automatically void manufacturer hardware warranties if untrained personnel operate the AV system"
+    ],
+    "answer": 0,
+    "explanation": "A signed Training Attendance Sheet proves the integrator fulfilled the contractual training requirement, and a recorded walkthrough video helps the client train future employees who join after project closeout.",
+    "studyNote": "Always collect a signed **Training Attendance Sheet** for the closeout binder and leave laminated Quick-Start Guides in the room.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 371-372",
+    "chapter": 15,
+    "rationales": [
+      "Correct: Sign-in sheets prove training deliverables were met, and video recordings support ongoing client onboarding.",
+      "Not this one: AV training documentation does not serve as NFPA emergency evacuation compliance records.",
+      "Not this one: Training attendance sheets confirm deliverable completion and do not shift equipment liability to employees.",
+      "Not this one: Manufacturer warranties cover hardware defects regardless of who operates the user interface."
+    ]
+  },
+  {
+    "id": 1066,
+    "legacyId": 66,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Finalize AV Project Documentation",
+    "topic": "Field Redlines / Marked-Up Drawings vs. Final As-Built Drawings (Drawings of Record)",
+    "prompt": "What is the distinction between Field Redlines and final As-Built Drawings?",
+    "choices": [
+      "Redlines show architectural interior finishes, while As-Built drawings show structural steel framing",
+      "Redlines document actual site changes, which CAD incorporates into formal As-Built drawings",
+      "Redlines are created during the schematic design phase, while As-Built drawings guide pre-bid estimates",
+      "Redlines specify manufacturer catalog numbers, while As-Built drawings show rough-in conduit sizing"
+    ],
+    "answer": 1,
+    "explanation": "Installers continuously mark up the on-site working prints ('Redlines') whenever a pull route, cable number, rack RU position, or port assignment changes; the CAD designer then updates the master CAD files from those redlines to issue formal 'As-Built' / 'Drawings of Record' at closeout.",
+    "studyNote": "**Field Redlines** = daily installer markups on the jobsite print set -> **As-Built / Drawings of Record** = final updated CAD drawings delivered at closeout.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 2, pp. 28-29; Chapter 15, pp. 368-370",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Redlines and as-builts both represent AV system documentation rather than general architectural finishes.",
+      "Correct: Field redlines record site modifications daily, which engineering transfers into formal As-Built drawings of record.",
+      "Not this one: Schematic design precedes installation, while redlines and as-builts occur during and after construction.",
+      "Not this one: Equipment specifications and conduit schedules are established in engineering packages prior to field redlines."
+    ]
+  },
+  {
+    "id": 1067,
+    "legacyId": 67,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Finalize AV Project Documentation",
+    "topic": "AVIXA D401.01 Closeout Documentation Package (DOC-100 through DOC-120)",
+    "prompt": "Which digital files must be included in the closeout package to ensure the system can be restored after a failure?",
+    "choices": [
+      "Cardboard product packaging materials, discarded shipping pallets, and contractor daily meal receipts",
+      "Generic manufacturer marketing brochures, sales presentation slide decks, and distributor line cards",
+      "Uncompiled control code, DSP configuration files, network tables, credentials, and test reports",
+      "Pre-bid estimation spreadsheets, subcontractor insurance certificates, and raw audio sample recordings"
+    ],
+    "answer": 2,
+    "explanation": "If a DSP or control processor fails two years later, the service technician cannot restore the room without the final DSP tuning file, uncompiled control source code (`DOC-120`), IP/MAC/VLAN schedule, firmware log, and admin credentials archived at closeout.",
+    "studyNote": "A complete Closeout Package (`AVIXA D401.01`) includes As-Built Drawings, Cable/IP/MAC/Serial Schedule, **DSP Config Files**, **Uncompiled Control Source Code (`DOC-120`)**, Admin Passwords, Test Reports, and Warranty/O&M Manuals.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 368-374",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: Packaging materials and personal receipts are waste items that should be removed from site, not closeout deliverables.",
+      "Not this one: Marketing collateral provides no technical configuration value for ongoing system maintenance and restoration.",
+      "Correct: Uncompiled control code, DSP files, IP schedules, credentials, and commissioning reports are essential for restoration.",
+      "Not this one: Internal accounting and insurance paperwork belong in administrative files rather than technical closeout packages."
+    ]
+  },
+  {
+    "id": 1068,
+    "legacyId": 68,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Finalize AV Project Documentation",
+    "topic": "Warranty Start Date, Certificate of Substantial Completion, and SLA Handover",
+    "prompt": "What milestone document triggers the system warranty period and transfers custody of equipment to the client?",
+    "choices": [
+      "The executed purchase order issued by the general contractor at contract award",
+      "The approved submittal package returned by the consulting engineer before rough-in",
+      "The initial request for information submitted during the pre-construction survey",
+      "The client-signed Certificate of Substantial Completion / Final System Acceptance Sign-Off Form"
+    ],
+    "answer": 3,
+    "explanation": "Once the client signs the System Acceptance / Certificate of Substantial Completion, financial billing milestones are released, the contractual warranty clock starts on a clearly documented date, and ongoing support transitions to the service/maintenance team.",
+    "studyNote": "Client signature on the **System Acceptance / Substantial Completion form** formally starts the warranty clock and transitions the system from Installation to Service.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 372-375",
+    "chapter": 15,
+    "rationales": [
+      "Not this one: A purchase order initiates project procurement and contracting rather than warranty and custody transfer.",
+      "Not this one: Submittal approval authorizes fabrication and procurement prior to site installation work.",
+      "Not this one: RFIs seek design clarification during project execution and do not represent completion milestones.",
+      "Correct: Substantial Completion sign-off establishes the warranty start date and transfers equipment custody to the owner."
+    ]
+  },
+  {
+    "id": 1069,
+    "legacyId": 69,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "E",
+    "task": "Finalize AV Project Documentation",
+    "topic": "Internal Post-Project Review (Lessons Learned Meeting)",
+    "prompt": "Why should the project team hold an internal lessons learned meeting after project closeout?",
+    "choices": [
+      "To compare estimated versus actual hours and improve future installation workflows",
+      "To reallocate unspent project contingency funds toward executive staff discretionary bonuses",
+      "To identify individual technician installation errors for formal disciplinary employment action",
+      "To prepare additional billing invoices for undocumented scope changes completed during rough-in"
+    ],
+    "answer": 0,
+    "explanation": "An internal Lessons Learned debrief compares estimated vs. actual labor/materials and analyzes what went right or wrong in design, staging, and site coordination so future projects avoid repeating the same costly mistakes.",
+    "studyNote": "Conduct an internal **Post-Project Review / Lessons Learned** meeting after closeout to compare estimated vs. actual hours and improve future designs.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 15, pp. 374-376",
+    "chapter": 15,
+    "rationales": [
+      "Correct: Lessons learned meetings analyze estimated vs. actual performance to refine future design and delivery practices.",
+      "Not this one: Post-project reviews focus on continuous process improvement rather than financial bonus distribution.",
+      "Not this one: Lessons learned sessions foster collaborative process improvement rather than punitive disciplinary actions.",
+      "Not this one: Post-closeout meetings do not serve as forums for generating retrospective unapproved billing charges."
+    ]
+  },
+  {
+    "id": 1070,
+    "legacyId": 70,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "F",
+    "task": "Maintain AV Systems",
+    "topic": "Preventive Maintenance vs. Break/Fix Maintenance and SLA Response Tiers",
+    "prompt": "What is the primary operational benefit of scheduled preventive maintenance compared to reactive break-fix service?",
+    "choices": [
+      "It removes the operational requirement for active hardware manufacturer equipment warranties",
+      "It identifies failing parts early to minimize unplanned downtime during critical operations",
+      "It allows the client to operate high-output projection systems without routine filter cleaning",
+      "It transfers equipment ownership and property tax liability directly to the service contractor"
+    ],
+    "answer": 1,
+    "explanation": "Scheduled preventive maintenance catches clogged filters, failing UPS batteries, loose mounts, and calibration drift during planned maintenance windows before they cause catastrophic mid-meeting failures.",
+    "studyNote": "**Preventive Maintenance** = scheduled proactive inspections/cleaning/updates to maximize uptime and equipment life; **SLA (Service Level Agreement)** defines response-time tiers, PM frequency, and escalation paths.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 16, pp. 381-385",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Preventive maintenance preserves equipment functionality but does not replace manufacturer warranty protections.",
+      "Correct: Proactive inspection, cleaning, and testing catch issues early, preventing disruptive equipment failures during meetings.",
+      "Not this one: Filter cleaning is a core preventive maintenance activity rather than something rendered unnecessary.",
+      "Not this one: Service level agreements govern maintenance support and do not alter capital asset ownership or taxes."
+    ]
+  },
+  {
+    "id": 1071,
+    "legacyId": 71,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "F",
+    "task": "Maintain AV Systems",
+    "topic": "Firmware Update Discipline: Backup Config First and Read Release Notes",
+    "prompt": "What discipline applies before loading a firmware update onto a functioning production AV system?",
+    "choices": [
+      "Reset all network switch ports to factory default settings before beginning component flash updates",
+      "Update all connected audiovisual endpoints simultaneously over wireless network links to save site time",
+      "Back up configurations, review release notes, and update during an approved maintenance window",
+      "Disconnect all primary and redundant technical ground conductors to prevent firmware memory corruption"
+    ],
+    "answer": 2,
+    "explanation": "Blindly updating firmware on a stable system can break control drivers, wipe static IP settings, or incompatible protocol versions; always read release notes first, back up all running configs/code, and never update right before a live event.",
+    "studyNote": "Golden Rule of Firmware Maintenance: (1) Read Release Notes first (`if it isn't fixing a needed bug/security patch, verify compatibility`), (2) **Back up running config/code first**, and (3) never update right before a live event.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 16, pp. 385-387",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Resetting switches erases VLANs and port settings, breaking network communications before the update.",
+      "Not this one: Flashing critical infrastructure over wireless links risks connection drops that can brick device firmware.",
+      "Correct: Always verify backups, confirm release notes justify the update, and execute only during scheduled downtime.",
+      "Not this one: Grounding conductors must remain fully connected to protect hardware and personnel from electrical faults."
+    ]
+  },
+  {
+    "id": 1072,
+    "legacyId": 72,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "F",
+    "task": "Maintain AV Systems",
+    "topic": "Handling Projector Lamps (Hg Vapor / Skin Oils) and Optical Engine Air Filters",
+    "prompt": "Why must a technician avoid touching quartz projector bulbs and blowing air inward through dirty filters?",
+    "choices": [
+      "Skin oils react with lamp reflector coatings to generate toxic mercury gas fumes in the room",
+      "Compressed air generates electrostatic discharge spikes that erase projector control processor firmware",
+      "Quartz glass absorbs skin moisture, creating optical color temperature shifts across the projected image",
+      "Skin oils cause quartz bulbs to shatter, and compressed air forces dust into optics"
+    ],
+    "answer": 3,
+    "explanation": "Finger oils on a quartz projector bulb alter glass surface tension and heat dissipation, causing the high-pressure envelope to shatter violently under operating heat; similarly, blowing compressed air into a projector pushes abrasive dust straight onto internal optical panels.",
+    "studyNote": "Let projector lamps cool completely before handling, never touch the quartz bulb with bare skin (oil creates hot spots -> shattering), dispose of mercury (`Hg`) lamps as hazardous waste, and never blow dust inward into optical engines.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 16, pp. 384-386",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Mercury vapor is contained inside the sealed quartz burner arc tube, not produced by surface oil reactions.",
+      "Not this one: Dust contamination degrades image optics rather than generating ESD spikes that wipe processor firmware.",
+      "Not this one: Skin oils cause thermal stress fractures on hot quartz glass rather than moisture absorption color shifts.",
+      "Correct: Finger oils cause localized thermal hot spots that shatter quartz lamps, and blowing air contaminates optical paths."
+    ]
+  },
+  {
+    "id": 1073,
+    "legacyId": 73,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "F",
+    "task": "Repair AV Systems",
+    "topic": "AVIXA 3-Step Troubleshooting Methodology (Analyze -> Isolate -> Repair & Verify)",
+    "prompt": "What are the three steps in the AVIXA troubleshooting methodology, and what is the initial action in Step 1?",
+    "choices": [
+      "Analyze, Isolate, Repair and Verify; start by interviewing users and reproducing symptoms",
+      "Document, Procure, Replace; start by issuing emergency change orders to purchase replacement rack components",
+      "De-install, Rebuild, Recalibrate; start by disassembling all field wiring connections inside the main equipment rack",
+      "Benchmark, Equalize, Commission; start by running automated pink noise acoustic transfer function sweeps in the room"
+    ],
+    "answer": 0,
+    "explanation": "Structured troubleshooting follows three disciplined steps: (1) Analyze (verify/reproduce the symptom, ask what changed, check docs), (2) Isolate (divide the signal chain in half using known-good test generators/monitors, changing only ONE variable at a time), and (3) Repair, Verify full system operation, and Document in the service log.",
+    "studyNote": "Memorize the **3-Step Troubleshooting Process**: **1. Analyze** (reproduce symptom, ask what changed, check docs) -> **2. Isolate** (half-split signal path, change ONE variable at a time) -> **3. Repair, Verify & Document**.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 16, pp. 388-393",
+    "chapter": 16,
+    "rationales": [
+      "Correct: The 3-step troubleshooting sequence is Analyze, Isolate, Repair/Verify, beginning with symptom reproduction.",
+      "Not this one: Replacing components before isolating the root cause wastes time and money without diagnosing the problem.",
+      "Not this one: Disassembling wiring before testing destroys diagnostic evidence and introduces new cabling faults.",
+      "Not this one: Acoustic benchmarking is a commissioning procedure, not the starting point for general fault troubleshooting."
+    ]
+  },
+  {
+    "id": 1074,
+    "legacyId": 74,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "F",
+    "task": "Repair AV Systems",
+    "topic": "Half-Splitting Signal Chain with Known-Good Test Generator and Test Monitor",
+    "prompt": "A projector fed through a wall plate, tie-line, rack switcher, and receiver displays no signal. How is half-splitting applied?",
+    "choices": [
+      "Replace the 50-meter horizontal HDBaseT tie-line cable before testing active matrix switcher processing components",
+      "Test signal at the rack switcher to determine whether the fault lies upstream or downstream",
+      "Reprogram the central control processor serial driver codes to verify bidirectional projector polling status",
+      "Install an in-line EDID emulator at the ceiling projector input before checking source signal transmission"
+    ],
+    "answer": 1,
+    "explanation": "Half-splitting tests the signal at the accessible midpoint of the chain (the rack switcher) using a known-good test monitor/analyzer or test generator. Eliminating half of the signal path on each test locates faults in `log2(N)` steps instead of testing every component end-to-end.",
+    "studyNote": "**Half-Splitting** = test at the midpoint of a signal chain with a **known-good Test Monitor (Sink)** or **Test Generator (Source)** to cut the suspect path in half with each step.",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 16, pp. 390-394",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Replacing long tie-lines before verifying signal at the rack midpoint violates half-splitting logic.",
+      "Correct: Testing at the accessible midpoint divides the signal path in half, immediately isolating upstream versus downstream faults.",
+      "Not this one: Control programming checks should not precede basic physical and digital signal presence verification.",
+      "Not this one: Adding hardware at the end of the chain before testing the midpoint is inefficient and adds unverified variables."
+    ]
+  },
+  {
+    "id": 1075,
+    "legacyId": 75,
+    "collection": "final-cram",
+    "type": "single",
+    "domain": "F",
+    "task": "Repair AV Systems",
+    "topic": "Ground-Loop Hum Diagnosis and Proper Technical Grounding vs. Lifting Safety Grounds",
+    "prompt": "A 60 Hz hum occurs between distant AC-powered audio devices. What causes this, and why is cutting the ground pin forbidden?",
+    "choices": [
+      "Speaker wire impedance mismatch causes oscillation; cutting ground pins damages amplifier output transformer stages",
+      "Microphone phantom power leaks into chassis metal; cutting ground pins voids manufacturer hardware warranties",
+      "Ground loops circulate current along shields; cutting ground pins creates a lethal shock hazard",
+      "High ambient RF noise couples into audio cables; cutting ground pins increases digital packet transmission jitter"
+    ],
+    "answer": 2,
+    "explanation": "A 50/60 Hz hum when two AC-powered devices interconnect across distant branch circuits is a classic ground loop caused by differing ground potentials along the audio shield. Never defeat an AC safety ground pin ('cheater plug'); use a 1:1 audio isolation transformer (hum bucker), balanced differential input isolation, or power both devices from the same technical ground reference.",
+    "studyNote": "**Ground Loop (50/60 Hz hum)** = two devices tied to different AC ground potentials connected by a grounded signal shield. **Fix**: use an audio isolation transformer or common technical ground - **NEVER lift or cut the AC third-prong safety ground!**",
+    "source": "Official CTS-I Exam Guide, 2nd ed., Chapter 7, pp. 157-161; Chapter 16, pp. 394-396",
+    "chapter": 16,
+    "rationales": [
+      "Not this one: Ground loop hum results from ground potential differences, not speaker cable impedance mismatch.",
+      "Not this one: Phantom power is DC and does not generate 60 Hz AC ground hum on line-level audio interconnections.",
+      "Correct: Ground loops drive circulating current down shields; lifting AC safety grounds violates code and risks electrocution.",
+      "Not this one: 60 Hz hum is caused by AC ground potential differentials rather than ambient radio frequency interference."
+    ]
+  }
+]

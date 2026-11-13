@@ -1,0 +1,101 @@
+{
+  "cts": {
+    "generatedAt": "2026-11-13T21:51:27.383Z",
+    "questionCount": 375,
+    "masteryBankQuestionCount": 300,
+    "finalCramQuestionCount": 75,
+    "clipCount": 2211,
+    "clipsByKind": {
+      "interface": 4,
+      "question": 375,
+      "rationale": 1457,
+      "review": 375
+    },
+    "totalUtf8Bytes": 1066385,
+    "estimatedWords": 159727,
+    "estimatedMinutesAt145Wpm": 1101.6,
+    "estimatedMp3MegabytesAt64Kbps": 528.8,
+    "priceEstimate": {
+      "basis": "Fish Audio public pricing checked 2026-07-22; verify again before generation",
+      "usdPerMillionUtf8Bytes": 15,
+      "estimatedUsd": 16
+    },
+    "safety": {
+      "apiKeyInManifest": false,
+      "runtimeProviderCalls": false,
+      "generationRequiresExplicitExecuteFlag": true,
+      "selectedVoice": {
+        "provider": "Fish Audio",
+        "model": "s2.1-pro",
+        "referenceId": "f3b85abdea0e4e1c9fc60b4e3063a4a0",
+        "approvedAt": "2026-07-22"
+      }
+    }
+  },
+  "cts-i": {
+    "generatedAt": "2026-11-13T21:51:27.430Z",
+    "questionCount": 375,
+    "masteryBankQuestionCount": 300,
+    "finalCramQuestionCount": 75,
+    "clipCount": 2211,
+    "clipsByKind": {
+      "interface": 4,
+      "question": 375,
+      "rationale": 1457,
+      "review": 375
+    },
+    "totalUtf8Bytes": 1254403,
+    "estimatedWords": 185916,
+    "estimatedMinutesAt145Wpm": 1282.2,
+    "estimatedMp3MegabytesAt64Kbps": 615.4,
+    "priceEstimate": {
+      "basis": "Fish Audio public pricing checked 2026-07-22; verify again before generation",
+      "usdPerMillionUtf8Bytes": 15,
+      "estimatedUsd": 18.82
+    },
+    "safety": {
+      "apiKeyInManifest": false,
+      "runtimeProviderCalls": false,
+      "generationRequiresExplicitExecuteFlag": true,
+      "selectedVoice": {
+        "provider": "Fish Audio",
+        "model": "s2.1-pro",
+        "referenceId": "f3b85abdea0e4e1c9fc60b4e3063a4a0",
+        "approvedAt": "2026-07-22"
+      }
+    }
+  },
+  "cts-d": {
+    "generatedAt": "2026-11-13T21:51:27.483Z",
+    "questionCount": 375,
+    "masteryBankQuestionCount": 300,
+    "finalCramQuestionCount": 75,
+    "clipCount": 2211,
+    "clipsByKind": {
+      "interface": 4,
+      "question": 375,
+      "rationale": 1457,
+      "review": 375
+    },
+    "totalUtf8Bytes": 1283321,
+    "estimatedWords": 187284,
+    "estimatedMinutesAt145Wpm": 1291.6,
+    "estimatedMp3MegabytesAt64Kbps": 620,
+    "priceEstimate": {
+      "basis": "Fish Audio public pricing checked 2026-07-22; verify again before generation",
+      "usdPerMillionUtf8Bytes": 15,
+      "estimatedUsd": 19.25
+    },
+    "safety": {
+      "apiKeyInManifest": false,
+      "runtimeProviderCalls": false,
+      "generationRequiresExplicitExecuteFlag": true,
+      "selectedVoice": {
+        "provider": "Fish Audio",
+        "model": "s2.1-pro",
+        "referenceId": "f3b85abdea0e4e1c9fc60b4e3063a4a0",
+        "approvedAt": "2026-07-22"
+      }
+    }
+  }
+}

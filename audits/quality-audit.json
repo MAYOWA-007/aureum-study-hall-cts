@@ -171,5 +171,242 @@
       "required": 23
     }
   },
+  "exams": {
+    "cts": {
+      "examCode": "CTS",
+      "questions": 300,
+      "finalCramQuestions": 75,
+      "uniqueCanonicalPrompts": 300,
+      "uniqueFinalCramPrompts": 75,
+      "semanticDuplicatePairs": [
+        {
+          "first": "Q9",
+          "second": "Q274",
+          "similarity": 1
+        },
+        {
+          "first": "Q10",
+          "second": "Q267",
+          "similarity": 0.75
+        },
+        {
+          "first": "Q13",
+          "second": "Q275",
+          "similarity": 1
+        },
+        {
+          "first": "Q14",
+          "second": "Q268",
+          "similarity": 1
+        },
+        {
+          "first": "Q15",
+          "second": "Q261",
+          "similarity": 1
+        },
+        {
+          "first": "Q34",
+          "second": "Q223",
+          "similarity": 1
+        },
+        {
+          "first": "Q53",
+          "second": "Q238",
+          "similarity": 1
+        },
+        {
+          "first": "Q60",
+          "second": "Q295",
+          "similarity": 1
+        },
+        {
+          "first": "Q69",
+          "second": "Q241",
+          "similarity": 0.75
+        },
+        {
+          "first": "Q81",
+          "second": "Q272",
+          "similarity": 0.8
+        },
+        {
+          "first": "Q84",
+          "second": "Q231",
+          "similarity": 1
+        },
+        {
+          "first": "Q87",
+          "second": "Q196",
+          "similarity": 0.833
+        },
+        {
+          "first": "Q91",
+          "second": "Q197",
+          "similarity": 1
+        },
+        {
+          "first": "Q98",
+          "second": "Q208",
+          "similarity": 0.909
+        },
+        {
+          "first": "Q102",
+          "second": "Q209",
+          "similarity": 1
+        },
+        {
+          "first": "Q104",
+          "second": "Q203",
+          "similarity": 1
+        },
+        {
+          "first": "Q111",
+          "second": "Q204",
+          "similarity": 0.889
+        },
+        {
+          "first": "Q115",
+          "second": "Q205",
+          "similarity": 1
+        },
+        {
+          "first": "Q125",
+          "second": "Q207",
+          "similarity": 0.9
+        },
+        {
+          "first": "Q130",
+          "second": "Q213",
+          "similarity": 0.857
+        },
+        {
+          "first": "Q132",
+          "second": "Q212",
+          "similarity": 0.786
+        },
+        {
+          "first": "Q136",
+          "second": "Q224",
+          "similarity": 1
+        },
+        {
+          "first": "Q141",
+          "second": "Q225",
+          "similarity": 0.909
+        },
+        {
+          "first": "Q149",
+          "second": "Q233",
+          "similarity": 0.875
+        },
+        {
+          "first": "Q158",
+          "second": "Q235",
+          "similarity": 0.875
+        },
+        {
+          "first": "Q167",
+          "second": "Q276",
+          "similarity": 0.875
+        },
+        {
+          "first": "Q174",
+          "second": "Q247",
+          "similarity": 0.857
+        },
+        {
+          "first": "Q190",
+          "second": "Q291",
+          "similarity": 1
+        },
+        {
+          "first": "Q194",
+          "second": "Q292",
+          "similarity": 0.875
+        }
+      ],
+      "uniqueSingleBestAnswerConcepts": {
+        "A": {
+          "available": 76,
+          "required": 40
+        },
+        "B": {
+          "available": 64,
+          "required": 35
+        },
+        "C": {
+          "available": 32,
+          "required": 17
+        },
+        "D": {
+          "available": 42,
+          "required": 23
+        }
+      },
+      "issues": []
+    },
+    "cts-i": {
+      "examCode": "CTS-I",
+      "questions": 300,
+      "finalCramQuestions": 75,
+      "uniqueCanonicalPrompts": 300,
+      "uniqueFinalCramPrompts": 75,
+      "semanticDuplicatePairs": [],
+      "uniqueSingleBestAnswerConcepts": {
+        "A": {
+          "available": 41,
+          "required": 20
+        },
+        "B": {
+          "available": 31,
+          "required": 14
+        },
+        "C": {
+          "available": 28,
+          "required": 14
+        },
+        "D": {
+          "available": 85,
+          "required": 44
+        },
+        "E": {
+          "available": 26,
+          "required": 14
+        },
+        "F": {
+          "available": 18,
+          "required": 9
+        }
+      },
+      "issues": []
+    },
+    "cts-d": {
+      "examCode": "CTS-D",
+      "questions": 300,
+      "finalCramQuestions": 75,
+      "uniqueCanonicalPrompts": 300,
+      "uniqueFinalCramPrompts": 75,
+      "semanticDuplicatePairs": [],
+      "uniqueSingleBestAnswerConcepts": {
+        "A": {
+          "available": 48,
+          "required": 23
+        },
+        "B": {
+          "available": 70,
+          "required": 32
+        },
+        "C": {
+          "available": 81,
+          "required": 44
+        },
+        "D": {
+          "available": 30,
+          "required": 16
+        }
+      },
+      "issues": []
+    }
+  },
   "issues": []
 }

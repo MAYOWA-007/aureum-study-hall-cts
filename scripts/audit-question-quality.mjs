@@ -1,8 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync, writeFileSync } from "node:fs";
 
-const bank = JSON.parse(readFileSync("audits/questions.release.json", "utf8"));
-const finalCram = JSON.parse(readFileSync("app/final-cram.generated.json", "utf8"));
 const blockedPhrases = [
   /applied scenario \d+/i,
   /missing term or value/i,
@@ -39,76 +37,103 @@ const bestAnswer = (question) => {
   return question.choices?.[Number(question.answer)] ?? "";
 };
 
-assert.equal(bank.length, 300, "release bank must contain 300 questions");
-assert.deepEqual(bank.map((question) => question.id), Array.from({ length: 300 }, (_, index) => index + 1), "question IDs must be sequential");
-assert.equal(finalCram.length, 75, "Final Cram must contain 75 questions");
-assert.deepEqual(finalCram.map((question) => question.id), Array.from({ length: 75 }, (_, index) => index + 1001), "Final Cram IDs must be stable and sequential");
+const conceptFingerprint = (question) => `${canonicalPrompt(question.topic)}|${canonicalPrompt(bestAnswer(question))}`;
 
-const seen = new Map();
-const issues = [];
-for (const question of bank) {
-  for (const pattern of blockedPhrases) {
-    if (pattern.test(question.prompt)) issues.push(`Q${question.id}: blocked wording ${pattern}`);
-  }
-  const canonical = canonicalPrompt(question.prompt);
-  if (seen.has(canonical)) issues.push(`Q${question.id}: semantically duplicates Q${seen.get(canonical)}`);
-  seen.set(canonical, question.id);
-  if (!question.source || !question.chapter || !question.explanation || !question.studyNote) {
-    issues.push(`Q${question.id}: missing source-grounded teaching metadata`);
-  }
-}
+function auditExam(examCode, bankPath, finalCramPath, officialPaceAllocation) {
+  const bank = JSON.parse(readFileSync(bankPath, "utf8"));
+  const finalCram = JSON.parse(readFileSync(finalCramPath, "utf8"));
 
-const finalCramSeen = new Map();
-for (const question of finalCram) {
-  const canonical = canonicalPrompt(question.prompt);
-  if (finalCramSeen.has(canonical)) issues.push(`FC${question.legacyId}: duplicates FC${finalCramSeen.get(canonical)}`);
-  finalCramSeen.set(canonical, question.legacyId);
-  if (question.type !== "single" || question.choices?.length !== 4 || question.rationales?.length !== 4) {
-    issues.push(`FC${question.legacyId}: must be a four-choice single-best-answer item with four rationales`);
-  }
-  if (!question.source || !question.chapter || !question.explanation || !question.studyNote) {
-    issues.push(`FC${question.legacyId}: missing source-grounded teaching metadata`);
-  }
-}
+  assert.equal(bank.length, 300, `${examCode} release bank must contain 300 questions`);
+  assert.deepEqual(bank.map((question) => question.id), Array.from({ length: 300 }, (_, index) => index + 1), `${examCode} question IDs must be sequential`);
+  assert.equal(finalCram.length, 75, `${examCode} Final Cram must contain 75 questions`);
+  assert.deepEqual(finalCram.map((question) => question.id), Array.from({ length: 75 }, (_, index) => index + 1001), `${examCode} Final Cram IDs must be stable and sequential`);
 
-const semanticDuplicatePairs = [];
-for (const collection of [bank, finalCram]) {
-  for (let left = 0; left < collection.length; left += 1) {
-    for (let right = left + 1; right < collection.length; right += 1) {
-      const a = collection[left];
-      const b = collection[right];
-      if (a.topic.toLowerCase() !== b.topic.toLowerCase()) continue;
-      if (canonicalPrompt(bestAnswer(a)) !== canonicalPrompt(bestAnswer(b))) continue;
-      const similarity = jaccard(a.prompt, b.prompt);
-      if (similarity < 0.72) continue;
-      const label = (question) => question.collection === "final-cram" ? `FC${question.legacyId}` : `Q${question.id}`;
-      semanticDuplicatePairs.push({ first: label(a), second: label(b), similarity: Number(similarity.toFixed(3)) });
+  const seen = new Map();
+  const issues = [];
+  for (const question of bank) {
+    for (const pattern of blockedPhrases) {
+      if (pattern.test(question.prompt)) issues.push(`[${examCode}] Q${question.id}: blocked wording ${pattern}`);
+    }
+    const canonical = canonicalPrompt(question.prompt);
+    if (seen.has(canonical)) issues.push(`[${examCode}] Q${question.id}: semantically duplicates Q${seen.get(canonical)}`);
+    seen.set(canonical, question.id);
+    if (!question.source || !question.chapter || !question.explanation || !question.studyNote) {
+      issues.push(`[${examCode}] Q${question.id}: missing source-grounded teaching metadata`);
     }
   }
+
+  const finalCramSeen = new Map();
+  for (const question of finalCram) {
+    const canonical = canonicalPrompt(question.prompt);
+    if (finalCramSeen.has(canonical)) issues.push(`[${examCode}] FC${question.legacyId}: duplicates FC${finalCramSeen.get(canonical)}`);
+    finalCramSeen.set(canonical, question.legacyId);
+    if (question.type !== "single" || question.choices?.length !== 4 || question.rationales?.length !== 4) {
+      issues.push(`[${examCode}] FC${question.legacyId}: must be a four-choice single-best-answer item with four rationales`);
+    }
+    if (!question.source || !question.chapter || !question.explanation || !question.studyNote) {
+      issues.push(`[${examCode}] FC${question.legacyId}: missing source-grounded teaching metadata`);
+    }
+  }
+
+  const semanticDuplicatePairs = [];
+  for (const collection of [bank, finalCram]) {
+    for (let left = 0; left < collection.length; left += 1) {
+      for (let right = left + 1; right < collection.length; right += 1) {
+        const a = collection[left];
+        const b = collection[right];
+        if (a.topic.toLowerCase() !== b.topic.toLowerCase()) continue;
+        if (canonicalPrompt(bestAnswer(a)) !== canonicalPrompt(bestAnswer(b))) continue;
+        const similarity = jaccard(a.prompt, b.prompt);
+        if (similarity < 0.72) continue;
+        const label = (question) => question.collection === "final-cram" ? `FC${question.legacyId}` : `Q${question.id}`;
+        semanticDuplicatePairs.push({ first: label(a), second: label(b), similarity: Number(similarity.toFixed(3)) });
+      }
+    }
+  }
+
+  const uniqueSingleBestAnswerConcepts = Object.fromEntries(Object.entries(officialPaceAllocation).map(([domain, required]) => {
+    const available = new Set(bank
+      .filter((question) => question.domain === domain && question.type === "single")
+      .map(conceptFingerprint)).size;
+    if (available < required) issues.push(`[${examCode}] Exam area ${domain}: only ${available} unique single-best-answer concepts for ${required} required positions`);
+    return [domain, { available, required }];
+  }));
+
+  return {
+    examCode,
+    questions: bank.length,
+    finalCramQuestions: finalCram.length,
+    uniqueCanonicalPrompts: seen.size,
+    uniqueFinalCramPrompts: finalCramSeen.size,
+    semanticDuplicatePairs,
+    uniqueSingleBestAnswerConcepts,
+    issues,
+  };
 }
 
-const conceptFingerprint = (question) => `${canonicalPrompt(question.topic)}|${canonicalPrompt(bestAnswer(question))}`;
-const officialPaceAllocation = { A: 40, B: 35, C: 17, D: 23 };
-const uniqueSingleBestAnswerConcepts = Object.fromEntries(Object.entries(officialPaceAllocation).map(([domain, required]) => {
-  const available = new Set(bank
-    .filter((question) => question.domain === domain && question.type === "single")
-    .map(conceptFingerprint)).size;
-  if (available < required) issues.push(`Exam area ${domain}: only ${available} unique single-best-answer concepts for ${required} required positions`);
-  return [domain, { available, required }];
-}));
+const ctsAudit = auditExam("CTS", "audits/questions.release.json", "app/final-cram.generated.json", { A: 40, B: 35, C: 17, D: 23 });
+const ctsiAudit = auditExam("CTS-I", "audits/questions-ctsi.release.json", "app/final-cram-ctsi.generated.json", { A: 20, B: 14, C: 14, D: 44, E: 14, F: 9 });
+const ctsdAudit = auditExam("CTS-D", "audits/questions-ctsd.release.json", "app/final-cram-ctsd.generated.json", { A: 23, B: 32, C: 44, D: 16 });
+
+const allIssues = [...ctsAudit.issues, ...ctsiAudit.issues, ...ctsdAudit.issues];
 
 const report = {
-  status: issues.length ? "FAIL" : "PASS",
-  questions: bank.length,
-  finalCramQuestions: finalCram.length,
-  uniqueCanonicalPrompts: seen.size,
-  uniqueFinalCramPrompts: finalCramSeen.size,
+  status: allIssues.length ? "FAIL" : "PASS",
+  questions: ctsAudit.questions,
+  finalCramQuestions: ctsAudit.finalCramQuestions,
+  uniqueCanonicalPrompts: ctsAudit.uniqueCanonicalPrompts,
+  uniqueFinalCramPrompts: ctsAudit.uniqueFinalCramPrompts,
   blockedWordingPatterns: blockedPhrases.length,
-  semanticDuplicatePairs,
+  semanticDuplicatePairs: ctsAudit.semanticDuplicatePairs,
   semanticDuplicatePolicy: "Variants remain available in full-bank study; timed sessions group by topic plus best answer and exhaust unique concepts before any reuse.",
-  uniqueSingleBestAnswerConcepts,
-  issues,
+  uniqueSingleBestAnswerConcepts: ctsAudit.uniqueSingleBestAnswerConcepts,
+  exams: {
+    cts: ctsAudit,
+    "cts-i": ctsiAudit,
+    "cts-d": ctsdAudit,
+  },
+  issues: allIssues,
 };
 writeFileSync("audits/quality-audit.json", `${JSON.stringify(report, null, 2)}\n`, "utf8");
-assert.deepEqual(issues, [], issues.join("\n"));
+assert.deepEqual(allIssues, [], allIssues.join("\n"));
 console.log(JSON.stringify(report, null, 2));
